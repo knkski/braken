@@ -1,0 +1,28 @@
+# ID       : LSYS-D34D8D38219D
+# Name     : Mango Leaf
+# Source   : Paul Bourke L-system manual/catalog | example 36; heading Mango Leaf | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/mango-leaf--d34d8d3821.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d34d8d38219d9feb9210ea5b9048227afc754f48b4e961f7ccc3485c52c7fe24
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = Y---Y
+# BOURKE | X -> {F-F}{F-F}--[--X]{F-F}{F-F}--{F-F}{F-F}--
+# BOURKE | Y -> f-F+X+F-fY
+# BOURKE | angle = 60
+#
+let ANGLE = 60;
+
+axiom Y Minus Minus Minus Y;
+
+match X then PolygonBegin F Minus F PolygonEnd PolygonBegin F Minus F PolygonEnd Minus Minus [ Minus Minus X ] PolygonBegin F Minus F PolygonEnd PolygonBegin F Minus F PolygonEnd Minus Minus PolygonBegin F Minus F PolygonEnd PolygonBegin F Minus F PolygonEnd Minus Minus;
+match Y then f Minus F Plus X Plus F Minus f Y;

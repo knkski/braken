@@ -1,0 +1,38 @@
+# ID       : LSYS-6E88592D72F6
+# Name     : five-pointed star as a planar Eulerian graph
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentastar.ls | https://github.com/jkubin/L-system/blob/68a699a/pentastar.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; output=no-drawable-segments
+# Render   : not-applicable; reason=expanded word contains no drawable segments
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 72
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:6e88592d72f6f88739ae7f8837eccc99dc6066ad34a0a4a06f31ab50c2702cbc
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/09/27⟧)
+# JKUBIN | ___DESCR(⟦five-pointed star as a planar Eulerian graph⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentastar.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTASTAR⟧, ⟦A--A--A--A--A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦A--A+AA--A--A⟧, ⟦F+F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(72),dnl
+# JKUBIN | "step":80,dnl
+# JKUBIN | "sety":-500,dnl
+# JKUBIN | "penw":4,dnl
+# JKUBIN | "speed":1,dnl
+# JKUBIN | 
+# JKUBIN | PENTASTAR(2)
+#
+let ANGLE = 72;
+
+axiom A Minus Minus A Minus Minus A Minus Minus A Minus Minus A;
+
+match A then A Minus Minus A Plus A A Minus Minus A Minus Minus A;

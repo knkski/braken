@@ -1,0 +1,33 @@
+# ID       : LSYS-869F93FEF0C1
+# Name     : Leaf5
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/leaves.l, section Leaf5 (#5) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/leaves.l
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/leaf5--869f93fef0.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:869f93fef0c144ea3f8ae015e1ba778654a3052141ddb94a746d2ef15b2a9a5f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Leaf5 {
+# RESETIUS | ; order 16
+# RESETIUS |   angle 8
+# RESETIUS |   axiom a
+# RESETIUS |   a=F[+A(1)][-A(1)]FA(0)
+# RESETIUS |   F=@1.5F@i1.5
+# RESETIUS | }
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then F [ Plus A(1) ] [ Minus A(1) ] F A(0);
+match F then Scale(1.5) F Scale(0.666666666667);
+match A(delay) when delay > 0 then A(delay - 1);
+match A(delay) when delay <= 0 then F [ Plus A(1) ] [ Minus A(1) ] F A(0);

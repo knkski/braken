@@ -1,0 +1,34 @@
+# ID       : LSYS-A9A6F2DB417F
+# Name     : ADH105r4
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH105r4 (#13) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh105r4--a9a6f2db41.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a9a6f2db417f53e1224e857a1b80cf99a3f7680fcbfdc88130259d7017f1b51a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH105r4 { ; rounded version of Anthony Hanmer's 105d, 2000
+# RESETIUS |   Angle 8 ; playing
+# RESETIUS |   Axiom x
+# RESETIUS |   f=
+# RESETIUS |   y=fy
+# RESETIUS |   x=fx+@.5fy@2+gx+@.5gy@2+fx-@.5fy@2-gx-@.5gy@2-fx
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match F then nothing;
+match Y then F Y;
+match X then F X Plus Scale(0.5) F Y Scale(2) Plus G X Plus Scale(0.5) G Y Scale(2) Plus F X Minus Scale(0.5) F Y Scale(2) Minus G X Minus Scale(0.5) G Y Scale(2) Minus F X;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

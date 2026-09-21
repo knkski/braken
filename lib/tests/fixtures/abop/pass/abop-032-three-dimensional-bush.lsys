@@ -1,0 +1,21 @@
+# ID       : ABOP-032
+# Name     : Three-dimensional bush
+# Source   : chapter 1, book page 26, Fig. 1.25
+# Formalism: deterministic bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+# Note     : Polygon and 3D turtle operations are represented as ordinary command modules.
+#
+# Original ABOP:
+# ABOP | ω : A
+# ABOP | p1    : A -> [&FL!A]/////'[&FL!A]///////'[&FL!A]
+# ABOP | p2    : F -> S/////F
+# ABOP | p3    : S -> FL
+# ABOP | p4    : L -> ['''^^{-f+f+f-|-f+f+f}]
+#
+axiom A;
+
+match A then [ PitchDown F L Width A ] RollRight RollRight RollRight RollRight RollRight ColorNext [ PitchDown F L Width A ] RollRight RollRight RollRight RollRight RollRight RollRight RollRight ColorNext [ PitchDown F L Width A ];
+match F then S RollRight RollRight RollRight RollRight RollRight F;
+match S then F L;
+match L then [ ColorNext ColorNext ColorNext PitchUp PitchUp PolygonBegin Minus f Plus f Plus f Minus Around Minus f Plus f Plus f PolygonEnd ];

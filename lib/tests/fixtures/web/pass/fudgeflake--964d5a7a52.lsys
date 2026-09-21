@@ -1,0 +1,39 @@
+# ID       : LSYS-964D5A7A526D
+# Name     : Fudgeflake
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[6] (Fudgeflake) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fudgeflake--964d5a7a52.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 30
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:964d5a7a526d40dd394280ff729e92d6c3064986c856d4297d9d0c822d640961
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Fudgeflake",
+# KITWALLACE |   "FX++++FX++++FX",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "-FY++FX-"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "+FY--FX+"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   30.0
+# KITWALLACE | ]
+#
+let ANGLE = 30;
+
+axiom F X Plus Plus Plus Plus F X Plus Plus Plus Plus F X;
+
+match X then Minus F Y Plus Plus F X Minus;
+match Y then Plus F Y Minus Minus F X Plus;

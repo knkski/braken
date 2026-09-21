@@ -1,0 +1,5 @@
+only F;
+
+axiom F(1) Hidden F(2) [ Side ] F(4);
+
+match F(x) left F(l) right F(r) then F(l + x + r);

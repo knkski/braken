@@ -1,0 +1,38 @@
+# ID       : LSYS-B2B3C72689BC
+# Name     : KitesAndDarts
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section KitesAndDarts (#3) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/kitesanddarts--b2b3c72689.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b2b3c72689bc2506e93891f3235ae0e2ebd7425214b2468f4306d8d23881e25c
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | KitesAndDarts { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers",
+# FRACTINT | ; Roger Penrose's kites and darts
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom WG+XG+WG+XG+WG+XG+WG+XG+WG+X
+# FRACTINT |   W=[F][++@1.618033989F][++G---@.618033989G|X-Y|G|W]
+# FRACTINT |   X=[F+++@1.618033989F][++@.618033989GZ|X|-G|W]
+# FRACTINT |   Y=[+F][@1.618033989F][+G@.618033989|Y+X]
+# FRACTINT |   Z=[-F][@1.618033989F][@.618033989G--WG|+Z]
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 36;
+
+axiom W G Plus X G Plus W G Plus X G Plus W G Plus X G Plus W G Plus X G Plus W G Plus X;
+
+match W then [ F ] [ Plus Plus Scale(1.618033989) F ] [ Plus Plus G Minus Minus Minus Scale(0.618033989) G TurnAround X Minus Y TurnAround G TurnAround W ];
+match X then [ F Plus Plus Plus Scale(1.618033989) F ] [ Plus Plus Scale(0.618033989) G Z TurnAround X TurnAround Minus G TurnAround W ];
+match Y then [ Plus F ] [ Scale(1.618033989) F ] [ Plus G Scale(0.618033989) TurnAround Y Plus X ];
+match Z then [ Minus F ] [ Scale(1.618033989) F ] [ Scale(0.618033989) G Minus Minus W G TurnAround Plus Z ];
+match F then nothing;

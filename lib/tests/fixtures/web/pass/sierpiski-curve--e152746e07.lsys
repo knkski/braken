@@ -1,0 +1,25 @@
+# ID       : LSYS-E152746E070A
+# Name     : Sierpiński curve
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[12]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sierpiski-curve--e152746e07.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F X
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e152746e070a422405b885a539f3fbde877a27bd71e8014d274f393c0fb5dc7d
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F X.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"X" -> "XF-F+F-XF+F+XF-F+F-X"}, "F+XF+F+XF", 5, 90]
+#
+let ANGLE = 90;
+
+axiom F Plus X F Plus F Plus X F;
+
+match X then X F Minus F Plus F Minus X F Plus F Plus X F Minus F Plus F Minus X;

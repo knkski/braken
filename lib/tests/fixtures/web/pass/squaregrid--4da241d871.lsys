@@ -1,0 +1,32 @@
+# ID       : LSYS-4DA241D8714F
+# Name     : SquareGrid
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section SquareGrid (#28) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/squaregrid--4da241d871.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4da241d8714ff141f64036817aab6742555706debd4346143acf06d25c6f54a3
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SquareGrid {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom x
+# RESETIUS |   x=[x]f+[x]f+[x]f+[x]f+
+# RESETIUS |   f=g
+# RESETIUS |   g=gg
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then [ X ] F Plus [ X ] F Plus [ X ] F Plus [ X ] F Plus;
+match F then G;
+match G then G G;

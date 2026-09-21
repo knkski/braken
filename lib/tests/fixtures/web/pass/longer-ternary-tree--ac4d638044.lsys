@@ -1,0 +1,36 @@
+# ID       : LSYS-AC4D6380441A
+# Name     : Longer ternary tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_ternary_longer.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_ternary_longer.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/longer-ternary-tree--ac4d638044.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:ac4d6380441a974303f31a3c83746e28b1b51f896973135343d62b31a209390e
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/04⟧)
+# JKUBIN | ___DESCR(⟦Longer ternary tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_ternary_longer.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | RULE(⟦F⟧, ⟦FF[+F][-F]F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":3,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | F(5)
+#
+let ANGLE = 45;
+
+axiom F;
+
+match F then F F [ Plus F ] [ Minus F ] F;

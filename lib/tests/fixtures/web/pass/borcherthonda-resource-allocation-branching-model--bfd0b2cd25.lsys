@@ -1,0 +1,41 @@
+# ID       : LSYS-BFD0B2CD2508
+# Name     : Borchert–Honda resource-allocation branching model
+# Source   : Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996) | Equation 17 | https://algorithmicbotany.org/papers/l-sys.csiro96.pdf
+# Formalism: parametric branch-context-sensitive resource-allocation L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-context-turtle2d'
+# Fidelity : equivalent
+# Features : branch-context, context-sensitive, parametric, quantitative-signal, resource-allocation
+# Angle    : 32
+# Heading  : 0
+# Draw     : I
+# Move     : none
+# Profile  : parametric-context-turtle2d
+# Fingerprint: sha256:bfd0b2cd250833ba29543d486a18b16ccb03b5e1d72b5b2e0a926cf4ec07b4e0
+#
+# Original Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996):
+# SCHOLARLY | alpha1=10; alpha2=32; sigma0=17; eta=0.89; lambda=0.7; vth=5
+# SCHOLARLY | ω : N(1) I(0,2,0,1) A
+# SCHOLARLY | Nine context-sensitive productions alternate apex counting and acropetal flux
+#
+let ALPHA1 = 10;
+let ALPHA2 = 32;
+let ETA = 0.89;
+let LAMBDA = 0.7;
+let SIGMA0 = 17;
+let VTH = 5;
+let ANGLE = 32;
+
+ignore Plus Minus TurnAround;
+axiom N(1) I(0,2,0,1) A;
+
+match I(b,m,v,c) left N(k) when b = 0 and m = 2 then I(b,1,SIGMA0*2^((k-1)*(ETA^k)),c);
+match N(k) right I(b,m,v,c) when b = 0 and m = 2 then N(k+1);
+match I(b,m,v,c) left I(bl,ml,vl,cl) when ml = 1 and b = 1 then I(b,ml,vl-vl*(1-LAMBDA)*((cl-c)/c),c);
+match I(b,m,v,c) left I(bl,ml,vl,cl) when ml = 1 and b = 2 then I(b,ml,vl*(1-LAMBDA)*(c/(cl-c)),c);
+match A left I(b,m,v,c) when m = 1 and v > VTH then TurnAround [ Minus(ALPHA2) I(2,2,v*(1-LAMBDA),1) A ] Plus(ALPHA1) I(1,2,v*LAMBDA,1) A;
+match I(b,m,v,c) right A when m = 1 and v <= VTH then I(b,2,v,c);
+match I(b,m,v,c) right [ I(b2,m2,v2,c2) ] I(b1,m1,v1,c1) when m = 0 and m1 = 2 and m2 = 2 then I(b,2,v,c1+c2);
+match I(b,m,v,c) when m = 1 then I(b,0,v,c);
+match I(b,m,v,c) left I(bl,ml,vl,cl) when ml = 2 and m = 2 then I(b,0,v,c);

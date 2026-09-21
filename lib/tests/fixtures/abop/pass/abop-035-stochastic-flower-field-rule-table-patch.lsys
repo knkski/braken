@@ -1,0 +1,19 @@
+# ID       : ABOP-035
+# Name     : Stochastic flower-field rule-table patch
+# Source   : chapter 1, book page 30, Flower-field modification
+# Formalism: stochastic context-free string
+# Parse    : pass
+# Execute  : pass
+# Note     : Standalone test fixture for the printed stochastic patch.
+#
+# Original ABOP:
+# ABOP | # Replacement for production p3 of the flower-field grammar:
+# ABOP | p3a : seg 0.33 -> seg[//&&leaf][//^^leaf]Fseg
+# ABOP | p3b : seg 0.33 -> segFseg
+# ABOP | p3c : seg 0.34 -> seg
+#
+axiom seg;
+
+match seg weight 33 then seg [ RollRight RollRight PitchDown PitchDown leaf ] [ RollRight RollRight PitchUp PitchUp leaf ] F seg;
+match seg weight 33 then seg F seg;
+match seg weight 34 then seg;

@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+  TRUNK_VERSION: 0.21.14
+
+jobs:
+  quality:
+    name: Formatting, Clippy, and docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the Rust toolchain
+        run: rustup show active-toolchain
+      - uses: Swatinem/rust-cache@v2.9.2
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Run Clippy
+        run: cargo clippy --locked --workspace --all-targets -- -D warnings
+      - name: Check documentation
+        env:
+          RUSTDOCFLAGS: -D warnings
+        run: cargo doc --locked --workspace --no-deps
+
+  test:
+    name: Tests and generated files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the Rust toolchain
+        run: rustup show active-toolchain
+      - uses: Swatinem/rust-cache@v2.9.2
+      - name: Run workspace tests
+        run: cargo test --locked --workspace
+      - name: Check generated application icons
+        run: cargo run --locked -p braken-gui --example generate_app_icons -- --check
+      - name: Check generated preset previews
+        run: cargo run --locked -p braken-gui --example generate_preset_previews -- --check
+      - name: Check generated IR fixtures
+        run: cargo run --locked -p braken --example generate_ir_fixtures -- --check
+      - name: Smoke-test the CLI
+        run: |
+          cargo run --locked --quiet -p braken-cli -- \
+            --file gui/presets/koch-snowflake.lsys \
+            --iterations 2 \
+            --backend cpu \
+            --visualizer turtle_2d \
+            --target svg \
+            --angle 60 \
+            --seed 0 \
+            --output /tmp/braken-cli-smoke.svg
+          test -s /tmp/braken-cli-smoke.svg
+          grep -q '<svg' /tmp/braken-cli-smoke.svg
+          grep -q '<line' /tmp/braken-cli-smoke.svg
+
+  web:
+    name: Browser applications
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the Rust toolchain
+        run: rustup show active-toolchain
+      - uses: Swatinem/rust-cache@v2.9.2
+      - name: Install Trunk
+        run: cargo install trunk --version "$TRUNK_VERSION" --locked
+      - name: Check the Yew application
+        run: >-
+          cargo clippy --locked -p braken-web
+          --target wasm32-unknown-unknown --all-targets -- -D warnings
+      - name: Check the Iced application
+        run: >-
+          cargo clippy --locked -p braken-gui
+          --target wasm32-unknown-unknown
+          --no-default-features --features web
+          --bin braken-gui -- -D warnings
+      - name: Check the render worker
+        run: >-
+          cargo clippy --locked -p braken-gui
+          --target wasm32-unknown-unknown
+          --no-default-features --features web-worker
+          --bin braken-render-worker -- -D warnings
+      - name: Build the Yew application
+        working-directory: web
+        run: >-
+          trunk build index.html
+          --release
+          --locked
+          --dist ../yew-dist
+          --public-url /braken/
+      - name: Build the Iced application
+        working-directory: gui
+        run: >-
+          trunk build index.html
+          --release
+          --locked
+          --dist ../iced-dist
+          --public-url /braken/iced/
+      - name: Check browser artifacts
+        run: |
+          test -s yew-dist/index.html
+          test -n "$(find yew-dist -maxdepth 1 -name 'braken-web-*_bg.wasm' -print -quit)"
+          test -s yew-dist/braken-render-worker.js
+          test -s yew-dist/braken-render-worker_bg.wasm
+          test -s iced-dist/index.html
+          test -n "$(find iced-dist -maxdepth 1 -name 'braken-gui-*_bg.wasm' -print -quit)"
+          test -s iced-dist/braken-render-worker.js
+          test -s iced-dist/braken-render-worker_bg.wasm

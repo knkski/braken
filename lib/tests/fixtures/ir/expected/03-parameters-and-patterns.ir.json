@@ -1,0 +1,145 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom A(1,2) A(3,4) Other(9);\n\nmatch A(x,2) then Literal(x);\nmatch A(x,_) when x > 1 then Wildcard(x);\n",
+  "source_fingerprint": "fnv1a64:2a2c63005aed6c93",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 2
+    },
+    {
+      "name": "Literal",
+      "arity": 1
+    },
+    {
+      "name": "Other",
+      "arity": 1
+    },
+    {
+      "name": "Wildcard",
+      "arity": 1
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x3ff0000000000000"
+            },
+            {
+              "Number": "0x4000000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x4008000000000000"
+            },
+            {
+              "Number": "0x4010000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 2,
+          "arguments": [
+            {
+              "Number": "0x4022000000000000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [
+        "x"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          {
+            "Literal": "0x4000000000000000"
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": [
+                {
+                  "Binding": 0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [
+        "x"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          "Wildcard"
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": {
+        "Binary": {
+          "op": "Greater",
+          "left": {
+            "Binding": 0
+          },
+          "right": {
+            "Number": "0x3ff0000000000000"
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 3,
+              "arguments": [
+                {
+                  "Binding": 0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

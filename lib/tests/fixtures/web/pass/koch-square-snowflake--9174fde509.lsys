@@ -1,0 +1,38 @@
+# ID       : LSYS-9174FDE509CE
+# Name     : Koch square snowflake
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | koch_square_snowflake.ls | https://github.com/jkubin/L-system/blob/68a699a/koch_square_snowflake.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/koch-square-snowflake--9174fde509.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:9174fde509ce81d9f4491f5b2436c74ca8ef77d1c33d1e2d9e94105a903cbf49
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/Koch_snowflake
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/Koch_snowflake ⟧)
+# JKUBIN | ___DESCR(⟦Koch square snowflake⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 koch_snowflake.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦KOCH_SQR_SNOWFLAKE⟧, ⟦F--F--F--F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F--F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":6,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | KOCH_SQR_SNOWFLAKE(3)
+#
+let ANGLE = 45;
+
+axiom F Minus Minus F Minus Minus F Minus Minus F;
+
+match F then F Plus F Minus Minus F Plus F;

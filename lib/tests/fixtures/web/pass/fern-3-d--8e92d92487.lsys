@@ -1,0 +1,31 @@
+# ID       : LSYS-8E92D9248724
+# Name     : Fern (3-D)
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 9 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-propfeds'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 4
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle3d-propfeds
+# Fingerprint: sha256:8e92d924872427c2113ef65079a7dd07658ede8da9a94ab1bf0b42804a49de21
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('FFFA', [
+# SCHOLARLY |             'A=[++++++++++++++FC]B^+B[--------------FD]B+BA',
+# SCHOLARLY |             'C=[---------FF][+++++++++FF]B&&+C',
+# SCHOLARLY |             'D=[---------FF][+++++++++FF]B&&-D'
+# SCHOLARLY |         ], 4)
+#
+let ANGLE = 4;
+
+axiom F F F A;
+
+match A then [ Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus F C ] B PitchUp Plus B [ Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus F D ] B Plus B A;
+match C then [ Minus Minus Minus Minus Minus Minus Minus Minus Minus F F ] [ Plus Plus Plus Plus Plus Plus Plus Plus Plus F F ] B PitchDown PitchDown Plus C;
+match D then [ Minus Minus Minus Minus Minus Minus Minus Minus Minus F F ] [ Plus Plus Plus Plus Plus Plus Plus Plus Plus F F ] B PitchDown PitchDown Minus D;

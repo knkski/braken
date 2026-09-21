@@ -1,0 +1,14 @@
+# Name: Sierpiński Arrowhead
+# Summary: A continuous zigzag recursively fills an equilateral triangle from edge to edge.
+# Visualizer: turtle_2d
+# Angle: 60
+# Orientation Anchor: endpoint
+# Iterations: 7
+# Preview Iterations: 4
+# Max Iterations: 12
+# Initial Color: 1
+
+axiom Y;
+
+match X then Y Draw Left X Draw Left Y;
+match Y then X Draw Right Y Draw Right X;

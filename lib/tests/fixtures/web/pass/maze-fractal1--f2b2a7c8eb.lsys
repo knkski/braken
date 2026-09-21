@@ -1,0 +1,42 @@
+# ID       : LSYS-F2B2A7C8EB65
+# Name     : Maze&Fractal1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Maze&Fractal1 (#47) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Maze&Fractal1 (#56) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/maze-fractal1--f2b2a7c8eb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f2b2a7c8eb65cfe8be97d34a2b0b3e6a2c0d887ba4d1202f2623ae35bdd2e062
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Maze&Fractal1 {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom x
+# RESETIUS |   x=fy+fyfy-fy
+# RESETIUS |   y=fx-fxfx+fx
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Maze&Fractal1 {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom x
+# RESETIUS |   x=fy+fyfy-fy
+# RESETIUS |   y=fx-fxfx+fx
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 120;
+
+axiom X;
+
+match X then F Y Plus F Y F Y Minus F Y;
+match Y then F X Minus F X F X Plus F X;
+match F then nothing;

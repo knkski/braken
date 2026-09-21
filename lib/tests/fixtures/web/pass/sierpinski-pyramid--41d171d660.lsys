@@ -1,0 +1,34 @@
+# ID       : LSYS-41D171D66069
+# Name     : Sierpinski Pyramid
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 5: Sierpinski Pyramid | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:41d171d66069d0b2ecfb0d13d53b1078078e67b9891baabc6fe847f2fab1797b
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Sierpinski Pyramid",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "m{0xffffff, 0.9, 0.9, true} f{8/2} cone{8, 8, 3}",
+# GERIZIM |       productions:
+# GERIZIM |         "cone{s, s} -> f{s/4} cone{s/2, s/2, 3} f{-s/2} [ +x{90} f{s*sin(pi/6)} -x{90} cone{s/2, s/2, 3} ] [ +z{120} +x{90} f{s*sin(pi/6)} -x{90} cone{s/2, s/2, 3} ] [ -z{120} +x{90} f{s*sin(pi/6)} -x{90} cone{s/2, s/2, 3} ] f{s/4}",
+# GERIZIM |       iterations: 3,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 1, angle: 90
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 90;
+
+axiom m(16777215,0.9,0.9,true) f(8/2) cone(8,8,3);
+
+match cone(s,_) then f(s/4) cone(s/2,s/2,3) f(-s/2) [ PitchUp(90) f(s*sin(PI/6)) PitchDown(90) cone(s/2,s/2,3) ] [ Plus(120) PitchUp(90) f(s*sin(PI/6)) PitchDown(90) cone(s/2,s/2,3) ] [ Minus(120) PitchUp(90) f(s*sin(PI/6)) PitchDown(90) cone(s/2,s/2,3) ] f(s/4);

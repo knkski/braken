@@ -1,0 +1,29 @@
+# ID       : LSYS-F6FAF22D0758
+# Name     : Vertigo2
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section Vertigo2 (#8) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/vertigo2--f6faf22d07.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 7.34693877551
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f6faf22d0758bb340fed0c59ab4fe95086a5ea636f878d130dba65773a6e2342
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Vertigo2 { ; by Morgan Savage
+# FRACTINT | ; Try order 13 and color cycle in both 256 and 16 color modes
+# FRACTINT |   Angle 49
+# FRACTINT |   Axiom X
+# FRACTINT |   X=X>1F+@.9997X
+# FRACTINT |   }
+#
+let ANGLE = 7.34693877551;
+
+axiom X;
+
+match X then X ColorIncrement(-1) F Plus Scale(0.9997) X;

@@ -1,0 +1,48 @@
+Braken IR v1 / semantics v2
+3 symbols · 0 globals · 1 productions · 4 expression programs
+maximum expression stack 2 · maximum bindings 3 · maximum context depth 1
+source fingerprint fnv1a64:f62580800ad573c0
+
+symbols
+  s0 = F / 1
+  s1 = Hidden / 0
+  s2 = Side / 0
+
+axiom
+  F(expr) Hidden F(expr) [Side] F(expr)
+
+context filter
+  only F
+
+productions
+  p0: F(x) left F(l) right F(r) then F(expr)
+    bindings: $0=x $1=l $2=r
+
+expression programs
+  e0 AxiomArgument { module: 0, argument: 0 } (stack 1)
+    0000 push.number 0x3ff0000000000000 ; 1.0
+    0001 return
+  e1 AxiomArgument { module: 2, argument: 0 } (stack 1)
+    0000 push.number 0x4000000000000000 ; 2.0
+    0001 return
+  e2 AxiomArgument { module: 4, argument: 0 } (stack 1)
+    0000 push.number 0x4010000000000000 ; 4.0
+    0001 return
+  e3 SuccessorArgument { production: ProductionId(0), module: 0, argument: 0 } (stack 2)
+    0000 load.binding $1
+    0001 load.binding $0
+    0002 binary Add
+    0003 load.binding $2
+    0004 binary Add
+    0005 return
+
+backend compatibility
+  CPU: compatible
+  CUDA: unsupported
+    Error [gpu-parameters] the current GPU derivation compiler accepts only argument-free modules
+    Error [gpu-context] the current GPU derivation compiler accepts only context-free productions
+    Error [gpu-context-filter] the current GPU derivation compiler does not implement ignore/only filters
+  WGPU: unsupported
+    Error [gpu-parameters] the current GPU derivation compiler accepts only argument-free modules
+    Error [gpu-context] the current GPU derivation compiler accepts only context-free productions
+    Error [gpu-context-filter] the current GPU derivation compiler does not implement ignore/only filters

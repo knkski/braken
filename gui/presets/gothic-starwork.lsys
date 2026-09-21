@@ -1,0 +1,21 @@
+# Name: Gothic Starwork
+# Summary: Nested stars, decagons, and onion-dome forms create intricate Gothic tracery.
+# Visualizer: turtle_2d
+# Angle: 36
+# Iterations: 2
+# Max Iterations: 4
+# Initial Color: 2
+# Heading: 0
+# Draw: X
+# Move: Y
+#
+# Morph-friendly carrier rewrite of the imported Gothic.Outline preset. The
+# original represents every drawn carrier as `F X` and every moving carrier as
+# `G Y`, then deletes F and G at the next rewrite. Fusing each pair into its
+# X/Y carrier preserves the exact turtle geometry while retaining visible
+# parentage across adjacent generations.
+
+axiom X Plus Plus X Plus Plus X Plus Plus X Plus Plus X Plus Plus;
+
+match X then X Plus Plus X [ Plus Plus Y ] Minus X [ Plus Plus Y [ Plus Plus Y ] Minus X Plus Plus X ] Minus X [ Plus Plus Y Minus Minus Y ] Minus X [ Plus Plus Y ] Minus X Plus Plus X;
+match Y then Y Plus Plus X [ Plus Plus Y ] Minus X [ Plus Plus Y [ Plus Plus Y ] Minus X Plus Plus X ] Minus X [ Plus Plus Y Minus Minus Y ] Minus X [ Plus Plus Y ] Minus X Plus Plus Y;

@@ -1,0 +1,43 @@
+Braken IR v1 / semantics v2
+3 symbols · 0 globals · 2 productions · 4 expression programs
+maximum expression stack 2 · maximum bindings 1 · maximum context depth 0
+source fingerprint fnv1a64:0f9a235aa1596fc2
+
+symbols
+  s0 = A / 1
+  s1 = High / 0
+  s2 = Low / 0
+
+axiom
+  A(expr) A(expr)
+
+productions
+  p0: A(x) weight e2 then Low
+    bindings: $0=x
+  p1: A(x) weight e3 then High
+    bindings: $0=x
+
+expression programs
+  e0 AxiomArgument { module: 0, argument: 0 } (stack 1)
+    0000 push.number 0x3ff0000000000000 ; 1.0
+    0001 return
+  e1 AxiomArgument { module: 1, argument: 0 } (stack 1)
+    0000 push.number 0x4000000000000000 ; 2.0
+    0001 return
+  e2 Weight(ProductionId(0)) (stack 1)
+    0000 load.binding $0
+    0001 return
+  e3 Weight(ProductionId(1)) (stack 2)
+    0000 push.number 0x4008000000000000 ; 3.0
+    0001 load.binding $0
+    0002 binary Subtract
+    0003 return
+
+backend compatibility
+  CPU: compatible
+  CUDA: unsupported
+    Error [gpu-parameters] the current GPU derivation compiler accepts only argument-free modules
+    Error [gpu-dynamic-weight] the current GPU derivation compiler requires weights to be independent of module bindings
+  WGPU: unsupported
+    Error [gpu-parameters] the current GPU derivation compiler accepts only argument-free modules
+    Error [gpu-dynamic-weight] the current GPU derivation compiler requires weights to be independent of module bindings

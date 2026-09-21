@@ -1,0 +1,33 @@
+# Name: Fractal Rhombus Tile
+# Summary: Mirrored diagonal branches repeat into a tile of nested rhombus fragments.
+# Visualizer: turtle_2d
+# Angle: 30
+# Iterations: 4
+# Max Iterations: 10
+# Initial Color: 9
+
+# ID       : LSYS-8BF848BD61F9
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section FracRhombusTile (#23) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8bf848bd61f924203f4753f0420b350d164dc4b5c9657269a4774373cc060abb
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | FracRhombusTile { ; William McWorter
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom f
+# RESETIUS |   f=[-f++g-]+f--g+
+# RESETIUS |   g=[-f++g-]+f--g+
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom F;
+
+match F then [ Minus F Plus Plus G Minus ] Plus F Minus Minus G Plus;
+match G then [ Minus F Plus Plus G Minus ] Plus F Minus Minus G Plus;

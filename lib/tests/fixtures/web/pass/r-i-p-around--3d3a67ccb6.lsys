@@ -1,0 +1,39 @@
+# ID       : LSYS-3D3A67CCB69D
+# Name     : R.I.P.Around
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section R.I.P.Around (#24) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/r-i-p-around--3d3a67ccb6.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:3d3a67ccb69dde060a896e8801c5c25094f359f3ce4fc859e51c0e63fcc77ba6
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | R.I.P.Around {
+# RESETIUS | 
+# RESETIUS |   ; best order 6
+# RESETIUS |   ; time 0:06
+# RESETIUS | 
+# RESETIUS |     angle 4
+# RESETIUS |     axiom FY-FY-FY-FY-
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     Y=FY-FY+FX+FY-FY
+# RESETIUS |     X=FA[-Y-Y]+FFX-FX-FXFA[-Y-Y]+F
+# RESETIUS |     A=FA+FFX-FXFA+F-
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Y Minus F Y Minus F Y Minus F Y Minus;
+
+match F then nothing;
+match Y then F Y Minus F Y Plus F X Plus F Y Minus F Y;
+match X then F A [ Minus Y Minus Y ] Plus F F X Minus F X Minus F X F A [ Minus Y Minus Y ] Plus F;
+match A then F A Plus F F X Minus F X F A Plus F Minus;

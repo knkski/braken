@@ -1,0 +1,33 @@
+# ID       : LSYS-DA161C3CB951
+# Name     : Tree-Bad
+# Source   : abiusx/L3D model archive | L/tree-bad.l3d | https://github.com/abiusx/L3D/blob/master/L/tree-bad.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 25
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:da161c3cb95162a0b74b1575ad3bdc4e6713253c032098ef1b359f7a4c931e0a
+# Note     : Upstream thickness setting: 2
+# Note     : The upstream model is labelled bad/crashing; rewrite transcription is retained for diagnosis.
+#
+# Original abiusx/L3D model archive:
+# L3D | 5
+# L3D | 25
+# L3D | 2
+# L3D | F
+# L3D | F=F[-EF[&&&A]]E[+F[^^^A]]
+# L3D | E=F[  F[+++A]][^F[---A]]
+# L3D | @
+#
+let ANGLE = 25;
+
+axiom F;
+
+match F then F [ Minus E F [ PitchDown PitchDown PitchDown A ] ] E [ Plus F [ PitchUp PitchUp PitchUp A ] ];
+match E then F [ F [ Plus Plus Plus A ] ] [ PitchUp F [ Minus Minus Minus A ] ];

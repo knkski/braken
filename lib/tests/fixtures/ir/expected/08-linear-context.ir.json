@@ -1,0 +1,156 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "only F;\n\naxiom F(1) Hidden F(2) [ Side ] F(4);\n\nmatch F(x) left F(l) right F(r) then F(l + x + r);\n",
+  "source_fingerprint": "fnv1a64:f62580800ad573c0",
+  "symbols": [
+    {
+      "name": "F",
+      "arity": 1
+    },
+    {
+      "name": "Hidden",
+      "arity": 0
+    },
+    {
+      "name": "Side",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": {
+    "Only": [
+      "F"
+    ]
+  },
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x3ff0000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 1,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x4000000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Branch": {
+          "items": [
+            {
+              "Module": {
+                "symbol": 2,
+                "arguments": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x4010000000000000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [
+        "x",
+        "l",
+        "r"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          }
+        ]
+      },
+      "left": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Bind": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "right": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Bind": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Add",
+                    "left": {
+                      "Binary": {
+                        "op": "Add",
+                        "left": {
+                          "Binding": 1
+                        },
+                        "right": {
+                          "Binding": 0
+                        }
+                      }
+                    },
+                    "right": {
+                      "Binding": 2
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

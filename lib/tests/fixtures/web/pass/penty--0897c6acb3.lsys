@@ -1,0 +1,52 @@
+# ID       : LSYS-0897C6ACB355
+# Name     : Penty
+# Aliases  : Xmastree-0
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Penty (#58) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Xmastree-0 (#94) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/penty--0897c6acb3.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0897c6acb3556213e206cffbd0413428383257849410ea49905df683cbad9a00
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Penty { ; William McWorter *
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom W
+# RESETIUS |   F=
+# RESETIUS |   W=++c15FX--c48FW--c48FY++
+# RESETIUS |   X=-c15FZ++c40FY-
+# RESETIUS |   Y=--c15FZ++c40FY++c48FW--
+# RESETIUS |   Z=+c15FX--c40FW+
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Xmastree-0 { ; William McWorter
+# RESETIUS | ; order 10
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom W
+# RESETIUS |   F=
+# RESETIUS |   W=++c15FX--c48FW--c48FY++
+# RESETIUS |   X=-c15FZ++c40FY-
+# RESETIUS |   Y=--c15FZ++c40FY++c48FW--
+# RESETIUS |   Z=+c15FX--c40FW+
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom W;
+
+match F then nothing;
+match W then Plus Plus Color(15) F X Minus Minus Color(48) F W Minus Minus Color(48) F Y Plus Plus;
+match X then Minus Color(15) F Z Plus Plus Color(40) F Y Minus;
+match Y then Minus Minus Color(15) F Z Plus Plus Color(40) F Y Plus Plus Color(48) F W Minus Minus;
+match Z then Plus Color(15) F X Minus Minus Color(40) F W Plus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

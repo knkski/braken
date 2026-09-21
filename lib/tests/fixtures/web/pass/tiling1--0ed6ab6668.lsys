@@ -1,0 +1,39 @@
+# ID       : LSYS-0ED6AB666804
+# Name     : Tiling1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Tiling1 (#79) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Tiling1 (#41) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/tiling1--0ed6ab6668.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0ed6ab66680422a5db8bc5c9a39ddc339796f3c4770fa4f2207d6dd30123eea9
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Tiling1 {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=f-f-f+f+fx++f-f-f+f+fx--f-f-f+f+fx
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Tiling1 {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=f-f-f+f+fx++f-f-f+f+fx--f-f-f+f+fx
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then F Minus F Minus F Plus F Plus F X Plus Plus F Minus F Minus F Plus F Plus F X Minus Minus F Minus F Minus F Plus F Plus F X;
+match F then nothing;

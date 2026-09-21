@@ -1,0 +1,37 @@
+# ID       : LSYS-DF99A9107AF4
+# Name     : Sign.
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Sign. (#31) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sign--df99a9107a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:df99a9107af41e6ea7a7e49ea81b9e1dd5d0dff07af9c534b270fe5cada20823
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sign. {
+# RESETIUS | 
+# RESETIUS |   ; best order 8
+# RESETIUS |   ; time 0:06
+# RESETIUS | 
+# RESETIUS |     angle 12
+# RESETIUS |     axiom FX-FY-FX-FY-FX-FY-FX-FY-FX-FY-FX-FY-
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=--FY++FX++FY--
+# RESETIUS |     Y=++FX--FY--FX++
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom F X Minus F Y Minus F X Minus F Y Minus F X Minus F Y Minus F X Minus F Y Minus F X Minus F Y Minus F X Minus F Y Minus;
+
+match F then nothing;
+match X then Minus Minus F Y Plus Plus F X Plus Plus F Y Minus Minus;
+match Y then Plus Plus F X Minus Minus F Y Minus Minus F X Plus Plus;

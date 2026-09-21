@@ -1,0 +1,24 @@
+# ID       : ABOP-076
+# Name     : Complete Lychnis coronaria model
+# Source   : chapter 3, book page 84, Fig. 3.14
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #include L(0), L(1), ...
+# ABOP | #include K(0), K(1), ...
+# ABOP | ω : A(7)
+# ABOP | p1    : A(t) : t=7 -> FI(20)[&(60)~L(0)]/(90)[&(45)A(0)]/(90)[&(60)~L(0)]/(90)[&(45)A(4)]FI(10)~K(0)
+# ABOP | p2    : A(t) : t<7 -> A(t+1)
+# ABOP | p3    : I(t) : t>0 -> F F I(t-1)
+# ABOP | p4    : L(t) -> L(t+1)
+# ABOP | p5    : K(t) -> K(t+1)
+#
+axiom A(7);
+
+match A(t) when t=7 then F I(20) [ PitchDown(60) L(0) ] RollRight(90) [ PitchDown(45) A(0) ] RollRight(90) [ PitchDown(60) L(0) ] RollRight(90) [ PitchDown(45) A(4) ] F I(10) K(0);
+match A(t) when t<7 then A(t+1);
+match I(t) when t>0 then F F I(t-1);
+match L(t) then L(t+1);
+match K(t) then K(t+1);

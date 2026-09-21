@@ -1,0 +1,44 @@
+# ID       : LSYS-000DA0C3369A
+# Name     : ThreeTile
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section ThreeTile (#76) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/threetile--000da0c336.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:000da0c3369a25e2bae86d58170e1af439038c52f5056670f469fe782ac29b0b
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ThreeTile {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom [c32u]@q3l
+# RESETIUS |   l=u
+# RESETIUS |   u=[+++@iq3f----@2f]fx
+# RESETIUS |   x=+++[---@iq3f++++@2f]fy----[-@2@iq3f++++@i2f]fz[---@iq3f++++@2f]fy+
+# RESETIUS |   y=---[+++@iq3f----@2f]fx++++[+@2@iq3f----@i2f]fw[+++@iq3f----@2f]fx-
+# RESETIUS |   z=-[+@2@iq3f----@i2f]fw[+++@iq3f----@2f]fx++++[+@2@iq3f----@i2f]fw---
+# RESETIUS |   w=+[-@2@iq3f++++@i2f]fz[---@iq3f++++@2f]fy----[-@2@iq3f++++@i2f]fz+++
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom [ Color(32) U ] Scale(1.73205080757) L;
+
+match L then U;
+match U then [ Plus Plus Plus Scale(0.57735026919) F Minus Minus Minus Minus Scale(2) F ] F X;
+match X then Plus Plus Plus [ Minus Minus Minus Scale(0.57735026919) F Plus Plus Plus Plus Scale(2) F ] F Y Minus Minus Minus Minus [ Minus Scale(2) Scale(0.57735026919) F Plus Plus Plus Plus Scale(0.5) F ] F Z [ Minus Minus Minus Scale(0.57735026919) F Plus Plus Plus Plus Scale(2) F ] F Y Plus;
+match Y then Minus Minus Minus [ Plus Plus Plus Scale(0.57735026919) F Minus Minus Minus Minus Scale(2) F ] F X Plus Plus Plus Plus [ Plus Scale(2) Scale(0.57735026919) F Minus Minus Minus Minus Scale(0.5) F ] F W [ Plus Plus Plus Scale(0.57735026919) F Minus Minus Minus Minus Scale(2) F ] F X Minus;
+match Z then Minus [ Plus Scale(2) Scale(0.57735026919) F Minus Minus Minus Minus Scale(0.5) F ] F W [ Plus Plus Plus Scale(0.57735026919) F Minus Minus Minus Minus Scale(2) F ] F X Plus Plus Plus Plus [ Plus Scale(2) Scale(0.57735026919) F Minus Minus Minus Minus Scale(0.5) F ] F W Minus Minus Minus;
+match W then Plus [ Minus Scale(2) Scale(0.57735026919) F Plus Plus Plus Plus Scale(0.5) F ] F Z [ Minus Minus Minus Scale(0.57735026919) F Plus Plus Plus Plus Scale(2) F ] F Y Minus Minus Minus Minus [ Minus Scale(2) Scale(0.57735026919) F Plus Plus Plus Plus Scale(0.5) F ] F Z Plus Plus Plus;
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

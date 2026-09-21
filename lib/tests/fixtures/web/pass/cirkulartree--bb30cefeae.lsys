@@ -1,0 +1,36 @@
+# ID       : LSYS-BB30CEFEAE57
+# Name     : CirkularTree
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section CirkularTree (#26) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/cirkulartree--bb30cefeae.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bb30cefeae5774d04b3fb2f6dc14a462cad19e142e60a4672cce8ba5f407aa69
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | CirkularTree { ;
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom F
+# RESETIUS |   F=F[+s]F[-t]
+# RESETIUS |   S=+<2F-<2F-<2F+<2F+<2F+<2F-<2F-<2F-<2F
+# RESETIUS |   S=-<2F-F>2+F>2+F>2+F>2+F>2+F>2+F>2+F>2+F>2
+# RESETIUS |   T=-<2F+<2F+<2F-<2F-<2F-<2F+<2F+<2F+<2F
+# RESETIUS |   T=+<2F+F>2-F>2-F>2-F>2-F>2-F>2-F>2-F>2-F>2
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom F;
+
+match F then F [ Plus S ] F [ Minus T ];
+match S then Plus ColorIncrement(2) F Minus ColorIncrement(2) F Minus ColorIncrement(2) F Plus ColorIncrement(2) F Plus ColorIncrement(2) F Plus ColorIncrement(2) F Minus ColorIncrement(2) F Minus ColorIncrement(2) F Minus ColorIncrement(2) F Minus ColorIncrement(2) F Minus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2) Plus F ColorIncrement(-2);
+match T then Minus ColorIncrement(2) F Plus ColorIncrement(2) F Plus ColorIncrement(2) F Minus ColorIncrement(2) F Minus ColorIncrement(2) F Minus ColorIncrement(2) F Plus ColorIncrement(2) F Plus ColorIncrement(2) F Plus ColorIncrement(2) F Plus ColorIncrement(2) F Plus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2) Minus F ColorIncrement(-2);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

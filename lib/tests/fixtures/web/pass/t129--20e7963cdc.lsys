@@ -1,0 +1,30 @@
+# ID       : LSYS-20E7963CDC98
+# Name     : T129
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section T129 (#46) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/t129--20e7963cdc.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:20e7963cdc98926bc55b2fdb8e2cd30328efa49ce3161586400e14a67d3c016c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | T129 { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 8 ; At last - my own Dragon curve variation (I HOPE)
+# RESETIUS |   Axiom -x
+# RESETIUS |   x=x+f+y-f
+# RESETIUS |   y=f+x-f-y
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Minus X;
+
+match X then X Plus F Plus Y Minus F;
+match Y then F Plus X Minus F Minus Y;

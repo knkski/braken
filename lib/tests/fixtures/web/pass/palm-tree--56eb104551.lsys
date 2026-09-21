@@ -1,0 +1,39 @@
+# ID       : LSYS-56EB104551C0
+# Name     : Palm Tree
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 7: Palm Tree | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 2
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:56eb104551c0b42865716727ce2872ae0d4708fd992824154fa7033fce1c8349
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Palm Tree",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "J m{0x00FF00} K K K K K K K K K K K K K K K K K K K K",
+# GERIZIM |       productions:
+# GERIZIM |         "J -> J m{0x964B00} -y cone s f e\nK -> -z{30} [ -y{32} L A ]\nL -> L -y{4}\nA -> s f e [ -x{24} B ] -y{16} [ A ] [ +x{24} B ]\nB -> s f e -y{16} B\ncone -> m{0x964B00} cone{random()/7+0.3}",
+# GERIZIM |       iterations: 8,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 1.2, angle: 2
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 2;
+
+axiom J m(65280) K K K K K K K K K K K K K K K K K K K K;
+
+match J then J m(9849600) RollRight cone s f e;
+match K then Minus(30) [ RollRight(32) L A ];
+match L then L RollRight(4);
+match A then s f e [ PitchDown(24) B ] RollRight(16) [ A ] [ PitchUp(24) B ];
+match B then s f e RollRight(16) B;
+match cone then m(9849600) cone(RANDOM/7+0.3);

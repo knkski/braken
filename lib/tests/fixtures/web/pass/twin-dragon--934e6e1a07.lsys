@@ -1,0 +1,39 @@
+# ID       : LSYS-934E6E1A07B8
+# Name     : Twin dragon
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[2] (Twin dragon) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/twin-dragon--934e6e1a07.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:934e6e1a07b871eb524b7c36ede73ad341ee554c3fb8a953dbf6e587308c64b0
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Twin dragon",
+# KITWALLACE |   "FX+FX+",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "X+YF"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "FX-Y"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+let ANGLE = 90;
+
+axiom F X Plus F X Plus;
+
+match X then X Plus Y F;
+match Y then F X Minus Y;

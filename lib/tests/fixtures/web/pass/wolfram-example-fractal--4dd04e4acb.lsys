@@ -1,0 +1,25 @@
+# ID       : LSYS-4DD04E4ACB60
+# Name     : Wolfram example fractal
+# Source   : Wolfram Function Repository LSystem | Basic Examples, In[5] (Show a fractal) | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/wolfram-example-fractal--4dd04e4acb.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:4dd04e4acb607d9c7b8bd533c2faccac485840ced33fc0e097481b46f59bc3ee
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"F" -> "FF-F-F-F-F-F+F"}, "F-F-F-F", 4, 90]
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F F Minus F Minus F Minus F Minus F Minus F Plus F;

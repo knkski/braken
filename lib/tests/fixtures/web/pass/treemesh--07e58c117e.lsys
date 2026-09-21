@@ -1,0 +1,38 @@
+# ID       : LSYS-07E58C117E77
+# Name     : TreeMesh
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TreeMesh (#26) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/treemesh--07e58c117e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:07e58c117e77baca73f038e904bf1066090771d3ffe524800bad4e1511ed3c82
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TreeMesh {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=xzf[-wf+x]+wf+y--
+# RESETIUS |   y=xzf[+wf+x]-wf+y
+# RESETIUS |   z=[c40+g++f]
+# RESETIUS |   w=[c40-g+f]
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom R;
+
+match R then X;
+match X then X Z F [ Minus W F Plus X ] Plus W F Plus Y Minus Minus;
+match Y then X Z F [ Plus W F Plus X ] Minus W F Plus Y;
+match Z then [ Color(40) Plus G Plus Plus F ];
+match W then [ Color(40) Minus G Plus F ];
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

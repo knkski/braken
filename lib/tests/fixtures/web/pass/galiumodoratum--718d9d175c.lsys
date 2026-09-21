@@ -1,0 +1,57 @@
+# ID       : LSYS-718D9D175C22
+# Name     : GaliumOdoratum
+# Source   : abiusx/L3D model archive | L/galium.l3d | https://github.com/abiusx/L3D/blob/master/L/galium.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 3
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:718d9d175c227fa8eb9b71dbcb22680ae7391b61ea1bcd63a84169a747c76842
+# Note     : Upstream thickness setting: 4
+#
+# Original abiusx/L3D model archive:
+# L3D | #GaliumOdoratum
+# L3D | 5
+# L3D | 3
+# L3D | 4
+# L3D | 'A6LAA8MAA8MD
+# L3D | A=a
+# L3D | a=FA
+# L3D | L=20/[33^!![n]o]
+# L3D | n=B
+# L3D | o=C
+# L3D | M=15/[33^!![B]C]
+# L3D | B=b-B
+# L3D | b=[[xg^{F]-x[g.].}]b
+# L3D | C=c+C
+# L3D | c=[[xg^{F]+x[g.].}]c
+# L3D | D=?JJJ0%13'~s
+# L3D | J=!40/[12^yD]
+# L3D | x=g^x
+# L3D | y=F^y
+# L3D | @
+#
+let ANGLE = 3;
+
+axiom ColorPrevious A TurtleNumber6 L A A TurtleNumber8 M A A TurtleNumber8 M D;
+
+match A then a;
+match a then F A;
+match L then TurtleNumber20 RollRight [ TurtleNumber33 PitchUp WidthDecrease WidthDecrease [ n ] o ];
+match n then B;
+match o then C;
+match M then TurtleNumber15 RollRight [ TurtleNumber33 PitchUp WidthDecrease WidthDecrease [ B ] C ];
+match B then b Minus B;
+match b then [ [ x g PitchUp PolygonBegin F ] Minus x [ g Vertex ] Vertex PolygonEnd ] b;
+match C then c Plus C;
+match c then [ [ x g PitchUp PolygonBegin F ] Plus x [ g Vertex ] Vertex PolygonEnd ] c;
+match D then Query J J J TurtleNumber0 Cut TurtleNumber13 ColorPrevious Surface s;
+match J then WidthDecrease TurtleNumber40 RollRight [ TurtleNumber12 PitchUp y D ];
+match x then g PitchUp x;
+match y then F PitchUp y;

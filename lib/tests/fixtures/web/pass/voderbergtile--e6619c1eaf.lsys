@@ -1,0 +1,54 @@
+# ID       : LSYS-E6619C1EAFF7
+# Name     : VoderbergTile
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section VoderbergTile (#92) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section VoderbergTile (#6) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/voderbergtile--e6619c1eaf.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e6619c1eaff732cb59263d84b742d23fe97b574767fddd0f6626d878ff8d3cc4
+# Source-token warnings: 1 2 3 6 7
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | VoderbergTile { ; by Herb Savage
+# RESETIUS | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers",
+# RESETIUS | ; A spiral tiling by Heinz Voderberg
+# RESETIUS |   angle 30
+# RESETIUS |   axiom \84.1A\96@4.783386117M@I4.783386117/96A
+# RESETIUS |   A=X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12Z
+# RESETIUS |   X=[D\78D\46.37236@3.393427D@I3.393427/46.37236D\114[\168X\24Y]D\78D\46.37236@3.393427D@I3.393427/46.37236D/78D]
+# RESETIUS |   Y=[D\78D\46.37236@3.393427D@I3.393427/46.37236D/78D\168[\192Y]D\78D\46.37236@3.393427D@I3.393427/46.37236D]
+# RESETIUS |   Z=[D\78D\46.37236@3.393427D@I3.393427/46.37236D\114D\78D\46.37236@3.393427D@I3.393427/46.37236D/78D]
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | VoderbergTile { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers",
+# FRACTINT | ; A spiral tiling by Heinz Voderberg
+# FRACTINT |   angle 30
+# FRACTINT |   axiom \84.1A\96@4.783386117M@I4.783386117/96A
+# FRACTINT |   A=X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12Z
+# FRACTINT |   X=[D\78D\46.37236@3.393427D@I3.393427/46.37236D\114[\168X\24Y]D\78D\46.37236@3.393427D@I3.393427/46.37236D/78D]
+# FRACTINT |   Y=[D\78D\46.37236@3.393427D@I3.393427/46.37236D/78D\168[\192Y]D\78D\46.37236@3.393427D@I3.393427/46.37236D]
+# FRACTINT |   Z=[D\78D\46.37236@3.393427D@I3.393427/46.37236D\114D\78D\46.37236@3.393427D@I3.393427/46.37236D/78D]
+# FRACTINT |   }
+#
+let ANGLE = 12;
+
+axiom ExplicitPlus(84) Dot SourceU0031 A ExplicitPlus(96) Scale(4.783386117) M Scale(0.209056926525) ExplicitMinus(96) A;
+
+match A then X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) X ExplicitPlus(12) Z;
+match X then [ D ExplicitPlus(78) D ExplicitPlus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 Scale(3.393427) D Scale(0.294687347039) ExplicitMinus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 D ExplicitPlus(114) [ ExplicitPlus(168) X ExplicitPlus(24) Y ] D ExplicitPlus(78) D ExplicitPlus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 Scale(3.393427) D Scale(0.294687347039) ExplicitMinus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 D ExplicitMinus(78) D ];
+match Y then [ D ExplicitPlus(78) D ExplicitPlus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 Scale(3.393427) D Scale(0.294687347039) ExplicitMinus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 D ExplicitMinus(78) D ExplicitPlus(168) [ ExplicitPlus(192) Y ] D ExplicitPlus(78) D ExplicitPlus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 Scale(3.393427) D Scale(0.294687347039) ExplicitMinus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 D ];
+match Z then [ D ExplicitPlus(78) D ExplicitPlus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 Scale(3.393427) D Scale(0.294687347039) ExplicitMinus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 D ExplicitPlus(114) D ExplicitPlus(78) D ExplicitPlus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 Scale(3.393427) D Scale(0.294687347039) ExplicitMinus(46) Dot SourceU0033 SourceU0037 SourceU0032 SourceU0033 SourceU0036 D ExplicitMinus(78) D ];
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

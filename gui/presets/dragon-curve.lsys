@@ -1,0 +1,14 @@
+# Name: Heighway Dragon
+# Summary: A paper-folding curve coils into the classic self-similar dragon silhouette.
+# Visualizer: turtle_2d
+# Angle: 90
+# Orientation Anchor: endpoint
+# Iterations: 12
+# Preview Iterations: 5
+# Max Iterations: 17
+# Initial Color: 3
+
+axiom Draw L;
+
+match L then L Left R Draw Left;
+match R then Right Draw L Right R;

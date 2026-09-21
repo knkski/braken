@@ -1,0 +1,42 @@
+# ID       : LSYS-45390C7F59EB
+# Name     : Sierpinski1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Sierpinski1 (#65) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/sierpinski1--45390c7f59.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:45390c7f59eb3862fa64beae2d7cf2fd40ba30218c180eb1b0ef88c2cb7d30d5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierpinski1 {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom z
+# RESETIUS |   z=x
+# RESETIUS |   x=+[c40-@.5g++@2.414g|@q2f--f---@q2f]y-fw-
+# RESETIUS |   x=[c40-@.5g++@2.414g|@q2f--f---@q2f]y+
+# RESETIUS |   y=-[c40+@.5g--@2.414g|@q2f++f+++@q2f]x+fw+
+# RESETIUS |   y=[c40+@.5g--@2.414g|@q2f++f+++@q2f]x-
+# RESETIUS |   w=fw
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Z;
+
+match Z then X;
+match X then Plus [ Color(40) Minus Scale(0.5) G Plus Plus Scale(2.414) G TurnAround Scale(1.41421356237) F Minus Minus F Minus Minus Minus Scale(1.41421356237) F ] Y Minus F W Minus [ Color(40) Minus Scale(0.5) G Plus Plus Scale(2.414) G TurnAround Scale(1.41421356237) F Minus Minus F Minus Minus Minus Scale(1.41421356237) F ] Y Plus;
+match Y then Minus [ Color(40) Plus Scale(0.5) G Minus Minus Scale(2.414) G TurnAround Scale(1.41421356237) F Plus Plus F Plus Plus Plus Scale(1.41421356237) F ] X Plus F W Plus [ Color(40) Plus Scale(0.5) G Minus Minus Scale(2.414) G TurnAround Scale(1.41421356237) F Plus Plus F Plus Plus Plus Scale(1.41421356237) F ] X Minus;
+match W then F W;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

@@ -1,0 +1,38 @@
+# ID       : LSYS-24CBA057E57B
+# Name     : Peano1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Peano1 (#20) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Peano1 (#6) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano1--24cba057e5.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:24cba057e57bf4df2dc06c96a84a263ac14275204a67a6fefa7b1a0ee448b7d4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Peano1 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom F-F-F-F
+# RESETIUS |   F=F-F+F+F+F-F-F-F+F
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Peano1 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 4
+# FRACTINT |   Axiom F-F-F-F
+# FRACTINT |   F=F-F+F+F+F-F-F-F+F
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F Minus F Plus F Plus F Plus F Minus F Minus F Minus F Plus F;

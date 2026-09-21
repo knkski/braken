@@ -1,0 +1,56 @@
+# ID       : LSYS-C9E10B110481
+# Name     : Cross
+# Aliases  : ABP Koch f; Cross2
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.cross2 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[29] (ABP Koch f) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 27; heading Cross | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/cross--c9e10b1104.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:c9e10b110481ee2a82a9bb4698cc5d2cd2e7b8ae094c6427767d4072a16aec44
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | cross2 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F+F-F+F+F" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F+F"
+# ELM |         , iterations = 5
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -7, y = -32 }
+# ELM |         , windowSize = 89
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "ABP Koch f",
+# KITWALLACE |   "F+F+F+F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F+F-F+F+F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F+F
+# BOURKE | F -> F+F-F+F+F
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Plus F Minus F Plus F Plus F;

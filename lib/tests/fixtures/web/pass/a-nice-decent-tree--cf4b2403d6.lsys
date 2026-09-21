@@ -1,0 +1,34 @@
+# ID       : LSYS-CF4B2403D6B2
+# Name     : a nice decent tree!
+# Source   : abiusx/L3D model archive | L/tree.l3d | https://github.com/abiusx/L3D/blob/master/L/tree.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 15
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:cf4b2403d6b2747765d865aefa9401b74a321f79051a6902f91993de9817775d
+# Note     : Upstream thickness setting: 4
+#
+# Original abiusx/L3D model archive:
+# L3D | #a nice decent tree!
+# L3D | #http://www.geekyblogger.com/2008/04/tree-and-l-system.html
+# L3D | 8
+# L3D | 15
+# L3D | 4
+# L3D | fA
+# L3D | A=^fB>>B>>>>>B
+# L3D | B=[^^f>>>>>>A]
+# L3D | @
+#
+let ANGLE = 15;
+
+axiom f A;
+
+match A then PitchUp f B WidthIncrease WidthIncrease B WidthIncrease WidthIncrease WidthIncrease WidthIncrease WidthIncrease B;
+match B then [ PitchUp PitchUp f WidthIncrease WidthIncrease WidthIncrease WidthIncrease WidthIncrease WidthIncrease A ];

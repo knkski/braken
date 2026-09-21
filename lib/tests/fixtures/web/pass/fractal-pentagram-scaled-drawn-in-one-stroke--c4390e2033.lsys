@@ -1,0 +1,32 @@
+# ID       : LSYS-C4390E2033CF
+# Name     : Fractal pentagram (scaled) drawn in one stroke
+# Source   : jkubin/L-system generated-catalog fallback (commit 68a699a) | Grammar #69: pentafrac_with_scale_2.ls | https://github.com/jkubin/L-system/blob/68a699a88aafed49b919c871b6255fd537b7043d/grammars.txt
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fractal-pentagram-scaled-drawn-in-one-stroke--c4390e2033.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 144
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:c4390e2033cf2ebe966c54dc49811a661db3b26d4733ff8b72deee5a67816f8d
+# Note     : Fallback adaptation from grammars.txt because the corresponding M4 source file is absent at the pinned revision.
+# Note     : Generated derivation rules and final terminal projections were separated explicitly.
+# Note     : This is a static axiom-only entry; the generated catalog supplies no productions.
+#
+# Original jkubin/L-system generated-catalog fallback (commit 68a699a):
+# JKUBIN | Grammar #69: pentafrac_with_scale_2.ls
+# JKUBIN | Description: Fractal pentagram (scaled) drawn in one stroke
+# JKUBIN | Variables: {}
+# JKUBIN | P: {
+# JKUBIN | 	ω → F----F----F----F----F
+# JKUBIN | }
+# JKUBIN | n = 4, δ = 144°, scale = 2.7
+#
+let ANGLE = 144;
+let SCALE = 2.7;
+
+axiom F Minus Minus Minus Minus F Minus Minus Minus Minus F Minus Minus Minus Minus F Minus Minus Minus Minus F;

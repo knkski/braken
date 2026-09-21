@@ -1,0 +1,35 @@
+# ID       : LSYS-89CA18E66274
+# Name     : A triangular grid
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | triangular_grid_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/triangular_grid_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/a-triangular-grid--89ca18e662.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:89ca18e66274fe15f2b148e530d760968d5d1c885aeb5f44ccddf4466ffb62bd
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦A triangular grid⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 triangular_grid_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TRIANGULAR_GRID⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-F+F+F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(120),dnl
+# JKUBIN | 
+# JKUBIN | TRIANGULAR_GRID(4)
+#
+let ANGLE = 120;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Plus F Plus F Minus F;

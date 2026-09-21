@@ -1,0 +1,39 @@
+# ID       : LSYS-D7171CD9F9AA
+# Name     : Sierpiński median curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | sierpinski_median_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/sierpinski_median_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpiski-median-curve--d7171cd9f9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d7171cd9f9aac3c307c80193f0e52536459b05ae79a4fccc698ea07d697230d6
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦Sierpiński median curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 sierpinski_median_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SIERPINSKY_MEDIAN_CURVE⟧, ⟦L--F--L--F⟧)
+# JKUBIN | RULE(⟦L⟧, ⟦+R-F-R+⟧)
+# JKUBIN | RULE(⟦R⟧, ⟦-L+F+L-⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "setx":-400,dnl
+# JKUBIN | 
+# JKUBIN | SIERPINSKY_MEDIAN_CURVE(10)
+#
+let ANGLE = 45;
+
+axiom L Minus Minus F Minus Minus L Minus Minus F;
+
+match L then Plus R Minus F Minus R Plus;
+match R then Minus L Plus F Plus L Minus;

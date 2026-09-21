@@ -1,0 +1,42 @@
+# ID       : LSYS-45986892CE9E
+# Name     : A colored tree (young parts are green, old are brown)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_colored.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_colored.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/a-colored-tree-young-parts-are-green-old-are-brown--45986892ce.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:45986892ce9e5bbb7e3939656b57b8cbe5dba45d023691440fd9c2caa521103c
+# Note     : Upstream acknowledgement: https://cs.wikipedia.org/wiki/L-syst%C3%A9m#Strome%C4%8Dek
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://cs.wikipedia.org/wiki/L-syst%C3%A9m#Strome%C4%8Dek ⟧)
+# JKUBIN | ___DESCR(⟦A colored tree (young parts are green, old are brown)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_colored.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦COLORED_TREE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦B[+A][-A]BA⟧, ⟦G⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦BB⟧, ⟦N⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "penw":8,dnl
+# JKUBIN | "sety":-500,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | COLORED_TREE(5)
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then B [ Plus A ] [ Minus A ] B A;
+match B then B B;

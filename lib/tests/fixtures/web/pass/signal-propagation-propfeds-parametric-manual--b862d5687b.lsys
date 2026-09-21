@@ -1,0 +1,27 @@
+# ID       : LSYS-B862D5687B39
+# Name     : Signal propagation (propfeds parametric manual)
+# Source   : propfeds Parametric L-systems Renderer examples | parametric.js manualSystems[3] / manual page 4, Signal propagation | https://github.com/propfeds/lsystems-renderer/blob/master/parametric.js
+# Formalism: left-context-sensitive 2L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'context-turtle2d'
+# Fidelity : transcription
+# Features : bracketed, context-sensitive, signal, turtle2d
+# Angle    : 30
+# Heading  : 0
+# Draw     : A B
+# Move     : none
+# Profile  : context-turtle2d
+# Fingerprint: sha256:b862d5687b39eee2a7a1130eeefbc8b81977e8e2b4d4323222d6025265e650fa
+# Note     : The source context-ignore list '+-' is represented by ignore Plus Minus.
+#
+# Original propfeds Parametric L-systems Renderer examples:
+# SCHOLARLY | new LSystem('B[+AAA]A[-AA]A[+A]A', ['B<A=B', 'B=A'], 30, 0, '', '+-')
+#
+let ANGLE = 30;
+
+ignore Plus Minus;
+axiom B [ Plus A A A ] A [ Minus A A ] A [ Plus A ] A;
+
+match A left B then B;
+match B then A;

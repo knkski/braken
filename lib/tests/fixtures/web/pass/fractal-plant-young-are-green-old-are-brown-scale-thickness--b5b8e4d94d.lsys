@@ -1,0 +1,44 @@
+# ID       : LSYS-B5B8E4D94D35
+# Name     : Fractal plant (young are green, old are brown; scale, thickness)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | plant_colored_scale_thickness.ls | https://github.com/jkubin/L-system/blob/68a699a/plant_colored_scale_thickness.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fractal-plant-young-are-green-old-are-brown-scale-thickness--b5b8e4d94d.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 25
+# Heading  : 70
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:b5b8e4d94d35f6e6c85cc3e486ec207561628d275aab74f0bb24b894cd14b785
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L-system#Example_7:_Fractal_plant
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/12⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L-system#Example_7:_Fractal_plant ⟧)
+# JKUBIN | ___DESCR(⟦Fractal plant (young are green, old are brown; scale, thickness)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 plant_colored_scale_thickness.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PLANT⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F+[[X]-X]-F[-FX]+X⟧, ⟦G⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>#F!<⟧, ⟦R⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(25),dnl
+# JKUBIN | SCALE(1.5),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":70,dnl
+# JKUBIN | 
+# JKUBIN | PLANT(5)
+#
+let ANGLE = 25;
+let SCALE = 1.5;
+
+axiom X;
+
+match X then F Plus [ [ X ] Minus X ] Minus F [ Minus F X ] Plus X;
+match F then ScaleLength WidthIncrease F WidthDecrease ScaleLengthInverse;

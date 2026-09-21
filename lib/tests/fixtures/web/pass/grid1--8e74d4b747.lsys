@@ -1,0 +1,32 @@
+# ID       : LSYS-8E74D4B747A5
+# Name     : Grid1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Grid1 (#26) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/grid1--8e74d4b747.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8e74d4b747a52eb17f0111be29fa1180dac17ca3b3ad760a40b599e8e6099c54
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grid1 { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom x
+# RESETIUS |   x=y
+# RESETIUS |   y=f
+# RESETIUS |   f=f[+f][-f]f
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then Y;
+match Y then F;
+match F then F [ Plus F ] [ Minus F ] F;

@@ -1,0 +1,35 @@
+# Name: Stochastic Sixfold Snowflake
+# Summary: Random branch lengths give six fernlike arms a distinct crystalline texture.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 3
+# Max Iterations: 3
+# Initial Color: 5
+
+# ID       : LSYS-33891ACE99B8
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 6 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Fidelity : transcription
+# Features : context-free, stochastic, turtle2d
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:33891ace99b8cf014d47eec35dc2beff94cff250aef02b6eef74fc7a69747d18
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('[X]+[X]+[X]+[X]+[X]+[X]', [
+# SCHOLARLY |             'X=F[+F][-F]X',
+# SCHOLARLY |             'F=F[+i][-i]F',
+# SCHOLARLY |             'i=Ii,IIi'
+# SCHOLARLY |         ], 60, 0, 'i')
+#
+let ANGLE = 60;
+
+axiom [ X ] Plus [ X ] Plus [ X ] Plus [ X ] Plus [ X ] Plus [ X ];
+
+match X then F [ Plus F ] [ Minus F ] X;
+match F then F [ Plus i ] [ Minus i ] F;
+match i weight 1 then I i;
+match i weight 1 then I I i;

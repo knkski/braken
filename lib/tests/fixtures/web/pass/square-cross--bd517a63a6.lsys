@@ -1,0 +1,40 @@
+# ID       : LSYS-BD517A63A621
+# Name     : Square cross
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | square_cross.ls | https://github.com/jkubin/L-system/blob/68a699a/square_cross.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/square-cross--bd517a63a6.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:bd517a63a621a1838a157795639f4190ede52f40eb96b976e146b141d0f3afdb
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦Square cross⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 square_cross.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SQUARE_CROSS⟧, ⟦XYXYXYX+XYXYXYX+XYXYXYX+XYXYXYX⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦X+X+XY-Y-⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦+X+XY-Y-Y⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | SQUARE_CROSS(3)
+#
+let ANGLE = 90;
+
+axiom X Y X Y X Y X Plus X Y X Y X Y X Plus X Y X Y X Y X Plus X Y X Y X Y X;
+
+match X then X Plus X Plus X Y Minus Y Minus;
+match Y then Plus X Plus X Y Minus Y Minus Y;

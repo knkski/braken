@@ -1,0 +1,16 @@
+# ID       : ABOP-030
+# Name     : Plant-like bracketed OL system e
+# Source   : chapter 1, book page 25, Fig. 1.24e
+# Formalism: deterministic bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : X
+# ABOP | p1    : X -> F[+X][-X]FX
+# ABOP | p2    : F -> FF
+#
+axiom X;
+
+match X then F [ Plus X ] [ Minus X ] F X;
+match F then F F;

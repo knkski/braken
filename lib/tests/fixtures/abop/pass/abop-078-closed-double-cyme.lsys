@@ -1,0 +1,15 @@
+# ID       : ABOP-078
+# Name     : Closed double cyme
+# Source   : chapter 3, book page 85, Closed double cyme patch
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Standalone patch fixture.
+#
+# Original ABOP:
+# ABOP | # Patch to the open double cyme:
+# ABOP | p4 : A -> K
+#
+axiom A;
+
+match A then K;

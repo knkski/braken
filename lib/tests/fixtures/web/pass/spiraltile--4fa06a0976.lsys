@@ -1,0 +1,33 @@
+# ID       : LSYS-4FA06A09761E
+# Name     : SpiralTile
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section SpiralTile (#5) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/spiraltile--4fa06a0976.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4fa06a09761e8fa4c74a313eedfa0369f834db1394a1b1a79c95000592806324
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | SpiralTile { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers"
+# FRACTINT |   angle 16
+# FRACTINT |   axiom X++X++X++X++|G|X++X++X++X
+# FRACTINT |   X=[C12FX+++++@.7653668647C10F@I.7653668647[-----Y]+++++C12F]
+# FRACTINT |   Y=[C12F+++++@.7653668647C10F@I.7653668647[-----Y]+++++C12F]
+# FRACTINT |   }
+#
+let ANGLE = 22.5;
+
+axiom X Plus Plus X Plus Plus X Plus Plus X Plus Plus TurnAround G TurnAround X Plus Plus X Plus Plus X Plus Plus X;
+
+match X then [ Color(12) F X Plus Plus Plus Plus Plus Scale(0.7653668647) Color(10) F Scale(1.30656296493) [ Minus Minus Minus Minus Minus Y ] Plus Plus Plus Plus Plus Color(12) F ];
+match Y then [ Color(12) F Plus Plus Plus Plus Plus Scale(0.7653668647) Color(10) F Scale(1.30656296493) [ Minus Minus Minus Minus Minus Y ] Plus Plus Plus Plus Plus Color(12) F ];
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

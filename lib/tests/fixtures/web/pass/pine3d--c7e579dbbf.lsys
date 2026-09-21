@@ -1,0 +1,46 @@
+# ID       : LSYS-C7E579DBBF6D
+# Name     : Pine3d
+# Source   : abiusx/L3D model archive | L/pine-bad.l3d | https://github.com/abiusx/L3D/blob/master/L/pine-bad.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 5
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:c7e579dbbf6d3634b2f338bc3f31364f18ec9d1a4a23b9671b6c8a442485c281
+# Note     : Upstream thickness setting: 8
+# Note     : The upstream model is labelled bad/crashing; rewrite transcription is retained for diagnosis.
+#
+# Original abiusx/L3D model archive:
+# L3D | #Pine3d
+# L3D | 8
+# L3D | 5
+# L3D | 8
+# L3D | ab'~o
+# L3D | a=FF
+# L3D | b=?ci6/b
+# L3D | c=cF
+# L3D | e=&&e
+# L3D | i=??6j
+# L3D | j=12/[8&eC]
+# L3D | C=!cF[9+'D!F`]^^[9-'D!F`]C
+# L3D | D=!F[9+F]^[9-F]D
+# L3D | @
+#
+let ANGLE = 5;
+
+axiom a b ColorPrevious Surface o;
+
+match a then F F;
+match b then Query c i TurtleNumber6 RollRight b;
+match c then c F;
+match e then PitchDown PitchDown e;
+match i then Query Query TurtleNumber6 j;
+match j then TurtleNumber12 RollRight [ TurtleNumber8 PitchDown e C ];
+match C then WidthDecrease c F [ TurtleNumber9 Plus ColorPrevious D WidthDecrease F ColorNext ] PitchUp PitchUp [ TurtleNumber9 Minus ColorPrevious D WidthDecrease F ColorNext ] C;
+match D then WidthDecrease F [ TurtleNumber9 Plus F ] PitchUp [ TurtleNumber9 Minus F ] D;

@@ -1,0 +1,31 @@
+# ID       : ABOP-105
+# Name     : Dryopteris thelypteris map L-system
+# Source   : chapter 7, book page 164, Fig. 7.17
+# Formalism: map L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | ω : directed A D C b
+# ABOP | r1  : A -> a[-B]O
+# ABOP | r2  : B -> E[+b]C[-x]D
+# ABOP | r3  : C -> J
+# ABOP | r4  : J -> E
+# ABOP | r5  : E -> x[-x]x
+# ABOP | r6  : D -> F[-H]G
+# ABOP | r7  : F -> x[+x]x[-x]J
+# ABOP | r8  : G -> K
+# ABOP | r9  : K -> E[+H]C[-x]D
+# ABOP | r10 : I -> L[+x]x[-x]M
+# ABOP | r11 : L -> x[+x]x[-x]x
+# ABOP | r12 : M -> L[+H]x[-H]N
+# ABOP | r13 : N -> I
+# ABOP | r14 : H -> x[+I]x
+# ABOP | r15 : O -> P
+# ABOP | r16 : P -> Q
+# ABOP | r17 : Q -> O[-I]O
+#
+# Expected parse failure: Dryopteris is a directed planar map grammar.
+map lsystem Dryopteris {
+    # The original edge productions are preserved above.
+}

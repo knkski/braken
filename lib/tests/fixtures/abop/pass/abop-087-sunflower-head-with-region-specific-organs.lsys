@@ -1,0 +1,29 @@
+# ID       : ABOP-087
+# Name     : Sunflower head with region-specific organs
+# Source   : chapter 4, book page 103, Fig. 4.4
+# Formalism: parametric turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define S
+# ABOP | #define R
+# ABOP | #include M N O P
+# ABOP | ω : A(0)
+# ABOP | p1    : A(n) -> +(137.5)[f(n^0.5)C(n)]A(n+1)
+# ABOP | p2    : C(n) : n<=440 -> ~S
+# ABOP | p3    : C(n) : 440<n and n<=565 -> ~R
+# ABOP | p4    : C(n) : 565<n and n<=580 -> ~M
+# ABOP | p5    : C(n) : 580<n and n<=595 -> ~N
+# ABOP | p6    : C(n) : 595<n and n<=610 -> ~O
+# ABOP | p7    : C(n) : 610<n -> ~P
+#
+axiom A(0);
+
+match A(n) then Plus(137.5) [ f(n^0.5) C(n) ] A(n+1);
+match C(n) when n<=440 then S;
+match C(n) when 440<n and n<=565 then R;
+match C(n) when 565<n and n<=580 then M;
+match C(n) when 580<n and n<=595 then N;
+match C(n) when 595<n and n<=610 then O;
+match C(n) when 610<n then P;

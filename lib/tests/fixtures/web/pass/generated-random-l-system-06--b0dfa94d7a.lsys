@@ -1,0 +1,35 @@
+# ID       : LSYS-B0DFA94D7A97
+# Name     : Generated random L-system 06
+# Source   : Notgnoshi generative toolkit examples (MIT) | examples/random-lsystems/saved.json[6] | https://github.com/Notgnoshi/generative/blob/25459b6/examples/random-lsystems/saved.json
+# Formalism: generated stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : source-provided; file=../renders/generated-random-l-system-06--b0dfa94d7a.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, generated, turtle3d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F G
+# Move     : f g
+# Profile  : turtle3d
+# Fingerprint: sha256:b0dfa94d7a9761a37bd504405921db72b8b160bb823532814b925ebd9e1a8e51
+# Note     : Source seed: 2668370672
+#
+# Original Notgnoshi generative toolkit examples (MIT):
+# NOTGNOSHI | {
+# NOTGNOSHI |   "scale": 100,
+# NOTGNOSHI |   "seed": 2668370672,
+# NOTGNOSHI |   "rules": [
+# NOTGNOSHI |     "F -> vFvF"
+# NOTGNOSHI |   ],
+# NOTGNOSHI |   "axiom": "F",
+# NOTGNOSHI |   "iterations": 5,
+# NOTGNOSHI |   "angle": 60,
+# NOTGNOSHI |   "comment": "Cycles over on top of itself"
+# NOTGNOSHI | }
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then PitchDown F PitchDown F;

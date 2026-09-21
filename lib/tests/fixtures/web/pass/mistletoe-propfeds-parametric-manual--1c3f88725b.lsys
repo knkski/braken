@@ -1,0 +1,34 @@
+# ID       : LSYS-1C3F88725BDA
+# Name     : Mistletoe (propfeds parametric manual)
+# Source   : propfeds Parametric L-systems Renderer examples | parametric.js manualSystems[8] / manual page 9, Mistletoe | https://github.com/propfeds/lsystems-renderer/blob/master/parametric.js
+# Formalism: conditional parametric 3-D L-system with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-propfeds'
+# Fidelity : projection
+# Features : conditional, parametric, terminal-homomorphism, tropism, turtle3d
+# Angle    : 48
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle3d-propfeds
+# Fingerprint: sha256:1c3f88725bdaa1df75e0d6746b4d48258f578ea6f7767649fcb5f7c8448059ab
+# Note     : The source turtle ignores A and applies tropism 0.16.
+# Note     : J is interpreted through terminal model rules for flowers/leaves; derivation is exact, while that host-renderer homomorphism is documented but omitted from execution.
+#
+# Original propfeds Parametric L-systems Renderer examples:
+# SCHOLARLY | new LSystem('FA(1)', [
+# SCHOLARLY | A(t): t<=5*b = F(2/b)//[+(24)&B(t)]//[&B(t)]//[&B(t)]A(t+1)
+# SCHOLARLY | B(t) = J(0.15, t/b-2)
+# SCHOLARLY | J(s, type) = J(s*0.75+0.25, type)
+# SCHOLARLY | ~> J/p/k/m terminal model rules omitted here
+# SCHOLARLY | ], 48, 0, 'A', '', 0.16, {b: 2.25})
+#
+let b = 2.25;
+let ANGLE = 48;
+
+axiom F A(1);
+
+match A(t) when t <= 5 * b then F(2/b) RollRight RollRight [ Plus(24) PitchDown B(t) ] RollRight RollRight [ PitchDown B(t) ] RollRight RollRight [ PitchDown B(t) ] A(t+1);
+match B(t) then J(0.15,t/b-2);
+match J(s,type) then J(s*0.75+0.25,type);

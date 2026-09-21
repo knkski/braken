@@ -1,0 +1,29 @@
+# ID       : LSYS-0335D8A0CBB0
+# Name     : peano
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/peano.ls, section peano (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/peano.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/peano--0335d8a0cb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 45
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0335d8a0cbb084205e858056001683d92eb88f2d3791b1557268c0c6e7e337ab
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | peano {
+# RESETIUS | axiom  F
+# RESETIUS | F = F-F+F+F+F-F-F-F+F
+# RESETIUS | alpha  0.78539816339744830961566084581988
+# RESETIUS | theta  1.5707963267948966192313216916398
+# RESETIUS | }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Minus F Plus F Plus F Plus F Minus F Minus F Minus F Plus F;

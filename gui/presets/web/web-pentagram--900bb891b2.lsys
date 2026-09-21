@@ -1,0 +1,32 @@
+# Name: Recursive Pentagram
+# Summary: Golden-ratio branches repeat a five-pointed star inside its surrounding pentagon.
+# Visualizer: turtle_2d
+# Angle: 36
+# Iterations: 3
+# Max Iterations: 3
+# Initial Color: 2
+
+# ID       : LSYS-900BB891B273
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Pentagram (#30) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:900bb891b27383c688125775ea685e0bb1d33097d856869f80176672f96fff6a
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Pentagram { ; created by Adrian Mariano
+# FRACTINT |   angle 10
+# FRACTINT |   axiom fx++fx++fx++fx++fx
+# FRACTINT | ; f=f[++++@1.618033989f]
+# FRACTINT |   x=[++++@i1.618033989f@.618033989f!x!@i.618033989f]
+# FRACTINT |   }
+#
+let ANGLE = 36;
+
+axiom F X Plus Plus F X Plus Plus F X Plus Plus F X Plus Plus F X;
+
+match X then [ Plus Plus Plus Plus Scale(0.618033988654) F Scale(0.618033989) F InvertTurns X InvertTurns Scale(1.6180339881) F ];

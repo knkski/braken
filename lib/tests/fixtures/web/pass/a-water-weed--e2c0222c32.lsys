@@ -1,0 +1,40 @@
+# ID       : LSYS-E2C0222C3221
+# Name     : A water weed
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | water_weed.ls | https://github.com/jkubin/L-system/blob/68a699a/water_weed.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/a-water-weed--e2c0222c32.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 27
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e2c0222c3221b990e42f001a677dbe5643421796582f7c6790b1f5ee9c6d875b
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦A water weed⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 water_weed.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦WATER_WEED⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF[-F++F][+F--F]++F--F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(27),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | "setx":500,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | WATER_WEED(4)
+#
+let ANGLE = 27;
+
+axiom F;
+
+match F then F F [ Minus F Plus Plus F ] [ Plus F Minus Minus F ] Plus Plus F Minus Minus F;

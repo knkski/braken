@@ -1,0 +1,16 @@
+# ID       : ABOP-090
+# Name     : Contour-traced growing leaf
+# Source   : chapter 5, book page 119, Contour-traced leaf example
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : L
+# ABOP | p1    : L -> {-F X + X - F X -|- F X + X + F X}
+# ABOP | p2    : X -> F X
+#
+axiom L;
+
+match L then PolygonBegin Minus F X Plus X Minus F X Minus Around Minus F X Plus X Plus F X PolygonEnd;
+match X then F X;

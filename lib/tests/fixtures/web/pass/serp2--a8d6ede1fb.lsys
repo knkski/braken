@@ -1,0 +1,31 @@
+# ID       : LSYS-A8D6EDE1FB9F
+# Name     : serp2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/serp2.ls, section serp2 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/serp2.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/serp2--a8d6ede1fb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 45
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a8d6ede1fb9fa125fd58d4d410c5ee254002846d2d779600230eb81a67afcf35
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | serp2 {
+# RESETIUS | axiom F+FX+F+XF
+# RESETIUS | F=F
+# RESETIUS | X=XF-F+F-XF+F+XF-F+F-X
+# RESETIUS | alpha 0.78539816339744830961566084581988
+# RESETIUS | theta 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+let ANGLE = 90;
+
+axiom F Plus F X Plus F Plus X F;
+
+match F then F;
+match X then X F Minus F Plus F Minus X F Plus F Plus X F Minus F Plus F Minus X;

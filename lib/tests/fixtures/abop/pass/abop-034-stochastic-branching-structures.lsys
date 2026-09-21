@@ -1,0 +1,18 @@
+# ID       : ABOP-034
+# Name     : Stochastic branching structures
+# Source   : chapter 1, book page 28, Fig. 1.27
+# Formalism: stochastic context-free string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : F
+# ABOP | p1    : F 0.33 -> F[+F]F[-F]F
+# ABOP | p2    : F 0.33 -> F[+F]F
+# ABOP | p3    : F 0.34 -> F[-F]F
+#
+axiom F;
+
+match F weight 33 then F [ Plus F ] F [ Minus F ] F;
+match F weight 33 then F [ Plus F ] F;
+match F weight 34 then F [ Minus F ] F;

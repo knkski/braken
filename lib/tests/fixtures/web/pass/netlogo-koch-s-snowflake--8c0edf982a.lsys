@@ -1,0 +1,45 @@
+# ID       : LSYS-8C0EDF982ACF
+# Name     : NetLogo Koch's Snowflake
+# Source   : NetLogo L-System Fractals model | NetLogo 7.0.4 code lines 134-153; setup-koch and koch | https://raw.githubusercontent.com/NetLogo/models/46db92708c960b3f10c5d6b3b685c37be1faf79c/Sample%20Models/Mathematics/Fractals/L-System%20Fractals.nlogox
+# Formalism: parallel turtle-agent procedural rewriting projected to a parametric bracketed L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-agent-turtle2d'
+# Fidelity : projection
+# Features : bracketed, deterministic, parallel-turtle-agents, parametric, spawn, turtle2d
+# Angle    : unspecified
+# Heading  : 90
+# Draw     : Forward
+# Move     : Move
+# Profile  : parametric-agent-turtle2d
+# Fingerprint: sha256:8c0edf982acff333aa2b635dceb844c8bea87df52659c8e518d2907c58498cc7
+# Note     : NetLogo runs one procedure per live turtle per tick. Tip parameters preserve turtle-local length, and [Tip(...)] represents a spawned clone at its spawn pose.
+# Note     : Geometry is preserved; NetLogo color inheritance/increment and absolute initial x/y translation are omitted because the target language has no equivalent state channels.
+# Note     : NetLogo heading 0 (north) is normalized to Cartesian turtle heading 90 degrees.
+# Note     : The model leaves tick count interactive; no source iteration count is asserted.
+# Note     : Official model page: https://ccl.northwestern.edu/netlogo/models/L-SystemFractals
+# Note     : Source initial point: (-47, -82); source initial heading: 0 degrees.
+#
+# Original NetLogo L-System Fractals model:
+# NETLOGO-LSYSTEM-FR | to setup-koch
+# NETLOGO-LSYSTEM-FR |   set color-inc 5
+# NETLOGO-LSYSTEM-FR |   set init-color 9
+# NETLOGO-LSYSTEM-FR |   set init-x -47
+# NETLOGO-LSYSTEM-FR |   set init-y -82
+# NETLOGO-LSYSTEM-FR |   setup
+# NETLOGO-LSYSTEM-FR |   ask turtles [ set len 160 ]
+# NETLOGO-LSYSTEM-FR |   set rule-set "koch"
+# NETLOGO-LSYSTEM-FR | end
+# NETLOGO-LSYSTEM-FR | 
+# NETLOGO-LSYSTEM-FR | to koch
+# NETLOGO-LSYSTEM-FR |   set len len / 3
+# NETLOGO-LSYSTEM-FR |   ifelse ticks = 0
+# NETLOGO-LSYSTEM-FR |   [ repeat 3 [ spawn fd len lt 60 spawn fd len rt 120 spawn fd len lt 60 spawn fd len rt 120 ] ]
+# NETLOGO-LSYSTEM-FR |   [ spawn fd len lt 60 spawn fd len rt 120 spawn fd len lt 60 spawn fd len rt 120 ]
+# NETLOGO-LSYSTEM-FR |   die
+# NETLOGO-LSYSTEM-FR | end
+#
+axiom Seed(160);
+
+match Seed(len) then [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120) [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120) [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120) [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120) [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120) [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120);
+match Tip(len) then [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120) [ Tip(len / 3) ] Forward(len / 3) ExplicitPlus(60) [ Tip(len / 3) ] Forward(len / 3) ExplicitMinus(120);

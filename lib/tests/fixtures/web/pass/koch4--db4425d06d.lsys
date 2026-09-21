@@ -1,0 +1,38 @@
+# ID       : LSYS-DB4425D06D6B
+# Name     : Koch4
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Koch4 (#16) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Koch4 (#21) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/koch4--db4425d06d.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:db4425d06d6b9c1ee31687ee3febe27148ac3b8bb9bae4946a581d2ea2de27b2
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch4 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   angle 12
+# RESETIUS |   axiom f++++f++++f
+# RESETIUS |   f=+f--f++f-
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Koch4 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 12
+# FRACTINT |   axiom f++++f++++f
+# FRACTINT |   f=+f--f++f-
+# FRACTINT |   }
+#
+let ANGLE = 30;
+
+axiom F Plus Plus Plus Plus F Plus Plus Plus Plus F;
+
+match F then Plus F Minus Minus F Plus Plus F Minus;

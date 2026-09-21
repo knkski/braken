@@ -1,0 +1,37 @@
+# ID       : LSYS-8EA5A81E9284
+# Name     : Anklets of Krishna
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | anklets_of_krishna.ls | https://github.com/jkubin/L-system/blob/68a699a/anklets_of_krishna.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/anklets-of-krishna--8ea5a81e92.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:8ea5a81e9284a33069f15aff8a9f98a27380da2650e03497bfbd1d0ea1f10c79
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Anklets of Krishna⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 anklets_of_krishna.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ANKLETS⟧, ⟦X-X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦XFX-XFX⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | "sety":300,dnl
+# JKUBIN | 
+# JKUBIN | ANKLETS(5)
+#
+let ANGLE = 90;
+
+axiom X Minus X;
+
+match X then X F X Minus X F X;

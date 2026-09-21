@@ -1,0 +1,41 @@
+# ID       : LSYS-00FE94D469E2
+# Name     : Triangle
+# Aliases  : Paul Bourke Triangle
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[18] (Paul Bourke Triangle) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 11; heading Triangle | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/triangle--00fe94d469.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:00fe94d469e29820336bf67a34e0a98847cc89cbd3725fef71030caedfd5047c
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Paul Bourke Triangle",
+# KITWALLACE |   "F+F+F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F-F+F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   120.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F
+# BOURKE | F -> F-F+F
+# BOURKE | angle = 120
+#
+let ANGLE = 120;
+
+axiom F Plus F Plus F;
+
+match F then F Minus F Plus F;

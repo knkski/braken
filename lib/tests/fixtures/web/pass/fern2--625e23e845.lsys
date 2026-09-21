@@ -1,0 +1,44 @@
+# ID       : LSYS-625E23E845CF
+# Name     : Fern2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Fern2 (#31) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/fern2--625e23e845.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:625e23e845cff302e01e1c6e03d4aff85056579080274c7177ee5fdd1bb3b8c8
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Fern2 { ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom X
+# RESETIUS |   x=<5@.9326F[+l][-r]<5@.8557F[+l][-r]<5@.7788F>5[+l][-r]
+# RESETIUS |   x=@.7619F>5[+l][-r]@.725F>5[l][r]Fx
+# RESETIUS |   l=+<5F[+l][---l]+<5@.9326F[+l][---l]+<5@.9026F[+l][---l]
+# RESETIUS |   l=+@.9326F>5[+l][---l]+@.8557F>5[l][--l]+@.7788F>5[-l]
+# RESETIUS |   r=-<5F[+++r][-r]-<5@.9326F[+++r][-r]-<5@.9326F[+++r][-r]
+# RESETIUS |   r=-@.9326F>5[+++r][-r]-@.8557F>5[++r][r]-@.7788F>5[+r]
+# RESETIUS | ;or ?
+# RESETIUS |   ;l=+<5F[+l][r]+<5@.9326F[+l][r]+<5@.8557F[+l][r]
+# RESETIUS |   ;l=+@.7788F>5[+l][r]+@.7019F>5[+l][r]+@.625F>5[l][+r]
+# RESETIUS |   ;r=-<5F[l][-r]-<5@.9326F[l][-r]-<5@.8557F[l][-r]
+# RESETIUS |   ;r=-@.7728F>5[l][-r]-@.7019F>5[l][-r]-@.625F>5[-l][r]
+# RESETIUS |   f=<20F<20F>20F>20
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom X;
+
+match X then ColorIncrement(5) Scale(0.9326) F [ Plus L ] [ Minus R ] ColorIncrement(5) Scale(0.8557) F [ Plus L ] [ Minus R ] ColorIncrement(5) Scale(0.7788) F ColorIncrement(-5) [ Plus L ] [ Minus R ] Scale(0.7619) F ColorIncrement(-5) [ Plus L ] [ Minus R ] Scale(0.725) F ColorIncrement(-5) [ L ] [ R ] F X;
+match L then Plus ColorIncrement(5) F [ Plus L ] [ Minus Minus Minus L ] Plus ColorIncrement(5) Scale(0.9326) F [ Plus L ] [ Minus Minus Minus L ] Plus ColorIncrement(5) Scale(0.9026) F [ Plus L ] [ Minus Minus Minus L ] Plus Scale(0.9326) F ColorIncrement(-5) [ Plus L ] [ Minus Minus Minus L ] Plus Scale(0.8557) F ColorIncrement(-5) [ L ] [ Minus Minus L ] Plus Scale(0.7788) F ColorIncrement(-5) [ Minus L ];
+match R then Minus ColorIncrement(5) F [ Plus Plus Plus R ] [ Minus R ] Minus ColorIncrement(5) Scale(0.9326) F [ Plus Plus Plus R ] [ Minus R ] Minus ColorIncrement(5) Scale(0.9326) F [ Plus Plus Plus R ] [ Minus R ] Minus Scale(0.9326) F ColorIncrement(-5) [ Plus Plus Plus R ] [ Minus R ] Minus Scale(0.8557) F ColorIncrement(-5) [ Plus Plus R ] [ R ] Minus Scale(0.7788) F ColorIncrement(-5) [ Plus R ];
+match F then ColorIncrement(20) F ColorIncrement(20) F ColorIncrement(-20) F ColorIncrement(-20);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

@@ -1,0 +1,55 @@
+# ID       : LSYS-A08C1B29B317
+# Name     : Lindenmayer's modelling the growth of Anabaena catenula
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | algae.ls | https://github.com/jkubin/L-system/blob/68a699a/algae.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'string-only'
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : unspecified
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : string-only
+# Fingerprint: sha256:a08c1b29b317e08e5787a974d5f08136ec3b002ee746f46fc2dfdc27be71b44a
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/17⟧)
+# JKUBIN | ___DESCR(⟦Lindenmayer's modelling the growth of Anabaena catenula⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 algae.ls | tail -1⟧)
+# JKUBIN | 
+# JKUBIN | # n = 0: A
+# JKUBIN | # n = 1: AB
+# JKUBIN | # n = 2: ABA
+# JKUBIN | # n = 3: ABAAB
+# JKUBIN | # n = 4: ABAABABA
+# JKUBIN | # n = 5: ABAABABAABAAB
+# JKUBIN | # n = 6: ABAABABAABAABABAABABA
+# JKUBIN | # n = 7: ABAABABAABAABABAABABAABAABABAABAAB
+# JKUBIN | # …
+# JKUBIN | #
+# JKUBIN | # n = 0:             A               A (start, axiom/initiator)
+# JKUBIN | #                   / \
+# JKUBIN | # n = 1:           A   B             A → AB
+# JKUBIN | #                 /|    \
+# JKUBIN | # n = 2:         A B     A           A → AB, B → A
+# JKUBIN | #              / | |     | \
+# JKUBIN | # n = 3:     A   B A     A   B       A → AB, B → A, A → AB
+# JKUBIN | #           /|   | |\    |\   \
+# JKUBIN | # n = 4:   A B   A A B   A B   A     A → AB, B → A, A → AB, A → AB, …
+# JKUBIN | #         /| |  /| |\ \  |\ \  |\
+# JKUBIN | # n = 5: A B A A B A B A A B A A B   …
+# JKUBIN | # …
+# JKUBIN | 
+# JKUBIN | RULE(⟦A⟧, ⟦AB⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦A⟧, ⟦B⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl
+# JKUBIN | 
+# JKUBIN | A(5)
+#
+axiom A;
+
+match A then A B;
+match B then A;

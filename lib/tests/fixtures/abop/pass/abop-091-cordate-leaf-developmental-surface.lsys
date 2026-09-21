@@ -1,0 +1,18 @@
+# ID       : ABOP-091
+# Name     : Cordate leaf developmental surface
+# Source   : chapter 5, book page 122, Fig. 5.5
+# Formalism: deterministic bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : [A][B]
+# ABOP | p1    : A -> [+A{.].C.}
+# ABOP | p2    : B -> [-B{.].C.}
+# ABOP | p3    : C -> G C
+#
+axiom [ A ] [ B ];
+
+match A then [ Plus A PolygonBegin Vertex ] Vertex C Vertex PolygonEnd;
+match B then [ Minus B PolygonBegin Vertex ] Vertex C Vertex PolygonEnd;
+match C then G C;

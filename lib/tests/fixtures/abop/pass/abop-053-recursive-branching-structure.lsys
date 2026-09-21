@@ -1,0 +1,17 @@
+# ID       : ABOP-053
+# Name     : Recursive branching structure
+# Source   : chapter 1, book page 48, Eq. 1.9 / Fig. 1.39
+# Formalism: parametric bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define R 1.456
+# ABOP | ω : A(1)
+# ABOP | p1    : A(s) -> F(s)[+A(s/R)][-A(s/R)]
+#
+let R = 1.456;
+
+axiom A(1);
+
+match A(s) then F(s) [ Plus A(s/R) ] [ Minus A(s/R) ];

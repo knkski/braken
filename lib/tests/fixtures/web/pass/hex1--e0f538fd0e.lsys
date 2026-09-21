@@ -1,0 +1,28 @@
+# ID       : LSYS-E0F538FD0E49
+# Name     : Hex1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hex1 (#29) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hex1--e0f538fd0e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e0f538fd0e4914c3a2a6d6c9335d6e8ac8783b80a6081ee0d8925e5a55963d10
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hex1 {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom f
+# RESETIUS |   f=-f+f+f[+f+f+f]-
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then Minus F Plus F Plus F [ Plus F Plus F Plus F ] Minus;

@@ -1,0 +1,32 @@
+# ID       : LSYS-FEA4971380AC
+# Name     : RhombusTile1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section RhombusTile1 (#34) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/rhombustile1--fea4971380.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fea4971380ac0eaeaaf0fd6a2a2201242e8c42b428737dc67bb46c96c38623f4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | RhombusTile1 {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom y
+# RESETIUS |   x=-fx++fx[++++fy]-
+# RESETIUS |   y=+fy--fy[----fx]+
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom Y;
+
+match X then Minus F X Plus Plus F X [ Plus Plus Plus Plus F Y ] Minus;
+match Y then Plus F Y Minus Minus F Y [ Minus Minus Minus Minus F X ] Plus;
+match F then nothing;

@@ -1,0 +1,41 @@
+# ID       : LSYS-9C7BDB32265D
+# Name     : 4Nautilus
+# Aliases  : 4Nautilus�n color bi-direccional
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/torres.ls, section 4Nautilus (#3) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/torres.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/4nautilus--9c7bdb3226.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 7.65957446809
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9c7bdb32265d68955f642209e92daae70df19af729897c144c67a033cb445763
+# Note     : Inventory label normalized from '4Nautilus�n color bi-direccional'.
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 4Nautilus {;Nautilus  rotaci�n color bi-direccional
+# RESETIUS | 
+# RESETIUS |   Angle 47
+# RESETIUS |   Axiom X
+# RESETIUS |   X=XG+@.97X[@3.68A@.92B]
+# RESETIUS |   A=--------------<1F-<1F-<1F-<1F-<1F-<1@.5F/120+<1F+<1F+<1F
+# RESETIUS |   B=\2++++++++++++++<1FF+<1FF+<1FF+<1FF+<1FF
+# RESETIUS |   }
+#
+let ANGLE = 7.65957446809;
+
+axiom X;
+
+match X then X G Plus Scale(0.97) X [ Scale(3.68) A Scale(0.92) B ];
+match A then Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) Scale(0.5) F ExplicitMinus(120) Plus ColorIncrement(1) F Plus ColorIncrement(1) F Plus ColorIncrement(1) F;
+match B then ExplicitPlus(2) Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus ColorIncrement(1) F F Plus ColorIncrement(1) F F Plus ColorIncrement(1) F F Plus ColorIncrement(1) F F Plus ColorIncrement(1) F F;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

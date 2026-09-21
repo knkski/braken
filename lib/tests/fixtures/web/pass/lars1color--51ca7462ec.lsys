@@ -1,0 +1,33 @@
+# ID       : LSYS-51CA7462EC79
+# Name     : Lars1Color
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Lars1Color (#68) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/lars1color--51ca7462ec.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:51ca7462ec79bc057e71cb762b03eda30509a70dbe12e97af75ea4dec11f2bc0
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Lars1Color{ ; By Jonathan Osuch [73277,1432]
+# FRACTINT |        ; Based on a suggestion by Lars Vangsgaard
+# FRACTINT |   Angle 8  ; angle increment/decrement is 45
+# FRACTINT |   axiom C1[F]++[F]++[F]++F
+# FRACTINT |   F=F<1[+F][-F]>1
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom Color(1) [ F ] Plus Plus [ F ] Plus Plus [ F ] Plus Plus F;
+
+match F then F ColorIncrement(1) [ Plus F ] [ Minus F ] ColorIncrement(-1);
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

@@ -1,0 +1,41 @@
+# ID       : LSYS-B99F03E83310
+# Name     : Round
+# Source   : abiusx/L3D model archive | L++/round.l++ | https://github.com/abiusx/L3D/blob/master/L++/round.l++
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : projection
+# Features : context-free, stochastic, turtle3d
+# Angle    : 20
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:b99f03e833100efbb85a2086325aa0ea0f783ea4e187a67efa9ea264ea488b6f
+# Source-token warnings: ( )
+# Note     : Upstream thickness setting: 10
+#
+# Original abiusx/L3D model archive:
+# L3D | 64
+# L3D | 20
+# L3D | 10
+# L3D | ^(90)Z
+# L3D | Z=^(15)+fB+fB+fBZ
+# L3D | B=[>(20)X]
+# L3D | X=-(90)f(.5)L
+# L3D | X=-(60)&f(.4)[++f(.2)L][--f(.2)L]
+# L3D | X=(-20)&&f(.2)
+# L3D | L=^(80)*(.6)
+# L3D | @
+#
+let ANGLE = 20;
+
+axiom PitchUp(90) Z;
+
+match Z then PitchUp(15) Plus f B Plus f B Plus f B Z;
+match B then [ WidthIncrease(20) X ];
+match X weight 1 then Minus(90) f(0.5) L;
+match X weight 1 then Minus(60) PitchDown f(0.4) [ Plus Plus f(0.2) L ] [ Minus Minus f(0.2) L ];
+match X weight 1 then SourceU0028 Minus TurtleNumber20 SourceU0029 PitchDown PitchDown f(0.2);
+match L then PitchUp(80) Object(0.6);

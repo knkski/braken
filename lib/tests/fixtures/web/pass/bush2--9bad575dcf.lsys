@@ -1,0 +1,36 @@
+# ID       : LSYS-9BAD575DCFE4
+# Name     : Bush2
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.bush2 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/bush2--9bad575dcf.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 22.5
+# Heading  : 90
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:9bad575dcfe467fc949b299e982e4bff8cddb3d2d204e8fcc7bf59cc46e1ee11
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | bush2 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "FF+[+F-F-F]-[-F+F+F]" )
+# ELM |             ]
+# ELM |         , axiom = "F"
+# ELM |         , iterations = 4
+# ELM |         , lineLength = 2
+# ELM |         , startHeading = Angle.right
+# ELM |         , turningAngle = Angle.fromDegrees 22.5
+# ELM |         , windowPosition = { x = -70, y = -4 }
+# ELM |         , windowSize = 120
+# ELM |     }
+#
+let ANGLE = 22.5;
+
+axiom F;
+
+match F then F F Plus [ Plus F Minus F Minus F ] Minus [ Minus F Plus F Plus F ];

@@ -1,0 +1,16 @@
+# ID       : ABOP-020
+# Name     : Peano/FASS curve on diagonal contacts
+# Source   : chapter 1, book page 17, Fig. 1.17a
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : L
+# ABOP | p1    : L -> LFRFL-F-RFLFR+F+LFRFL
+# ABOP | p2    : R -> RFLFR+F+LFRFL-F-RFLFR
+#
+axiom L;
+
+match L then L F R F L Minus F Minus R F L F R Plus F Plus L F R F L;
+match R then R F L F R Plus F Plus L F R F L Minus F Minus R F L F R;

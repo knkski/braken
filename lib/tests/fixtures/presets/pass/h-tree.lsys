@@ -1,0 +1,9 @@
+# Name: H-tree
+# Summary: Parametric branching tree.
+# Angle: 89
+# Iterations: 9
+
+axiom A;
+
+match A then Draw(1) [ Left A ] [ Right A ];
+match Draw(s) then Draw(s * 1.456);

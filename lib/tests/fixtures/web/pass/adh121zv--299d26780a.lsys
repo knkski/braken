@@ -1,0 +1,28 @@
+# ID       : LSYS-299D26780A35
+# Name     : ADH121zv
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH121zv (#185) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh121zv--299d26780a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:299d26780a358ccade781bf4ecf3fe21a90ef3e59bfb99cc6a4a685ee501647d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH121zv { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 5 ;
+# RESETIUS |   Axiom f+f+f+f+f
+# RESETIUS |   f=+gf--f+gf-g-f
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom F Plus F Plus F Plus F Plus F;
+
+match F then Plus G F Minus Minus F Plus G F Minus G Minus F;

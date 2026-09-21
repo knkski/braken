@@ -1,0 +1,3 @@
+axiom A [ B [ C ] D ] E;
+
+match B then X [ Y ];

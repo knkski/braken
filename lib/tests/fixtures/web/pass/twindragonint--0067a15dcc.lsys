@@ -1,0 +1,30 @@
+# ID       : LSYS-0067A15DCC81
+# Name     : Twindragonint
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Twindragonint (#24) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/twindragonint--0067a15dcc.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0067a15dcc81aaf59d592d130967b0bdaea525a1b3c1f9217cc212381ca9caa5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Twindragonint {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom +x++x
+# RESETIUS |   x=x++y
+# RESETIUS |   y=x-f-y
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Plus X Plus Plus X;
+
+match X then X Plus Plus Y;
+match Y then X Minus F Minus Y;

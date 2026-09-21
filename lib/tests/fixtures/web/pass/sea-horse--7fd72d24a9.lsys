@@ -1,0 +1,43 @@
+# ID       : LSYS-7FD72D24A9EF
+# Name     : Sea.Horse
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Sea.Horse (#25) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sea-horse--7fd72d24a9.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:7fd72d24a9efc8bbb0249529783603405c129838ebad6f763b571c5aacda1134
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sea.Horse {
+# RESETIUS | 
+# RESETIUS |   ; best order 16 (floats on)
+# RESETIUS |   ; time 0:07
+# RESETIUS | 
+# RESETIUS |     angle 8
+# RESETIUS |     axiom C88FX
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=+FY-<1-@2F@I2X+>1+FY-
+# RESETIUS |     Y=@Q2F@I2X@Q2
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Color(88) F X;
+
+match F then nothing;
+match X then Plus F Y Minus ColorIncrement(1) Minus Scale(2) F Scale(0.5) X Plus ColorIncrement(-1) Plus F Y Minus;
+match Y then Scale(1.41421356237) F Scale(0.5) X Scale(1.41421356237);
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

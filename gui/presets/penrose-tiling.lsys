@@ -1,0 +1,15 @@
+# Name: Penrose Tiling
+# Summary: Five colored substitution paths weave a star-shaped patch of Penrose geometry.
+# Visualizer: turtle_2d
+# Angle: 36
+# Iterations: 5
+# Max Iterations: 7
+
+axiom [ N7 ] Left Left [ N7 ] Left Left [ N7 ] Left Left [ N7 ] Left Left [ N7 ];
+
+match N6 then N8 Color(0) Draw Left Left N9 Color(7) Draw Right Right Right Right N7 Color(5) Draw [ Right N8 Color(0) Draw Right Right Right Right N6 Color(1) Draw ] Left Left;
+match N7 then Left N8 Color(0) Draw Right Right N9 Color(7) Draw [ Right Right Right N6 Color(1) Draw Right Right N7 Color(5) Draw ] Left;
+match N8 then Right N6 Color(1) Draw Left Left N7 Color(5) Draw [ Left Left Left N8 Color(0) Draw Left Left N9 Color(7) Draw ] Right;
+match N9 then Right Right N8 Color(0) Draw Left Left Left Left N6 Color(1) Draw [ Left N9 Color(7) Draw Left Left Left Left N7 Color(5) Draw ] Right Right N7 Color(5) Draw;
+match Color(c) then nothing;
+match Draw then nothing;

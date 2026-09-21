@@ -1,0 +1,33 @@
+# ID       : LSYS-B203BE83A217
+# Name     : 3Tile&med
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section 3Tile&med (#5) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; output=no-drawable-segments
+# Render   : not-applicable; reason=expanded word contains no drawable segments
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b203be83a217500d911155d7d5268142db8ff63059729190f2522a29d18da8d1
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 3Tile&med {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS | 
+# RESETIUS |   p=fp
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom R;
+
+match R then X;
+match P then F P;
+match F then nothing;

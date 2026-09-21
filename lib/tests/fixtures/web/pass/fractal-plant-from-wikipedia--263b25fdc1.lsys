@@ -1,0 +1,34 @@
+# ID       : LSYS-263B25FDC154
+# Name     : fractal plant, from wikipedia
+# Source   : abiusx/L3D model archive | L/fractal_plant.l | https://github.com/abiusx/L3D/blob/master/L/fractal_plant.l
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : projection
+# Features : context-free, deterministic, turtle3d
+# Angle    : 35
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:263b25fdc1547b8a8ca25392a1db38cc371958d2808c63b9152b59a90381bec3
+# Source-token warnings: )
+# Note     : Upstream thickness setting: 15
+#
+# Original abiusx/L3D model archive:
+# L3D | #fractal plant, from wikipedia
+# L3D | 5
+# L3D | 35
+# L3D | 15
+# L3D | X
+# L3D | X=F-[[X]+X]+F[+FX]-X)
+# L3D | F=FF
+# L3D | @
+#
+let ANGLE = 35;
+
+axiom X;
+
+match X then F Minus [ [ X ] Plus X ] Plus F [ Plus F X ] Minus X SourceU0029;
+match F then F F;

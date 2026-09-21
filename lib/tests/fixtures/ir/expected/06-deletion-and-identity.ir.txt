@@ -1,0 +1,25 @@
+Braken IR v1 / semantics v2
+5 symbols · 0 globals · 2 productions · 0 expression programs
+maximum expression stack 0 · maximum bindings 0 · maximum context depth 0
+source fingerprint fnv1a64:b8e3f4437d48f445
+
+symbols
+  s0 = A / 0
+  s1 = B / 0
+  s2 = Delete / 0
+  s3 = Grow / 0
+  s4 = Keep / 0
+
+axiom
+  Delete Keep Grow
+
+productions
+  p0: Delete then nothing
+  p1: Grow then A B
+
+expression programs
+
+backend compatibility
+  CPU: compatible
+  CUDA: compatible
+  WGPU: compatible

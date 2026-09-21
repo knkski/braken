@@ -1,0 +1,44 @@
+# ID       : LSYS-AFCDAB39ECF2
+# Name     : KochCurve
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section KochCurve (#41) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section KochCurve (#19) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section KochCurve (#56) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/kochcurve--afcdab39ec.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:afcdab39ecf2fd26fad41a68f68e7f2569e1e292dab2d1e06963a6e3e83f471e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | KochCurve { ; Adrian Mariano
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom F
+# RESETIUS |   F=F+F--F+F
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | KochCurve { ; Adrian Mariano
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom F
+# RESETIUS |   F=F+F--F+F
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | KochCurve { ; Adrian Mariano
+# FRACTINT |   Angle 6
+# FRACTINT |   Axiom F
+# FRACTINT |   F=F+F--F+F
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then F Plus F Minus Minus F Plus F;

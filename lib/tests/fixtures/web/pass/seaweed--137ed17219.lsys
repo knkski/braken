@@ -1,0 +1,30 @@
+# ID       : LSYS-137ED1721904
+# Name     : Seaweed
+# Source   : abiusx/L3D model archive | L++/seaweed.l++ | https://github.com/abiusx/L3D/blob/master/L++/seaweed.l++
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 22
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:137ed17219047a5fd6a3d8ffc4acff09da85b27ec2d21619a66aef3836690522
+# Note     : Upstream thickness setting: 5
+#
+# Original abiusx/L3D model archive:
+# L3D | 3
+# L3D | 22
+# L3D | 5
+# L3D | F
+# L3D | F=FF-[&F^F^F]+[^F*&F&F*]\[^f*^f*&f*]
+# L3D | @
+#
+let ANGLE = 22;
+
+axiom F;
+
+match F then F F Minus [ PitchDown F PitchUp F PitchUp F ] Plus [ PitchUp F Object PitchDown F PitchDown F Object ] RollLeft [ PitchUp f Object PitchUp f Object PitchDown f Object ];

@@ -1,0 +1,41 @@
+# ID       : LSYS-69538F349BA7
+# Name     : Shrub
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | shrub.ls | https://github.com/jkubin/L-system/blob/68a699a/shrub.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/shrub--69538f349b.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 30
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:69538f349ba713862627ae72736aaa57af71d1ae173e833e643da8bfb0621a95
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/07⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Shrub⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 shrub.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SHRUB⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦F[-FB]F[+FC]FA⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦F[-FB]F[+F]FB⟧)
+# JKUBIN | RULE(⟦C⟧, ⟦F[-F]F[+FC]FC⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(30),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | SHRUB(4)
+#
+let ANGLE = 30;
+
+axiom A;
+
+match A then F [ Minus F B ] F [ Plus F C ] F A;
+match B then F [ Minus F B ] F [ Plus F ] F B;
+match C then F [ Minus F ] F [ Plus F C ] F C;

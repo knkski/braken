@@ -1,0 +1,34 @@
+# ID       : ABOP-067
+# Name     : Capsella bursa-pastoris
+# Source   : chapter 3, book page 74, Fig. 3.5
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : I(9)a(13)
+# ABOP | p1    : a(t) : t>0 -> [&(70)L]/(137.5)I(10)a(t-1)
+# ABOP | p2    : a(t) : t=0 -> [&(70)L]/(137.5)I(10)A
+# ABOP | p3    : A -> [&(18)u(4)FFI(10)I(5)X(5)KKKK]/(137.5)I(8)A
+# ABOP | p4    : I(t) : t>0 -> F I(t-1)
+# ABOP | p5    : I(t) : t=0 -> F
+# ABOP | p6    : u(t) : t>0 -> &(9)u(t-1)
+# ABOP | p7    : u(t) : t=0 -> &(9)
+# ABOP | p8    : L -> [{.-FI(7)+FI(7)+FI(7)}][{.+FI(7)-FI(7)-FI(7)}]
+# ABOP | p9    : K -> [&{.+FI(2)--FI(2)}][&{.-FI(2)++FI(2)}]/(90)
+# ABOP | p10   : X(t) : t>0 -> X(t-1)
+# ABOP | p11   : X(t) : t=0 -> ^(50)[[-GGGG++[GGG[++G{.].].].++GGGG.--GGG.--G.}]%
+#
+axiom I(9) a(13);
+
+match a(t) when t>0 then [ PitchDown(70) L ] RollRight(137.5) I(10) a(t-1);
+match a(t) when t=0 then [ PitchDown(70) L ] RollRight(137.5) I(10) A;
+match A then [ PitchDown(18) u(4) F F I(10) I(5) X(5) K K K K ] RollRight(137.5) I(8) A;
+match I(t) when t>0 then F I(t-1);
+match I(t) when t=0 then F;
+match u(t) when t>0 then PitchDown(9) u(t-1);
+match u(t) when t=0 then PitchDown(9);
+match L then [ PolygonBegin Vertex Minus F I(7) Plus F I(7) Plus F I(7) PolygonEnd ] [ PolygonBegin Vertex Plus F I(7) Minus F I(7) Minus F I(7) PolygonEnd ];
+match K then [ PitchDown PolygonBegin Vertex Plus F I(2) Minus Minus F I(2) PolygonEnd ] [ PitchDown PolygonBegin Vertex Minus F I(2) Plus Plus F I(2) PolygonEnd ] RollRight(90);
+match X(t) when t>0 then X(t-1);
+match X(t) when t=0 then PitchUp(50) [ [ Minus G G G G Plus Plus [ G G G [ Plus Plus G PolygonBegin Vertex ] Vertex ] Vertex ] Vertex Plus Plus G G G G Vertex Minus Minus G G G Vertex Minus Minus G Vertex PolygonEnd ] Cut;

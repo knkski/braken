@@ -1,0 +1,38 @@
+# ID       : LSYS-19B63B53F2B2
+# Name     : Hexa-grid
+# Aliases  : FIXME: hexa-grid
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | hexa_grid.ls | https://github.com/jkubin/L-system/blob/68a699a/hexa_grid.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/hexa-grid--19b63b53f2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, quarantine, terminal-homomorphism, turtle2d, upstream-fixme
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:19b63b53f2b2702689f5a191bbbc4ec35ae04c7c7bf03c64fb1709fcaf758298
+# Note     : Upstream acknowledgement: http://archive.bridgesmathart.org/2016/bridges2016-537.pdf
+# Note     : The upstream description is prefixed FIXME. The grammar parses and renders, but its intended construction has not been independently verified.
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦http://archive.bridgesmathart.org/2016/bridges2016-537.pdf ⟧)
+# JKUBIN | ___DESCR(⟦FIXME: hexa-grid⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 hexa_grid.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦HEXA_GRID⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F+F-F-F-F-F+F+F+F+F-F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | 
+# JKUBIN | HEXA_GRID(2)
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then F Plus F Plus F Minus F Minus F Minus F Minus F Plus F Plus F Plus F Plus F Minus F Minus F;

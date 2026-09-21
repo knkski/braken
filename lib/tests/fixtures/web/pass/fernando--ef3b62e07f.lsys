@@ -1,0 +1,42 @@
+# ID       : LSYS-EF3B62E07F11
+# Name     : Fernando
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | fernando.ls | https://github.com/jkubin/L-system/blob/68a699a/fernando.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/fernando--ef3b62e07f.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 3
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:ef3b62e07f116c61e53f2efcc6e6f506d2fe04620c51ac6452a3385fa8cc1fff
+# Note     : Upstream acknowledgement: https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html ⟧)
+# JKUBIN | ___DESCR(⟦Fernando⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 fernando.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦FERNANDO⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F[+++++++++X]-F[---------X]X⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | # or
+# JKUBIN | # X = F [+++++++++ 0.5@ {X}] -F [--------- 0.4@ {X}] 0.6@ {X}
+# JKUBIN | # 0.12566370614356°
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(3),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | FERNANDO(3)
+#
+let ANGLE = 3;
+
+axiom X;
+
+match X then F [ Plus Plus Plus Plus Plus Plus Plus Plus Plus X ] Minus F [ Minus Minus Minus Minus Minus Minus Minus Minus Minus X ] X;

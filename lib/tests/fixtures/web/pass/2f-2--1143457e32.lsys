@@ -1,0 +1,39 @@
+# ID       : LSYS-1143457E3275
+# Name     : 2f_2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section 2f_2 (#20) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/2f-2--1143457e32.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1143457e327593257135a454c3baa025f5d40336bb60feac37164ecb75c0539e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 2f_2 { ;
+# RESETIUS |   Angle 30     ;
+# RESETIUS |   Axiom x
+# RESETIUS |   x=<5@.9326F[s][t]<5@.8557F[s][t]<5@.7788F>5[s][t]
+# RESETIUS |   x=@.7619F>5[s][t]@.725F>5[s][t]
+# RESETIUS |   t=+<1F[++s][t]+<3@.9326F[++s][t]+<5@.7788F[++s][t]
+# RESETIUS |   t=-@.7619F>5[++s][t]-@.725F>3[+s][t]-@.7019F>1[t]
+# RESETIUS |   s=-<1F[s][--t]-<3@.9326F[s][--t]-<5@.7788F[s][--t]
+# RESETIUS |   s=+@.7619F>5[s][--t]+@.725F>3[s][-t]+@.7019F>1[s]
+# RESETIUS |   f=<8FFF>8
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom X;
+
+match X then ColorIncrement(5) Scale(0.9326) F [ S ] [ T ] ColorIncrement(5) Scale(0.8557) F [ S ] [ T ] ColorIncrement(5) Scale(0.7788) F ColorIncrement(-5) [ S ] [ T ] Scale(0.7619) F ColorIncrement(-5) [ S ] [ T ] Scale(0.725) F ColorIncrement(-5) [ S ] [ T ];
+match T then Plus ColorIncrement(1) F [ Plus Plus S ] [ T ] Plus ColorIncrement(3) Scale(0.9326) F [ Plus Plus S ] [ T ] Plus ColorIncrement(5) Scale(0.7788) F [ Plus Plus S ] [ T ] Minus Scale(0.7619) F ColorIncrement(-5) [ Plus Plus S ] [ T ] Minus Scale(0.725) F ColorIncrement(-3) [ Plus S ] [ T ] Minus Scale(0.7019) F ColorIncrement(-1) [ T ];
+match S then Minus ColorIncrement(1) F [ S ] [ Minus Minus T ] Minus ColorIncrement(3) Scale(0.9326) F [ S ] [ Minus Minus T ] Minus ColorIncrement(5) Scale(0.7788) F [ S ] [ Minus Minus T ] Plus Scale(0.7619) F ColorIncrement(-5) [ S ] [ Minus Minus T ] Plus Scale(0.725) F ColorIncrement(-3) [ S ] [ Minus T ] Plus Scale(0.7019) F ColorIncrement(-1) [ S ];
+match F then ColorIncrement(8) F F F ColorIncrement(-8);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

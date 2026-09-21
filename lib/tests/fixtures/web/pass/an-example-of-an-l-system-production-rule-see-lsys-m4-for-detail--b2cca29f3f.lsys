@@ -1,0 +1,55 @@
+# ID       : LSYS-B2CCA29F3F1F
+# Name     : an example of an L-system production rule, see lsys.m4 for details
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | how_it_works.ls | https://github.com/jkubin/L-system/blob/68a699a/how_it_works.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'string-only'
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : unspecified
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : string-only
+# Fingerprint: sha256:b2cca29f3f1ffdb696f72db42d268ba3c10c62ff0244e698373a8303197f8255
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/10/13⟧)
+# JKUBIN | ___DESCR(⟦an example of an L-system production rule, see lsys.m4 for details⟧)
+# JKUBIN | ___POINT(⟦understanding the internal M4 implementation of L-system production rules⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 how_it_works.ls⟧)
+# JKUBIN | 
+# JKUBIN | # axiom rule is optional
+# JKUBIN | AXIOM(⟦ω⟧, ⟦F⟧)
+# JKUBIN | # F → F+F
+# JKUBIN | # F → ε
+# JKUBIN | # RULE(⟦F⟧, ⟦F+F⟧, ⟦⟧)
+# JKUBIN | # is the same as
+# JKUBIN | # RULE(⟦F⟧, ⟦F+F⟧)
+# JKUBIN | #
+# JKUBIN | # F → F+F
+# JKUBIN | # F → Howdy!
+# JKUBIN | # RULE(⟦F⟧, ⟦F+F⟧, ⟦Howdy!⟧)
+# JKUBIN | 
+# JKUBIN | # ω → F
+# JKUBIN | # ω(N) → F(N)
+# JKUBIN | #
+# JKUBIN | # the RULE is internaly converted:
+# JKUBIN | #
+# JKUBIN | # F → F+F
+# JKUBIN | # F(N) → F(N-1)+F(N-1)
+# JKUBIN | # F(0) → F
+# JKUBIN | 
+# JKUBIN | # An example:
+# JKUBIN | RULE(⟦F⟧, ⟦F+F⟧, ⟦F⟧)
+# JKUBIN | # F(2) → F(1)+F(1) → F(0)+F(0)+F(1) → F+F(0)+F(1) → F+F+F(1) → F+F+F(0)+F(0) → F+F+F+F(0) → F+F+F+F
+# JKUBIN | divert⟦⟧dnl
+# JKUBIN | 
+# JKUBIN | indir(⟦ω⟧, 3)
+# JKUBIN | 
+# JKUBIN | F(3)
+#
+axiom F;
+
+match F then F Plus F;

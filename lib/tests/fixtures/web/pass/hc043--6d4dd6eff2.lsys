@@ -1,0 +1,32 @@
+# ID       : LSYS-6D4DD6EFF2FF
+# Name     : hc043
+# Source   : Fractint 20.04p17 official rule library | lsystem/fract205.l, section hc043 (#2) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/hc043--6d4dd6eff2.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6d4dd6eff2ff823a16bd5a84bde73317989c7edd9e411bd9a546906ece70c0ae
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | hc043 {  ;  Hanmer Curve variation
+# FRACTINT |          ;  Anthony Hanmer 2001, a.hanmer@gmail.com
+# FRACTINT |   angle 4; one of the best
+# FRACTINT |   ; More work to be found at:
+# FRACTINT |   ; http://spanky.triumf.ca/pub/fractals/LSYSTEMS/
+# FRACTINT |   ; in HCVar.l
+# FRACTINT |   axiom |f
+# FRACTINT |   f=f[@.5f]f|f+
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom TurnAround F;
+
+match F then F [ Scale(0.5) F ] F TurnAround F Plus;

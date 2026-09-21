@@ -1,0 +1,31 @@
+# ID       : LSYS-9778669040CF
+# Name     : Plant05
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Plant05 (#39) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/plant05--9778669040.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 25.7142857143
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9778669040cfec59252a69a75ba86d4c6818db01a3d837ff221a535bf2f68cdd
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Plant05 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	 ; Plant-like structure, figure 1.24e p.25
+# FRACTINT |   angle 14
+# FRACTINT |   axiom x
+# FRACTINT |   X=f[+X][-X]FX
+# FRACTINT |   F=FF
+# FRACTINT |   }
+#
+let ANGLE = 25.7142857143;
+
+axiom X;
+
+match X then F [ Plus X ] [ Minus X ] F X;
+match F then F F;

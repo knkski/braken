@@ -1,0 +1,30 @@
+# ID       : LSYS-FFD450F8B9DD
+# Name     : Maze05M
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Maze05M (#49) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/maze05m--ffd450f8b9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ffd450f8b9ddaaea452ea54c59886022b5f9d182f3309d35b604d052b219989d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Maze05M {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom x
+# RESETIUS |   x=x+f+y+f+x-f-y-f-x-f-y+f+x-f-y+f+x+f+y
+# RESETIUS |   y=x-f-y-f-x+f+y-f-x+f+y+f+x+f+y-f-x-f-y
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match X then X Plus F Plus Y Plus F Plus X Minus F Minus Y Minus F Minus X Minus F Minus Y Plus F Plus X Minus F Minus Y Plus F Plus X Plus F Plus Y;
+match Y then X Minus F Minus Y Minus F Minus X Plus F Plus Y Minus F Minus X Plus F Plus Y Plus F Plus X Plus F Plus Y Minus F Minus X Minus F Minus Y;

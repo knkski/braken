@@ -1,0 +1,96 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom Delete Keep Grow;\n\nmatch Delete then nothing;\nmatch Grow then A B;\n",
+  "source_fingerprint": "fnv1a64:b8e3f4437d48f445",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 0
+    },
+    {
+      "name": "B",
+      "arity": 0
+    },
+    {
+      "name": "Delete",
+      "arity": 0
+    },
+    {
+      "name": "Grow",
+      "arity": 0
+    },
+    {
+      "name": "Keep",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 2,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 4,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 3,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 2,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": []
+      }
+    },
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 3,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": []
+            }
+          },
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# ID       : LSYS-09B5E1701A86
+# Name     : Feather
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Feather (#27) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/feather--09b5e1701a.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:09b5e1701a86cf38080216e847ce95e563585c5c7a398e65d5cb0e0e846cbd3a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Feather { ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom F
+# RESETIUS |   X=-<10F[-X]-F>10[-X]
+# RESETIUS |   F=+<10F[-X]-F>10[-X]
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom F;
+
+match X then Minus ColorIncrement(10) F [ Minus X ] Minus F ColorIncrement(-10) [ Minus X ];
+match F then Plus ColorIncrement(10) F [ Minus X ] Minus F ColorIncrement(-10) [ Minus X ];
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

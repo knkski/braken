@@ -1,0 +1,39 @@
+# ID       : LSYS-1CA46019873C
+# Name     : 3Nautilus
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/torres.ls, section 3Nautilus (#2) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/torres.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/3nautilus--1ca4601987.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 7.34693877551
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1ca46019873ceb50af6153fb6ee8a8eb05b6251af9eca835d0a3d02adc3cfb7a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 3Nautilus {;Nautilus Rotation of paletes on both axis
+# RESETIUS | 
+# RESETIUS |   Angle 49
+# RESETIUS |   Axiom C255X
+# RESETIUS | 
+# RESETIUS | 
+# RESETIUS | X=X<1G+@.9879X[\120<1F-<1F-<1F-<1F-<1F-<1F/120+<1F+<1F+<1F+++++++<1F+<1F+<1F]
+# RESETIUS |   }
+#
+let ANGLE = 7.34693877551;
+
+axiom Color(255) X;
+
+match X then X ColorIncrement(1) G Plus Scale(0.9879) X [ ExplicitPlus(120) ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F Minus ColorIncrement(1) F ExplicitMinus(120) Plus ColorIncrement(1) F Plus ColorIncrement(1) F Plus ColorIncrement(1) F Plus Plus Plus Plus Plus Plus Plus ColorIncrement(1) F Plus ColorIncrement(1) F Plus ColorIncrement(1) F ];
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

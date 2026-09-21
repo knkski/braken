@@ -1,0 +1,26 @@
+# ID       : LSYS-012B2503C517
+# Name     : Heighway dragon
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 2 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/heighway-dragon--012b2503c5.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:012b2503c517b365dd779d05a306ea46f1a106aa98c949f78b18fab3837ef675
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('FX', ['Y=-FX-Y', 'X=X+YF+'], 90)
+#
+let ANGLE = 90;
+
+axiom F X;
+
+match Y then Minus F X Minus Y;
+match X then X Plus Y F Plus;

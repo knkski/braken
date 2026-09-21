@@ -1,0 +1,41 @@
+# ID       : LSYS-FAA1A36359F3
+# Name     : Orchid2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Orchid2 (#38) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/orchid2--faa1a36359.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:faa1a36359f39802184a0ec7ade142ed41a7001cf25997ed9ae2bb7a37d359b8
+# Source-token warnings: 2 4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Orchid2 { ;
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom F+F+F+F+F+F+F+F
+# RESETIUS |   D=42D!\84D!\42D
+# RESETIUS |   F=D[+A]D[+B]
+# RESETIUS |   A=+FC1-F<21+F<21F<21-F<21F<21F<21+F<21F<21F<21F<21F<21
+# RESETIUS |   B=-FC255+F>21-F>21F>21+F>21F>21F>21-F>21F>21F>21F>21F>21
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F Plus F Plus F Plus F Plus F;
+
+match D then SourceU0034 SourceU0032 D InvertTurns ExplicitPlus(84) D InvertTurns ExplicitPlus(42) D;
+match F then D [ Plus A ] D [ Plus B ];
+match A then Plus F Color(1) Minus F ColorIncrement(21) Plus F ColorIncrement(21) F ColorIncrement(21) Minus F ColorIncrement(21) F ColorIncrement(21) F ColorIncrement(21) Plus F ColorIncrement(21) F ColorIncrement(21) F ColorIncrement(21) F ColorIncrement(21) F ColorIncrement(21);
+match B then Minus F Color(255) Plus F ColorIncrement(-21) Minus F ColorIncrement(-21) F ColorIncrement(-21) Plus F ColorIncrement(-21) F ColorIncrement(-21) F ColorIncrement(-21) Minus F ColorIncrement(-21) F ColorIncrement(-21) F ColorIncrement(-21) F ColorIncrement(-21) F ColorIncrement(-21);
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

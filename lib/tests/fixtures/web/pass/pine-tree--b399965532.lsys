@@ -1,0 +1,48 @@
+# ID       : LSYS-B399965532A9
+# Name     : pine tree
+# Source   : abiusx/L3D model archive | L++/pine.l++ | https://github.com/abiusx/L3D/blob/master/L++/pine.l++
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : projection
+# Features : context-free, stochastic, turtle3d
+# Angle    : 37
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:b399965532a9d6f0af4cf2be09bd620b43bb7c760c9033d32eac0fc3e0c1e8e4
+# Source-token warnings: ( )
+# Note     : Upstream thickness setting: 150
+#
+# Original abiusx/L3D model archive:
+# L3D | #pine tree
+# L3D | 15
+# L3D | 37
+# L3D | 150 #thickness percentage
+# L3D | ffffA
+# L3D | A=  >(10)ff[&(90)TP++P++P++P++P]fA >(80)B
+# L3D | P=[>(80)^(10)fZ]
+# L3D | Z= f[=(20)B] Z
+# L3D | B= +(70)[f(.2)*]  +(100)[f(.2)*]
+# L3D | B= -(80)f(.4)*
+# L3D | B= ^(80)f(.3)*
+# L3D | B= &(90)f(.3)* + (40)f(.05)*
+# L3D | B= *&(90)[f(.3)*]  *&(80)[f(.2)*]
+# L3D | T=+(20)T
+# L3D | @
+#
+let ANGLE = 37;
+
+axiom f f f f A;
+
+match A then WidthIncrease(10) f f [ PitchDown(90) T P Plus Plus P Plus Plus P Plus Plus P Plus Plus P ] f A WidthIncrease(80) B;
+match P then [ WidthIncrease(80) PitchUp(10) f Z ];
+match Z then f [ SetWidth(20) B ] Z;
+match B weight 1 then Plus(70) [ f(0.2) Object ] Plus(100) [ f(0.2) Object ];
+match B weight 1 then Minus(80) f(0.4) Object;
+match B weight 1 then PitchUp(80) f(0.3) Object;
+match B weight 1 then PitchDown(90) f(0.3) Object Plus SourceU0028 TurtleNumber40 SourceU0029 f(0.05) Object;
+match B weight 1 then Object PitchDown(90) [ f(0.3) Object ] Object PitchDown(80) [ f(0.2) Object ];
+match T then Plus(20) T;

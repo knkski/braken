@@ -1,0 +1,49 @@
+# ID       : LSYS-151627B89E44
+# Name     : A leaf
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | leaf.ls | https://github.com/jkubin/L-system/blob/68a699a/leaf.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/a-leaf--151627b89e.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 30
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:151627b89e447149d617d2933a24cbcf15a2ea1a12e5e9c313c2bd224c203a7b
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/22⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ⟧)
+# JKUBIN | ___DESCR(⟦A leaf⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 leaf.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦LEAF⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>F<⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦F[+X]FB⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦F[-Y]FA⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦A⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦B⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(30),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | SCALE(1.36),dnl
+# JKUBIN | "sety":-200,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | LEAF(10)
+#
+let ANGLE = 30;
+let SCALE = 1.36;
+
+axiom A;
+
+match F then ScaleLength F ScaleLengthInverse;
+match A then F [ Plus X ] F B;
+match B then F [ Minus Y ] F A;
+match X then A;
+match Y then B;

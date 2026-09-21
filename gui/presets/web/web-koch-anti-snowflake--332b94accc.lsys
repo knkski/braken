@@ -1,0 +1,37 @@
+# Name: Koch Anti-Snowflake
+# Summary: Three inward-growing Koch curves create a deeply notched triangular snowflake.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 4
+# Max Iterations: 10
+# Initial Color: 4
+
+# ID       : LSYS-332B94ACCC09
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[20] (Koch anti snowflake) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:332b94accc09995c1aea2a746efbb5986bea8729f2d0079589e2e80f28ede363
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Koch anti snowflake",
+# KITWALLACE |   "F++F++F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F+F--F+F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0
+# KITWALLACE | ]
+#
+let ANGLE = 60;
+
+axiom F Plus Plus F Plus Plus F;
+
+match F then F Plus F Minus Minus F Plus F;

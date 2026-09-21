@@ -1,0 +1,32 @@
+# Name: Colored Triangle Gasket
+# Summary: Color-shifting triangular loops assemble a bright Sierpiński-style gasket.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 3
+# Max Iterations: 3
+
+# ID       : LSYS-CD9888001BD0
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section ColorTriangGasket (#52) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:cd9888001bd03a199551e1981fe28ea7fd2433a17060150b2a35bb22efcda732
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | ColorTriangGasket { ; Adrian Mariano
+# FRACTINT |   Angle 6
+# FRACTINT |   Axiom --X
+# FRACTINT |   X=++FXF++FXF++FXF>1
+# FRACTINT |   F=FF
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom Minus Minus X;
+
+match X then Plus Plus F X F Plus Plus F X F Plus Plus F X F ColorIncrement(-1);
+match F then F F;

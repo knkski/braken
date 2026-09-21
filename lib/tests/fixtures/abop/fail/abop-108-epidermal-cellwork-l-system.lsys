@@ -1,0 +1,22 @@
+# ID       : ABOP-108
+# Name     : Epidermal cellwork L-system
+# Source   : chapter 7, book page 174, Fig. 7.24
+# Formalism: cellwork L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | p1 : A : walls 1,2,3 -> C3[E1]B2[D1]C3
+# ABOP | p2 : A : wall 4      -> C B4[F1]C4
+# ABOP | p3 : B : *           -> A
+# ABOP | p4 : C : *           -> B
+# ABOP | p5 : E : *           -> D
+# ABOP | p6 : F : walls 1,2,3 -> H G H
+# ABOP | p7 : F : wall 4      -> H4[F1]G4[F1]H4
+# ABOP | p8 : G : *           -> F
+# ABOP | p9 : H : *           -> G
+#
+# Expected parse failure: epidermal development needs the 3D cellwork engine.
+cellwork lsystem Epidermis {
+    # The original wall-scoped productions are preserved above.
+}

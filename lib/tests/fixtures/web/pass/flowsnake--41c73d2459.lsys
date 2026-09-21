@@ -1,0 +1,44 @@
+# ID       : LSYS-41C73D2459A9
+# Name     : FlowSnake
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section FlowSnake (#11) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section FlowSnake (#9) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/flowsnake--41c73d2459.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:41c73d2459a9c127779e2c93826eb7b747a29992bea5c71aa6beedd1e0e44ed6
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | FlowSnake { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   angle 6
+# RESETIUS |   axiom FL
+# RESETIUS |   L=FL-FR--FR+FL++FLFL+FR-"
+# RESETIUS |   R=+FL-FRFR--FR-FL++FL+FR"
+# RESETIUS |   F=
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | FlowSnake { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle=6;
+# FRACTINT |   axiom FL
+# FRACTINT |   L=FL-FR--FR+FL++FLFL+FR-",
+# FRACTINT |   R=+FL-FRFR--FR-FL++FL+FR",
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom F L;
+
+match L then F L Minus F R Minus Minus F R Plus F L Plus Plus F L F L Plus F R Minus;
+match R then Plus F L Minus F R F R Minus Minus F R Minus F L Plus Plus F L Plus F R;
+match F then nothing;

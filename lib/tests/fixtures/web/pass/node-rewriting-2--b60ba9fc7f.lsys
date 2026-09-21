@@ -1,0 +1,38 @@
+# ID       : LSYS-B60BA9FC7F7B
+# Name     : Node Rewriting 2
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/node-rewriting-2.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/node-rewriting-2.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/node-rewriting-2--b60ba9fc7f.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 25.7
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:b60ba9fc7f7b336af906fb2d3d7e529f19ea57f6c605e0663ccd67fac33733ec
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>
+# OFX | X -&gt; F[+X][-X]FX;
+# OFX | F -&gt; FF;
+# OFX | </rule>
+# OFX | <axiom>X</axiom>
+# OFX | <maxDepth>7</maxDepth>
+# OFX | <theta>25.7</theta>
+# OFX | <bg_color>39, 128, 123, 255</bg_color>
+# OFX | 		<tree_color>150, 180, 0, 255</tree_color>
+# OFX | 	<depth>4</depth>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 25.7;
+
+axiom X;
+
+match X then F [ Plus X ] [ Minus X ] F X;
+match F then F F;

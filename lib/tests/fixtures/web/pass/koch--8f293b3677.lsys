@@ -1,0 +1,37 @@
+# ID       : LSYS-8F293B3677EE
+# Name     : Koch
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | koch_7.ls | https://github.com/jkubin/L-system/blob/68a699a/koch_7.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/koch--8f293b3677.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:8f293b3677eef174ac251a437c3a72c3c637e9a5bb77593777c3bc7520a4491a
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/07⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Koch⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 koch_7.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦KOCH⟧, ⟦F-F-F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | "setx":-100,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | 
+# JKUBIN | KOCH(2)
+#
+let ANGLE = 60;
+
+axiom F Minus F Minus F Minus F Minus F Minus F;
+
+match F then F Plus F Minus F Minus F Plus F;

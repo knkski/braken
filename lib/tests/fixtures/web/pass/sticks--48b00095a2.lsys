@@ -1,0 +1,38 @@
+# ID       : LSYS-48B00095A24F
+# Name     : Sticks
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.sticks | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sticks--48b00095a2.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 20
+# Heading  : 90
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:48b00095a24f923f960adcddbedb345bbbeae041110cd051b3ce39e320f631ae
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | sticks =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "FF" )
+# ELM |             , ( 'X', "F[+X]F[-X]+X" )
+# ELM |             ]
+# ELM |         , axiom = "X"
+# ELM |         , iterations = 7
+# ELM |         , lineLength = 1
+# ELM |         , startHeading = Angle.right
+# ELM |         , turningAngle = Angle.fromDegrees 20
+# ELM |         , windowPosition = { x = -129, y = -5 }
+# ELM |         , windowSize = 258
+# ELM |     }
+#
+let ANGLE = 20;
+
+axiom X;
+
+match F then F F;
+match X then F [ Plus X ] F [ Minus X ] Plus X;

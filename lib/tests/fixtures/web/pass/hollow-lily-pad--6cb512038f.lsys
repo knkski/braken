@@ -1,0 +1,31 @@
+# ID       : LSYS-6CB512038F4A
+# Name     : Hollow lily pad
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 10 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/hollow-lily-pad--6cb512038f.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 27
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:6cb512038f4ad832ad46231ff7e640757114a2fcc38cbc01793cd236d71d1df1
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('{[A}]{[B}]', [
+# SCHOLARLY |             'A=[+A]C.',
+# SCHOLARLY |             'B=[-B]C.',
+# SCHOLARLY |             'C=GC'
+# SCHOLARLY |         ], 27)
+#
+let ANGLE = 27;
+
+axiom PolygonBegin [ A PolygonEnd ] PolygonBegin [ B PolygonEnd ];
+
+match A then [ Plus A ] C Vertex;
+match B then [ Minus B ] C Vertex;
+match C then G C;

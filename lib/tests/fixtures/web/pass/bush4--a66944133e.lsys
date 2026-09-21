@@ -1,0 +1,44 @@
+# ID       : LSYS-A66944133E07
+# Name     : Bush4
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.bush4 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/bush4--a66944133e.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 20
+# Heading  : 90
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:a66944133e072f0a67a0e4b03c07c5db7116aec11c126f137077afa13621fe07
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | bush4 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'V', "[+++W][---W]YV" )
+# ELM |             , ( 'W', "+X[-W]Z" )
+# ELM |             , ( 'X', "-W[+X]Z" )
+# ELM |             , ( 'Y', "YZ" )
+# ELM |             , ( 'Z', "[-FFF][+FFF]F" )
+# ELM |             ]
+# ELM |         , axiom = "VZFFF"
+# ELM |         , iterations = 10
+# ELM |         , lineLength = 2
+# ELM |         , startHeading = Angle.right
+# ELM |         , turningAngle = Angle.fromDegrees 20
+# ELM |         , windowPosition = { x = -48, y = -12 }
+# ELM |         , windowSize = 102
+# ELM |     }
+#
+let ANGLE = 20;
+
+axiom V HalfForward F F F;
+
+match V then [ Plus Plus Plus W ] [ Minus Minus Minus W ] Y V;
+match W then Plus X [ Minus W ] HalfForward;
+match X then Minus W [ Plus X ] HalfForward;
+match Y then Y HalfForward;
+match Z then [ Minus F F F ] [ Plus F F F ] F;

@@ -1,0 +1,47 @@
+# ID       : LSYS-DBD5A16A373F
+# Name     : Calendula
+# Source   : propfeds Parametric L-systems Renderer examples | parametric.js welcomeSystem (manualSystems[9] reuses it) | https://github.com/propfeds/lsystems-renderer/blob/master/parametric.js
+# Formalism: ordered conditional parametric 3-D L-system with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-propfeds'
+# Fidelity : projection
+# Features : conditional, ordered, parametric, terminal-homomorphism, turtle3d
+# Angle    : 15
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle3d-propfeds
+# Fingerprint: sha256:dbd5a16a373f8ba1dafd1a18ae8b6dc230af19c2f0ec9890ecea0d668765c59b
+# Note     : Source rule order is preserved and first-match selection is required.
+# Note     : The source turtle ignores A and I, applies tropism -0.2, and expands K/L through a large terminal model homomorphism. Derivation is exact; those host-renderer/model details are documented but not executed by the target turtle.
+#
+# Original propfeds Parametric L-systems Renderer examples:
+# SCHOLARLY | new LSystem('-(3)A(0.06, 4)', [
+# SCHOLARLY | A(r, t): t<=0 && r>=AThreshold = F(0.78, 2.1)K(0)
+# SCHOLARLY | A(r, t): r>=AThreshold = [&A(r-0.15, 2)][^I(3)]
+# SCHOLARLY | A(r, t): t>0 = A(r+0.06, t-1)
+# SCHOLARLY | A(r, t) = F(0.12, 0.6)T[-L(0.06, maxLSize)]/(180)[-L(0.06, maxLSize)]/(90)A(r, 4)
+# SCHOLARLY | I(t): t>0 = F(0.24, 0.84)T[-L(0.06, maxLSize/3)]/(137.508)I(t-1)
+# SCHOLARLY | I(t) = F(0.48, 1.44)K(0)
+# SCHOLARLY | K(p): p<maxKSize = K(p+0.25)
+# SCHOLARLY | L(r, lim): r<lim = L(r+0.02, lim)
+# SCHOLARLY | F(l, lim): l<lim = F(l+0.12, lim)
+# SCHOLARLY | ], 15, 0, 'AI', '', -0.2, {AThreshold: 0.96, maxKSize: 3, maxLSize: 0.68}, [model rules])
+#
+let AThreshold = 0.96;
+let maxKSize = 3;
+let maxLSize = 0.68;
+let ANGLE = 15;
+
+axiom Minus(3) A(0.06,4);
+
+match A(r,t) when t <= 0 and r >= AThreshold then F(0.78,2.1) K(0);
+match A(r,t) when r >= AThreshold then [ PitchDown A(r-0.15,2) ] [ PitchUp I(3) ];
+match A(r,t) when t > 0 then A(r+0.06,t-1);
+match A(r,t) then F(0.12,0.6) T [ Minus L(0.06,maxLSize) ] RollRight(180) [ Minus L(0.06,maxLSize) ] RollRight(90) A(r,4);
+match I(t) when t > 0 then F(0.24,0.84) T [ Minus L(0.06,maxLSize/3) ] RollRight(137.508) I(t-1);
+match I(t) then F(0.48,1.44) K(0);
+match K(p) when p < maxKSize then K(p+0.25);
+match L(r,lim) when r < lim then L(r+0.02,lim);
+match F(l,lim) when l < lim then F(l+0.12,lim);

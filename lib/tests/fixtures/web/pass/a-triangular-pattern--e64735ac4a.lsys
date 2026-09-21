@@ -1,0 +1,43 @@
+# ID       : LSYS-E64735AC4A82
+# Name     : A triangular pattern
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pattern.ls | https://github.com/jkubin/L-system/blob/68a699a/pattern.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/a-triangular-pattern--e64735ac4a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 30
+# Heading  : 180
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e64735ac4a8263262ffbf1bef47e2191944918c5a7cc9ef572a7b646d5b3f27a
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/19⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦A triangular pattern⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pattern.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TRIANGULAR_PATTERN⟧, ⟦F---W---F---Y⟧)
+# JKUBIN | RULE(⟦W⟧, ⟦+++X--F--ZFX+⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦---W++F++YFW-⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦+ZFX--F--Z+++⟧)
+# JKUBIN | RULE(⟦Z⟧, ⟦-YFW++F++Y---⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(30),dnl
+# JKUBIN | "seth":180,dnl
+# JKUBIN | 
+# JKUBIN | TRIANGULAR_PATTERN(6)
+#
+let ANGLE = 30;
+
+axiom F Minus Minus Minus W Minus Minus Minus F Minus Minus Minus Y;
+
+match W then Plus Plus Plus X Minus Minus F Minus Minus HalfForward F X Plus;
+match X then Minus Minus Minus W Plus Plus F Plus Plus Y F W Minus;
+match Y then Plus HalfForward F X Minus Minus F Minus Minus HalfForward Plus Plus Plus;
+match Z then Minus Y F W Plus Plus F Plus Plus Y Minus Minus Minus;

@@ -1,0 +1,32 @@
+# ID       : LSYS-DE7827FF3C96
+# Name     : 1be
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section 1be (#9) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/1be--de7827ff3c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:de7827ff3c96d15b2dc52c2ccf9551ab0d607ef5c926f645b5e4f32cf7107946
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 1be { ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom X
+# RESETIUS |   X=-<2F[+X][-X]-<2@0.95F[+X][-X]-<2@0.9F[+X][-X]-@0.85F>2[+X][-X]-@0.8F>2[+X][-X]-@0.75F>2[X]
+# RESETIUS |   F=<5F<5F>5F>5
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom X;
+
+match X then Minus ColorIncrement(2) F [ Plus X ] [ Minus X ] Minus ColorIncrement(2) Scale(0.95) F [ Plus X ] [ Minus X ] Minus ColorIncrement(2) Scale(0.9) F [ Plus X ] [ Minus X ] Minus Scale(0.85) F ColorIncrement(-2) [ Plus X ] [ Minus X ] Minus Scale(0.8) F ColorIncrement(-2) [ Plus X ] [ Minus X ] Minus Scale(0.75) F ColorIncrement(-2) [ X ];
+match F then ColorIncrement(5) F ColorIncrement(5) F ColorIncrement(-5) F ColorIncrement(-5);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

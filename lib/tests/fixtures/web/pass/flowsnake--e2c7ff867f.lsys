@@ -1,0 +1,43 @@
+# ID       : LSYS-E2C7FF867F36
+# Name     : FlowSnake
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[9] (FlowSnake) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/flowsnake--e2c7ff867f.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : A B
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e2c7ff867f36cd5dc5b59df4039612d0946261b2e45a2960dfe68ad29a614895
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "FlowSnake",
+# KITWALLACE |   "A",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "A",
+# KITWALLACE |       "A-B--B+A++AA+B-"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "B",
+# KITWALLACE |       "+A-BB--B-A++A+B"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0,
+# KITWALLACE |   [
+# KITWALLACE |     "A",
+# KITWALLACE |     "B"
+# KITWALLACE |   ]
+# KITWALLACE | ]
+#
+let ANGLE = 60;
+
+axiom A;
+
+match A then A Minus B Minus Minus B Plus A Plus Plus A A Plus B Minus;
+match B then Plus A Minus B B Minus Minus B Minus A Plus Plus A Plus B;

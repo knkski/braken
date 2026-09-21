@@ -1,0 +1,39 @@
+# ID       : LSYS-43FDECEB7884
+# Name     : NetLogo Tree1
+# Source   : NetLogo L-System Fractals model | NetLogo 7.0.4 code lines 78-89; setup-tree1 and tree1 | https://raw.githubusercontent.com/NetLogo/models/46db92708c960b3f10c5d6b3b685c37be1faf79c/Sample%20Models/Mathematics/Fractals/L-System%20Fractals.nlogox
+# Formalism: parallel turtle-agent procedural rewriting projected to a parametric bracketed L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-agent-turtle2d'
+# Fidelity : projection
+# Features : bracketed, deterministic, parallel-turtle-agents, parametric, spawn, turtle2d
+# Angle    : unspecified
+# Heading  : 90
+# Draw     : Forward
+# Move     : Move
+# Profile  : parametric-agent-turtle2d
+# Fingerprint: sha256:43fdeceb78849b80c082c88dec9bfa328e7ebc65008574896613dea99d167120
+# Note     : NetLogo runs one procedure per live turtle per tick. Tip parameters preserve turtle-local length, and [Tip(...)] represents a spawned clone at its spawn pose.
+# Note     : Geometry is preserved; NetLogo color inheritance/increment and absolute initial x/y translation are omitted because the target language has no equivalent state channels.
+# Note     : NetLogo heading 0 (north) is normalized to Cartesian turtle heading 90 degrees.
+# Note     : The model leaves tick count interactive; no source iteration count is asserted.
+# Note     : Official model page: https://ccl.northwestern.edu/netlogo/models/L-SystemFractals
+# Note     : Source initial point: (0, -50); source initial heading: 0 degrees.
+#
+# Original NetLogo L-System Fractals model:
+# NETLOGO-LSYSTEM-FR | to setup-tree1
+# NETLOGO-LSYSTEM-FR |   set color-inc 9
+# NETLOGO-LSYSTEM-FR |   set init-color 9
+# NETLOGO-LSYSTEM-FR |   set init-x 0
+# NETLOGO-LSYSTEM-FR |   set init-y -50
+# NETLOGO-LSYSTEM-FR |   setup
+# NETLOGO-LSYSTEM-FR |   set rule-set "tree1"
+# NETLOGO-LSYSTEM-FR | end
+# NETLOGO-LSYSTEM-FR | 
+# NETLOGO-LSYSTEM-FR | to tree1
+# NETLOGO-LSYSTEM-FR |   fd 4 rt 15 fd 8 spawn rt 180 skip 8 rt 180 lt 15 fd 4 lt 15 spawn fd 8 die
+# NETLOGO-LSYSTEM-FR | end
+#
+axiom Tip(128);
+
+match Tip(len) then Forward(4) ExplicitMinus(15) Forward(8) [ Tip(len) ] ExplicitMinus(180) Move(8) ExplicitMinus(180) ExplicitPlus(15) Forward(4) ExplicitPlus(15) [ Tip(len) ] Forward(8);

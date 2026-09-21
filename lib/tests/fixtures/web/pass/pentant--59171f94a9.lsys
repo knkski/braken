@@ -1,0 +1,32 @@
+# ID       : LSYS-59171F94A9AF
+# Name     : Pentant
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Pentant (#51) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentant--59171f94a9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:59171f94a9af9edbbbb997db9da14468f3a5cc3b0ff86ecb56b78af0bf78328d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentant { ; William McWorter
+# RESETIUS |   Angle 5
+# RESETIUS |   Axiom x-x-x-x-x
+# RESETIUS |   f=
+# RESETIUS |   x=fx-fx-fx+fy+fy+fx-fx
+# RESETIUS |   y=fy+fy-fx-fx-fy+fy+fy
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom X Minus X Minus X Minus X Minus X;
+
+match F then nothing;
+match X then F X Minus F X Minus F X Plus F Y Plus F Y Plus F X Minus F X;
+match Y then F Y Plus F Y Minus F X Minus F X Minus F Y Plus F Y Plus F Y;

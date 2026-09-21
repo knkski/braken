@@ -1,0 +1,15 @@
+# ID       : ABOP-071
+# Name     : Closed dibotryoid
+# Source   : chapter 3, book page 79, Closed dibotryoid patch
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Standalone patch fixture.
+#
+# Original ABOP:
+# ABOP | # Patch to the open dibotryoid partial system:
+# ABOP | p8 : B -> K
+#
+axiom B;
+
+match B then K;

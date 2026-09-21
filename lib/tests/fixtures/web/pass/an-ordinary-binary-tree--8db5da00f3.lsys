@@ -1,0 +1,34 @@
+# ID       : LSYS-8DB5DA00F3FC
+# Name     : An ordinary binary tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_binary_plain.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_binary_plain.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/an-ordinary-binary-tree--8db5da00f3.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 30
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:8db5da00f3fc5d65e8928afd216b96954344a190652cabd0341d465b0ff3b341
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | ___DESCR(⟦An ordinary binary tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_binary_plain.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | RULE(⟦F⟧, ⟦F[-F][+F]⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(30),dnl
+# JKUBIN | "step":100,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | F(3)
+#
+let ANGLE = 30;
+
+axiom F;
+
+match F then F [ Minus F ] [ Plus F ];

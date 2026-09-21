@@ -1,0 +1,36 @@
+# ID       : LSYS-F19CBCB67D99
+# Name     : TwinDragonCurd1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section TwinDragonCurd1 (#84) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/twindragoncurd1--f19cbcb67d.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f19cbcb67d997a7020157896316bc62be775882a1bda52c6fcb3345ebd8386fb
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TwinDragonCurd1 {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom fx+c32fx
+# RESETIUS |   x=fx+gy
+# RESETIUS |   y=fx-gy
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F X Plus Color(32) F X;
+
+match X then F X Plus G Y;
+match Y then F X Minus G Y;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

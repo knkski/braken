@@ -1,0 +1,37 @@
+# ID       : LSYS-309C00335359
+# Name     : Nice work from Andrea Kühne
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | andrea_6.ls | https://github.com/jkubin/L-system/blob/68a699a/andrea_6.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/nice-work-from-andrea-khne--309c003353.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 72
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:309c0033535905b52d4f2489462070d2bf064147d169e3e82851271493d5975b
+# Note     : Upstream acknowledgement: http://www.motionesque.com/beautyoffractals/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/08/20⟧)
+# JKUBIN | __THANKS(⟦http://www.motionesque.com/beautyoffractals/ ⟧)
+# JKUBIN | ___DESCR(⟦Nice work from Andrea Kühne⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 andrea_6.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ANNI⟧, ⟦F+F+F+F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-F+F+F+F--F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(72),dnl
+# JKUBIN | "step":2,dnl
+# JKUBIN | 
+# JKUBIN | ANNI(4)
+#
+let ANGLE = 72;
+
+axiom F Plus F Plus F Plus F Plus F;
+
+match F then F Minus F Plus F Plus F Plus F Minus Minus F;

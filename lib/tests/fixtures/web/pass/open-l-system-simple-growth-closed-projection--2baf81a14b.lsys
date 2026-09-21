@@ -1,0 +1,47 @@
+# ID       : LSYS-2BAF81A14B3D
+# Name     : Open L-system simple growth (closed projection)
+# Source   : OpenAlea L-Py training example: open simple growth | share/training/17-open-lsystem-simple-growth.lpy | https://github.com/openalea/lpy/blob/4226991d625e/share/training/17-open-lsystem-simple-growth.lpy
+# Formalism: open parametric L-system projected to closed rewriting
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'open-lsystem-projection'
+# Fidelity : projection
+# Features : bracketed, environment-query, open-lsystem, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : open-lsystem-projection
+# Fingerprint: sha256:2baf81a14b3d28c7207ec8b46f965f947ad69c6d2159aa664c4795138d731351
+# Note     : L-Py fills ?P with the current turtle position. The target parser has no environment channel, so QueryP is initialized to (0,0,0); rewrite execution is valid but environmental behavior is not equivalent.
+#
+# Original OpenAlea L-Py training example: open simple growth:
+# SCHOLARLY | Axiom: A
+# SCHOLARLY | derivation length: 24
+# SCHOLARLY | production:
+# SCHOLARLY | 
+# SCHOLARLY | A :
+# SCHOLARLY | 	produce [+(60)B][-(60)B]F?P(0,0,0)A
+# SCHOLARLY | 
+# SCHOLARLY | B :
+# SCHOLARLY | 	produce F?P(0,0,0)@O(0.2)B
+# SCHOLARLY | 
+# SCHOLARLY | ?P(x,y,z) :
+# SCHOLARLY |     if 4*y*y +(z-10)**2 > 100:
+# SCHOLARLY |         produce [+(2*z)F][-(2*z)F]%
+# SCHOLARLY |     else:
+# SCHOLARLY |         produce *
+# SCHOLARLY | ###### INITIALISATION ######
+# SCHOLARLY | 
+# SCHOLARLY | __copyright__ = """open-source GPL"""
+# SCHOLARLY | __institutes__ = """INRIA - CIRAD Virtual Plants"""
+# SCHOLARLY | __authors__ = """C. Godin, F. Boudon"""
+#
+let ANGLE = 60;
+
+axiom A;
+
+match A then [ Plus B ] [ Minus B ] F QueryP(0,0,0) A;
+match B then F QueryP(0,0,0) Sphere(0.2) B;
+match QueryP(x,y,z) when 4 * y * y + (z - 10) ^ 2 > 100 then [ Plus(2*z) F ] [ Minus(2*z) F ] Cut;
+match QueryP(x,y,z) when not (4 * y * y + (z - 10) ^ 2 > 100) then nothing;

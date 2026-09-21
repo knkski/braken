@@ -1,0 +1,41 @@
+# ID       : LSYS-63117821A4F4
+# Name     : Organic tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_organic.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_organic.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/organic-tree--63117821a4.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 15
+# Heading  : 105
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:63117821a4f49f97185ede07e3fdee043eb12b99e85ebf92429d65f16d4f919d
+# Note     : Upstream acknowledgement: https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/ ⟧)
+# JKUBIN | ___DESCR(⟦Organic tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_organic.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ORGANIC_TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦-F[+F][---X]+F-F[++++X]-X⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(15),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":105,dnl
+# JKUBIN | 
+# JKUBIN | ORGANIC_TREE(6)
+#
+let ANGLE = 15;
+
+axiom X;
+
+match X then Minus F [ Plus F ] [ Minus Minus Minus X ] Plus F Minus F [ Plus Plus Plus Plus X ] Minus X;
+match F then F F;

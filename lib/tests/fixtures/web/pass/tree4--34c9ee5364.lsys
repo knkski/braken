@@ -1,0 +1,30 @@
+# ID       : LSYS-34C9EE536411
+# Name     : Tree4
+# Source   : abiusx/L3D model archive | L/tree4.l3d | https://github.com/abiusx/L3D/blob/master/L/tree4.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 25
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:34c9ee536411789f19c2475c43a46b3c456daf1cc84394e9ca9e9111fab8eb8b
+# Note     : Upstream thickness setting: 8
+#
+# Original abiusx/L3D model archive:
+# L3D | 6
+# L3D | 25
+# L3D | 8
+# L3D | ffffffA
+# L3D | A=f[++Al][--Al]>>>A
+# L3D | @
+#
+let ANGLE = 25;
+
+axiom f f f f f f A;
+
+match A then f [ Plus Plus A l ] [ Minus Minus A l ] WidthIncrease WidthIncrease WidthIncrease A;

@@ -1,0 +1,45 @@
+# ID       : LSYS-926EAEC918AB
+# Name     : Quadratic Koch Island
+# Aliases  : Quadratic Koch Island3
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.quadraticKochIsland3 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 20; heading Quadratic Koch Island | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/quadratic-koch-island--926eaec918.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:926eaec918ab86d4ffc03ce05250a313737513cfd68a3f7b45d3d4e11ade1092
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | quadraticKochIsland3 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "X+YF++YF-FX--FXFX-YF+X" )
+# ELM |             , ( 'Y', "-FX+YFYF++YF+FX--FX-YF" )
+# ELM |             ]
+# ELM |         , axiom = "X+X+X+X+X+X+X+X"
+# ELM |         , iterations = 3
+# ELM |         , lineLength = 0.5
+# ELM |         , turningAngle = Angle.fromDegrees 45
+# ELM |         , windowPosition = { x = -117, y = -22 }
+# ELM |         , windowSize = 140
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = X+X+X+X+X+X+X+X
+# BOURKE | X -> X+YF++YF-FX--FXFX-YF+X
+# BOURKE | Y -> -FX+YFYF++YF+FX--FX-YF
+# BOURKE | angle = 45
+#
+let ANGLE = 45;
+
+axiom X Plus X Plus X Plus X Plus X Plus X Plus X Plus X;
+
+match X then X Plus Y F Plus Plus Y F Minus F X Minus Minus F X F X Minus Y F Plus X;
+match Y then Minus F X Plus Y F Y F Plus Plus Y F Plus F X Minus Minus F X Minus Y F;

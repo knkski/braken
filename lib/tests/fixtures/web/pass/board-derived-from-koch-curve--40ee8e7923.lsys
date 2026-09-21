@@ -1,0 +1,36 @@
+# ID       : LSYS-40EE8E792374
+# Name     : Board (derived from Koch curve)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | board.ls | https://github.com/jkubin/L-system/blob/68a699a/board.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/board-derived-from-koch-curve--40ee8e7923.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:40ee8e79237467cc732b7a4eaa8aa9a89afdd5aead43112e5780c3bb6fd86c15
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/06⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Board (derived from Koch curve)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 board.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BOARD⟧, ⟦F+F+F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF+F+F+F+FF⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | 
+# JKUBIN | BOARD(4)
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F F Plus F Plus F Plus F Plus F F;

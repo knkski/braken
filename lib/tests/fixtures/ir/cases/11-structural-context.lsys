@@ -1,0 +1,4 @@
+axiom A [ B ] C X [ Y ] Z;
+
+match A right [ B ] C then RightHit;
+match Z left X [ Y ] then LeftHit;

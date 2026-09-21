@@ -1,0 +1,61 @@
+# ID       : LSYS-B7B3E9E81C11
+# Name     : Penta.Spread
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Penta.Spread (#22) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/penta-spread--b7b3e9e81c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b7b3e9e81c115029aceff954a09b9dc924e5994d5fe5e0762943eda076531036
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Penta.Spread {
+# RESETIUS | 
+# RESETIUS |   ; best order 8
+# RESETIUS |   ; time 0:02
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom C31++GA--G++GA--G++GA--G++GA--G++GA--G
+# RESETIUS | 
+# RESETIUS |     R=@0.618034>2G
+# RESETIUS |     A=[+F[RZ]--F[RE]--F[RB]--F]--F
+# RESETIUS |     B=+F[RB]--F--F--F--F
+# RESETIUS |     Z=[+F[RY]--F[RE]--F[RB]--F]--F
+# RESETIUS |     Y=[+F[RX]--F[RE]--F[RB]--F]--F
+# RESETIUS |     X=[+F[RB]--F[RW]--F[RB]--F]--F
+# RESETIUS |     W=[+F--F[RV]--F[RB]--F]--F
+# RESETIUS |     V=[+F[RW]--F[RI]--F[RB]--F]--F
+# RESETIUS |     E=[+F[RZ]--F[RH]--F[RB]--F]--F
+# RESETIUS |     H=[+F[RZ]--F[RI]--F[RB]--F]--F
+# RESETIUS |     I=[+F[RU]--F--F[RB]--F]--F
+# RESETIUS |     U=[+F[RS]--F--F[RT]--F]--F
+# RESETIUS |     S=[+F[RX]--F[RU]--F[RT]--F]--F
+# RESETIUS |     T=[+F--F--F--F]--F
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Color(31) Plus Plus G A Minus Minus G Plus Plus G A Minus Minus G Plus Plus G A Minus Minus G Plus Plus G A Minus Minus G Plus Plus G A Minus Minus G;
+
+match R then Scale(0.618034) ColorIncrement(-2) G;
+match A then [ Plus F [ R Z ] Minus Minus F [ R E ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match B then Plus F [ R B ] Minus Minus F Minus Minus F Minus Minus F Minus Minus F;
+match Z then [ Plus F [ R Y ] Minus Minus F [ R E ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match Y then [ Plus F [ R X ] Minus Minus F [ R E ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match X then [ Plus F [ R B ] Minus Minus F [ R W ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match W then [ Plus F Minus Minus F [ R V ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match V then [ Plus F [ R W ] Minus Minus F [ R I ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match E then [ Plus F [ R Z ] Minus Minus F [ R H ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match H then [ Plus F [ R Z ] Minus Minus F [ R I ] Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match I then [ Plus F [ R U ] Minus Minus F Minus Minus F [ R B ] Minus Minus F ] Minus Minus F;
+match U then [ Plus F [ R S ] Minus Minus F Minus Minus F [ R T ] Minus Minus F ] Minus Minus F;
+match S then [ Plus F [ R X ] Minus Minus F [ R U ] Minus Minus F [ R T ] Minus Minus F ] Minus Minus F;
+match T then [ Plus F Minus Minus F Minus Minus F Minus Minus F ] Minus Minus F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

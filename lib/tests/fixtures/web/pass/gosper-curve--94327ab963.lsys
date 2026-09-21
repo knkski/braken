@@ -1,0 +1,40 @@
+# ID       : LSYS-94327AB96302
+# Name     : Gosper curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | gosper_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/gosper_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/gosper-curve--94327ab963.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:94327ab963021e37689045f69ec36ab81542c1798ea047e2605e7cc5f97485ff
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/Gosper_curve
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/Gosper_curve ⟧)
+# JKUBIN | ___DESCR(⟦Gosper curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 gosper_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦GOSPER⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦A-B--B+A++AA+B-⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦+A-BB--B-A++A+B⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | "sety":300,dnl
+# JKUBIN | 
+# JKUBIN | GOSPER(4)
+#
+let ANGLE = 60;
+
+axiom A;
+
+match A then A Minus B Minus Minus B Plus A Plus Plus A A Plus B Minus;
+match B then Plus A Minus B B Minus Minus B Minus A Plus Plus A Plus B;

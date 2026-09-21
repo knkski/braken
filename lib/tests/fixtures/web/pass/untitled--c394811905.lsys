@@ -1,0 +1,32 @@
+# ID       : LSYS-C394811905E5
+# Name     : Untitled
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Untitled (#87) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/untitled--c394811905.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c394811905e59600834e70eb4f99fb16cbcef74f1497870fd762a7d7ab3d7690
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Untitled { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom x
+# RESETIUS |   f=
+# RESETIUS |   x=fx-fy-fx+fy+fx+fy-fx-fy+
+# RESETIUS |   y=-fx+fy+fx-fy-fx-fy+fx+fy
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match F then nothing;
+match X then F X Minus F Y Minus F X Plus F Y Plus F X Plus F Y Minus F X Minus F Y Plus;
+match Y then Minus F X Plus F Y Plus F X Minus F Y Minus F X Minus F Y Plus F X Plus F Y;

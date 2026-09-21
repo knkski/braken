@@ -1,0 +1,21 @@
+# Name: Cordate Leaf
+# Summary: A developmental heart-shaped leaf assembled from overlapping triangular surfaces.
+# Visualizer: turtle_2d
+# Angle: 10
+# Iterations: 17
+# Preview Iterations: 17
+# Max Iterations: 30
+# Draw: G
+# Initial Width: 0.3
+# Initial Color: 0
+# Palette: #72b56b #24563a
+#
+# Adapted from Figure 5.5 of The Algorithmic Beauty of Plants. G draws
+# the growing vein framework; explicit vertices define the triangular blade
+# surfaces without treating those framework segments as polygon boundaries.
+
+axiom [ A ] [ B ];
+
+match A then [ Plus A Color(0) PolygonBegin Color(1) Vertex ] Color(1) Vertex C Vertex PolygonEnd;
+match B then [ Minus B Color(0) PolygonBegin Color(1) Vertex ] Color(1) Vertex C Vertex PolygonEnd;
+match C then G C;

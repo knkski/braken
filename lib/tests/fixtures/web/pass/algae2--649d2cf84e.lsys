@@ -1,0 +1,85 @@
+# ID       : LSYS-649D2CF84EC0
+# Name     : Algae2
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.algae2 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/algae2--649d2cf84e.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 12
+# Heading  : 90
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:649d2cf84ec089aa2da86ce1ca133df32cadcec64a004f93a73cfb2d79a55fd6
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | algae2 =
+# ELM |     --
+# ELM |     -- N.B. This one doesn't look quite right. Check the reference image. What could be the issue?
+# ELM |     --
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'a', "FFFFFy[++++n][----t]fb" )
+# ELM |             , ( 'b', "+FFFFFy[++++n][----t]fc" )
+# ELM |             , ( 'c', "FFFFFy[++++n][----t]fd" )
+# ELM |             , ( 'd', "-FFFFFy[++++n][----t]fe" )
+# ELM |             , ( 'e', "FFFFFy[++++n][----t]fg" )
+# ELM |             , ( 'g', "FFFFFy[+++fa]fh" )
+# ELM |             , ( 'h', "FFFFFy[++++n][----t]fi" )
+# ELM |             , ( 'i', "+FFFFFy[++++n][----t]fj" )
+# ELM |             , ( 'j', "FFFFFy[++++n][----t]fk" )
+# ELM |             , ( 'k', "-FFFFFy[++++n][----t]fl" )
+# ELM |             , ( 'l', "FFFFFy[++++n][----t]fm" )
+# ELM |             , ( 'm', "FFFFFy[---fa]fa" )
+# ELM |             , ( 'n', "ofFFF" )
+# ELM |             , ( 'o', "fFFFp" )
+# ELM |             , ( 'p', "fFFF[-s]q" )
+# ELM |             , ( 'q', "fFFF[-s]r" )
+# ELM |             , ( 'r', "fFFF[-s]" )
+# ELM |             , ( 's', "fFfF" )
+# ELM |             , ( 't', "ufFFF" )
+# ELM |             , ( 'u', "fFFFv" )
+# ELM |             , ( 'v', "fFFF[+s]w" )
+# ELM |             , ( 'w', "fFFF[+s]x" )
+# ELM |             , ( 'x', "fFFF[+s]" )
+# ELM |             , ( 'y', "Fy" )
+# ELM |             ]
+# ELM |         , axiom = "aF"
+# ELM |         , iterations = 17
+# ELM |         , lineLength = 1
+# ELM |         , startHeading = Angle.right
+# ELM |         , turningAngle = Angle.fromDegrees 12
+# ELM |         , windowPosition = { x = -153, y = -3 }
+# ELM |         , windowSize = 246
+# ELM |     }
+#
+let ANGLE = 12;
+
+axiom a F;
+
+match a then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f b;
+match b then Plus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f c;
+match c then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f d;
+match d then Minus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f e;
+match e then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f g;
+match g then F F F F F y [ Plus Plus Plus f a ] f h;
+match h then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f i;
+match i then Plus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f j;
+match j then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f k;
+match k then Minus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f l;
+match l then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f m;
+match m then F F F F F y [ Minus Minus Minus f a ] f a;
+match n then o f F F F;
+match o then f F F F p;
+match p then f F F F [ Minus s ] q;
+match q then f F F F [ Minus s ] r;
+match r then f F F F [ Minus s ];
+match s then f F f F;
+match t then u f F F F;
+match u then f F F F v;
+match v then f F F F [ Plus s ] w;
+match w then f F F F [ Plus s ] x;
+match x then f F F F [ Plus s ];
+match y then F y;

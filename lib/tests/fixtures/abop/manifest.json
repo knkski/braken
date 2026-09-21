@@ -1,0 +1,2110 @@
+[
+  {
+    "id": "ABOP-001",
+    "chapter": 1,
+    "book_page": 3,
+    "reference": "§1.2 example / Fig. 1.3",
+    "name": "Fibonacci word (a→ab, b→a)",
+    "listing_kind": "complete",
+    "formalism": "deterministic context-free string",
+    "features": [
+      "identity fallback",
+      "parallel rewriting"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-001-fibonacci-word-a-ab-b-a.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-002",
+    "chapter": 1,
+    "book_page": 5,
+    "reference": "Eq. 1.1 / Fig. 1.4",
+    "name": "Anabaena catenula DOL model",
+    "listing_kind": "complete",
+    "formalism": "deterministic context-free string",
+    "features": [
+      "multi-symbol alphabet"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-002-anabaena-catenula-dol-model.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-003",
+    "chapter": 1,
+    "book_page": 7,
+    "reference": "Fig. 1.6",
+    "name": "Quadratic Koch island",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns",
+      "edge rewriting"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-003-quadratic-koch-island.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "first listing"
+  },
+  {
+    "id": "ABOP-004",
+    "chapter": 1,
+    "book_page": 9,
+    "reference": "Fig. 1.7a",
+    "name": "Quadratic Koch island (second listing)",
+    "listing_kind": "duplicate",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns",
+      "edge rewriting"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "Duplicate/alternate presentation of the earlier Koch-island grammar.",
+    "fixture": "pass/abop-004-quadratic-koch-island-second-listing.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "duplicate listing"
+  },
+  {
+    "id": "ABOP-005",
+    "chapter": 1,
+    "book_page": 9,
+    "reference": "Fig. 1.7b",
+    "name": "Quadratic modification of the snowflake",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-005-quadratic-modification-of-the-snowflake.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-006",
+    "chapter": 1,
+    "book_page": 9,
+    "reference": "Fig. 1.8",
+    "name": "Combination of islands and lakes",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "two drawing symbols",
+      "disconnected components"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-006-combination-of-islands-and-lakes.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-007",
+    "chapter": 1,
+    "book_page": 10,
+    "reference": "Fig. 1.9a",
+    "name": "Koch curve modification a",
+    "listing_kind": "variant",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-007-koch-curve-modification-a.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-008",
+    "chapter": 1,
+    "book_page": 10,
+    "reference": "Fig. 1.9b",
+    "name": "Koch curve modification b",
+    "listing_kind": "variant",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-008-koch-curve-modification-b.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-009",
+    "chapter": 1,
+    "book_page": 10,
+    "reference": "Fig. 1.9c",
+    "name": "Koch curve modification c",
+    "listing_kind": "variant",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-009-koch-curve-modification-c.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-010",
+    "chapter": 1,
+    "book_page": 10,
+    "reference": "Fig. 1.9d",
+    "name": "Koch curve modification d",
+    "listing_kind": "variant",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-010-koch-curve-modification-d.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-011",
+    "chapter": 1,
+    "book_page": 10,
+    "reference": "Fig. 1.9e",
+    "name": "Koch curve modification e",
+    "listing_kind": "variant",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-011-koch-curve-modification-e.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-012",
+    "chapter": 1,
+    "book_page": 10,
+    "reference": "Fig. 1.9f",
+    "name": "Koch curve modification f",
+    "listing_kind": "variant",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "turtle turns"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-012-koch-curve-modification-f.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-013",
+    "chapter": 1,
+    "book_page": 11,
+    "reference": "Fig. 1.10a",
+    "name": "Dragon curve",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "two edge symbols"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-013-dragon-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-014",
+    "chapter": 1,
+    "book_page": 11,
+    "reference": "Fig. 1.10b",
+    "name": "Sierpiński gasket",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "two edge symbols"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-014-sierpi-ski-gasket.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-015",
+    "chapter": 1,
+    "book_page": 12,
+    "reference": "Fig. 1.11a",
+    "name": "Hexagonal Gosper curve",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "two edge symbols",
+      "long successors"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-015-hexagonal-gosper-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-016",
+    "chapter": 1,
+    "book_page": 12,
+    "reference": "Fig. 1.11b",
+    "name": "Quadratic Gosper / E-curve",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "two edge symbols",
+      "long successors"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-016-quadratic-gosper-e-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-017",
+    "chapter": 1,
+    "book_page": 16,
+    "reference": "Fig. 1.15 / §1.4.2",
+    "name": "Hilbert curve by node rewriting",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "node rewriting",
+      "ignored non-drawing modules"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-017-hilbert-curve-by-node-rewriting.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-018",
+    "chapter": 1,
+    "book_page": 17,
+    "reference": "Fig. 1.16a",
+    "name": "FASS curve on 3×3 tiles",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "node rewriting",
+      "long successors"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-018-fass-curve-on-3-3-tiles.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-019",
+    "chapter": 1,
+    "book_page": 17,
+    "reference": "Fig. 1.16b",
+    "name": "FASS curve on 4×4 tiles",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "node rewriting",
+      "long successors"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-019-fass-curve-on-4-4-tiles.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-020",
+    "chapter": 1,
+    "book_page": 17,
+    "reference": "Fig. 1.17a",
+    "name": "Peano/FASS curve on diagonal contacts",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "node rewriting"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-020-peano-fass-curve-on-diagonal-contacts.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-021",
+    "chapter": 1,
+    "book_page": 17,
+    "reference": "Fig. 1.17b",
+    "name": "5×5 diagonal-contact FASS curve",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "node rewriting",
+      "very long successors"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-021-5-5-diagonal-contact-fass-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-022",
+    "chapter": 1,
+    "book_page": 18,
+    "reference": "§1.4.3 first listing",
+    "name": "Dragon curve, edge-rewriting form",
+    "listing_kind": "duplicate",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "two edge symbols"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "Restates Fig. 1.10a for comparison.",
+    "fixture": "pass/abop-022-dragon-curve-edge-rewriting-form.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Normalized to the equivalent edge-rewriting symbols Fl and Fr."
+  },
+  {
+    "id": "ABOP-023",
+    "chapter": 1,
+    "book_page": 18,
+    "reference": "§1.4.3 pseudo-L form",
+    "name": "Dragon curve with multi-letter predecessors",
+    "listing_kind": "alternate_formulation",
+    "formalism": "pseudo-L string rewriting",
+    "features": [
+      "strict predecessor spans multiple modules"
+    ],
+    "proposal_coverage": "needs_multi_predecessor",
+    "coverage_note": "The proposed one-center-module rule IR cannot replace a multi-module strict predecessor without adding span matching and overlap resolution.",
+    "fixture": "fail/abop-023-dragon-curve-with-multi-letter-predecessors.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": "Requires multi-module strict predecessors and overlap resolution."
+  },
+  {
+    "id": "ABOP-024",
+    "chapter": 1,
+    "book_page": 18,
+    "reference": "§1.4.3 node form",
+    "name": "Dragon curve, node-rewriting form",
+    "listing_kind": "alternate_formulation",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "single-module node rules"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-024-dragon-curve-node-rewriting-form.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-025",
+    "chapter": 1,
+    "book_page": 20,
+    "reference": "Fig. 1.19",
+    "name": "Three-dimensional Hilbert curve",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed/turtle string",
+    "features": [
+      "3D rotations",
+      "multiple control symbols"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires a complete 3D turtle interpretation, but not new rewriting semantics.",
+    "fixture": "pass/abop-025-three-dimensional-hilbert-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "3D turtle commands are ordinary modules to the rewrite engine."
+  },
+  {
+    "id": "ABOP-026",
+    "chapter": 1,
+    "book_page": 25,
+    "reference": "Fig. 1.24a",
+    "name": "Plant-like bracketed OL system a",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed string",
+    "features": [
+      "branches",
+      "turtle interpretation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-026-plant-like-bracketed-ol-system-a.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-027",
+    "chapter": 1,
+    "book_page": 25,
+    "reference": "Fig. 1.24b",
+    "name": "Plant-like bracketed OL system b",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed string",
+    "features": [
+      "branches",
+      "turtle interpretation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-027-plant-like-bracketed-ol-system-b.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-028",
+    "chapter": 1,
+    "book_page": 25,
+    "reference": "Fig. 1.24c",
+    "name": "Plant-like bracketed OL system c",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed string",
+    "features": [
+      "branches",
+      "turtle interpretation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-028-plant-like-bracketed-ol-system-c.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-029",
+    "chapter": 1,
+    "book_page": 25,
+    "reference": "Fig. 1.24d",
+    "name": "Plant-like bracketed OL system d",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed string",
+    "features": [
+      "branches",
+      "turtle interpretation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-029-plant-like-bracketed-ol-system-d.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-030",
+    "chapter": 1,
+    "book_page": 25,
+    "reference": "Fig. 1.24e",
+    "name": "Plant-like bracketed OL system e",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed string",
+    "features": [
+      "branches",
+      "turtle interpretation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-030-plant-like-bracketed-ol-system-e.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-031",
+    "chapter": 1,
+    "book_page": 25,
+    "reference": "Fig. 1.24f",
+    "name": "Plant-like bracketed OL system f",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed string",
+    "features": [
+      "branches",
+      "turtle interpretation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-031-plant-like-bracketed-ol-system-f.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-032",
+    "chapter": 1,
+    "book_page": 26,
+    "reference": "Fig. 1.25",
+    "name": "Three-dimensional bush",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed turtle string",
+    "features": [
+      "3D rotations",
+      "polygon delimiters",
+      "line-width/color commands"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Rewriting is covered; rendering needs the full ABOP turtle command set.",
+    "fixture": "pass/abop-032-three-dimensional-bush.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Polygon and 3D turtle operations are represented as ordinary command modules."
+  },
+  {
+    "id": "ABOP-033",
+    "chapter": 1,
+    "book_page": 27,
+    "reference": "Fig. 1.26",
+    "name": "Plant with flowers",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed turtle string",
+    "features": [
+      "named modules",
+      "3D rotations",
+      "polygons"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires visualizer asset/command support.",
+    "fixture": "pass/abop-033-plant-with-flowers.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-034",
+    "chapter": 1,
+    "book_page": 28,
+    "reference": "Fig. 1.27",
+    "name": "Stochastic branching structures",
+    "listing_kind": "complete",
+    "formalism": "stochastic context-free string",
+    "features": [
+      "weighted alternatives",
+      "seeded randomness"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-034-stochastic-branching-structures.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-035",
+    "chapter": 1,
+    "book_page": 30,
+    "reference": "Flower-field modification",
+    "name": "Stochastic flower-field rule-table patch",
+    "listing_kind": "patch",
+    "formalism": "stochastic context-free string",
+    "features": [
+      "weighted alternatives",
+      "patching an existing grammar"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs source-level grammar composition/override syntax; the execution model is already covered.",
+    "fixture": "pass/abop-035-stochastic-flower-field-rule-table-patch.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Standalone test fixture for the printed stochastic patch."
+  },
+  {
+    "id": "ABOP-036",
+    "chapter": 1,
+    "book_page": 31,
+    "reference": "§1.8 signal propagation",
+    "name": "Linear 1L signal propagation",
+    "listing_kind": "complete",
+    "formalism": "context-sensitive string",
+    "features": [
+      "one-sided context"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-036-linear-1l-signal-propagation.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-037",
+    "chapter": 1,
+    "book_page": 32,
+    "reference": "Fig. 1.30a",
+    "name": "Acropetal signal in a branching string",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "left context",
+      "#ignore",
+      "branch traversal"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires topological context matching through bracketed branches, not merely adjacent flat tokens.",
+    "fixture": "pass/abop-037-acropetal-signal-in-a-branching-string.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-038",
+    "chapter": 1,
+    "book_page": 32,
+    "reference": "Fig. 1.30b",
+    "name": "Basipetal signal in a branching string",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "right context",
+      "#ignore",
+      "branch traversal"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires topological context matching through bracketed branches.",
+    "fixture": "pass/abop-038-basipetal-signal-in-a-branching-string.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-039",
+    "chapter": 1,
+    "book_page": 35,
+    "reference": "Fig. 1.31a",
+    "name": "Hogeweg–Hesper branching system a",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "two-sided context",
+      "wildcards",
+      "#ignore",
+      "branches"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs wildcard context patterns and ABOP branch-context traversal.",
+    "fixture": "pass/abop-039-hogeweg-hesper-branching-system-a.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-040",
+    "chapter": 1,
+    "book_page": 35,
+    "reference": "Fig. 1.31b",
+    "name": "Hogeweg–Hesper branching system b",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "two-sided context",
+      "wildcards",
+      "#ignore",
+      "branches"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs wildcard context patterns and ABOP branch-context traversal.",
+    "fixture": "pass/abop-040-hogeweg-hesper-branching-system-b.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-041",
+    "chapter": 1,
+    "book_page": 35,
+    "reference": "Fig. 1.31c",
+    "name": "Hogeweg–Hesper branching system c",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "two-sided context",
+      "wildcards",
+      "#ignore",
+      "branches"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs wildcard context patterns and ABOP branch-context traversal.",
+    "fixture": "pass/abop-041-hogeweg-hesper-branching-system-c.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-042",
+    "chapter": 1,
+    "book_page": 35,
+    "reference": "Fig. 1.31d",
+    "name": "Hogeweg–Hesper branching system d",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "two-sided context",
+      "wildcards",
+      "#ignore",
+      "branches"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs wildcard context patterns and ABOP branch-context traversal.",
+    "fixture": "pass/abop-042-hogeweg-hesper-branching-system-d.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-043",
+    "chapter": 1,
+    "book_page": 35,
+    "reference": "Fig. 1.31e",
+    "name": "Hogeweg–Hesper branching system e",
+    "listing_kind": "complete",
+    "formalism": "branch-aware context-sensitive string",
+    "features": [
+      "two-sided context",
+      "wildcards",
+      "#ignore",
+      "branches"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs wildcard context patterns and ABOP branch-context traversal.",
+    "fixture": "pass/abop-043-hogeweg-hesper-branching-system-e.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-044",
+    "chapter": 1,
+    "book_page": 36,
+    "reference": "Eq. 1.2",
+    "name": "Fibonacci growth-function example",
+    "listing_kind": "duplicate",
+    "formalism": "deterministic context-free string",
+    "features": [
+      "growth analysis"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "Same production system as the introductory Fibonacci example.",
+    "fixture": "pass/abop-044-fibonacci-growth-function-example.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Same production system as ABOP-001, with axiom a."
+  },
+  {
+    "id": "ABOP-045",
+    "chapter": 1,
+    "book_page": 37,
+    "reference": "Polynomial growth schema",
+    "name": "Arbitrary-degree polynomial growth schema",
+    "listing_kind": "schema",
+    "formalism": "indexed deterministic string family",
+    "features": [
+      "indexed symbol families",
+      "rule ranges"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs source-level generative syntax or compilation to parametric modules; no new runtime semantics.",
+    "fixture": "pass/abop-045-arbitrary-degree-polynomial-growth-schema.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "The source-level indexed family is represented by one parametric rule."
+  },
+  {
+    "id": "ABOP-046",
+    "chapter": 1,
+    "book_page": 38,
+    "reference": "Eq. 1.4",
+    "name": "Sigmoidal-growth approximation schema",
+    "listing_kind": "schema",
+    "formalism": "indexed deterministic string family",
+    "features": [
+      "indexed symbol families",
+      "rule ranges"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs rule-family/macro syntax or explicit unrolling.",
+    "fixture": "pass/abop-046-sigmoidal-growth-approximation-schema.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-047",
+    "chapter": 1,
+    "book_page": 39,
+    "reference": "Eq. 1.5",
+    "name": "Square-root growth 2L system",
+    "listing_kind": "complete",
+    "formalism": "context-sensitive string",
+    "features": [
+      "two-sided context",
+      "identity fallback"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-047-square-root-growth-2l-system.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-048",
+    "chapter": 1,
+    "book_page": 42,
+    "reference": "Eq. 1.7",
+    "name": "Introductory parametric OL system",
+    "listing_kind": "complete",
+    "formalism": "parametric context-free string",
+    "features": [
+      "module parameters",
+      "guards",
+      "empty successor"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-048-introductory-parametric-ol-system.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-049",
+    "chapter": 1,
+    "book_page": 43,
+    "reference": "Eq. 1.8",
+    "name": "Sample parametric 2L production",
+    "listing_kind": "rule_fragment",
+    "formalism": "parametric context-sensitive string",
+    "features": [
+      "two-sided parametric context",
+      "guard expressions"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "A production example rather than a complete grammar.",
+    "fixture": "pass/abop-049-sample-parametric-2l-production.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "The axiom is the sample word shown directly below the production."
+  },
+  {
+    "id": "ABOP-050",
+    "chapter": 1,
+    "book_page": 44,
+    "reference": "L-system 1.1 / Fig. 1.35",
+    "name": "Anabaena catenula with heterocysts",
+    "listing_kind": "complete",
+    "formalism": "parametric context-sensitive string",
+    "features": [
+      "constants",
+      "include",
+      "#ignore",
+      "guards",
+      "neighbor diffusion"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Core rules are covered. Includes/assets and branch-context directives need source-language support. '1.1' is the book model label, not a language version.",
+    "fixture": "pass/abop-050-anabaena-catenula-with-heterocysts.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-051",
+    "chapter": 1,
+    "book_page": 47,
+    "reference": "Fig. 1.37a",
+    "name": "Row-of-trees curve",
+    "listing_kind": "complete",
+    "formalism": "parametric turtle string",
+    "features": [
+      "constants",
+      "power operator",
+      "parameterized drawing"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-051-row-of-trees-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-052",
+    "chapter": 1,
+    "book_page": 47,
+    "reference": "Fig. 1.37b",
+    "name": "Delayed row-of-trees curve",
+    "listing_kind": "complete",
+    "formalism": "parametric turtle string",
+    "features": [
+      "guards",
+      "integer-like state parameter"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-052-delayed-row-of-trees-curve.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-053",
+    "chapter": 1,
+    "book_page": 48,
+    "reference": "Eq. 1.9 / Fig. 1.39",
+    "name": "Recursive branching structure",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "parameters",
+      "branches"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-053-recursive-branching-structure.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-054",
+    "chapter": 1,
+    "book_page": 50,
+    "reference": "Eq. 1.10 / Fig. 1.40",
+    "name": "Equivalent elongating branching structure",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "parameter growth",
+      "branches"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-054-equivalent-elongating-branching-structure.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-055",
+    "chapter": 2,
+    "book_page": 56,
+    "reference": "Fig. 2.6",
+    "name": "Honda monopodial tree family",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "guards",
+      "3D turtle",
+      "width",
+      "constants"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires full turtle command set, including gravity-alignment command '$'.",
+    "fixture": "pass/abop-055-honda-monopodial-tree-family.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-056",
+    "chapter": 2,
+    "book_page": 59,
+    "reference": "Fig. 2.7",
+    "name": "Aono–Kunii sympodial tree family",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "guards",
+      "3D turtle",
+      "width"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires full 3D turtle interpretation.",
+    "fixture": "pass/abop-056-aono-kunii-sympodial-tree-family.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-057",
+    "chapter": 2,
+    "book_page": 60,
+    "reference": "Fig. 2.8",
+    "name": "Ternary branching with tropism",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "parameter growth",
+      "width",
+      "3D turtle",
+      "external tropism parameters"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Rewriting is covered; tropism is interpretation/environment state.",
+    "fixture": "pass/abop-057-ternary-branching-with-tropism.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Tropism is interpretation-side and is not encoded in the printed productions."
+  },
+  {
+    "id": "ABOP-058",
+    "chapter": 3,
+    "book_page": 64,
+    "reference": "Eq. 3.1",
+    "name": "Single-flower shoot, partial L-system",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "unweighted alternative productions"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "A partial L-system describes possible developments rather than one stochastic or deterministic run. The API needs an exploration/choice policy.",
+    "fixture": "pass/abop-058-single-flower-shoot-partial-l-system.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; choose AmbiguousRulePolicy::Uniform or a domain policy to execute the partial system."
+  },
+  {
+    "id": "ABOP-059",
+    "chapter": 3,
+    "book_page": 66,
+    "reference": "Stochastic mechanism",
+    "name": "Stochastic developmental switch",
+    "listing_kind": "schema",
+    "formalism": "stochastic bracketed string",
+    "features": [
+      "symbolic probabilities"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Allow named probability constants and validate normalization.",
+    "fixture": "pass/abop-059-stochastic-developmental-switch.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Concrete pi values are supplied solely to make the fixture executable."
+  },
+  {
+    "id": "ABOP-060",
+    "chapter": 3,
+    "book_page": 66,
+    "reference": "Table mechanism",
+    "name": "Two-table developmental switch",
+    "listing_kind": "schema",
+    "formalism": "table L-system",
+    "features": [
+      "named production tables",
+      "external table selection"
+    ],
+    "proposal_coverage": "needs_table_semantics",
+    "coverage_note": "Requires multiple rule tables and a schedule or host callback selecting the active table.",
+    "fixture": "fail/abop-060-two-table-developmental-switch.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": "Requires table selection semantics."
+  },
+  {
+    "id": "ABOP-061",
+    "chapter": 3,
+    "book_page": 67,
+    "reference": "Delay mechanism",
+    "name": "Indexed delay schema",
+    "listing_kind": "schema",
+    "formalism": "indexed deterministic string family",
+    "features": [
+      "indexed symbols",
+      "rule ranges"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Can lower to a parametric module, but source sugar is desirable.",
+    "fixture": "pass/abop-061-indexed-delay-schema.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-062",
+    "chapter": 3,
+    "book_page": 67,
+    "reference": "Eq. 3.2",
+    "name": "Accumulation-controlled switch",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "guards",
+      "parameter accumulation"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-062-accumulation-controlled-switch.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "Concrete C and dc values are supplied for execution."
+  },
+  {
+    "id": "ABOP-063",
+    "chapter": 3,
+    "book_page": 67,
+    "reference": "Signal-controlled development",
+    "name": "Signal-controlled flowering scheme",
+    "listing_kind": "complete",
+    "formalism": "parametric context-sensitive bracketed string",
+    "features": [
+      "empty successor",
+      "left context",
+      "signal propagation"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires branch-aware context matching and deletion.",
+    "fixture": "pass/abop-063-signal-controlled-flowering-scheme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-064",
+    "chapter": 3,
+    "book_page": 69,
+    "reference": "Fig. 3.2",
+    "name": "Crocus complete model",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "shape includes",
+      "guards",
+      "developmental surfaces"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Asset imports and rendering are outside the rewriting core.",
+    "fixture": "pass/abop-064-crocus-complete-model.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-065",
+    "chapter": 3,
+    "book_page": 71,
+    "reference": "Eq. 3.3",
+    "name": "Open simple raceme",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "unweighted alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-065-open-simple-raceme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-066",
+    "chapter": 3,
+    "book_page": 73,
+    "reference": "Indexed flower-age modification",
+    "name": "Acropetal indexed flower sequence",
+    "listing_kind": "schema",
+    "formalism": "indexed deterministic string family",
+    "features": [
+      "infinite-looking rule family"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Represent as K(age) or compile a bounded family.",
+    "fixture": "pass/abop-066-acropetal-indexed-flower-sequence.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-067",
+    "chapter": 3,
+    "book_page": 74,
+    "reference": "Fig. 3.5",
+    "name": "Capsella bursa-pastoris",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "guards",
+      "polygons",
+      "cut operator",
+      "3D turtle"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires complete visualizer/turtle semantics, including cut '%'.",
+    "fixture": "pass/abop-067-capsella-bursa-pastoris.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-068",
+    "chapter": 3,
+    "book_page": 75,
+    "reference": "Closed raceme",
+    "name": "Closed simple raceme",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "unweighted alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-068-closed-simple-raceme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-069",
+    "chapter": 3,
+    "book_page": 76,
+    "reference": "Eq. 3.4",
+    "name": "Open dibotryoid",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "multiple developmental switches"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-069-open-dibotryoid.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-070",
+    "chapter": 3,
+    "book_page": 77,
+    "reference": "L-system 3.1",
+    "name": "Signal-controlled dibotryoid",
+    "listing_kind": "complete",
+    "formalism": "parametric context-sensitive bracketed string",
+    "features": [
+      "guards",
+      "left context",
+      "signals",
+      "constants"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires branch-aware context matching.",
+    "fixture": "pass/abop-070-signal-controlled-dibotryoid.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-071",
+    "chapter": 3,
+    "book_page": 79,
+    "reference": "Closed dibotryoid patch",
+    "name": "Closed dibotryoid",
+    "listing_kind": "patch",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "grammar extension"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-071-closed-dibotryoid.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Standalone patch fixture."
+  },
+  {
+    "id": "ABOP-072",
+    "chapter": 3,
+    "book_page": 81,
+    "reference": "Closed tribotryoid",
+    "name": "Closed tribotryoid",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "many unweighted alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-072-closed-tribotryoid.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-073",
+    "chapter": 3,
+    "book_page": 82,
+    "reference": "Eq. 3.5",
+    "name": "Open simple cyme",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "unweighted alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-073-open-simple-cyme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-074",
+    "chapter": 3,
+    "book_page": 83,
+    "reference": "Eq. 3.6",
+    "name": "Open double cyme",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "unweighted alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-074-open-double-cyme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-075",
+    "chapter": 3,
+    "book_page": 83,
+    "reference": "Lychnis schema",
+    "name": "Indexed Lychnis developmental schema",
+    "listing_kind": "schema",
+    "formalism": "indexed deterministic bracketed family",
+    "features": [
+      "indexed modules",
+      "rule ranges"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-075-indexed-lychnis-developmental-schema.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-076",
+    "chapter": 3,
+    "book_page": 84,
+    "reference": "Fig. 3.14",
+    "name": "Complete Lychnis coronaria model",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "shape includes",
+      "guards",
+      "3D turtle"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-076-complete-lychnis-coronaria-model.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-077",
+    "chapter": 3,
+    "book_page": 85,
+    "reference": "Closed simple cyme patch",
+    "name": "Closed simple cyme",
+    "listing_kind": "patch",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "additional alternative"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-077-closed-simple-cyme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Standalone patch fixture."
+  },
+  {
+    "id": "ABOP-078",
+    "chapter": 3,
+    "book_page": 85,
+    "reference": "Closed double cyme patch",
+    "name": "Closed double cyme",
+    "listing_kind": "patch",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "additional alternative"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-078-closed-double-cyme.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Standalone patch fixture."
+  },
+  {
+    "id": "ABOP-079",
+    "chapter": 3,
+    "book_page": 86,
+    "reference": "Thyrsus",
+    "name": "Closed thyrsus",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "mixed monopodial/sympodial alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-079-closed-thyrsus.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-080",
+    "chapter": 3,
+    "book_page": 86,
+    "reference": "Panicle",
+    "name": "Panicle partial L-system",
+    "listing_kind": "schema",
+    "formalism": "nondeterministic bracketed string",
+    "features": [
+      "recursive alternatives"
+    ],
+    "proposal_coverage": "needs_nondeterminism_policy",
+    "coverage_note": "",
+    "fixture": "pass/abop-080-panicle-partial-l-system.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "policy",
+    "fixture_note": "Parses; execution needs an explicit policy for unweighted alternatives."
+  },
+  {
+    "id": "ABOP-081",
+    "chapter": 3,
+    "book_page": 88,
+    "reference": "L-system 3.2",
+    "name": "Mycelis muralis, Model II",
+    "listing_kind": "complete",
+    "formalism": "parametric branch-aware context-sensitive string",
+    "features": [
+      "#ignore",
+      "signals",
+      "empty successors",
+      "shape include"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires branch-aware context and asset imports.",
+    "fixture": "pass/abop-081-mycelis-muralis-model-ii.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-082",
+    "chapter": 3,
+    "book_page": 89,
+    "reference": "L-system 3.3",
+    "name": "Mycelis muralis, Model III",
+    "listing_kind": "complete",
+    "formalism": "parametric branch-aware context-sensitive string",
+    "features": [
+      "#consider",
+      "signals",
+      "shape include"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Add #consider as the complement of #ignore; branch-aware context still required.",
+    "fixture": "pass/abop-082-mycelis-muralis-model-iii.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-083",
+    "chapter": 3,
+    "book_page": 92,
+    "reference": "Fig. 3.19",
+    "name": "Lilac inflorescence",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "guards",
+      "shape include",
+      "3D turtle"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-083-lilac-inflorescence.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-084",
+    "chapter": 3,
+    "book_page": 95,
+    "reference": "Simple umbel",
+    "name": "Simple umbel schema",
+    "listing_kind": "schema",
+    "formalism": "bracketed string with repetition",
+    "features": [
+      "successor repetition exponent"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs compile-time repetition syntax such as repeat(n, [...]).",
+    "fixture": "fail/abop-084-simple-umbel-schema.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": "Requires compile-time or runtime successor repetition."
+  },
+  {
+    "id": "ABOP-085",
+    "chapter": 3,
+    "book_page": 95,
+    "reference": "Compound umbel",
+    "name": "Compound umbel schema",
+    "listing_kind": "schema",
+    "formalism": "bracketed string with repetition",
+    "features": [
+      "successor repetition exponent",
+      "symbolic counts"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Needs compile-time repetition/macros or explicit unrolling.",
+    "fixture": "fail/abop-085-compound-umbel-schema.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": "Requires compile-time or runtime successor repetition."
+  },
+  {
+    "id": "ABOP-086",
+    "chapter": 4,
+    "book_page": 100,
+    "reference": "Fig. 4.1",
+    "name": "Vogel sunflower pattern",
+    "listing_kind": "complete",
+    "formalism": "parametric turtle string",
+    "features": [
+      "power operator",
+      "shape include",
+      "many iterations"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Asset include is interpretation-side; expression support needs power/sqrt-equivalent.",
+    "fixture": "pass/abop-086-vogel-sunflower-pattern.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-087",
+    "chapter": 4,
+    "book_page": 103,
+    "reference": "Fig. 4.4",
+    "name": "Sunflower head with region-specific organs",
+    "listing_kind": "complete",
+    "formalism": "parametric turtle string",
+    "features": [
+      "range guards",
+      "multiple shape assets"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-087-sunflower-head-with-region-specific-organs.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-088",
+    "chapter": 4,
+    "book_page": 110,
+    "reference": "Fig. 4.11",
+    "name": "Cylindrical phyllotaxis",
+    "listing_kind": "complete",
+    "formalism": "parametric turtle string",
+    "features": [
+      "constants",
+      "3D rotations",
+      "shape asset"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-088-cylindrical-phyllotaxis.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-089",
+    "chapter": 4,
+    "book_page": 117,
+    "reference": "L-system 4.1",
+    "name": "Carex laevigata male spike",
+    "listing_kind": "complete",
+    "formalism": "parametric turtle string",
+    "features": [
+      "guards",
+      "growth parameters",
+      "shape asset"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-089-carex-laevigata-male-spike.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-090",
+    "chapter": 5,
+    "book_page": 119,
+    "reference": "Contour-traced leaf example",
+    "name": "Contour-traced growing leaf",
+    "listing_kind": "complete",
+    "formalism": "deterministic turtle string",
+    "features": [
+      "polygon fill",
+      "edge growth"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "Requires polygon interpretation commands.",
+    "fixture": "pass/abop-090-contour-traced-growing-leaf.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-091",
+    "chapter": 5,
+    "book_page": 122,
+    "reference": "Fig. 5.5",
+    "name": "Cordate leaf developmental surface",
+    "listing_kind": "complete",
+    "formalism": "deterministic bracketed turtle string",
+    "features": [
+      "developmental surface commands"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-091-cordate-leaf-developmental-surface.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-092",
+    "chapter": 5,
+    "book_page": 123,
+    "reference": "Fig. 5.6",
+    "name": "Parametric simple-leaf family",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "guards",
+      "segment growth",
+      "surface commands"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-092-parametric-simple-leaf-family.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-093",
+    "chapter": 5,
+    "book_page": 125,
+    "reference": "Fig. 5.8",
+    "name": "Rose leaf",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "guards",
+      "bilateral construction",
+      "surface commands"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-093-rose-leaf.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-094",
+    "chapter": 5,
+    "book_page": 126,
+    "reference": "Fig. 5.10 component grammar",
+    "name": "Lily-of-the-valley flower surface strip",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed turtle string",
+    "features": [
+      "surface mesh construction",
+      "angle growth"
+    ],
+    "proposal_coverage": "covered_small_extension",
+    "coverage_note": "",
+    "fixture": "pass/abop-094-lily-of-the-valley-flower-surface-strip.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": "The printed component grammar intentionally builds a surface strip with nested polygon state."
+  },
+  {
+    "id": "ABOP-095",
+    "chapter": 5,
+    "book_page": 128,
+    "reference": "Fig. 5.11",
+    "name": "Compound leaf",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "apical delays",
+      "segment growth"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-095-compound-leaf.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-096",
+    "chapter": 5,
+    "book_page": 129,
+    "reference": "Fig. 5.12",
+    "name": "Alternating compound leaf",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "two apex states",
+      "apical delays"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-096-alternating-compound-leaf.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-097",
+    "chapter": 6,
+    "book_page": 135,
+    "reference": "Eq. 6.1",
+    "name": "Timed Anabaena model",
+    "listing_kind": "complete",
+    "formalism": "timed DOL",
+    "features": [
+      "continuous global time",
+      "module age",
+      "terminal age",
+      "event subdivision"
+    ],
+    "proposal_coverage": "needs_timed_engine",
+    "coverage_note": "Discrete derivation steps are insufficient; this needs event/age semantics and continuous observation time.",
+    "fixture": "fail/abop-097-timed-anabaena-model.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": "Requires continuous time and per-module age."
+  },
+  {
+    "id": "ABOP-098",
+    "chapter": 6,
+    "book_page": 137,
+    "reference": "Eq. 6.2",
+    "name": "Simplified timed Anabaena model",
+    "listing_kind": "complete",
+    "formalism": "timed DOL",
+    "features": [
+      "nonzero initial ages",
+      "continuous time"
+    ],
+    "proposal_coverage": "needs_timed_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-098-simplified-timed-anabaena-model.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-099",
+    "chapter": 6,
+    "book_page": 141,
+    "reference": "§6.2.2",
+    "name": "Timed branching/compound-leaf system",
+    "listing_kind": "complete",
+    "formalism": "timed bracketed DOL",
+    "features": [
+      "continuous time",
+      "branches",
+      "growth functions"
+    ],
+    "proposal_coverage": "needs_timed_engine",
+    "coverage_note": "Also needs age-dependent growth functions and continuity constraints.",
+    "fixture": "fail/abop-099-timed-branching-compound-leaf-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": "The listing is distributed through the timed-development discussion and figures."
+  },
+  {
+    "id": "ABOP-100",
+    "chapter": 7,
+    "book_page": 147,
+    "reference": "Fig. 7.2",
+    "name": "Basic mBPMOL map L-system",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "planar map",
+      "edge rewriting",
+      "marker matching",
+      "region division"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "A string/module engine cannot represent cyclic planar maps or marker-induced region subdivision.",
+    "fixture": "fail/abop-100-basic-mbpmol-map-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-101",
+    "chapter": 7,
+    "book_page": 148,
+    "reference": "Fig. 7.3",
+    "name": "Map L-system with Z-offset",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "planar map",
+      "marker matching",
+      "offset edge"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-101-map-l-system-with-z-offset.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-102",
+    "chapter": 7,
+    "book_page": 149,
+    "reference": "Fig. 7.5",
+    "name": "Directed-edge map L-system",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "directed edges",
+      "markers",
+      "region division"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-102-directed-edge-map-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-103",
+    "chapter": 7,
+    "book_page": 156,
+    "reference": "Fig. 7.10",
+    "name": "Microsorium linguaeforme map L-system",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "many edge labels",
+      "directed markers",
+      "concurrent divisions"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-103-microsorium-linguaeforme-map-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-104",
+    "chapter": 7,
+    "book_page": 160,
+    "reference": "Fig. 7.12",
+    "name": "Microsorium basal-segment map variant",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "map grammar variant",
+      "directed markers"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-104-microsorium-basal-segment-map-variant.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-105",
+    "chapter": 7,
+    "book_page": 164,
+    "reference": "Fig. 7.17",
+    "name": "Dryopteris thelypteris map L-system",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "planar cellular topology",
+      "edge productions"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-105-dryopteris-thelypteris-map-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-106",
+    "chapter": 7,
+    "book_page": 166,
+    "reference": "Fig. 7.18",
+    "name": "Patella vulgata map L-system",
+    "listing_kind": "complete",
+    "formalism": "map L-system",
+    "features": [
+      "spherical cellular layer",
+      "edge productions"
+    ],
+    "proposal_coverage": "needs_map_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-106-patella-vulgata-map-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-107",
+    "chapter": 7,
+    "book_page": 172,
+    "reference": "Fig. 7.23",
+    "name": "Basic mBPCOL cellwork L-system",
+    "listing_kind": "complete",
+    "formalism": "cellwork L-system",
+    "features": [
+      "3D cells",
+      "walls",
+      "edge productions",
+      "marker cycles"
+    ],
+    "proposal_coverage": "needs_cellwork_engine",
+    "coverage_note": "Requires a 3D cell/wall/edge complex and consistency-aware division phases.",
+    "fixture": "fail/abop-107-basic-mbpcol-cellwork-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-108",
+    "chapter": 7,
+    "book_page": 174,
+    "reference": "Fig. 7.24",
+    "name": "Epidermal cellwork L-system",
+    "listing_kind": "complete",
+    "formalism": "cellwork L-system",
+    "features": [
+      "wall-scoped productions",
+      "3D cell divisions",
+      "delays"
+    ],
+    "proposal_coverage": "needs_cellwork_engine",
+    "coverage_note": "",
+    "fixture": "fail/abop-108-epidermal-cellwork-l-system.lsys",
+    "expected_parse": "fail",
+    "expected_execute": "unsupported",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-109",
+    "chapter": 8,
+    "book_page": 179,
+    "reference": "Eq. 8.1",
+    "name": "Compound-leaf source for IFS analysis",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "segment scaling",
+      "branches"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-109-compound-leaf-source-for-ifs-analysis.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  },
+  {
+    "id": "ABOP-110",
+    "chapter": 8,
+    "book_page": 181,
+    "reference": "Eq. 8.2",
+    "name": "Decreasing-apex equivalent",
+    "listing_kind": "complete",
+    "formalism": "parametric bracketed string",
+    "features": [
+      "scale carried by apex parameter"
+    ],
+    "proposal_coverage": "covered_core",
+    "coverage_note": "",
+    "fixture": "pass/abop-110-decreasing-apex-equivalent.lsys",
+    "expected_parse": "pass",
+    "expected_execute": "pass",
+    "fixture_note": ""
+  }
+]

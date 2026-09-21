@@ -1,0 +1,18 @@
+# ID       : ABOP-023
+# Name     : Dragon curve with multi-letter predecessors
+# Source   : chapter 1, book page 18, §1.4.3 pseudo-L form
+# Formalism: pseudo-L string rewriting
+# Parse    : fail
+# Execute  : unsupported
+# Note     : Requires multi-module strict predecessors and overlap resolution.
+#
+# Original ABOP:
+# ABOP | ω : F l
+# ABOP | p1    : F l -> F l + r F +
+# ABOP | p2    : r F -> - F l - r F
+#
+# Expected parse failure: version one permits one strict predecessor module.
+axiom F l;
+
+match F l then F l Plus r F Plus;
+match r F then Minus F l Minus r F;

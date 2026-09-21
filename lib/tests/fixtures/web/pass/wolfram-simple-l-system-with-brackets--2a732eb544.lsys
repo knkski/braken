@@ -1,0 +1,26 @@
+# ID       : LSYS-2A732EB54407
+# Name     : Wolfram simple L-system with brackets
+# Source   : Wolfram Function Repository LSystem | Basic Examples, In[3] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=1
+# Render   : pass; file=../renders/wolfram-simple-l-system-with-brackets--2a732eb544.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 45
+# Heading  : 90
+# Draw     : A B
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2a732eb54407e57e3c84f331b89a82fc3348bb44e30b0bc92b237dd1c7d91fbd
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: A B.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"A" -> "B+[B]", "B" -> "A-B"}, "AAA", 1, 45]
+#
+let ANGLE = 45;
+
+axiom A A A;
+
+match A then B Plus [ B ];
+match B then A Minus B;

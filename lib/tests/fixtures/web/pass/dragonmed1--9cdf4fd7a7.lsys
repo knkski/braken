@@ -1,0 +1,32 @@
+# ID       : LSYS-9CDF4FD7A70F
+# Name     : Dragonmed1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Dragonmed1 (#14) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dragonmed1--9cdf4fd7a7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9cdf4fd7a70fc190b7fbecad779e2b624381203915ad488279084bff74bae810
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragonmed1 {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom r
+# RESETIUS |   r=fx
+# RESETIUS |   x=x+fyf
+# RESETIUS |   y=fxf-y
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom R;
+
+match R then F X;
+match X then X Plus F Y F;
+match Y then F X F Minus Y;

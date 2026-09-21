@@ -1,0 +1,36 @@
+# ID       : LSYS-2553434AE2AC
+# Name     : Quadratic Koch curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | koch_curve_quadratic.ls | https://github.com/jkubin/L-system/blob/68a699a/koch_curve_quadratic.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/quadratic-koch-curve--2553434ae2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2553434ae2ac747f19cd80bcb1b20b5486dd5afc3dcc1211f4d08d522f413984
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/10/12⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Quadratic Koch curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 koch_curve_quadratic.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦QUADRATIC_KOCH_CURVE⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-FF+F+F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | 
+# JKUBIN | QUADRATIC_KOCH_CURVE(3)
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F F Plus F Plus F Minus F;

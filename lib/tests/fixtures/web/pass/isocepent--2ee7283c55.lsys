@@ -1,0 +1,52 @@
+# ID       : LSYS-2EE7283C55B1
+# Name     : Isocepent
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/isocepcent.ls, section Isocepent (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/isocepcent.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Isocepent (#37) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/isocepent--2ee7283c55.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:2ee7283c55b11cf6719cd32130b135d5338048e673cc93de88c1467afe314c94
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Isocepent {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom w
+# RESETIUS |   w=++[-@1.618033989f@I1.618033989++++f]fx--[++@1.618033989f----f]fw--
+# RESETIUS |   w=[--@1.618033989f++++f]fy++
+# RESETIUS |   x=-[+@1.618033989f@I1.618033989----f]fz++[--@1.618033989f++++f]fy-
+# RESETIUS |   y=--[+@1.618033989f@I1.6180339898----f]fz++[--@1.618033989f++++f]fy++
+# RESETIUS |   y=[++@1.618033989f----f]fw--
+# RESETIUS |   z=+[-@1.618033989f@I1.618033989++++f]fx--[++@1.618033989f----f]fw+
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Isocepent { ; William McWorter
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom w
+# RESETIUS |   w=++[-@1.618033989f@I1.618033989++++f]fx--[++@1.618033989f----f]fw--
+# RESETIUS |   w=[--@1.618033989f++++f]fy++
+# RESETIUS |   x=-[+@1.618033989f@I1.618033989----f]fz++[--@1.618033989f++++f]fy-
+# RESETIUS |   y=--[+@1.618033989f@I1.6180339898----f]fz++[--@1.618033989f++++f]fy++
+# RESETIUS |   y=[++@1.618033989f----f]fw--
+# RESETIUS |   z=+[-@1.618033989f@I1.618033989++++f]fx--[++@1.618033989f----f]fw+
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom W;
+
+match W then Plus Plus [ Minus Scale(1.618033989) F Scale(0.618033988654) Plus Plus Plus Plus F ] F X Minus Minus [ Plus Plus Scale(1.618033989) F Minus Minus Minus Minus F ] F W Minus Minus [ Minus Minus Scale(1.618033989) F Plus Plus Plus Plus F ] F Y Plus Plus;
+match X then Minus [ Plus Scale(1.618033989) F Scale(0.618033988654) Minus Minus Minus Minus F ] F Z Plus Plus [ Minus Minus Scale(1.618033989) F Plus Plus Plus Plus F ] F Y Minus;
+match Y then Minus Minus [ Plus Scale(1.618033989) F Scale(0.618033988349) Minus Minus Minus Minus F ] F Z Plus Plus [ Minus Minus Scale(1.618033989) F Plus Plus Plus Plus F ] F Y Plus Plus [ Plus Plus Scale(1.618033989) F Minus Minus Minus Minus F ] F W Minus Minus;
+match Z then Plus [ Minus Scale(1.618033989) F Scale(0.618033988654) Plus Plus Plus Plus F ] F X Minus Minus [ Plus Plus Scale(1.618033989) F Minus Minus Minus Minus F ] F W Plus;
+match F then nothing;

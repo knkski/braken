@@ -1,0 +1,44 @@
+# ID       : LSYS-AC21AC097B84
+# Name     : AmmannPolyColor
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section AmmannPolyColor (#9) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/ammannpolycolor--ac21ac097b.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ac21ac097b846e7f4e3c49346e15dcd13450f5bce005cc6b7de0f2c9267bb5a7
+# Source-token warnings: 5
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | AmmannPolyColor {
+# FRACTINT |                   ;; by Philippe Hurbain
+# FRACTINT |                   ;; Ammann's coloring of Penrose's rhombuses, giving an
+# FRACTINT |                   ;; aperiodic tiling of 2 pentagons and 1 hexagon
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom c1x
+# FRACTINT |   x=@.618034/36[c3\9@.66D]D[c3/196.5@.363D][/180y]\72D[/180x]
+# FRACTINT |   x=[\144@.618034M@i.618034x]\108[c3\36@.509D@1.18\30D][x]D[c3\153@.66D]\72[y]D
+# FRACTINT |   y=@.618034/72[x][c3\36@.509D]D\144[c3\9@.66D]D[/180y][c3/196.5@.363D]
+# FRACTINT |   y=\36[y]D\144D[/180x]
+# FRACTINT |   D=M
+# FRACTINT | }
+#
+let ANGLE = 36;
+
+axiom Color(1) X;
+
+match X then Scale(0.618034) ExplicitMinus(36) [ Color(3) ExplicitPlus(9) Scale(0.66) D ] D [ Color(3) ExplicitMinus(196) Dot SourceU0035 Scale(0.363) D ] [ ExplicitMinus(180) Y ] ExplicitPlus(72) D [ ExplicitMinus(180) X ] [ ExplicitPlus(144) Scale(0.618034) M Scale(1.6180339593) X ] ExplicitPlus(108) [ Color(3) ExplicitPlus(36) Scale(0.509) D Scale(1.18) ExplicitPlus(30) D ] [ X ] D [ Color(3) ExplicitPlus(153) Scale(0.66) D ] ExplicitPlus(72) [ Y ] D;
+match Y then Scale(0.618034) ExplicitMinus(72) [ X ] [ Color(3) ExplicitPlus(36) Scale(0.509) D ] D ExplicitPlus(144) [ Color(3) ExplicitPlus(9) Scale(0.66) D ] D [ ExplicitMinus(180) Y ] [ Color(3) ExplicitMinus(196) Dot SourceU0035 Scale(0.363) D ] ExplicitPlus(36) [ Y ] D ExplicitPlus(144) D [ ExplicitMinus(180) X ];
+match D then M;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

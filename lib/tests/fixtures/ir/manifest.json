@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "01-deterministic-flat",
+      "title": "Deterministic flat rewriting",
+      "summary": "Stable symbol IDs, production order, identity fallback, and simple successor bytecode.",
+      "source": "cases/01-deterministic-flat.lsys",
+      "expected_features": [],
+      "compatibility": { "cpu": [], "cuda": [], "wgpu": [] },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "A B", "lineage": [2] },
+        { "iterations": 2, "seed": 0, "generation": "A B A", "lineage": [2, 1] }
+      ]
+    },
+    {
+      "id": "02-globals-and-expressions",
+      "title": "Globals and expression programs",
+      "summary": "Forward global dependencies, exact numeric bits, builtins, parameters, and successor evaluation.",
+      "source": "cases/02-globals-and-expressions.lsys",
+      "expected_features": ["builtin:max", "builtin:sqrt", "dynamic-conditions", "parameterized-modules"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-parameters", "gpu-dynamic-condition"],
+        "wgpu": ["gpu-parameters", "gpu-dynamic-condition"]
+      },
+      "runs": [
+        { "iterations": 0, "seed": 0, "generation": "F(3,0.1)" },
+        { "iterations": 1, "seed": 0, "generation": "F(6,0.25)", "lineage": [1] }
+      ]
+    },
+    {
+      "id": "03-parameters-and-patterns",
+      "title": "Parameterized pattern matching",
+      "summary": "Arity, numeric literals, wildcard arguments, binding slots, conditions, and identity fallback.",
+      "source": "cases/03-parameters-and-patterns.lsys",
+      "expected_features": ["dynamic-conditions", "parameterized-modules"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-parameters", "gpu-dynamic-condition"],
+        "wgpu": ["gpu-parameters", "gpu-dynamic-condition"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "Literal(1) Wildcard(3) Other(9)", "lineage": [1, 1, 1] }
+      ]
+    },
+    {
+      "id": "04-boolean-short-circuit",
+      "title": "Boolean short-circuiting",
+      "summary": "Nested and/or control flow, comparisons, a builtin, and binding-dependent conditions.",
+      "source": "cases/04-boolean-short-circuit.lsys",
+      "expected_features": ["builtin:sqrt", "dynamic-conditions", "parameterized-modules"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-parameters", "gpu-dynamic-condition"],
+        "wgpu": ["gpu-parameters", "gpu-dynamic-condition"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "Pass(0) Pass(2)", "lineage": [1, 1] }
+      ]
+    },
+    {
+      "id": "05-stochastic-wildcard",
+      "title": "Weighted wildcard selection",
+      "summary": "Source-ordered exact and wildcard productions with constant stochastic weights.",
+      "source": "cases/05-stochastic-wildcard.lsys",
+      "expected_features": ["weighted-productions"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": [],
+        "wgpu": []
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "Z Z Z", "lineage": [1, 1, 1] },
+        { "iterations": 1, "seed": 7, "generation": "X Z Z", "lineage": [1, 1, 1] }
+      ]
+    },
+    {
+      "id": "06-deletion-and-identity",
+      "title": "Deletion and identity fallback",
+      "summary": "An empty successor, an unmatched module, and a growing successor.",
+      "source": "cases/06-deletion-and-identity.lsys",
+      "expected_features": [],
+      "compatibility": { "cpu": [], "cuda": [], "wgpu": [] },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "Keep A B", "lineage": [0, 1, 2] }
+      ]
+    },
+    {
+      "id": "07-nested-branches",
+      "title": "Nested structural branches",
+      "summary": "Nested axiom branches and a successor that introduces another branch.",
+      "source": "cases/07-nested-branches.lsys",
+      "expected_features": ["structural-branches"],
+      "compatibility": { "cpu": [], "cuda": [], "wgpu": [] },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "A [ X [ Y ] [ C ] D ] E", "lineage": [1, 2, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "08-linear-context",
+      "title": "Linear context with an only filter",
+      "summary": "Left/right context crosses hidden modules and skips a side branch.",
+      "source": "cases/08-linear-context.lsys",
+      "expected_features": ["context-filter", "contextual-productions", "parameterized-modules", "structural-branches"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-parameters", "gpu-context", "gpu-context-filter"],
+        "wgpu": ["gpu-parameters", "gpu-context", "gpu-context-filter"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "F(1) Hidden F(7) [ Side ] F(4)", "lineage": [1, 1, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "09-ignore-filter",
+      "title": "Ignore context filter",
+      "summary": "Ignored modules remain in the generation while disappearing from context lookup.",
+      "source": "cases/09-ignore-filter.lsys",
+      "expected_features": ["context-filter", "contextual-productions"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-context", "gpu-context-filter"],
+        "wgpu": ["gpu-context", "gpu-context-filter"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "L Hidden Hit Turn R", "lineage": [1, 1, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "10-only-filter",
+      "title": "Only context filter",
+      "summary": "Only-listed symbols participate in context lookup; decorations remain untouched.",
+      "source": "cases/10-only-filter.lsys",
+      "expected_features": ["context-filter", "contextual-productions"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-context", "gpu-context-filter"],
+        "wgpu": ["gpu-context", "gpu-context-filter"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "L Decoration Hit Decoration R", "lineage": [1, 1, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "11-structural-context",
+      "title": "Explicit structural context",
+      "summary": "Right and left patterns match explicitly attached branches.",
+      "source": "cases/11-structural-context.lsys",
+      "expected_features": ["contextual-productions", "structural-branches", "structural-contexts"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-context"],
+        "wgpu": ["gpu-context"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "RightHit [ B ] C X [ Y ] LeftHit", "lineage": [1, 1, 1, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "12-acropetal-context",
+      "title": "Acropetal branch context",
+      "summary": "Left context climbs from a branch to its parent anchor while honoring ignored turns.",
+      "source": "cases/12-acropetal-context.lsys",
+      "expected_features": ["context-filter", "contextual-productions", "structural-branches"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-context", "gpu-context-filter"],
+        "wgpu": ["gpu-context", "gpu-context-filter"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "Fb [ Plus Fb ] Fb [ Minus Fa ] Fa", "lineage": [1, 1, 1, 1, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "13-anabaena-reference",
+      "title": "Anabaena reference system",
+      "summary": "A representative attributed grammar combining globals, parameters, context filters, context bindings, conditions, branches in expression control flow, and builtins-free numeric programs.",
+      "source": "cases/13-anabaena-reference.lsys",
+      "expected_features": ["context-filter", "contextual-productions", "dynamic-conditions", "parameterized-modules"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-parameters", "gpu-context", "gpu-context-filter", "gpu-dynamic-condition"],
+        "wgpu": ["gpu-parameters", "gpu-context", "gpu-context-filter", "gpu-dynamic-condition"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "Minus(90) F(0,0,900) F(4.1,1,675) F(0,0,900)", "lineage": [1, 1, 1, 1] }
+      ]
+    },
+    {
+      "id": "14-dynamic-weight",
+      "title": "Binding-dependent weighted selection",
+      "summary": "Parameterized alternatives whose stochastic weights are evaluated separately for each predecessor module.",
+      "source": "cases/14-dynamic-weight.lsys",
+      "expected_features": ["dynamic-weights", "parameterized-modules", "weighted-productions"],
+      "compatibility": {
+        "cpu": [],
+        "cuda": ["gpu-parameters", "gpu-dynamic-weight"],
+        "wgpu": ["gpu-parameters", "gpu-dynamic-weight"]
+      },
+      "runs": [
+        { "iterations": 1, "seed": 0, "generation": "High Low", "lineage": [1, 1] },
+        { "iterations": 1, "seed": 7, "generation": "High High", "lineage": [1, 1] }
+      ]
+    }
+  ]
+}

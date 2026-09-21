@@ -1,0 +1,30 @@
+# ID       : LSYS-8E54A659CB92
+# Name     : net
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/net.ls, section net (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/net.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/net--8e54a659cb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8e54a659cb92e37f1e3e0fc42a881f5b787628ab1db950f7079bda8b51f5ebe2
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | net {
+# RESETIUS | axiom F+F+F+F
+# RESETIUS | F=F+B-F-FFF+F+B-F
+# RESETIUS | B=BBB
+# RESETIUS | theta 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Plus B Minus F Minus F F F Plus F Plus B Minus F;
+match B then B B B;

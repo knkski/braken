@@ -1,0 +1,20 @@
+# ID       : ABOP-048
+# Name     : Introductory parametric OL system
+# Source   : chapter 1, book page 42, Eq. 1.7
+# Formalism: parametric context-free string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : B(2) A(4,4)
+# ABOP | p1    : A(x,y) : y <= 3 -> A(x*2,x+y)
+# ABOP | p2    : A(x,y) : y > 3  -> B(x) A(x/y,0)
+# ABOP | p3    : B(x)   : x < 1  -> C
+# ABOP | p4    : B(x)   : x >= 1 -> B(x-1)
+#
+axiom B(2) A(4,4);
+
+match A(x,y) when y <= 3 then A(x*2,x+y);
+match A(x,y) when y > 3 then B(x) A(x/y,0);
+match B(x) when x < 1 then C;
+match B(x) when x >= 1 then B(x-1);

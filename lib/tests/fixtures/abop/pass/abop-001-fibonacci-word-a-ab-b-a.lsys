@@ -1,0 +1,16 @@
+# ID       : ABOP-001
+# Name     : Fibonacci word (a→ab, b→a)
+# Source   : chapter 1, book page 3, §1.2 example / Fig. 1.3
+# Formalism: deterministic context-free string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : b
+# ABOP | p1    : a -> ab
+# ABOP | p2    : b -> a
+#
+axiom b;
+
+match a then a b;
+match b then a;

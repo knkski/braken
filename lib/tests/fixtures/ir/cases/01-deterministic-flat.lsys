@@ -1,0 +1,4 @@
+axiom A;
+
+match A then A B;
+match B then A;

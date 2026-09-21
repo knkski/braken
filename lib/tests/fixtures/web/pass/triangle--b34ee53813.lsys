@@ -1,0 +1,36 @@
+# ID       : LSYS-B34EE53813F0
+# Name     : Triangle
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.triangle | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/triangle--b34ee53813.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 120
+# Heading  : 90
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:b34ee53813f065271be69f1f8034a107a09a9c2fd30b288af1af9f9b1054e581
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | triangle =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F-F+F" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F"
+# ELM |         , iterations = 7
+# ELM |         , lineLength = 1
+# ELM |         , startHeading = Angle.right
+# ELM |         , turningAngle = Angle.fromDegrees 120
+# ELM |         , windowPosition = { x = -34, y = -56 }
+# ELM |         , windowSize = 62
+# ELM |     }
+#
+let ANGLE = 120;
+
+axiom F Plus F Plus F;
+
+match F then F Minus F Plus F;

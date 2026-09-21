@@ -1,0 +1,30 @@
+# ID       : LSYS-495C6B531F12
+# Name     : isocright
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section isocright (#40) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/isocright--495c6b531f.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:495c6b531f12a5d2b1c60450f19510982d4196338aa25e0da0e921d7736ced42
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | isocright {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom x
+# RESETIUS |   x=+y-f-y+
+# RESETIUS |   y=-x+f+x-
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match X then Plus Y Minus F Minus Y Plus;
+match Y then Minus X Plus F Plus X Minus;

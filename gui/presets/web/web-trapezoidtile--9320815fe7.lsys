@@ -1,0 +1,38 @@
+# Name: Trapezoid Tile
+# Summary: A 60-degree substitution stretches a simple trapezoid into a finely segmented frame.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 8
+# Max Iterations: 11
+# Initial Color: 9
+
+# ID       : LSYS-9320815FE7D3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TrapezoidTile (#22) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9320815fe7d31a7521d5d0331b70e510a09fbf394eb45d9b9c3a298e1d96ad0c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TrapezoidTile {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=fxfff++xff+xff+xff++ ; x=+yff-yff-yff--fyfff|
+# RESETIUS |                          ;        y=-xff+xff+xff++fxfff|
+# RESETIUS |   f=gg
+# RESETIUS |   g=gg
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom R;
+
+match R then X;
+match X then F X F F F Plus Plus X F F Plus X F F Plus X F F Plus Plus;
+match F then G G;
+match G then G G;

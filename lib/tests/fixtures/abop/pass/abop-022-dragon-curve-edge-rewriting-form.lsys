@@ -1,0 +1,17 @@
+# ID       : ABOP-022
+# Name     : Dragon curve, edge-rewriting form
+# Source   : chapter 1, book page 18, §1.4.3 first listing
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+# Note     : Normalized to the equivalent edge-rewriting symbols Fl and Fr.
+#
+# Original ABOP:
+# ABOP | ω : Fl
+# ABOP | p1    : Fl -> Fl+Fr+
+# ABOP | p2    : Fr -> -Fl-Fr
+#
+axiom Fl;
+
+match Fl then Fl Plus Fr Plus;
+match Fr then Minus Fl Minus Fr;

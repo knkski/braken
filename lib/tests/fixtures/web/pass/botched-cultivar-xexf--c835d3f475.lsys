@@ -1,0 +1,31 @@
+# ID       : LSYS-C835D3F47506
+# Name     : Botched Cultivar XEXF
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 15 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/botched-cultivar-xexf--c835d3f475.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:c835d3f4750665a3b5a90b6e3dfb637f0e72cd0295d378389651fa4dba697f06
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('X', [
+# SCHOLARLY |             'E=XEXF-',
+# SCHOLARLY |             'F=FX+[E]X',
+# SCHOLARLY |             'X=F-[X+[X[++E]F]]+F[X+FX]-X'
+# SCHOLARLY |         ], 22.5)
+#
+let ANGLE = 22.5;
+
+axiom X;
+
+match E then X E X F Minus;
+match F then F X Plus [ E ] X;
+match X then F Minus [ X Plus [ X [ Plus Plus E ] F ] ] Plus F [ X Plus F X ] Minus X;

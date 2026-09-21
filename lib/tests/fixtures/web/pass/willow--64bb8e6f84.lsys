@@ -1,0 +1,42 @@
+# ID       : LSYS-64BB8E6F84C3
+# Name     : Willow
+# Source   : abiusx/L3D model archive | L++/willow.l++ | https://github.com/abiusx/L3D/blob/master/L++/willow.l++
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, stochastic, turtle3d
+# Angle    : 30
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:64bb8e6f84c3b4b581ea5e05390b7fd3344e224713701af4cea6061ab15b2330
+# Note     : Upstream thickness setting: 10
+#
+# Original abiusx/L3D model archive:
+# L3D | 4
+# L3D | 30
+# L3D | 10
+# L3D | TA
+# L3D | T=f(1.8)T
+# L3D | A=^(90)X B B B B B B
+# L3D | B=+(10)X +(10)X +(10)X
+# L3D | X=Z +(10)Z +(10)Z +(10)Z
+# L3D | Z= =(1) R
+# L3D | R=[^(15)fR ]
+# L3D | R=[^(25)fR [+(10)fR] [-(10)fR]]
+# L3D | @
+#
+let ANGLE = 30;
+
+axiom T A;
+
+match T then f(1.8) T;
+match A then PitchUp(90) X B B B B B B;
+match B then Plus(10) X Plus(10) X Plus(10) X;
+match X then Z Plus(10) Z Plus(10) Z Plus(10) Z;
+match Z then SetWidth(1) R;
+match R weight 1 then [ PitchUp(15) f R ];
+match R weight 1 then [ PitchUp(25) f R [ Plus(10) f R ] [ Minus(10) f R ] ];

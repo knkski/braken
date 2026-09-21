@@ -1,0 +1,33 @@
+# ID       : ABOP-064
+# Name     : Crocus complete model
+# Source   : chapter 3, book page 69, Fig. 3.2
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define Ta 7
+# ABOP | #define TL 9
+# ABOP | #define TK 5
+# ABOP | #include L(0),...,L(TL)
+# ABOP | #include K(0),...,K(TK)
+# ABOP | ω : a(1)
+# ABOP | p1    : a(t) : t<Ta -> F(1)[&(30)~L(0)]/(137.5)a(t+1)
+# ABOP | p2    : a(t) : t=Ta -> F(20)A
+# ABOP | p3    : A -> ~K(0)
+# ABOP | p4    : L(t) : t<TL -> L(t+1)
+# ABOP | p5    : K(t) : t<TK -> K(t+1)
+# ABOP | p6    : F(l) : l<2 -> F(l+0.2)
+#
+let Ta = 7;
+let TL = 9;
+let TK = 5;
+
+axiom a(1);
+
+match a(t) when t<Ta then F(1) [ PitchDown(30) L(0) ] RollRight(137.5) a(t+1);
+match a(t) when t=Ta then F(20) A;
+match A then K(0);
+match L(t) when t<TL then L(t+1);
+match K(t) when t<TK then K(t+1);
+match F(l) when l<2 then F(l+0.2);

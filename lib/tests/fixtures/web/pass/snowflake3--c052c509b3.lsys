@@ -1,0 +1,44 @@
+# ID       : LSYS-C052C509B333
+# Name     : SnowFlake3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section SnowFlake3 (#28) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section SnowFlake3 (#17) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/snowflake3--c052c509b3.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c052c509b3333f8ca9e2b95476e02a450d42c61d6545ca48b2cbb60593873b04
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SnowFlake3 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   angle 12
+# RESETIUS |   axiom fx
+# RESETIUS |   x=++f!x!fy--fx--fy|+@iq3fyf!x!++f!y!++f!y!fx@q3+++f!y!fx
+# RESETIUS |   y=fyf!x!+++@iq3fyf!x!++f!x!++f!y!fx@q3|+fx--fy--fxf!y!++
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | SnowFlake3 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 12
+# FRACTINT |   axiom fx
+# FRACTINT |   x=++f!x!fy--fx--fy|+@iq3fyf!x!++f!y!++f!y!fx@q3+++f!y!fx
+# FRACTINT |   y=fyf!x!+++@iq3fyf!x!++f!x!++f!y!fx@q3|+fx--fy--fxf!y!++
+# FRACTINT |   f=
+# FRACTINT |   }
+#
+let ANGLE = 30;
+
+axiom F X;
+
+match X then Plus Plus F InvertTurns X InvertTurns F Y Minus Minus F X Minus Minus F Y TurnAround Plus Scale(0.57735026919) F Y F InvertTurns X InvertTurns Plus Plus F InvertTurns Y InvertTurns Plus Plus F InvertTurns Y InvertTurns F X Scale(1.73205080757) Plus Plus Plus F InvertTurns Y InvertTurns F X;
+match Y then F Y F InvertTurns X InvertTurns Plus Plus Plus Scale(0.57735026919) F Y F InvertTurns X InvertTurns Plus Plus F InvertTurns X InvertTurns Plus Plus F InvertTurns Y InvertTurns F X Scale(1.73205080757) TurnAround Plus F X Minus Minus F Y Minus Minus F X F InvertTurns Y InvertTurns Plus Plus;
+match F then nothing;

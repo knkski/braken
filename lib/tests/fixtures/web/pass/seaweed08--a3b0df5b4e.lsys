@@ -1,0 +1,34 @@
+# ID       : LSYS-A3B0DF5B4ECB
+# Name     : Seaweed08
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Seaweed08 (#66) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/seaweed08--a3b0df5b4e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a3b0df5b4ecbd08e03b210f2bc215a9571520a56d559f32cee80c306d0c5ff25
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Seaweed08 { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom xy
+# RESETIUS |   x=<1+F>1+<1F>1[+y][-y]<1F>1-<1F>1[+y][-y]
+# RESETIUS |   y=<1-F>1-<1F>1[+x][-x]<1F>1+<1F>1[+x][-x]
+# RESETIUS |   f=<10F[+x][-x][+y][-y]F>10
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom X Y;
+
+match X then ColorIncrement(1) Plus F ColorIncrement(-1) Plus ColorIncrement(1) F ColorIncrement(-1) [ Plus Y ] [ Minus Y ] ColorIncrement(1) F ColorIncrement(-1) Minus ColorIncrement(1) F ColorIncrement(-1) [ Plus Y ] [ Minus Y ];
+match Y then ColorIncrement(1) Minus F ColorIncrement(-1) Minus ColorIncrement(1) F ColorIncrement(-1) [ Plus X ] [ Minus X ] ColorIncrement(1) F ColorIncrement(-1) Plus ColorIncrement(1) F ColorIncrement(-1) [ Plus X ] [ Minus X ];
+match F then ColorIncrement(10) F [ Plus X ] [ Minus X ] [ Plus Y ] [ Minus Y ] F ColorIncrement(-10);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

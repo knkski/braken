@@ -1,0 +1,45 @@
+# ID       : LSYS-88BDD9D46C62
+# Name     : Lucky flower
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 5 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=stochastic or nondeterministic productions are not supported (duplicate predecessor 'A')
+# Fidelity : transcription
+# Features : context-free, stochastic, turtle2d
+# Angle    : 12
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:88bdd9d46c62765f2e57fba37509f9a69a3eb78efd03408c04f5cad171817f2c
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('A', [
+# SCHOLARLY |             'A=I[L]B,I[L]A,I[L][R]B,IF',
+# SCHOLARLY |             'B=I[R]A,I[R]B,I[L][R]A,IF',
+# SCHOLARLY |             'L=---I,--I,----I',
+# SCHOLARLY |             'R=+++I,++I,++++I',
+# SCHOLARLY |             'F=[---[I+I]--I+I][+++[I-I]++I-I]II'
+# SCHOLARLY |         ], 12)
+#
+let ANGLE = 12;
+
+axiom A;
+
+match A weight 1 then I [ L ] B;
+match A weight 1 then I [ L ] A;
+match A weight 1 then I [ L ] [ R ] B;
+match A weight 1 then I F;
+match B weight 1 then I [ R ] A;
+match B weight 1 then I [ R ] B;
+match B weight 1 then I [ L ] [ R ] A;
+match B weight 1 then I F;
+match L weight 1 then Minus Minus Minus I;
+match L weight 1 then Minus Minus I;
+match L weight 1 then Minus Minus Minus Minus I;
+match R weight 1 then Plus Plus Plus I;
+match R weight 1 then Plus Plus I;
+match R weight 1 then Plus Plus Plus Plus I;
+match F then [ Minus Minus Minus [ I Plus I ] Minus Minus I Plus I ] [ Plus Plus Plus [ I Minus I ] Plus Plus I Minus I ] I I;

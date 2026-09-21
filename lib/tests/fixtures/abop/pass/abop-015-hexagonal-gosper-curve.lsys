@@ -1,0 +1,16 @@
+# ID       : ABOP-015
+# Name     : Hexagonal Gosper curve
+# Source   : chapter 1, book page 12, Fig. 1.11a
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : Fl
+# ABOP | p1    : Fl -> Fl+Fr++Fr-Fl--FlFl-Fr+
+# ABOP | p2    : Fr -> -Fl+FrFr++Fr+Fl--Fl-Fr
+#
+axiom Fl;
+
+match Fl then Fl Plus Fr Plus Plus Fr Minus Fl Minus Minus Fl Fl Minus Fr Plus;
+match Fr then Minus Fl Plus Fr Fr Plus Plus Fr Plus Fl Minus Minus Fl Minus Fr;

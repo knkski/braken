@@ -1,0 +1,41 @@
+# ID       : LSYS-37784D376C5E
+# Name     : A tree bent to the left
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_bent_to_left.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_bent_to_left.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/a-tree-bent-to-the-left--37784d376c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 15
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:37784d376c5e8dc655ba8ce62364d24cda7e194994fca3136b3cfdc16bee01bd
+# Note     : Upstream acknowledgement: https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/ ⟧)
+# JKUBIN | ___DESCR(⟦A tree bent to the left⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_bent_to_left.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FX[FX[+XF]]⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦FF[+XZ++X-F[+ZX]][-X++F-X]⟧)
+# JKUBIN | RULE(⟦Z⟧, ⟦[+F-X-F][++ZX]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(15),dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(4)
+#
+let ANGLE = 15;
+
+axiom X;
+
+match F then F X [ F X [ Plus X F ] ];
+match X then F F [ Plus X HalfForward Plus Plus X Minus F [ Plus HalfForward X ] ] [ Minus X Plus Plus F Minus X ];
+match Z then [ Plus F Minus X Minus F ] [ Plus Plus HalfForward X ];

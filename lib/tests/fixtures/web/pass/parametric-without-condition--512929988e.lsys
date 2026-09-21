@@ -1,0 +1,40 @@
+# ID       : LSYS-512929988EC5
+# Name     : Parametric Without Condition
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/parametric-without-condition.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/parametric-without-condition.xml
+# Formalism: parametric bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-turtle2d'
+# Fidelity : transcription
+# Features : bracketed, conditional, parametric
+# Angle    : 85
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : parametric-turtle2d
+# Fingerprint: sha256:512929988ec5de33aaf5bc8357f3e7dca5a46b9b81d352ea6010886abee5704a
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>
+# OFX | A(s) -&gt; F(s)[+A(s/R)][-A(s/R)];
+# OFX | </rule>
+# OFX | <axiom>A(100)</axiom>
+# OFX | <constants>R=1.456</constants>
+# OFX | <maxDepth>2</maxDepth>
+# OFX | <theta>85</theta>
+# OFX | <bg_color>40, 31, 228, 255</bg_color>
+# OFX | 		<tree_color>104, 173, 0, 255</tree_color>
+# OFX | 	<Random_Y_Rotation>0</Random_Y_Rotation>
+# OFX | 		<depth>3</depth>
+# OFX | 		<specular_color>255, 45, 0, 255</specular_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let R = 1.456;
+let ANGLE = 85;
+
+axiom A(100);
+
+match A(s) then F(s) [ Plus A(s/R) ] [ Minus A(s/R) ];

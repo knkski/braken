@@ -1,0 +1,56 @@
+# ID       : LSYS-315533AD0F2A
+# Name     : Krishna Anklets
+# Aliases  : Anklets of Krishna
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.krishnaAnklets | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[34] (Anklets of Krishna) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 35; heading Krishna Anklets | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/krishna-anklets--315533ad0f.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:315533ad0f2a4e95f18e6f882a9392a13e51b32126ffba01ad3e7658b30130a2
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | krishnaAnklets =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "XFX--XFX" )
+# ELM |             ]
+# ELM |         , axiom = "-X--X"
+# ELM |         , iterations = 6
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.fromDegrees 45
+# ELM |         , windowPosition = { x = -46, y = -91 }
+# ELM |         , windowSize = 92
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Anklets of Krishna",
+# KITWALLACE |   "-X--X",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "XFX--XFX"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   45.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = -X--X
+# BOURKE | X -> XFX--XFX
+# BOURKE | angle = 45
+#
+let ANGLE = 45;
+
+axiom Minus X Minus Minus X;
+
+match X then X F X Minus Minus X F X;

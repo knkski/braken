@@ -1,0 +1,36 @@
+# ID       : LSYS-8472CE8CFDBF
+# Name     : A
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section A (#19) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/a--8472ce8cfd.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8472ce8cfdbf382d2aecd53a7d667ddbfe4d59ca2481cc8cfbe3308ed8e32f31
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | A {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom r
+# RESETIUS |   r=g-g--c40f+fc15f-ff+fc56f-fc15++g+gx
+# RESETIUS |   x=g-g--c40f+fc15f-ff+fc56f-fc15++g+gx++g-g--c40f+fc15f-ff+fc56f-fc15++g+gx--g-g--c40f+fc15f-ff+fc56f-fc15++g+gx
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom R;
+
+match R then G Minus G Minus Minus Color(40) F Plus F Color(15) F Minus F F Plus F Color(56) F Minus F Color(15) Plus Plus G Plus G X;
+match X then G Minus G Minus Minus Color(40) F Plus F Color(15) F Minus F F Plus F Color(56) F Minus F Color(15) Plus Plus G Plus G X Plus Plus G Minus G Minus Minus Color(40) F Plus F Color(15) F Minus F F Plus F Color(56) F Minus F Color(15) Plus Plus G Plus G X Minus Minus G Minus G Minus Minus Color(40) F Plus F Color(15) F Minus F F Plus F Color(56) F Minus F Color(15) Plus Plus G Plus G X;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

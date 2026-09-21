@@ -1,0 +1,30 @@
+# ID       : LSYS-6CEA33341E7D
+# Name     : ADH114
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH114 (#22) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh114--6cea33341e.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6cea33341e7df98db86c32e7624d06f93e55a798717c5a9c33b8ee1e64d72023
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH114 { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 4 ;
+# RESETIUS |   Axiom f--h+f--h+f--h+f--h
+# RESETIUS |   f=f+@.8f--g+@1.25f
+# RESETIUS |   h=f-@.8f++g-@1.25f
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Minus Minus H Plus F Minus Minus H Plus F Minus Minus H Plus F Minus Minus H;
+
+match F then F Plus Scale(0.8) F Minus Minus G Plus Scale(1.25) F;
+match H then F Minus Scale(0.8) F Plus Plus G Minus Scale(1.25) F;

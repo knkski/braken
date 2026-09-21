@@ -1,0 +1,38 @@
+# ID       : LSYS-A231206F0212
+# Name     : Kites&DartsColor
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section Kites&DartsColor (#8) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/kites-dartscolor--a231206f02.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a231206f021291ef81a9f171000ebaf769d56ebf12dc053d87986a47e5553d55
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Kites&DartsColor {
+# FRACTINT |                    ;; by Philippe Hurbain
+# FRACTINT |                    ;; Penrose's kites and darts, with serpentine coloring
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom c4[k]++[k]++[k]++[k]++[k]
+# FRACTINT |   k=+[@.618034a[g---@.618c10f][--g+++@.618c10f]]
+# FRACTINT |   k=f@.618034---[-k]f-f---[-k]@i.618034f[@.618034|a]
+# FRACTINT |   a=[@.618034k]+f@.618034[|a][|g++@.382c10f]----f+
+# FRACTINT |   a=f----[a][g--@.382c10f]@i.618034f
+# FRACTINT |   f=g
+# FRACTINT | }
+#
+let ANGLE = 36;
+
+axiom Color(4) [ K ] Plus Plus [ K ] Plus Plus [ K ] Plus Plus [ K ] Plus Plus [ K ];
+
+match K then Plus [ Scale(0.618034) A [ G Minus Minus Minus Scale(0.618) Color(10) F ] [ Minus Minus G Plus Plus Plus Scale(0.618) Color(10) F ] ] F Scale(0.618034) Minus Minus Minus [ Minus K ] F Minus F Minus Minus Minus [ Minus K ] Scale(1.6180339593) F [ Scale(0.618034) TurnAround A ];
+match A then [ Scale(0.618034) K ] Plus F Scale(0.618034) [ TurnAround A ] [ TurnAround G Plus Plus Scale(0.382) Color(10) F ] Minus Minus Minus Minus F Plus F Minus Minus Minus Minus [ A ] [ G Minus Minus Scale(0.382) Color(10) F ] Scale(1.6180339593) F;
+match F then G;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

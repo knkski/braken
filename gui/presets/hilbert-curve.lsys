@@ -1,0 +1,13 @@
+# Name: Hilbert Curve
+# Summary: A continuous right-angled path recursively fills a square lattice.
+# Visualizer: turtle_2d
+# Angle: 90
+# Iterations: 5
+# Preview Iterations: 2
+# Max Iterations: 9
+# Initial Color: 0
+
+axiom L;
+
+match L then Left R Draw Right L Draw L Right Draw R Left;
+match R then Right L Draw Left R Draw R Left Draw L Right;

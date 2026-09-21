@@ -1,0 +1,43 @@
+# ID       : LSYS-EA2A035D842B
+# Name     : Xmastree
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Xmastree (#93) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/xmastree--ea2a035d84.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ea2a035d842beb4bdcacf5109959c24f3e5b56fe6068737d98371db2339c8afa
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Xmastree { ; William McWorter
+# RESETIUS | ; order 10
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom p
+# RESETIUS |   f=
+# RESETIUS |   p=--<1fr++++<1fs--<1fu
+# RESETIUS |   q=<1ft++<1fr----<1fs++
+# RESETIUS |   r=++<1fp----<1fq++<1ft
+# RESETIUS |   s=<1fu--<1fp++++<1fq--
+# RESETIUS |   t=+<1fu--<1fp+
+# RESETIUS |   u=-<1fq++<1ft-
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom P;
+
+match F then nothing;
+match P then Minus Minus ColorIncrement(1) F R Plus Plus Plus Plus ColorIncrement(1) F S Minus Minus ColorIncrement(1) F U;
+match Q then ColorIncrement(1) F T Plus Plus ColorIncrement(1) F R Minus Minus Minus Minus ColorIncrement(1) F S Plus Plus;
+match R then Plus Plus ColorIncrement(1) F P Minus Minus Minus Minus ColorIncrement(1) F Q Plus Plus ColorIncrement(1) F T;
+match S then ColorIncrement(1) F U Minus Minus ColorIncrement(1) F P Plus Plus Plus Plus ColorIncrement(1) F Q Minus Minus;
+match T then Plus ColorIncrement(1) F U Minus Minus ColorIncrement(1) F P Plus;
+match U then Minus ColorIncrement(1) F Q Plus Plus ColorIncrement(1) F T Minus;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

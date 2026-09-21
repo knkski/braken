@@ -1,0 +1,35 @@
+# ID       : LSYS-60ABF2F7B6B0
+# Name     : Grass2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Grass2 (#35) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/grass2--60abf2f7b6.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:60abf2f7b6b001f2d04d180b7a8241c802b54ec9c4563bf5ffdd4c8819b2bce2
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grass2 { ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom +++++++F
+# RESETIUS |   F=F[+A]F[--A]
+# RESETIUS |   A=+c1F-<3FFFFF+<3F-<3FFF+<3F
+# RESETIUS |   A=<3F-<3FF+<3FFF-<3F+<3FFFFF
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom Plus Plus Plus Plus Plus Plus Plus F;
+
+match F then F [ Plus A ] F [ Minus Minus A ];
+match A then Plus Color(1) F Minus ColorIncrement(3) F F F F F Plus ColorIncrement(3) F Minus ColorIncrement(3) F F F Plus ColorIncrement(3) F ColorIncrement(3) F Minus ColorIncrement(3) F F Plus ColorIncrement(3) F F F Minus ColorIncrement(3) F Plus ColorIncrement(3) F F F F F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

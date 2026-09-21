@@ -1,0 +1,44 @@
+# ID       : LSYS-EA3A16747F1F
+# Name     : Generated random L-system 02
+# Source   : Notgnoshi generative toolkit examples (MIT) | examples/random-lsystems/saved.json[2] | https://github.com/Notgnoshi/generative/blob/25459b6/examples/random-lsystems/saved.json
+# Formalism: generated stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : source-provided; file=../renders/generated-random-l-system-02--ea3a16747f.svg
+# Fidelity : projection
+# Features : context-free, generated, stochastic, turtle3d
+# Angle    : 3
+# Heading  : 0
+# Draw     : F G
+# Move     : f g
+# Profile  : turtle3d
+# Fingerprint: sha256:ea3a16747f1fda7516a1edf6811cbe20c488d5ec554c21c5f7489fd7b9cee0b6
+# Source-token warnings: unbalanced-branches-projected-to-modules
+# Note     : Source seed: 607095405
+# Note     : The source contains unmatched branch delimiters. All brackets in each affected axiom or successor are represented as BranchBegin/BranchEnd modules; token order is preserved, but structural branch semantics are intentionally lost.
+#
+# Original Notgnoshi generative toolkit examples (MIT):
+# NOTGNOSHI | {
+# NOTGNOSHI |   "scale": 10,
+# NOTGNOSHI |   "seed": 607095405,
+# NOTGNOSHI |   "rules": [
+# NOTGNOSHI |     "F -> >[^F[FF<",
+# NOTGNOSHI |     "G -> [F[G<^f>[[^]v",
+# NOTGNOSHI |     "F -> -|f++FGFf^F",
+# NOTGNOSHI |     "G -> [][Fv^<[f<",
+# NOTGNOSHI |     "f -> G[f^GF-["
+# NOTGNOSHI |   ],
+# NOTGNOSHI |   "axiom": "F",
+# NOTGNOSHI |   "iterations": 6,
+# NOTGNOSHI |   "angle": 3
+# NOTGNOSHI | }
+#
+let ANGLE = 3;
+
+axiom F;
+
+match F weight 1 then RollRight BranchBegin PitchUp F BranchBegin F F RollLeft;
+match G weight 1 then BranchBegin F BranchBegin G RollLeft PitchUp f RollRight BranchBegin BranchBegin PitchUp BranchEnd PitchDown;
+match F weight 1 then Minus TurnAround f Plus Plus F G F f PitchUp F;
+match G weight 1 then BranchBegin BranchEnd BranchBegin F PitchDown PitchUp RollLeft BranchBegin f RollLeft;
+match f then G BranchBegin f PitchUp G F Minus BranchBegin;

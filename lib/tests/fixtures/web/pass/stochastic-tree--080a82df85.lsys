@@ -1,0 +1,30 @@
+# ID       : LSYS-080A82DF85F8
+# Name     : Stochastic tree
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 4 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=stochastic or nondeterministic productions are not supported (duplicate predecessor 'X')
+# Fidelity : transcription
+# Features : context-free, stochastic, turtle2d
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:080a82df85f89185dabb3e43331c39d08f8f369668d6ce38119db3a2fe067c1d
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('X', [
+# SCHOLARLY |             'F=FF',
+# SCHOLARLY |             'X=F-[[X]+X]+F[+FX]-X,F+[[X]-X]-F[-FX]+X'
+# SCHOLARLY |         ], 22.5)
+#
+let ANGLE = 22.5;
+
+axiom X;
+
+match F then F F;
+match X weight 1 then F Minus [ [ X ] Plus X ] Plus F [ Plus F X ] Minus X;
+match X weight 1 then F Plus [ [ X ] Minus X ] Minus F [ Minus F X ] Plus X;

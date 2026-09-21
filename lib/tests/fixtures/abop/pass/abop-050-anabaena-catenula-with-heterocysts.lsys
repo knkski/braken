@@ -1,0 +1,33 @@
+# ID       : ABOP-050
+# Name     : Anabaena catenula with heterocysts
+# Source   : chapter 1, book page 44, L-system 1.1 / Fig. 1.35
+# Formalism: parametric context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define CH 900
+# ABOP | #define CT 0.4
+# ABOP | #define ST 3.9
+# ABOP | #include H
+# ABOP | #ignore f ~ H
+# ABOP | ω : -(90)F(0,0,CH)F(4,1,CH)F(0,0,CH)
+# ABOP | p1    :               F(s,t,c)                 : t=1 & s>=6     -> F(s/3*2,2,c)f(1)F(s/3,1,c)
+# ABOP | p2    :               F(s,t,c)                 : t=2 & s>=6     -> F(s/3,2,c)f(1)F(s/3*2,1,c)
+# ABOP | p3    : F(h,i,k) <    F(s,t,c)    > F(o,p,r)  : s>ST | c>CT    -> F(s+.1,t,c+0.25*(k+r-3*c))
+# ABOP | p4    : F(h,i,k) <    F(s,t,c)    > F(o,p,r)  : !(s>ST | c>CT) -> F(0,0,CH) ~ H(1)
+# ABOP | p5    :               H(s)                     : s<3             -> H(s*1.1)
+#
+let CH = 900;
+let CT = 0.4;
+let ST = 3.9;
+
+only F;
+
+axiom Minus(90) F(0,0,CH) F(4,1,CH) F(0,0,CH);
+
+match F(s,t,c) when t=1 and s>=6 then F(s/3*2,2,c) f(1) F(s/3,1,c);
+match F(s,t,c) when t=2 and s>=6 then F(s/3,2,c) f(1) F(s/3*2,1,c);
+match F(s,t,c) left F(_,_,k) right F(_,_,r) when s>ST or c>CT then F(s+.1,t,c+0.25*(k+r-3*c));
+match F(s,t,c) left F(_,_,_) right F(_,_,_) then F(0,0,CH) H(1);
+match H(s) when s<3 then H(s*1.1);

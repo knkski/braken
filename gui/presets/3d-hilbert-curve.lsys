@@ -1,0 +1,20 @@
+# Name: 3D Hilbert Curve
+# Summary: A continuous orthogonal path folds through every point of a cubic lattice.
+# Visualizer: turtle_3d
+# Angle: 90
+# Iterations: 2
+# Preview Iterations: 2
+# Max Iterations: 4
+# Initial Color: 7
+# Draw: F
+#
+# This is the three-dimensional Hilbert grammar from Figure 1.9 of The
+# Algorithmic Beauty of Plants. A, B, C, and D orient recursive sub-curves;
+# only the F connectors advance and draw at the final derivation depth.
+
+axiom A;
+
+match A then B Minus F Plus C F C Plus F Minus D PitchDown F PitchUp D Minus F Plus PitchDown PitchDown C F C Plus F Plus B RollRight RollRight;
+match B then A PitchDown F PitchUp C F B PitchUp F PitchUp D PitchUp PitchUp Minus F Minus D PitchUp TurnAround F PitchUp B TurnAround F C PitchUp F PitchUp A RollRight RollRight;
+match C then TurnAround D PitchUp TurnAround F PitchUp B Minus F Plus C PitchUp F PitchUp A PitchDown PitchDown F A PitchDown F PitchUp C Plus F Plus B PitchUp F PitchUp D RollRight RollRight;
+match D then TurnAround C F B Minus F Plus B TurnAround F A PitchDown F PitchUp A PitchDown PitchDown F B Minus F Plus B TurnAround F C RollRight RollRight;

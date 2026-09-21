@@ -1,0 +1,37 @@
+# ID       : LSYS-D8435477C79E
+# Name     : Triangular star with scale
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | triangular_star_with_scale.ls | https://github.com/jkubin/L-system/blob/68a699a/triangular_star_with_scale.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/triangular-star-with-scale--d8435477c7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d8435477c79edbe1f167e65794b34e33476dd3db8d1575bb707b876d700e39ee
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/04⟧)
+# JKUBIN | ___DESCR(⟦Triangular star with scale⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 triangular_star_with_scale.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TRIANGULAR_STAR⟧, ⟦F+F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F>F<++F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(120),dnl
+# JKUBIN | SCALE(2),dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | 
+# JKUBIN | TRIANGULAR_STAR(3)
+#
+let ANGLE = 120;
+let SCALE = 2;
+
+axiom F Plus F Plus F;
+
+match F then F ScaleLength F ScaleLengthInverse Plus Plus F Plus F;

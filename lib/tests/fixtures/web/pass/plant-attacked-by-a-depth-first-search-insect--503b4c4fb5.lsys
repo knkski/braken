@@ -1,0 +1,39 @@
+# ID       : LSYS-503B4C4FB57F
+# Name     : Plant attacked by a depth-first-search insect
+# Source   : Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996) | Equation 16 | https://algorithmicbotany.org/papers/l-sys.csiro96.pdf
+# Formalism: parametric branch-context-sensitive L-system with endogenous mobile signal
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-context-turtle2d'
+# Fidelity : transcription
+# Features : branch-context, context-sensitive, depth-first-search, mobile-signal, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : parametric-context-turtle2d
+# Fingerprint: sha256:503b4c4fb57f88f171b1a214a57edff44cf93c14839fa37f16090b6925675be9
+#
+# Original Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996):
+# SCHOLARLY | lL=3; lR=5; d=5; w=40
+# SCHOLARLY | ω : W(w) F A(lL,d)
+# SCHOLARLY | 14 productions implement plant growth plus a U/D depth-first-search insect
+#
+let ANGLE = 45;
+
+axiom W(40) F A(3,5);
+
+match A(n,m) left F when m > 0 then A(n,m-1);
+match A(n,m) left F when n > 0 and m = 0 then F A(n-1,5);
+match A(n,m) left F when n = 0 and m = 0 then L [ Plus F A(3,5) ] [ Minus F A(5,5) ];
+match W(t) when t > 0 then W(t-1);
+match W(t) when t = 0 then U;
+match F left U then F U;
+match U then nothing;
+match Plus left U L then Plus U;
+match A(n,m) left U then D;
+match F right D then D F;
+match D then nothing;
+match L right [ Plus D ] then U R;
+match Minus left U R then Minus U;
+match R right [ ] [ Minus D ] then D;

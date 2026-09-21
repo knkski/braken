@@ -1,0 +1,44 @@
+# Name: Tiered Fractal Tree
+# Summary: Repeated side forks build a compact symmetric crown with level-varying stroke widths.
+# Visualizer: turtle_2d
+# Angle: 45
+# Iterations: 4
+# Max Iterations: 4
+# Initial Color: 6
+
+# Render Map: A=F F=F
+
+# ID       : LSYS-D251FEEC2804
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_thickness.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_thickness.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d251feec280481252faac34de4c26032844b080500fff94ef420910fcff60431
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/05⟧)
+# JKUBIN | ___DESCR(⟦An ordinary fractal tree of various thicknesses of branches⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_thickness.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦F[+A][-A]FA⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦#FF!⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":4,dnl
+# JKUBIN | "sety":-530,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(7)
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then F [ Plus A ] [ Minus A ] F A;
+match F then WidthIncrease F F WidthDecrease;

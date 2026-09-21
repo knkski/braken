@@ -1,0 +1,17 @@
+# ID       : ABOP-037
+# Name     : Acropetal signal in a branching string
+# Source   : chapter 1, book page 32, Fig. 1.30a
+# Formalism: branch-aware context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #ignore : + -
+# ABOP | ω   : Fb[+Fa]Fa[-Fa]Fa[+Fa]Fa
+# ABOP | p1      : Fb < Fa -> Fb
+#
+ignore Plus Minus;
+
+axiom Fb [ Plus Fa ] Fa [ Minus Fa ] Fa [ Plus Fa ] Fa;
+
+match Fa left Fb then Fb;

@@ -1,0 +1,44 @@
+# ID       : LSYS-9D0FD97E45EE
+# Name     : Penrose tiling 2
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | penrose_tiling_2.ls | https://github.com/jkubin/L-system/blob/68a699a/penrose_tiling_2.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/penrose-tiling-2--9d0fd97e45.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 36
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:9d0fd97e45ee960e4bec07e2714ef7899f314196c72433d69492cbe043d1a95e
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦Penrose tiling 2⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 penrose_tiling_2.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENROSE⟧, ⟦+A--B---C--D⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦C++D----B[-C----A]++⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦+C--D[---A--B]+⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦C⟧, ⟦-A++B[+++C++D]-⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦D⟧, ⟦--C++++A[+D++++B]--B⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(36),dnl
+# JKUBIN | "step":30,dnl
+# JKUBIN | "sety":100,dnl
+# JKUBIN | 
+# JKUBIN | PENROSE(5)
+#
+let ANGLE = 36;
+
+axiom Plus A Minus Minus B Minus Minus Minus C Minus Minus D;
+
+match A then C Plus Plus D Minus Minus Minus Minus B [ Minus C Minus Minus Minus Minus A ] Plus Plus;
+match B then Plus C Minus Minus D [ Minus Minus Minus A Minus Minus B ] Plus;
+match C then Minus A Plus Plus B [ Plus Plus Plus C Plus Plus D ] Minus;
+match D then Minus Minus C Plus Plus Plus Plus A [ Plus D Plus Plus Plus Plus B ] Minus Minus B;

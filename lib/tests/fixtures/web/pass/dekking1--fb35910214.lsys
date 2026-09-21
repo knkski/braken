@@ -1,0 +1,34 @@
+# ID       : LSYS-FB3591021431
+# Name     : Dekking1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dekking1 (#8) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/dekking1--fb35910214.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fb3591021431c5103b713ed832d73ba7852519497525714e59e3f673526ae55b
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dekking1 {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom x+x+x
+# RESETIUS |   x=fy+gx-fy
+# RESETIUS |   y=gx+fy-gx
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 120;
+
+axiom X Plus X Plus X;
+
+match X then F Y Plus G X Minus F Y;
+match Y then G X Plus F Y Minus G X;
+match F then nothing;
+match G then nothing;

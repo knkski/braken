@@ -1,0 +1,5 @@
+ignore Hidden Turn;
+
+axiom L Hidden A Turn R;
+
+match A left L right R then Hit;

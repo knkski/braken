@@ -1,0 +1,22 @@
+# Adapted from ABOP-050, Anabaena catenula with heterocysts.
+# Source: The Algorithmic Beauty of Plants, L-system 1.1 / Fig. 1.35.
+# The final rule carries its printed complementary condition explicitly so
+# this focused fixture has deterministic behavior under the default policy.
+
+let CH = 900;
+let CT = 0.4;
+let ST = 3.9;
+
+only F;
+
+axiom Minus(90) F(0,0,CH) F(4,1,CH) F(0,0,CH);
+
+match F(s,t,c) when t = 1 and s >= 6 then F(s / 3 * 2,2,c) f(1) F(s / 3,1,c);
+match F(s,t,c) when t = 2 and s >= 6 then F(s / 3,2,c) f(1) F(s / 3 * 2,1,c);
+match F(s,t,c) left F(_,_,k) right F(_,_,r)
+    when s > ST or c > CT
+    then F(s + 0.1,t,c + 0.25 * (k + r - 3 * c));
+match F(s,t,c) left F(_,_,_) right F(_,_,_)
+    when not (s > ST or c > CT)
+    then F(0,0,CH) H(1);
+match H(s) when s < 3 then H(s * 1.1);

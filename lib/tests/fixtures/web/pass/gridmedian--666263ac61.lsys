@@ -1,0 +1,45 @@
+# ID       : LSYS-666263AC6158
+# Name     : GridMedian
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, recovered section GridMedian (#27) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/gridmedian--666263ac61.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, inventory-recovery, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:666263ac6158e3f0ba36fc5cb9e95dc417941f5d207cf960214ee46f91e11cfe
+# Note     : Recovered from an active source section omitted by the independent inventory.
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS |  GridMedian { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom z
+# RESETIUS |   z=x
+# RESETIUS |   x=-[c40@I2g+f+@2f+f+f+@I2f]yfw+[c40@I2g+f+@2f+f+f+@I2f]xfw
+# RESETIUS |   x=[c40@I2g+f+@2f+f+f+@I2f]x+fw[c40@I2g+f+@2f+f+f+@I2f]y-
+# RESETIUS |   y=+[c40@I2g+f+@2f+f+f+@I2f]xfw-[c40@I2g+f+@2f+f+f+@I2f]yfw
+# RESETIUS |   y=[c40@I2g+f+@2f+f+f+@I2f]y-fw[c40@I2g+f+@2f+f+f+@I2f]x+
+# RESETIUS |   w=fw
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom Z;
+
+match Z then X;
+match X then Minus [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] Y F W Plus [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] X F W [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] X Plus F W [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] Y Minus;
+match Y then Plus [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] X F W Minus [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] Y F W [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] Y Minus F W [ Color(40) Scale(0.5) G Plus F Plus Scale(2) F Plus F Plus F Plus Scale(0.5) F ] X Plus;
+match W then F W;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

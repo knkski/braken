@@ -1,0 +1,38 @@
+# ID       : LSYS-08716F93252B
+# Name     : 1j
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section 1j (#18) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/1j--08716f9325.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:08716f93252b60c6f833e45e3fe9fe7ffa59ae39bce4d865da87624412158210
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 1j { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom |X
+# RESETIUS |   x=F[s][t]
+# RESETIUS |   s=-<1F[s][t]+<3F[s][t]+<5F[s][t]
+# RESETIUS |   s=-F>5[s][t]+F>3[s][t]-F>1[s][t]
+# RESETIUS |   t=+<1F[s][t]-<3F[s][t]-<5F[s][t]
+# RESETIUS |   t=+F>5[s][t]-F>3[s][t]+F>1[s][t]
+# RESETIUS |   F=<10FFF>10
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom TurnAround X;
+
+match X then F [ S ] [ T ];
+match S then Minus ColorIncrement(1) F [ S ] [ T ] Plus ColorIncrement(3) F [ S ] [ T ] Plus ColorIncrement(5) F [ S ] [ T ] Minus F ColorIncrement(-5) [ S ] [ T ] Plus F ColorIncrement(-3) [ S ] [ T ] Minus F ColorIncrement(-1) [ S ] [ T ];
+match T then Plus ColorIncrement(1) F [ S ] [ T ] Minus ColorIncrement(3) F [ S ] [ T ] Minus ColorIncrement(5) F [ S ] [ T ] Plus F ColorIncrement(-5) [ S ] [ T ] Minus F ColorIncrement(-3) [ S ] [ T ] Plus F ColorIncrement(-1) [ S ] [ T ];
+match F then ColorIncrement(10) F F F ColorIncrement(-10);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

@@ -1,0 +1,30 @@
+# ID       : LSYS-3DC2C7E3AA71
+# Name     : Maze&Fractal1M
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Maze&Fractal1M (#55) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/maze-fractal1m--3dc2c7e3aa.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:3dc2c7e3aa71da58f265d4ecfdddbbd513de6f68b7f92894f3207c4cbb1d22db
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Maze&Fractal1M {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=y+f+yffy-f-y
+# RESETIUS |   y=x-f-xffx+f+x
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then Y Plus F Plus Y F F Y Minus F Minus Y;
+match Y then X Minus F Minus X F F X Plus F Plus X;

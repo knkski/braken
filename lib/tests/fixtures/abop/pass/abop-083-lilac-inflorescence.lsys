@@ -1,0 +1,19 @@
+# ID       : ABOP-083
+# Name     : Lilac inflorescence
+# Source   : chapter 3, book page 92, Fig. 3.19
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #include K
+# ABOP | ω : A ~ K
+# ABOP | p1    : A -> [-/~K][+/~K]I(0)/(90)A
+# ABOP | p2    : I(t) : not(t=2) -> F I(t+1)
+# ABOP | p3    : I(t) : t=2 -> I(t+1)[-F F A][+F F A]
+#
+axiom A K;
+
+match A then [ Minus RollRight K ] [ Plus RollRight K ] I(0) RollRight(90) A;
+match I(t) when not (t=2) then F I(t+1);
+match I(t) when t=2 then I(t+1) [ Minus F F A ] [ Plus F F A ];

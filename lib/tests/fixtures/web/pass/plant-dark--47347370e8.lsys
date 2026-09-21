@@ -1,0 +1,37 @@
+# ID       : LSYS-47347370E88D
+# Name     : Plant Dark
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 2: Plant Dark | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, parametric, scene-primitives, stochastic, turtle3d
+# Angle    : 25
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:47347370e88df80ceab91f1042f34f5f0847697217150bf75175762f9524dd40
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Plant Dark",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "m{0xffffff, 0.1, 0} A{0.2}",
+# GERIZIM |       productions:
+# GERIZIM |         "A{r} -> l{0.2, r, r} +x +y +z [ [ A{r/2} ] -x A{r/2} ] -x -y -z l{0.2, r, r} [ -x l{0.2, r, r/2} A{r/2} sphere ] +x A{r/2}\nl{a, b, c} -> l{a*2.5, b, c}\nl{a, b, c} -> l{a*2, b, c}\nsphere -> sphere{random()/7+0.1}",
+# GERIZIM |       iterations: 4,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 0.2, angle: 25
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 25;
+
+axiom m(16777215,0.1,0) A(0.2);
+
+match A(r) then l(0.2,r,r) PitchUp RollLeft Plus [ [ A(r/2) ] PitchDown A(r/2) ] PitchDown RollRight Minus l(0.2,r,r) [ PitchDown l(0.2,r,r/2) A(r/2) sphere ] PitchUp A(r/2);
+match l(a,b,c) weight 1 then l(a*2.5,b,c);
+match l(a,b,c) weight 1 then l(a*2,b,c);
+match sphere then sphere(RANDOM/7+0.1);

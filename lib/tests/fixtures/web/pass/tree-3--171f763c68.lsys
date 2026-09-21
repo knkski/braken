@@ -1,0 +1,46 @@
+# ID       : LSYS-171F763C681A
+# Name     : Tree 3
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/tree-3.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/tree-3.xml
+# Formalism: parametric bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-turtle2d'
+# Fidelity : transcription
+# Features : bracketed, conditional, parametric
+# Angle    : 24.3
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : parametric-turtle2d
+# Fingerprint: sha256:171f763c681a384e92cbe28f6fbbbe5dec6f010935738bfb3cb66ff4917e7e04
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>
+# OFX | A(s) -&gt; F(s)[--A(s/R)][+A(s/R)]-A(s/R);
+# OFX | </rule>
+# OFX | <axiom>A(100)</axiom>
+# OFX | <maxDepth>3</maxDepth>
+# OFX | <theta>24.3</theta>
+# OFX | <bg_color>29, 244, 206, 255</bg_color>
+# OFX | 		<tree_color>39, 202, 227, 255</tree_color>
+# OFX | 	<constants>R=1.456</constants>
+# OFX | 		<Random_Y_Rotation>1</Random_Y_Rotation>
+# OFX | 		<rotateY>0</rotateY>
+# OFX | 		<rotateZ>0</rotateZ>
+# OFX | 		<rotateX>0</rotateX>
+# OFX | 		<depth>5</depth>
+# OFX | 		<total>1</total>
+# OFX | 		<shiness>0.01</shiness>
+# OFX | 		<tree_spec_color>255, 0, 0, 255</tree_spec_color>
+# OFX | 	<specular_color>195, 63, 134, 255</specular_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let R = 1.456;
+let ANGLE = 24.3;
+
+axiom A(100);
+
+match A(s) then F(s) [ Minus Minus A(s/R) ] [ Plus A(s/R) ] Minus A(s/R);

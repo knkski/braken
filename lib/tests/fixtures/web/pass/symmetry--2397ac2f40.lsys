@@ -1,0 +1,32 @@
+# ID       : LSYS-2397AC2F40C0
+# Name     : Symmetry
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Symmetry (#70) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/symmetry--2397ac2f40.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:2397ac2f40c0a5adc7169fa4ffa5be4b759c491ffeb48c3be18e4c7aa50e2367
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Symmetry { ;
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom X
+# RESETIUS |   X=+<10F[--X]-F>10[++X]+<10F[--X]-F>10[++X]
+# RESETIUS |   F=<1FF>1
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then Plus ColorIncrement(10) F [ Minus Minus X ] Minus F ColorIncrement(-10) [ Plus Plus X ] Plus ColorIncrement(10) F [ Minus Minus X ] Minus F ColorIncrement(-10) [ Plus Plus X ];
+match F then ColorIncrement(1) F F ColorIncrement(-1);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

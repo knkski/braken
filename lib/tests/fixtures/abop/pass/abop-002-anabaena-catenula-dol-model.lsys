@@ -1,0 +1,20 @@
+# ID       : ABOP-002
+# Name     : Anabaena catenula DOL model
+# Source   : chapter 1, book page 5, Eq. 1.1 / Fig. 1.4
+# Formalism: deterministic context-free string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : ar
+# ABOP | p1    : ar -> al br
+# ABOP | p2    : al -> bl ar
+# ABOP | p3    : br -> ar
+# ABOP | p4    : bl -> al
+#
+axiom ar;
+
+match ar then al br;
+match al then bl ar;
+match br then ar;
+match bl then al;

@@ -1,0 +1,31 @@
+# ID       : LSYS-276044693264
+# Name     : adh6894
+# Source   : Fractint 20.04p17 official rule library | lsystem/fract205.l, section adh6894 (#1) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh6894--2760446932.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:276044693264b6f7daea969616aa7976cff251c6d8a029381a2d366b3ac0e754
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | adh6894 { ; Anthony Hanmer 2001, a.hanmer@gmail.com
+# FRACTINT |   Angle 8 ; DC from 6829:
+# FRACTINT |   Axiom x ; My only irregular-interior DC so far
+# FRACTINT |   ; More work to be found at:
+# FRACTINT |   ; http://spanky.triumf.ca/pub/fractals/LSYSTEMS/
+# FRACTINT |   ; in TDC.l
+# FRACTINT |   x=f[@iq2-x]|[+!+!@.5x]f[@iq2+x]
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match X then F [ Scale(0.707106781187) Minus X ] TurnAround [ Plus InvertTurns Plus InvertTurns Scale(0.5) X ] F [ Scale(0.707106781187) Plus X ];

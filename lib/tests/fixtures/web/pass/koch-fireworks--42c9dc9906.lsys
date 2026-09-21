@@ -1,0 +1,69 @@
+# ID       : LSYS-42C9DC99063A
+# Name     : Koch.Fireworks
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Koch.Fireworks (#13) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/koch-fireworks--42c9dc9906.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:42c9dc99063ad458d2883c5d0d41b7aed1269e421d9b6bbf066cf54b78485a45
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch.Fireworks {
+# RESETIUS | 
+# RESETIUS |   ; best order 9
+# RESETIUS |   ; time 0:08
+# RESETIUS | 
+# RESETIUS |     angle 12
+# RESETIUS |     axiom C31Z+[A]--F[A]--F[A]--F[A]--F[A]--F[A]--F-
+# RESETIUS | 
+# RESETIUS |     A=>2+F[R]--F[U]--F[E]--F
+# RESETIUS |     E=+F[H]--[|!H]F
+# RESETIUS |     F=-!F!++!F!-
+# RESETIUS |     H=>1+F[I]--[|!I]F
+# RESETIUS |     I=>2+F[J]--[|!J]F
+# RESETIUS |     J=>1+F[K]--[|!K]F
+# RESETIUS |     K=>2+F[L]--[|!L]F
+# RESETIUS |     L=>2+F--F
+# RESETIUS |     R=>1+F[S]--F[U]--F[E]--F
+# RESETIUS |     S=>2+F[T]--F[U]--F[E]--F
+# RESETIUS |     T=>1+F[P]--F[S]--F[E]--F
+# RESETIUS |     P=>2+F--[|!E]F--F[E]--F
+# RESETIUS |     U=>2+F[R]--F[V]--F--F
+# RESETIUS |     V=>1+F[R]--F[W]--F[E]--F
+# RESETIUS |     W=>1+F[V]--F[X]--F--F
+# RESETIUS |     X=>2+F[Y]--F[Y]--F--F
+# RESETIUS |     Y=>2+F--F--F--F
+# RESETIUS |     Z=Z@IQ3
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom Color(31) Z Plus [ A ] Minus Minus F [ A ] Minus Minus F [ A ] Minus Minus F [ A ] Minus Minus F [ A ] Minus Minus F [ A ] Minus Minus F Minus;
+
+match A then ColorIncrement(-2) Plus F [ R ] Minus Minus F [ U ] Minus Minus F [ E ] Minus Minus F;
+match E then Plus F [ H ] Minus Minus [ TurnAround InvertTurns H ] F;
+match F then Minus InvertTurns F InvertTurns Plus Plus InvertTurns F InvertTurns Minus;
+match H then ColorIncrement(-1) Plus F [ I ] Minus Minus [ TurnAround InvertTurns I ] F;
+match I then ColorIncrement(-2) Plus F [ J ] Minus Minus [ TurnAround InvertTurns J ] F;
+match J then ColorIncrement(-1) Plus F [ K ] Minus Minus [ TurnAround InvertTurns K ] F;
+match K then ColorIncrement(-2) Plus F [ L ] Minus Minus [ TurnAround InvertTurns L ] F;
+match L then ColorIncrement(-2) Plus F Minus Minus F;
+match R then ColorIncrement(-1) Plus F [ S ] Minus Minus F [ U ] Minus Minus F [ E ] Minus Minus F;
+match S then ColorIncrement(-2) Plus F [ T ] Minus Minus F [ U ] Minus Minus F [ E ] Minus Minus F;
+match T then ColorIncrement(-1) Plus F [ P ] Minus Minus F [ S ] Minus Minus F [ E ] Minus Minus F;
+match P then ColorIncrement(-2) Plus F Minus Minus [ TurnAround InvertTurns E ] F Minus Minus F [ E ] Minus Minus F;
+match U then ColorIncrement(-2) Plus F [ R ] Minus Minus F [ V ] Minus Minus F Minus Minus F;
+match V then ColorIncrement(-1) Plus F [ R ] Minus Minus F [ W ] Minus Minus F [ E ] Minus Minus F;
+match W then ColorIncrement(-1) Plus F [ V ] Minus Minus F [ X ] Minus Minus F Minus Minus F;
+match X then ColorIncrement(-2) Plus F [ Y ] Minus Minus F [ Y ] Minus Minus F Minus Minus F;
+match Y then ColorIncrement(-2) Plus F Minus Minus F Minus Minus F Minus Minus F;
+match Z then Z Scale(0.57735026919);
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

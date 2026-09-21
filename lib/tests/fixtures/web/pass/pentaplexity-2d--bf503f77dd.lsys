@@ -1,0 +1,34 @@
+# ID       : LSYS-BF503F77DD4F
+# Name     : Pentaplexity (2D)
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 13: Pentaplexity (2D) | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 36
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:bf503f77dd4fcdf9834cd847e5b693553970e31561bf7bc5f7d0bacebb246760
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Pentaplexity (2D)",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "s m{0x66cdaa} f +x +x f +x +x f +x +x f +x +x f e",
+# GERIZIM |       productions:
+# GERIZIM |         "f -> s f +x +x f +x +x f +x{180} f -x f +x +x f e",
+# GERIZIM |       iterations: 3,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 0.5, angle: 36
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 36;
+
+axiom s m(6737322) f PitchUp PitchUp f PitchUp PitchUp f PitchUp PitchUp f PitchUp PitchUp f e;
+
+match f then s f PitchUp PitchUp f PitchUp PitchUp f PitchUp(180) f PitchDown f PitchUp PitchUp f e;

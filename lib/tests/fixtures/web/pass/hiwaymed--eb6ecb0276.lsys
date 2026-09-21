@@ -1,0 +1,41 @@
+# ID       : LSYS-EB6ECB02764B
+# Name     : Hiwaymed
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hiwaymed (#35) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hiwaymed.ls, section Hiwaymed (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hiwaymed.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/hiwaymed--eb6ecb0276.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:eb6ecb02764bf0edb6ce1d3537a3f309a073410eb2e066a3c096310ccf296760
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hiwaymed {
+# RESETIUS |   Angle 8  ; Smallest turn is 45=360/8 degrees
+# RESETIUS |   Axiom -X ; Turn whole thing 45 degrees so that all lines of X are horizontal or vertical
+# RESETIUS |   X=X+F+Y  ; Do X, turn left, forward, turn left, do Y
+# RESETIUS |   Y=X-F-Y  ; Do X backwards
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hiwaymed {
+# RESETIUS | ; mgl setsize 150 150
+# RESETIUS | ; order 10
+# RESETIUS |   Angle 8  ; Smallest turn is 45=360/8 degrees
+# RESETIUS |   Axiom -X ; Turn whole thing 45 degrees so that all lines of X are horizontal or vertical
+# RESETIUS |   X=X+F+Y  ; Do X, turn left, forward, turn left, do Y
+# RESETIUS |   Y=X-F-Y  ; Do X backwards
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Minus X;
+
+match X then X Plus F Plus Y;
+match Y then X Minus F Minus Y;

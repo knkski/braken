@@ -1,0 +1,27 @@
+# ID       : ABOP-060
+# Name     : Two-table developmental switch
+# Source   : chapter 3, book page 66, Table mechanism
+# Formalism: table L-system
+# Parse    : fail
+# Execute  : unsupported
+# Note     : Requires table selection semantics.
+#
+# Original ABOP:
+# ABOP | Table 1:
+# ABOP |   ω : a
+# ABOP |   p1    : a -> I[L]a
+# ABOP | 
+# ABOP | Table 2:
+# ABOP |   p1    : a -> I[L]A
+# ABOP |   p2    : A -> K
+#
+# Expected parse failure: named production tables are not in version one.
+table Vegetative {
+    axiom a;
+    match a then I [ L ] a;
+}
+
+table Flowering {
+    match a then I [ L ] A;
+    match A then K;
+}

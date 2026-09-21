@@ -1,0 +1,47 @@
+# ID       : LSYS-1B512886DF33
+# Name     : Grown.Lawn
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Grown.Lawn (#11) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/grown-lawn--1b512886df.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1b512886df33b04de87ce20058c096afc90159fbab2a6c030d6533fc92cb036a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grown.Lawn {
+# RESETIUS | 
+# RESETIUS |   ; best order 24
+# RESETIUS |   ; time 0:42
+# RESETIUS | 
+# RESETIUS |     angle 5
+# RESETIUS |     axiom C70[\63@I2D@2X]M[\78@I2D@2!X]M[\72DX]M[\81DX]M[\69@I2D@2X]M[\90D!X]M[\90DX]M[\108@I2D@2!X]M[\99D!X]M[\102@I2D@2X]M[\117@I2D@2X]M[\135@I2D@2!X]
+# RESETIUS | 
+# RESETIUS |     X=D/2[A]D/2[!A]D/2@0.618034X
+# RESETIUS |     A=B
+# RESETIUS |     B=E
+# RESETIUS |     E=@0.381966>1X
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom Color(70) [ ExplicitPlus(63) Scale(0.5) D Scale(2) X ] M [ ExplicitPlus(78) Scale(0.5) D Scale(2) InvertTurns X ] M [ ExplicitPlus(72) D X ] M [ ExplicitPlus(81) D X ] M [ ExplicitPlus(69) Scale(0.5) D Scale(2) X ] M [ ExplicitPlus(90) D InvertTurns X ] M [ ExplicitPlus(90) D X ] M [ ExplicitPlus(108) Scale(0.5) D Scale(2) InvertTurns X ] M [ ExplicitPlus(99) D InvertTurns X ] M [ ExplicitPlus(102) Scale(0.5) D Scale(2) X ] M [ ExplicitPlus(117) Scale(0.5) D Scale(2) X ] M [ ExplicitPlus(135) Scale(0.5) D Scale(2) InvertTurns X ];
+
+match X then D ExplicitMinus(2) [ A ] D ExplicitMinus(2) [ InvertTurns A ] D ExplicitMinus(2) Scale(0.618034) X;
+match A then B;
+match B then E;
+match E then Scale(0.381966) ColorIncrement(-1) X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

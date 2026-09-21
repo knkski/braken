@@ -1,0 +1,28 @@
+# ID       : LSYS-ABFB9EF77C20
+# Name     : ADH127c
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH127c (#44) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh127c--abfb9ef77c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:abfb9ef77c20735b9878ebdc62a847fcf94f2a2a1e1d10589ce658fec6a40531
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH127c { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 4 ;
+# RESETIUS |   Axiom f--@.75f--@.75f--@.75f--@.75f--@.75f--@.75f--@.75f--@.75f--@.75f--@.75f
+# RESETIUS |   f=+ff--g-g+ff
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F Minus Minus Scale(0.75) F;
+
+match F then Plus F F Minus Minus G Minus G Plus F F;

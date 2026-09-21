@@ -1,0 +1,21 @@
+# ID       : ABOP-097
+# Name     : Timed Anabaena model
+# Source   : chapter 6, book page 135, Eq. 6.1
+# Formalism: timed DOL
+# Parse    : fail
+# Execute  : unsupported
+# Note     : Requires continuous time and per-module age.
+#
+# Original ABOP:
+# ABOP | ω : (ar,0)
+# ABOP | p1    : (ar,1) -> (al,0)(br,0)
+# ABOP | p2    : (al,1) -> (bl,0)(ar,0)
+# ABOP | p3    : (br,1) -> (ar,0)
+# ABOP | p4    : (bl,1) -> (al,0)
+#
+# Expected parse failure: timed modules carry age and terminal-age semantics.
+timed axiom (ar, 0);
+timed match (ar, 1) then (al, 0) (br, 0);
+timed match (al, 1) then (bl, 0) (ar, 0);
+timed match (br, 1) then (ar, 0);
+timed match (bl, 1) then (al, 0);

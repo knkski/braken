@@ -1,0 +1,8 @@
+# Name: Tree Row
+# Summary: Parametric row of leaning branches.
+# Angle: 86
+# Iterations: 6
+
+axiom Turn(-89.954) Draw(1);
+
+match Draw(x) then Draw(x*0.3) Left Draw(x*0.458) Right Right Draw(x*0.458) Left Draw(x*0.7);

@@ -1,0 +1,54 @@
+# ID       : LSYS-6EB82C359EE5
+# Name     : Pentive3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/pentive3.ls, section Pentive3 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/pentive3.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Pentive3 (#57) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/pentive3--6eb82c359e.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6eb82c359ee5f955c470114e1ba12cca13b13bd9039bc7d0a58cf2050d5da4bc
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentive3 {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom q
+# RESETIUS |   f=
+# RESETIUS |   p=--fr++++fs--fu
+# RESETIUS |   q=ft++fr----fs++
+# RESETIUS |   r=++fp----fq++ft
+# RESETIUS |   s=fu--fp++++fq--
+# RESETIUS |   t=+fu--fp+
+# RESETIUS |   u=-fq++ft-
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentive3 {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom q
+# RESETIUS |   f=
+# RESETIUS |   p=--fr++++fs--fu
+# RESETIUS |   q=ft++fr----fs++
+# RESETIUS |   r=++fp----fq++ft
+# RESETIUS |   s=fu--fp++++fq--
+# RESETIUS |   t=+fu--fp+
+# RESETIUS |   u=-fq++ft-
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Q;
+
+match F then nothing;
+match P then Minus Minus F R Plus Plus Plus Plus F S Minus Minus F U;
+match Q then F T Plus Plus F R Minus Minus Minus Minus F S Plus Plus;
+match R then Plus Plus F P Minus Minus Minus Minus F Q Plus Plus F T;
+match S then F U Minus Minus F P Plus Plus Plus Plus F Q Minus Minus;
+match T then Plus F U Minus Minus F P Plus;
+match U then Minus F Q Plus Plus F T Minus;

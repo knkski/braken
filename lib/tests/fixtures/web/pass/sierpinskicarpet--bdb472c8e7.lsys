@@ -1,0 +1,39 @@
+# ID       : LSYS-BDB472C8E739
+# Name     : SierpinskiCarpet
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/serpinsky_carpet.ls, section SierpinskiCarpet (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/serpinsky_carpet.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section SierpinskiCarpet (#66) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpinskicarpet--bdb472c8e7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bdb472c8e739ab93b440cfe7c111fa01fe29c8ddf443e46690cd17a8692c83a1
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SierpinskiCarpet {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom f
+# RESETIUS |   f=f+f-f-f-g+f+f+f-f
+# RESETIUS |   g=ggg
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SierpinskiCarpet {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom f
+# RESETIUS |   f=f+f-f-f-g+f+f+f-f
+# RESETIUS |   g=ggg
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Minus G Plus F Plus F Plus F Minus F;
+match G then G G G;

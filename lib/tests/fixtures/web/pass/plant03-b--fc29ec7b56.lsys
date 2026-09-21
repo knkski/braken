@@ -1,0 +1,30 @@
+# ID       : LSYS-FC29EC7B56F9
+# Name     : Plant03_b
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Plant03_b (#47) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/plant03-b--fc29ec7b56.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fc29ec7b56f984353647fb03fcd0f1b2df9e1a0ad019fde6c8c3c7d96fee408a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Plant03_b { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom ++FF
+# RESETIUS |   F=+<5F[+F]-F>5[-F+F];F
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom Plus Plus F F;
+
+match F then Plus ColorIncrement(5) F [ Plus F ] Minus F ColorIncrement(-5) [ Minus F Plus F ];
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

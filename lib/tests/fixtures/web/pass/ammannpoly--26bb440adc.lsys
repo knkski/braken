@@ -1,0 +1,57 @@
+# ID       : LSYS-26BB440ADCD2
+# Name     : AmmannPoly
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section AmmannPoly (#2) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section AmmannPoly (#10) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/ammannpoly--26bb440adc.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:26bb440adcd2b21ffec27e34d2d6cb24b1fa52ceb7458cc6d2b6128128a1e5e1
+# Source-token warnings: 5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | AmmannPoly {
+# RESETIUS |      ;; by Philippe Hurbain
+# RESETIUS |      ;; Same as AmmanPolyColor, showing only the
+# RESETIUS |      ;; pentagon/hexagon tiling
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom x
+# RESETIUS |   x=@.618034/36[\9@.66D]M[/196.5@.363D][/180y]\72M[/180x]
+# RESETIUS |   x=[\144@.618034M@i.618034x]\108[\36@.509D@1.18\30D][x]M[\153@.66D]\72[y]M
+# RESETIUS |   y=@.618034/72[x][\36@.509D]M\144[\9@.66D]M[/180y][/196.5@.363D]
+# RESETIUS |   y=\36[y]M\144M[/180x]
+# RESETIUS |   D=M
+# RESETIUS | }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | AmmannPoly {
+# FRACTINT |              ;; by Philippe Hurbain
+# FRACTINT |              ;; Same as AmmanPolyColor, showing only the
+# FRACTINT |              ;; pentagon/hexagon tiling
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom x
+# FRACTINT |   x=@.618034/36[\9@.66D]M[/196.5@.363D][/180y]\72M[/180x]
+# FRACTINT |   x=[\144@.618034M@i.618034x]\108[\36@.509D@1.18\30D][x]M[\153@.66D]\72[y]M
+# FRACTINT |   y=@.618034/72[x][\36@.509D]M\144[\9@.66D]M[/180y][/196.5@.363D]
+# FRACTINT |   y=\36[y]M\144M[/180x]
+# FRACTINT |   D=M
+# FRACTINT | }
+#
+let ANGLE = 36;
+
+axiom X;
+
+match X then Scale(0.618034) ExplicitMinus(36) [ ExplicitPlus(9) Scale(0.66) D ] M [ ExplicitMinus(196) Dot SourceU0035 Scale(0.363) D ] [ ExplicitMinus(180) Y ] ExplicitPlus(72) M [ ExplicitMinus(180) X ] [ ExplicitPlus(144) Scale(0.618034) M Scale(1.6180339593) X ] ExplicitPlus(108) [ ExplicitPlus(36) Scale(0.509) D Scale(1.18) ExplicitPlus(30) D ] [ X ] M [ ExplicitPlus(153) Scale(0.66) D ] ExplicitPlus(72) [ Y ] M;
+match Y then Scale(0.618034) ExplicitMinus(72) [ X ] [ ExplicitPlus(36) Scale(0.509) D ] M ExplicitPlus(144) [ ExplicitPlus(9) Scale(0.66) D ] M [ ExplicitMinus(180) Y ] [ ExplicitMinus(196) Dot SourceU0035 Scale(0.363) D ] ExplicitPlus(36) [ Y ] M ExplicitPlus(144) M [ ExplicitMinus(180) X ];
+match D then M;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

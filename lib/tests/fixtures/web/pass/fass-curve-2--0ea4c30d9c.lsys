@@ -1,0 +1,42 @@
+# ID       : LSYS-0EA4C30D9C13
+# Name     : FASS curve 2
+# Aliases  : FIXME: broken rules; FASS (space-Filling, self-Avoiding, Simple, self-Similar)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | fass_curve_2.ls | https://github.com/jkubin/L-system/blob/68a699a/fass_curve_2.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/fass-curve-2--0ea4c30d9c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, known-broken-upstream, quarantine, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:0ea4c30d9c13ec6ebffe06be2715d0822c4133f0643af8886eeec6c7f9f2c2da
+# Note     : The upstream description explicitly says that the rules are broken; this parseable/renderable transcription is retained for diagnosis, not presented as a verified FASS construction.
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦FIXME: broken rules; FASS (space-Filling, self-Avoiding, Simple, self-Similar)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 fass_curve_2.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦FASS⟧, ⟦-L⟧)
+# JKUBIN | RULE(⟦L⟧, ⟦LFLF+RFR+FLFL-FRF-LF-LFR+F+RF-LFL-FRFRFR+⟧)
+# JKUBIN | RULE(⟦R⟧, ⟦-LFLFLF+RFR+FL-F-LF+RFR+FLF+RFRF-LFL-FRFR⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | FASS(2)
+#
+let ANGLE = 90;
+
+axiom Minus L;
+
+match L then L F L F Plus R F R Plus F L F L Minus F R F Minus L F Minus L F R Plus F Plus R F Minus L F L Minus F R F R F R Plus;
+match R then Minus L F L F L F Plus R F R Plus F L Minus F Minus L F Plus R F R Plus F L F Plus R F R F Minus L F L Minus F R F R;

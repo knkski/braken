@@ -1,0 +1,4 @@
+axiom A(1,2) A(3,4) Other(9);
+
+match A(x,2) then Literal(x);
+match A(x,_) when x > 1 then Wildcard(x);

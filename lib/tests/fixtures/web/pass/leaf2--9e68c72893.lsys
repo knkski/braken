@@ -1,0 +1,37 @@
+# ID       : LSYS-9E68C72893DF
+# Name     : Leaf2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/leaves.l, section Leaf2 (#2) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/leaves.l
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/leaf2--9e68c72893.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9e68c72893dff50b2c4b696d67b9ff105ce8dc8e4f60ba0ce7551ebc09a06aa7
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Leaf2 {
+# RESETIUS | ; order 34
+# RESETIUS |   angle 8
+# RESETIUS |   axiom a
+# RESETIUS |   a=F[+A(4)]Fb
+# RESETIUS |   b=F[-B(4)]Fa
+# RESETIUS |   F=@1.36F@i1.36
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then F [ Plus A(4) ] F B;
+match B then F [ Minus B(4) ] F A;
+match F then Scale(1.36) F Scale(0.735294117647);
+match A(delay) when delay > 0 then A(delay - 1);
+match A(delay) when delay <= 0 then F [ Plus A(4) ] F B;
+match B(delay) when delay > 0 then B(delay - 1);
+match B(delay) when delay <= 0 then F [ Minus B(4) ] F A;

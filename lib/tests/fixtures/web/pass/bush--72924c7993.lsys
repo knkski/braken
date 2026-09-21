@@ -1,0 +1,48 @@
+# ID       : LSYS-72924C7993D0
+# Name     : Bush
+# Aliases  : bush2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/bush2.ls, section bush2 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/bush2.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Bush (#5) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Bush (#50) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/bush--72924c7993.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:72924c7993d0e405ece4b163cee9a204c779c035507e89c00b032b2950785d16
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | bush2 {
+# RESETIUS | ; order 6
+# RESETIUS | ; mgl setsize 10 10
+# RESETIUS |   axiom ++++F
+# RESETIUS |   theta 360/16*pi/180
+# RESETIUS |   F=FF-[-F+F+F]+[+F-F-F]
+# RESETIUS | 
+# RESETIUS | }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Bush { ; Adrian Mariano
+# RESETIUS |   Angle 16
+# RESETIUS |   Axiom ++++F
+# RESETIUS |   F=FF-[-F+F+F]+[+F-F-F]
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Bush { ; Adrian Mariano
+# FRACTINT |   Angle 16
+# FRACTINT |   Axiom ++++F
+# FRACTINT |   F=FF-[-F+F+F]+[+F-F-F]
+# FRACTINT |   }
+#
+let ANGLE = 22.5;
+
+axiom Plus Plus Plus Plus F;
+
+match F then F F Minus [ Minus F Plus F Plus F ] Plus [ Plus F Minus F Minus F ];

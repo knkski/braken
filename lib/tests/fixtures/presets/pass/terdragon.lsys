@@ -1,0 +1,8 @@
+# Name: Terdragon
+# Summary: Triangular dragon curve.
+# Angle: 120
+# Iterations: 9
+
+axiom Draw;
+
+match Draw then Draw Left Draw Right Draw;

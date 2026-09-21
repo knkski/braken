@@ -1,0 +1,53 @@
+# ID       : LSYS-795E949CDE26
+# Name     : Leaf1
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Leaf1 (#48) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/leaf1--795e949cde.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:795e949cde264347833e4171fe8cb256b69bb7964e76f004d12fc7e3ca36bab9
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Leaf1 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	; Compound leaf with alternating branches, Figure 5.12b p.130
+# FRACTINT |   angle 8
+# FRACTINT |   axiom x
+# FRACTINT |   a=n
+# FRACTINT |   n=o
+# FRACTINT |   o=p
+# FRACTINT |   p=x
+# FRACTINT |   b=e
+# FRACTINT |   e=h
+# FRACTINT |   h=j
+# FRACTINT |   j=y
+# FRACTINT |   x=F[+A(4)]Fy
+# FRACTINT |   y=F[-B(4)]Fx
+# FRACTINT |   F=@1.18F@i1.18
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match A then N;
+match N then O;
+match O then P;
+match P then X;
+match B then E;
+match E then H;
+match H then J;
+match J then Y;
+match X then F [ Plus A(4) ] F Y;
+match Y then F [ Minus B(4) ] F X;
+match F then Scale(1.18) F Scale(0.847457627119);
+match A(delay) when delay > 0 then A(delay - 1);
+match A(delay) when delay <= 0 then N;
+match B(delay) when delay > 0 then B(delay - 1);
+match B(delay) when delay <= 0 then E;

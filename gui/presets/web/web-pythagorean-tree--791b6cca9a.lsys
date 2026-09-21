@@ -1,0 +1,40 @@
+# Name: Pythagorean Tree
+# Summary: Scaled square branches grow from a right-triangle scaffold into a geometric canopy.
+# Visualizer: turtle_2d
+# Angle: 30
+# Iterations: 1
+# Max Iterations: 1
+# Initial Color: 6
+
+# Render Map: A=F
+
+# ID       : LSYS-791B6CCA9A91
+# Source   : jkubin/L-system generated-catalog fallback (commit 68a699a) | Grammar #116: tree_pythagorean_test.ls | https://github.com/jkubin/L-system/blob/68a699a88aafed49b919c871b6255fd537b7043d/grammars.txt
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Fidelity : transcription
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:791b6cca9a91e555c45d3ca9ed7cf368b8132f851ba71ba27a91022d91f2e593
+# Note     : Fallback adaptation from grammars.txt because the corresponding M4 source file is absent at the pinned revision.
+# Note     : Generated derivation rules and final terminal projections were separated explicitly.
+#
+# Original jkubin/L-system generated-catalog fallback (commit 68a699a):
+# JKUBIN | Grammar #116: tree_pythagorean_test.ls
+# JKUBIN | Description: Pythagorean tree
+# JKUBIN | Variables: {A}
+# JKUBIN | P: {
+# JKUBIN | 	ω → F+++F+++F+++A
+# JKUBIN | 	A → [----->>F+++A+++F+++F]F[----->F+++F+++A+++F]
+# JKUBIN | 	A → F
+# JKUBIN | }
+# JKUBIN | n = 1, δ = 30°, scale = 0.707106781
+#
+let ANGLE = 30;
+let SCALE = 0.707106781;
+
+axiom F Plus Plus Plus F Plus Plus Plus F Plus Plus Plus A;
+
+match A then [ Minus Minus Minus Minus Minus ScaleLength ScaleLength F Plus Plus Plus A Plus Plus Plus F Plus Plus Plus F ] F [ Minus Minus Minus Minus Minus ScaleLength F Plus Plus Plus F Plus Plus Plus A Plus Plus Plus F ];

@@ -1,0 +1,33 @@
+# ID       : LSYS-B89CF5CCFAA5
+# Name     : tree simple and efficient
+# Source   : abiusx/L3D model archive | L/tree3.l3d | https://github.com/abiusx/L3D/blob/master/L/tree3.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 20
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:b89cf5ccfaa513ca8d2536b5ef4547ea763597b9d6ece4126d7d5fd1b99ee9ab
+# Note     : Upstream thickness setting: 10
+#
+# Original abiusx/L3D model archive:
+# L3D | #tree simple and efficient
+# L3D | 5
+# L3D | 20
+# L3D | 10
+# L3D | A
+# L3D | A=[B]////[B]////[B]
+# L3D | B=&FFFA
+# L3D | @
+#
+let ANGLE = 20;
+
+axiom A;
+
+match A then [ B ] RollRight RollRight RollRight RollRight [ B ] RollRight RollRight RollRight RollRight [ B ];
+match B then PitchDown F F F A;

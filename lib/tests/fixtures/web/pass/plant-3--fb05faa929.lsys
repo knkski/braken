@@ -1,0 +1,25 @@
+# ID       : LSYS-FB05FAA92957
+# Name     : Plant 3
+# Source   : Wolfram Function Repository LSystem | Scope, In[8], plants[[3]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/plant-3--fb05faa929.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 22.5
+# Heading  : 90
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:fb05faa92957aab518c7509c429b39a7a790bf081f07e6c95c2673f0fd41670e
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"F" -> "FF+[+F-F-F]-[-F+F+F]"}, "F", 4, 22.5]
+#
+let ANGLE = 22.5;
+
+axiom F;
+
+match F then F F Plus [ Plus F Minus F Minus F ] Minus [ Minus F Plus F Plus F ];

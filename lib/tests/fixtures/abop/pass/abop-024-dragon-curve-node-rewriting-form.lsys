@@ -1,0 +1,16 @@
+# ID       : ABOP-024
+# Name     : Dragon curve, node-rewriting form
+# Source   : chapter 1, book page 18, §1.4.3 node form
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : F l
+# ABOP | p1    : l -> l + r F +
+# ABOP | p2    : r -> - F l - r
+#
+axiom F l;
+
+match l then l Plus r F Plus;
+match r then Minus F l Minus r;

@@ -1,0 +1,38 @@
+# ID       : LSYS-12A627E9D5DA
+# Name     : Stochastic Test
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/stochastic-test.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/stochastic-test.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/stochastic-test--12a627e9d5.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 25
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:12a627e9d5da7f210e6f821ae672f65c47cd379e1971d1385f9fc366e3ca4e6e
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>
+# OFX | 0.50 -> B -> F[-B]+B;
+# OFX | 0.50 -> F -> FF
+# OFX | </rule>
+# OFX | 
+# OFX | <axiom>B</axiom>
+# OFX | <maxDepth>2</maxDepth>
+# OFX | <theta>25</theta>
+# OFX | <bg_color>100, 100, 140, 255</bg_color>
+# OFX | 		<tree_color>255, 0, 0, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 25;
+
+axiom B;
+
+match B weight 0.5 then F [ Minus B ] Plus B;
+match F weight 0.5 then F F;

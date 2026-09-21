@@ -1,0 +1,30 @@
+# ID       : LSYS-09F3E1A1E8D4
+# Name     : L-System Weed
+# Source   : Paul Bourke L-system manual/catalog | example 10; heading L-System Weed | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/l-system-weed--09f3e1a1e8.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:09f3e1a1e8d42f31ee840269099557d0cc6a028e59f08a072c307ba259a37c63
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F
+# BOURKE | F -> FF-[XY]+[XY]
+# BOURKE | X -> +FY
+# BOURKE | Y -> -FX
+# BOURKE | angle = 22.5
+#
+let ANGLE = 22.5;
+
+axiom F;
+
+match F then F F Minus [ X Y ] Plus [ X Y ];
+match X then Plus F Y;
+match Y then Minus F X;

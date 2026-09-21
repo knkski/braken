@@ -1,0 +1,40 @@
+# ID       : LSYS-5BFB5EC106D2
+# Name     : Snowflake2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section SnowFlake2 (#27) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Snowflake2 (#11) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/snowflake2--5bfb5ec106.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:5bfb5ec106d2a32cce98f08795e9274535d3520c80ad80740e0e864c593dcf9d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SnowFlake2 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   angle 12
+# RESETIUS |   axiom F
+# RESETIUS |   F=++!F!F--F--F@IQ3|+F!F--
+# RESETIUS |   F=F--F!+++@Q3F@QI3|+F!F@Q3|+F!F
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Snowflake2 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 12
+# FRACTINT |   axiom F
+# FRACTINT |   F=++!F!F--F--F@IQ3|+F!F--
+# FRACTINT |   F=F--F!+++@Q3F@QI3|+F!F@Q3|+F!F
+# FRACTINT |   }
+#
+let ANGLE = 30;
+
+axiom F;
+
+match F then Plus Plus InvertTurns F InvertTurns F Minus Minus F Minus Minus F Scale(0.57735026919) TurnAround Plus F InvertTurns F Minus Minus F Minus Minus F InvertTurns Plus Plus Plus Scale(1.73205080757) F Scale(0.57735026919) TurnAround Plus F InvertTurns F Scale(1.73205080757) TurnAround Plus F InvertTurns F;

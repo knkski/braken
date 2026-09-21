@@ -1,0 +1,39 @@
+# ID       : LSYS-5EDE5A69E092
+# Name     : Moore curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | moore_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/moore_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/moore-curve--5ede5a69e0.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5ede5a69e0929f0eebbd3ea2624103a7d8b8a5e8ee3e64ffb358cfb3326c6ca0
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/Moore_curve
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/Moore_curve ⟧)
+# JKUBIN | ___DESCR(⟦Moore curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 moore_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦MOORE⟧, ⟦LFL+F+LFL⟧)
+# JKUBIN | RULE(⟦L⟧, ⟦-RF+LFL+FR-⟧)
+# JKUBIN | RULE(⟦R⟧, ⟦+LF-RFR-FL+⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | MOORE(4)
+#
+let ANGLE = 90;
+
+axiom L F L Plus F Plus L F L;
+
+match L then Minus R F Plus L F L Plus F R Minus;
+match R then Plus L F Minus R F R Minus F L Plus;

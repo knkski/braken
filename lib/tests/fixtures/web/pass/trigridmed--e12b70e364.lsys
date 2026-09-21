@@ -1,0 +1,36 @@
+# ID       : LSYS-E12B70E3647B
+# Name     : TrigridMed
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TrigridMed (#7) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/trigridmed--e12b70e364.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e12b70e3647bec7c695a858c07ca4c9766c2483375f8d98bd59f44759e0087d1
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TrigridMed {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=++z+f--f-x---f-y+++f+x
+# RESETIUS |   y=--w-f++f+y+++f+x---f-y
+# RESETIUS |   z=z-f---w+f+++z+f++f-x--
+# RESETIUS |   w=w+f+++z-f---w-f--f+y++
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom R;
+
+match R then X;
+match X then Plus Plus Z Plus F Minus Minus F Minus X Minus Minus Minus F Minus Y Plus Plus Plus F Plus X;
+match Y then Minus Minus W Minus F Plus Plus F Plus Y Plus Plus Plus F Plus X Minus Minus Minus F Minus Y;
+match Z then Z Minus F Minus Minus Minus W Plus F Plus Plus Plus Z Plus F Plus Plus F Minus X Minus Minus;
+match W then W Plus F Plus Plus Plus Z Minus F Minus Minus Minus W Minus F Minus Minus F Plus Y Plus Plus;

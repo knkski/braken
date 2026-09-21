@@ -1,0 +1,36 @@
+# ID       : LSYS-E77887D866DA
+# Name     : Flower5
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Flower5 (#32) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/flower5--e77887d866.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e77887d866da6fb3bf7bae35572baba7a10095ebdbcb026ed2446592e310a088
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Flower5 { ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom FC1+F+F+F+F+F+FC51+F+F+F+F+F+FC102+F+F+F+F+F+FC68+F+F+F+F+F+FC34+F+F+F+F+F
+# RESETIUS |   F=F[X]
+# RESETIUS |   X=FSFT;FFSSFFFTTT
+# RESETIUS |   S=-FC1[+X]-FC128[-X]
+# RESETIUS |   T=+FC196[-X]+FC64[+X]
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom F Color(1) Plus F Plus F Plus F Plus F Plus F Plus F Color(51) Plus F Plus F Plus F Plus F Plus F Plus F Color(102) Plus F Plus F Plus F Plus F Plus F Plus F Color(68) Plus F Plus F Plus F Plus F Plus F Plus F Color(34) Plus F Plus F Plus F Plus F Plus F;
+
+match F then F [ X ];
+match X then F S F T;
+match S then Minus F Color(1) [ Plus X ] Minus F Color(128) [ Minus X ];
+match T then Plus F Color(196) [ Minus X ] Plus F Color(64) [ Plus X ];
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

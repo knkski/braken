@@ -1,0 +1,46 @@
+# ID       : LSYS-5197FA5BB267
+# Name     : Branched acropetal signal
+# Source   : OpenAlea L-Py training example: branched signal | share/training/13-branched-signal.lpy | https://github.com/openalea/lpy/blob/4226991d625e/share/training/13-branched-signal.lpy
+# Formalism: left-context-sensitive bracketed L-system with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'context-turtle2d'
+# Fidelity : transcription
+# Features : branch-context, context-sensitive, ignore-filter, terminal-homomorphism
+# Angle    : 30
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : context-turtle2d
+# Fingerprint: sha256:5197fa5bb267615cfde1fd1ef9b0a283d41ea08570b1f520b5617c5a3dc7cbfa
+# Note     : The L-Py homomorphism maps A and B to colored F modules; color is retained only as provenance.
+#
+# Original OpenAlea L-Py training example: branched signal:
+# SCHOLARLY | Axiom: B[-A]A[+A]A[-A]A
+# SCHOLARLY | 
+# SCHOLARLY | derivation length: 3
+# SCHOLARLY | ignore: +-
+# SCHOLARLY | production:
+# SCHOLARLY | 
+# SCHOLARLY | B < A --> B
+# SCHOLARLY | 
+# SCHOLARLY | homomorphism:
+# SCHOLARLY | 
+# SCHOLARLY | B --> ;(3)F
+# SCHOLARLY | A --> ;(1)F
+# SCHOLARLY | 
+# SCHOLARLY | endlsystem
+# SCHOLARLY | ###### INITIALISATION ######
+# SCHOLARLY | 
+# SCHOLARLY | __copyright__ = """opensource GPL"""
+# SCHOLARLY | __description__ = """change B < A --> B to use fast information transfer
+# SCHOLARLY | """
+# SCHOLARLY | __institutes__ = """INRIA-CIRAD V.Plants team"""
+# SCHOLARLY | __authors__ = """F. Boudon, C. Godin"""
+#
+let ANGLE = 30;
+
+ignore Plus Minus;
+axiom B [ Minus A ] A [ Plus A ] A [ Minus A ] A;
+
+match A left B then B;

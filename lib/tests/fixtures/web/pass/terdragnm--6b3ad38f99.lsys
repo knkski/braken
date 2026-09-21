@@ -1,0 +1,29 @@
+# ID       : LSYS-6B3AD38F998B
+# Name     : TerdragnM
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section TerdragnM (#75) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/terdragnm--6b3ad38f99.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6b3ad38f998bc9055718610e86b7149b60d2c5bf14ef5571ce8ff53f80f2d2ad
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TerdragnM { ; William McWorter
+# RESETIUS |   ; median terdragon
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom X
+# RESETIUS |   X=X+F+X-F-X
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then X Plus F Plus X Minus F Minus X;

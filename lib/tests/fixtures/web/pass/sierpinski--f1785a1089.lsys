@@ -1,0 +1,41 @@
+# ID       : LSYS-F1785A108948
+# Name     : Sierpinski
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/sierpinski.ls, section Sierpinski (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/sierpinski.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Sierpinski (#64) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpinski--f1785a1089.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f1785a108948a71995460604330f058e699765f6c2143718ae730e372ef1fad5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierpinski {
+# RESETIUS | ; mgl setsize 100 100
+# RESETIUS | ; order 6
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom L--F--L--F
+# RESETIUS |   L=+R-F-R+
+# RESETIUS |   R=-L+F+L-
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierpinski { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom L--F--L--F
+# RESETIUS |   L=+R-F-R+
+# RESETIUS |   R=-L+F+L-
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom L Minus Minus F Minus Minus L Minus Minus F;
+
+match L then Plus R Minus F Minus R Plus;
+match R then Minus L Plus F Plus L Minus;

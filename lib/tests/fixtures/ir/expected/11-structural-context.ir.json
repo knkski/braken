@@ -1,0 +1,181 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom A [ B ] C X [ Y ] Z;\n\nmatch A right [ B ] C then RightHit;\nmatch Z left X [ Y ] then LeftHit;\n",
+  "source_fingerprint": "fnv1a64:8d57f1a25eaa5bc6",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 0
+    },
+    {
+      "name": "B",
+      "arity": 0
+    },
+    {
+      "name": "C",
+      "arity": 0
+    },
+    {
+      "name": "LeftHit",
+      "arity": 0
+    },
+    {
+      "name": "RightHit",
+      "arity": 0
+    },
+    {
+      "name": "X",
+      "arity": 0
+    },
+    {
+      "name": "Y",
+      "arity": 0
+    },
+    {
+      "name": "Z",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      },
+      {
+        "Branch": {
+          "items": [
+            {
+              "Module": {
+                "symbol": 1,
+                "arguments": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 2,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 5,
+          "arguments": []
+        }
+      },
+      {
+        "Branch": {
+          "items": [
+            {
+              "Module": {
+                "symbol": 6,
+                "arguments": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 7,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 0,
+        "arguments": []
+      },
+      "left": null,
+      "right": {
+        "items": [
+          {
+            "Branch": {
+              "items": [
+                {
+                  "Module": {
+                    "symbol": 1,
+                    "arguments": []
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Module": {
+              "symbol": 2,
+              "arguments": []
+            }
+          }
+        ]
+      },
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 4,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 7,
+        "arguments": []
+      },
+      "left": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 5,
+              "arguments": []
+            }
+          },
+          {
+            "Branch": {
+              "items": [
+                {
+                  "Module": {
+                    "symbol": 6,
+                    "arguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 3,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

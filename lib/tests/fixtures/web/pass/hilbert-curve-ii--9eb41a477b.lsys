@@ -1,0 +1,26 @@
+# ID       : LSYS-9EB41A477B7D
+# Name     : Hilbert curve II
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[5]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/hilbert-curve-ii--9eb41a477b.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F X Y
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:9eb41a477b7d3b40af6d63e1129147eb9936da19c8b9b172c4a75fbc4e3075af
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F X Y.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"X" -> "XFYFX+F+YFXFY-F-XFYFX", "Y" -> "YFXFY-F-XFYFX+F+YFXFY"}, "X", 3, 90]
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then X F Y F X Plus F Plus Y F X F Y Minus F Minus X F Y F X;
+match Y then Y F X F Y Minus F Minus X F Y F X Plus F Plus Y F X F Y;

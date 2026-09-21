@@ -1,0 +1,35 @@
+# ID       : LSYS-96BBA62F62CE
+# Name     : ADH156_kavichka_1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/alpha01.ls, section ADH156_kavichka_1 (#62) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/alpha01.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/adh156-kavichka-1--96bba62f62.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 10
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:96bba62f62ce5f4817febd927f8f1d9eafffb5b8077dda4974a0d930f876c731
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH156_kavichka_1 { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 36 ; Cesaro variation alphabet:  " (opening, 66)
+# RESETIUS |   ;Axiom /90dd/60d
+# RESETIUS |   Axiom \240dd\30d\90c000dd\90c015d/30dd
+# RESETIUS |   d=d\80d/160d\80d
+# RESETIUS |   }
+#
+let ANGLE = 10;
+
+axiom ExplicitPlus(240) D D ExplicitPlus(30) D ExplicitPlus(90) Color(0) D D ExplicitPlus(90) Color(15) D ExplicitMinus(30) D D;
+
+match D then D ExplicitPlus(80) D ExplicitMinus(160) D ExplicitPlus(80) D;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

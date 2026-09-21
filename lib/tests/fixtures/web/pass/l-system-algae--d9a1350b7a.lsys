@@ -1,0 +1,66 @@
+# ID       : LSYS-D9A1350B7A1B
+# Name     : L-System algae
+# Source   : Paul Bourke L-system manual/catalog | example 8; heading L-System algae | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/l-system-algae--d9a1350b7a.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 12
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d9a1350b7a1b04efec4fe590e0772c097d1b015d21665e3306095d63a77e26ca
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = aF
+# BOURKE | a -> FFFFFv[+++h][---q]fb
+# BOURKE | b -> FFFFFv[+++h][---q]fc
+# BOURKE | c -> FFFFFv[+++fa]fd
+# BOURKE | d -> FFFFFv[+++h][---q]fe
+# BOURKE | e -> FFFFFv[+++h][---q]fg
+# BOURKE | g -> FFFFFv[---fa]fa
+# BOURKE | h -> ifFF
+# BOURKE | i -> fFFF[--m]j
+# BOURKE | j -> fFFF[--n]k
+# BOURKE | k -> fFFF[--o]l
+# BOURKE | l -> fFFF[--p]
+# BOURKE | m -> fFn
+# BOURKE | n -> fFo
+# BOURKE | o -> fFp
+# BOURKE | p -> fF
+# BOURKE | q -> rfF
+# BOURKE | r -> fFFF[++m]s
+# BOURKE | s -> fFFF[++n]t
+# BOURKE | t -> fFFF[++o]u
+# BOURKE | u -> fFFF[++p]
+# BOURKE | v -> Fv
+# BOURKE | angle = 12
+#
+let ANGLE = 12;
+
+axiom a F;
+
+match a then F F F F F v [ Plus Plus Plus h ] [ Minus Minus Minus q ] f b;
+match b then F F F F F v [ Plus Plus Plus h ] [ Minus Minus Minus q ] f c;
+match c then F F F F F v [ Plus Plus Plus f a ] f d;
+match d then F F F F F v [ Plus Plus Plus h ] [ Minus Minus Minus q ] f e;
+match e then F F F F F v [ Plus Plus Plus h ] [ Minus Minus Minus q ] f g;
+match g then F F F F F v [ Minus Minus Minus f a ] f a;
+match h then i f F F;
+match i then f F F F [ Minus Minus m ] j;
+match j then f F F F [ Minus Minus n ] k;
+match k then f F F F [ Minus Minus o ] l;
+match l then f F F F [ Minus Minus p ];
+match m then f F n;
+match n then f F o;
+match o then f F p;
+match p then f F;
+match q then r f F;
+match r then f F F F [ Plus Plus m ] s;
+match s then f F F F [ Plus Plus n ] t;
+match t then f F F F [ Plus Plus o ] u;
+match u then f F F F [ Plus Plus p ];
+match v then F v;

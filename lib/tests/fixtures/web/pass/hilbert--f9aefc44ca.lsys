@@ -1,0 +1,98 @@
+# ID       : LSYS-F9AEFC44CA7D
+# Name     : Hilbert
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hilbert.ls, section Hilbert (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hilbert.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hilbert (#30) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Hilbert (#12) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Hilbert (#24) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.hilbert | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[8] (Hilbert) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 23; heading Hilbert | https://paulbourke.net/fractals/lsys/
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hilbert--f9aefc44ca.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f9aefc44ca7ddb78665b444e94127d277afb18c4fdee0fa43d8f8990178b4071
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hilbert {       ; Ken Philip, from The Science of Fractal Images
+# RESETIUS |   axiom x
+# RESETIUS |   x=-YF+XFX+FY- ; cup interior on left during trace
+# RESETIUS |   y=+XF-YFY-FX+ ; cup interior on right during trace
+# RESETIUS |   angle 4
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hilbert {       ; Ken Philip, from The Science of Fractal Images
+# RESETIUS |   axiom x
+# RESETIUS |   x=-YF+XFX+FY- ; cup interior on left during trace
+# RESETIUS |   y=+XF-YFY-FX+ ; cup interior on right during trace
+# RESETIUS |   angle 4
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hilbert { ; Ken Philip, from The Science of Fractal Images
+# RESETIUS |   axiom x
+# RESETIUS |   x=-YF+XFX+FY-
+# RESETIUS |   y=+XF-YFY-FX+
+# RESETIUS |   angle 4
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Hilbert { ; Ken Philip, from The Science of Fractal Images
+# FRACTINT |   axiom x
+# FRACTINT |   x=-YF+XFX+FY-
+# FRACTINT |   y=+XF-YFY-FX+
+# FRACTINT |   angle 4
+# FRACTINT |   }
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | hilbert =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "-YF+XFX+FY-" )
+# ELM |             , ( 'Y', "+XF-YFY-FX+" )
+# ELM |             ]
+# ELM |         , axiom = "X"
+# ELM |         , iterations = 7
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -4, y = -131 }
+# ELM |         , windowSize = 135
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Hilbert",
+# KITWALLACE |   "X",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "-YF+XFX+FY-"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "+XF-YFY-FX+"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = X
+# BOURKE | X -> -YF+XFX+FY-
+# BOURKE | Y -> +XF-YFY-FX+
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then Minus Y F Plus X F X Plus F Y Minus;
+match Y then Plus X F Minus Y F Y Minus F X Plus;

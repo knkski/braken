@@ -1,0 +1,32 @@
+# ID       : LSYS-E2D44CA888C1
+# Name     : Bronchia2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Bronchia2 (#23) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/bronchia2--e2d44ca888.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e2d44ca888c1513f5cd9befa13c722bfcc115f41a88f7c5f9813e2ab6dd239c3
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Bronchia2 { ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom X
+# RESETIUS |   F=-<1F>1[-X]+<1F>1[+X]
+# RESETIUS |   X=[+F]-<1F>1[+F]-<1F>1
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom X;
+
+match F then Minus ColorIncrement(1) F ColorIncrement(-1) [ Minus X ] Plus ColorIncrement(1) F ColorIncrement(-1) [ Plus X ];
+match X then [ Plus F ] Minus ColorIncrement(1) F ColorIncrement(-1) [ Plus F ] Minus ColorIncrement(1) F ColorIncrement(-1);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

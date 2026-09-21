@@ -1,0 +1,38 @@
+# ID       : LSYS-0A02D1A7A568
+# Name     : Pentigree
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Pentigree (#53) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/pentigree.ls, section Pentigree (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/pentigree.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentigree--0a02d1a7a5.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0a02d1a7a5686c4289d8f939cd99f12a1fbdd0fc2151f7b075a0488fc66cdc67
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentigree { ; William McWorter
+# RESETIUS |   Angle 5
+# RESETIUS |   Axiom F-F-F-F-F
+# RESETIUS |   F=F-F++F+F-F-F
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentigree {
+# RESETIUS | ; mgl setsize 150 150
+# RESETIUS | ; order 5
+# RESETIUS |   Angle 5
+# RESETIUS |   Axiom F-F-F-F-F
+# RESETIUS |   F=F-F++F+F-F-F
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom F Minus F Minus F Minus F Minus F;
+
+match F then F Minus F Plus Plus F Plus F Minus F Minus F;

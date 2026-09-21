@@ -1,0 +1,25 @@
+# ID       : ABOP-052
+# Name     : Delayed row-of-trees curve
+# Source   : chapter 1, book page 47, Fig. 1.37b
+# Formalism: parametric turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define c 1
+# ABOP | #define p 0.3
+# ABOP | #define q c-p
+# ABOP | #define h (p*q)^0.5
+# ABOP | ω : F(1,0)
+# ABOP | p1    : F(x,t) : t=0 -> F(x*p,2)+F(x*h,1)--F(x*h,1)+F(x*q,0)
+# ABOP | p2    : F(x,t) : t>0 -> F(x,t-1)
+#
+let c = 1;
+let p = 0.3;
+let q = c-p;
+let h = sqrt(p*q);
+
+axiom F(1,0);
+
+match F(x,t) when t=0 then F(x*p,2) Plus F(x*h,1) Minus Minus F(x*h,1) Plus F(x*q,0);
+match F(x,t) when t>0 then F(x,t-1);

@@ -1,0 +1,37 @@
+# ID       : LSYS-5D18D4EE0944
+# Name     : pentagon as a planar Eulerian graph
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentagon.ls | https://github.com/jkubin/L-system/blob/68a699a/pentagon.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentagon-as-a-planar-eulerian-graph--5d18d4ee09.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 72
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5d18d4ee094426453a35a7a1fa3f784d697f1a915609ee0f6ae9f291371009e1
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦pentagon as a planar Eulerian graph⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentagon.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAGON⟧, ⟦F-F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-F++F+F-F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(72),dnl
+# JKUBIN | "step":15,dnl
+# JKUBIN | 
+# JKUBIN | PENTAGON(3)
+#
+let ANGLE = 72;
+
+axiom F Minus F Minus F Minus F Minus F;
+
+match F then F Minus F Plus Plus F Plus F Minus F Minus F;

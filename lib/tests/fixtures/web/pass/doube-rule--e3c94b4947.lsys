@@ -1,0 +1,34 @@
+# ID       : LSYS-E3C94B4947ED
+# Name     : Doube Rule
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/doube-rule.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/doube-rule.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/doube-rule--e3c94b4947.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 25
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e3c94b4947edf9695eeeeee120fadfc8dcd5a9fd0064e085402d6490ecd454f1
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>B ->F[-B]+B;F->FF</rule>
+# OFX | <axiom>B</axiom>
+# OFX | <maxDepth>2</maxDepth>
+# OFX | <theta>25</theta>
+# OFX | <bg_color>100, 100, 140, 255</bg_color>
+# OFX | 		<tree_color>255, 0, 0, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 25;
+
+axiom B;
+
+match B then F [ Minus B ] Plus B;
+match F then F F;

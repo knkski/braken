@@ -1,0 +1,47 @@
+# ID       : LSYS-64AD44C6F52A
+# Name     : Triangle with angular segments
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | angular.ls | https://github.com/jkubin/L-system/blob/68a699a/angular.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/triangle-with-angular-segments--64ad44c6f5.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 36
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:64ad44c6f52a9b7866c79c9d32fca25aed86d2bbd1d6c246b330357fc769ddc4
+# Note     : Upstream acknowledgement: https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html ⟧)
+# JKUBIN | ___DESCR(⟦Triangle with angular segments⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 angular.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ANGULAR⟧, ⟦Q⟧)
+# JKUBIN | RULE(⟦P⟧, ⟦--R++++S--U⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦Q⟧, ⟦T++R----S++⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦R⟧, ⟦++P----Q++T⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦S⟧, ⟦U--P++++Q--⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦T⟧, ⟦+U--P+⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦U⟧, ⟦-Q++T-⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(36),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | 
+# JKUBIN | ANGULAR(6)
+#
+let ANGLE = 36;
+
+axiom Q;
+
+match P then Minus Minus R Plus Plus Plus Plus S Minus Minus U;
+match Q then T Plus Plus R Minus Minus Minus Minus S Plus Plus;
+match R then Plus Plus P Minus Minus Minus Minus Q Plus Plus T;
+match S then U Minus Minus P Plus Plus Plus Plus Q Minus Minus;
+match T then Plus U Minus Minus P Plus;
+match U then Minus Q Plus Plus T Minus;

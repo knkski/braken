@@ -1,0 +1,25 @@
+# ID       : LSYS-4BC475FB7DF1
+# Name     : Peano curve
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[7]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano-curve--4bc475fb7d.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:4bc475fb7df12ba68f483b029e290f9eab5607a7d115e52b268b3bfa4e18f469
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"F" -> "F+F-F-F-F+F+F+F-F"}, "F", 3, 90]
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Minus F Plus F Plus F Plus F Minus F;

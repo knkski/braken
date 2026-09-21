@@ -1,0 +1,28 @@
+# ID       : LSYS-716B0B1E1D9A
+# Name     : ADH119
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH119 (#56) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/adh119--716b0b1e1d.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:716b0b1e1d9a119e82d283e7eb9c149e516dd3b510f88e0014980310fa0e4d27
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH119 { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 4 ;  The one that started it all...
+# RESETIUS |   Axiom f
+# RESETIUS |   f=f+ff-f+f-ff-f
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F F Minus F Plus F Minus F F Minus F;

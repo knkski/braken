@@ -1,0 +1,32 @@
+# ID       : LSYS-DB44EC87BBAC
+# Name     : gilbert
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/gilbert.ls, section gilbert (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/gilbert.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/gilbert--db44ec87bb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:db44ec87bbac4839bc3a4bc18721d10aff04bc23b3506d02f679d73ecfe4b0df
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | gilbert {
+# RESETIUS | axiom X
+# RESETIUS | F=F
+# RESETIUS | X=-YF+XFX+FY-
+# RESETIUS | Y=+XF-YFY-FX+
+# RESETIUS | theta 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match F then F;
+match X then Minus Y F Plus X F X Plus F Y Minus;
+match Y then Plus X F Minus Y F Y Minus F X Plus;

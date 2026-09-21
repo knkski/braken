@@ -1,0 +1,43 @@
+# ID       : LSYS-3CF30AC02230
+# Name     : Tree
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 8: Tree | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 2
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:3cf30ac02230f400c22a37ce3b6e0285c44f04343c40fa90cc8123ca62583afe
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Tree",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "A B m{0x8B4513} sphere",
+# GERIZIM |       productions:
+# GERIZIM |         "A -> s f f e\nB -> r{0.08} C I +z{60} B\nC -> C s f e\nE -> -y{4} E\nI -> r{0.04} J J J J J J J J\nJ -> +z{60} [ -y{48} E G ]\nG -> r{0.08} C F [ -x{30} m{0x50C878} D sphere ] +y +y [ -x{30} m{0x50C878} D sphere ] G\nD -> F [ -x{30} ] +y [ +x{30} ] D\ncone -> m{0x50C878} cone{random()/5+0.1}\nsphere -> m{0x50C878, 0.7, 0, false, true, false, true, 0.8, 2} sphere{random()/7+1, 12, 6, 0, pi/2, 0, pi}",
+# GERIZIM |       iterations: 9,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 0.4, angle: 2
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 2;
+
+axiom A B m(9127187) sphere;
+
+match A then s f f e;
+match B then r(0.08) C I Plus(60) B;
+match C then C s f e;
+match E then RollRight(4) E;
+match I then r(0.04) J J J J J J J J;
+match J then Plus(60) [ RollRight(48) E G ];
+match G then r(0.08) C F [ PitchDown(30) m(5294200) D sphere ] RollLeft RollLeft [ PitchDown(30) m(5294200) D sphere ] G;
+match D then F [ PitchDown(30) ] RollLeft [ PitchUp(30) ] D;
+match cone then m(5294200) cone(RANDOM/5+0.1);
+match sphere then m(5294200,0.7,0,false,true,false,true,0.8,2) sphere(RANDOM/7+1,12,6,0,PI/2,0,PI);

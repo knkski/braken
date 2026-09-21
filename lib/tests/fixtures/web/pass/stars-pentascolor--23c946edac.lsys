@@ -1,0 +1,39 @@
+# ID       : LSYS-23C946EDACF0
+# Name     : Stars&PentasColor
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section Stars&PentasColor (#11) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/stars-pentascolor--23c946edac.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 18
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:23c946edacf0e836847f8acbd96bd98c6de9b79e2f596e9d53fbd4b00847597b
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Stars&PentasColor {
+# FRACTINT |                 ;; by Philippe Hurbain
+# FRACTINT |                 ;; Penrose's stars and pentagon tiling, generated as
+# FRACTINT |                 ;; a coloring of kites and darts
+# FRACTINT |   Angle 20
+# FRACTINT |   Axiom c04k
+# FRACTINT |   k=++[@.618034[g-c10@.5878[f]------ff++++f]a]f@.618034------
+# FRACTINT |   k=[--k]f--f------[--k]@i.618034f[@.618034|a]
+# FRACTINT |   a=[@.618034k]++f@.618034[|[gc10@.5878+++++++f]a]--------f
+# FRACTINT |   a=++f--------[c10g@.5878-------f][a]@i.618034f
+# FRACTINT |   f=g
+# FRACTINT | }
+#
+let ANGLE = 18;
+
+axiom Color(4) K;
+
+match K then Plus Plus [ Scale(0.618034) [ G Minus Color(10) Scale(0.5878) [ F ] Minus Minus Minus Minus Minus Minus F F Plus Plus Plus Plus F ] A ] F Scale(0.618034) Minus Minus Minus Minus Minus Minus [ Minus Minus K ] F Minus Minus F Minus Minus Minus Minus Minus Minus [ Minus Minus K ] Scale(1.6180339593) F [ Scale(0.618034) TurnAround A ];
+match A then [ Scale(0.618034) K ] Plus Plus F Scale(0.618034) [ TurnAround [ G Color(10) Scale(0.5878) Plus Plus Plus Plus Plus Plus Plus F ] A ] Minus Minus Minus Minus Minus Minus Minus Minus F Plus Plus F Minus Minus Minus Minus Minus Minus Minus Minus [ Color(10) G Scale(0.5878) Minus Minus Minus Minus Minus Minus Minus F ] [ A ] Scale(1.6180339593) F;
+match F then G;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

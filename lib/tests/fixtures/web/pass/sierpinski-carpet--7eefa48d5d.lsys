@@ -1,0 +1,40 @@
+# ID       : LSYS-7EEFA48D5D30
+# Name     : Sierpinski carpet
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | sierpinski_carpet.ls | https://github.com/jkubin/L-system/blob/68a699a/sierpinski_carpet.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpinski-carpet--7eefa48d5d.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:7eefa48d5d30f205d3ac88300fa04fbe7d1b820e4578d7d30104881c87e09a87
+# Note     : Upstream acknowledgement: http://ecademy.agnesscott.edu/~lriddle/ifs/carpet/carpet.htm
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/08/20⟧)
+# JKUBIN | __THANKS(⟦http://ecademy.agnesscott.edu/~lriddle/ifs/carpet/carpet.htm ⟧)
+# JKUBIN | ___DESCR(⟦Sierpinski carpet⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 sierpinski_carpet.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SIERPINSKI_CARPET⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-F-G+F+F+F-F⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦G⟧, ⟦GGG⟧, ⟦f⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":8,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | SIERPINSKI_CARPET(4)
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Minus G Plus F Plus F Plus F Minus F;
+match G then G G G;

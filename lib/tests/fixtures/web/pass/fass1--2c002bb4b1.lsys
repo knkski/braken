@@ -1,0 +1,51 @@
+# ID       : LSYS-2C002BB4B134
+# Name     : Fass1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Fass1 (#21) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Fass1 (#9) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Fass1 (#32) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/fass1--2c002bb4b1.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:2c002bb4b134c103083fc7ccd6d4e42428d8a714b136f01e5c60a5b4e357e047
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Fass1 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS | 	; FASS curve (3x3 tiles form macrotile), Figure 1.16a p.17
+# RESETIUS |   axiom -l
+# RESETIUS |   angle 4
+# RESETIUS |   L=LF+RFR+FL-F-LFLFL-FRFR+
+# RESETIUS |   R=-LFLF+RFRFR+F+RF-LFL-FR
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Fass1 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS |    ; FASS curve (3x3 tiles form macrotile), Figure 1.16a p.17
+# RESETIUS |   axiom -l
+# RESETIUS |   angle 4
+# RESETIUS |   L=LF+RFR+FL-F-LFLFL-FRFR+
+# RESETIUS |   R=-LFLF+RFRFR+F+RF-LFL-FR
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Fass1 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	; FASS curve (3x3 tiles form macrotile), Figure 1.16a p.17
+# FRACTINT |   axiom -l
+# FRACTINT |   angle 4
+# FRACTINT |   L=LF+RFR+FL-F-LFLFL-FRFR+
+# FRACTINT |   R=-LFLF+RFRFR+F+RF-LFL-FR
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom Minus L;
+
+match L then L F Plus R F R Plus F L Minus F Minus L F L F L Minus F R F R Plus;
+match R then Minus L F L F Plus R F R F R Plus F Plus R F Minus L F L Minus F R;

@@ -1,0 +1,30 @@
+# ID       : LSYS-F7896E421E5B
+# Name     : TrainSmoke
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TrainSmoke (#35) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/trainsmoke--f7896e421e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f7896e421e5b1a134842c74c54ef9799e48c16ca60baa10d1a5a370c4aa02ae5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TrainSmoke {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom r
+# RESETIUS |   r=f
+# RESETIUS |   f=+f--f[----f]+
+# RESETIUS |     }
+#
+let ANGLE = 30;
+
+axiom R;
+
+match R then F;
+match F then Plus F Minus Minus F [ Minus Minus Minus Minus F ] Plus;

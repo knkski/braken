@@ -1,0 +1,46 @@
+# Name: Terdragon Boundary
+# Summary: Two mutually recursive paths trace the crenellated perimeter of a terdragon.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 5
+# Max Iterations: 19
+# Initial Color: 3
+
+# ID       : LSYS-4B24E03A7513
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[4] (Terdragon boundary) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Heading  : 0
+# Draw     : A B
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:4b24e03a7513b2ae26b7fe8ae546b810e5e8536066cf07e26f65176e76d6f8f8
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Terdragon boundary",
+# KITWALLACE |   "A-B--A-B--",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "A",
+# KITWALLACE |       "A+B"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "B",
+# KITWALLACE |       "A-B"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0,
+# KITWALLACE |   [
+# KITWALLACE |     "A",
+# KITWALLACE |     "B"
+# KITWALLACE |   ]
+# KITWALLACE | ]
+#
+let ANGLE = 60;
+
+axiom A Minus B Minus Minus A Minus B Minus Minus;
+
+match A then A Plus B;
+match B then A Minus B;

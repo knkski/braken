@@ -1,0 +1,38 @@
+# ID       : LSYS-86F820362D75
+# Name     : TwoTile
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section TwoTile (#86) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/twotile--86f820362d.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:86f820362d7595cd45d421bde884baa25a0e5baccd2929c7d654b32300092f87
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TwoTile {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom [c32z]@q2a
+# RESETIUS |   a=z
+# RESETIUS |   z=[+@q2@i2f--f]fx
+# RESETIUS |   x=+[-@q2@i2f++f]fy--[-@q2@i2f++f]fy+
+# RESETIUS |   y=-[+@q2@i2f--f]fx++[+@q2@i2f--f]fx-
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom [ Color(32) Z ] Scale(1.41421356237) A;
+
+match A then Z;
+match Z then [ Plus Scale(1.41421356237) Scale(0.5) F Minus Minus F ] F X;
+match X then Plus [ Minus Scale(1.41421356237) Scale(0.5) F Plus Plus F ] F Y Minus Minus [ Minus Scale(1.41421356237) Scale(0.5) F Plus Plus F ] F Y Plus;
+match Y then Minus [ Plus Scale(1.41421356237) Scale(0.5) F Minus Minus F ] F X Plus Plus [ Plus Scale(1.41421356237) Scale(0.5) F Minus Minus F ] F X Minus;
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

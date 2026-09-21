@@ -1,0 +1,42 @@
+# ID       : LSYS-8AF0EE8F7CF1
+# Name     : Double branched tree (scale)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_double_scale.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_double_scale.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/double-branched-tree-scale--8af0ee8f7c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 25
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:8af0ee8f7cf1e3dae0e71e85c0a175142fa1c210bb7447523884ffba2f43bbbb
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/12⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ⟧)
+# JKUBIN | ___DESCR(⟦Double branched tree (scale)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_double_scale.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦DOUBLE_TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>F<⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F[+X]F[-X]+X⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(25),dnl
+# JKUBIN | SCALE(1.8),dnl
+# JKUBIN | "step":15,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | DOUBLE_TREE(5)
+#
+let ANGLE = 25;
+let SCALE = 1.8;
+
+axiom X;
+
+match F then ScaleLength F ScaleLengthInverse;
+match X then F [ Plus X ] F [ Minus X ] Plus X;

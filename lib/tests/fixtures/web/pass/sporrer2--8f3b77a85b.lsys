@@ -1,0 +1,30 @@
+# ID       : LSYS-8F3B77A85B37
+# Name     : Sporrer2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Sporrer2 (#3) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sporrer2--8f3b77a85b.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8f3b77a85b37e186a9f59941c9e46d10defb9bbc9cac0acc58c2ca1f205b5c19
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sporrer2 { ;
+# RESETIUS |   angle 4
+# RESETIUS |   axiom F+F+F+F
+# RESETIUS |   F=+<1F-<1F
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then Plus ColorIncrement(1) F Minus ColorIncrement(1) F;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

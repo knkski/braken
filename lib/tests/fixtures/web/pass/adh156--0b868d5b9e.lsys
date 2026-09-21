@@ -1,0 +1,34 @@
+# ID       : LSYS-0B868D5B9EC1
+# Name     : ADH156_:
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/alpha01.ls, recovered section ADH156_: (#53) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/alpha01.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/adh156--0b868d5b9e.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, inventory-recovery, parametric, quarantine
+# Angle    : 10
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0b868d5b9ec16d086d6c467769c4c58b4be01941e7fed335a630729d656c8ee7
+# Note     : Recovered from an active source section omitted by the independent inventory.
+# Note     : The resetius scanner drops unsupported punctuation from this group name, causing a source-name collision; path and section ordinal are the stable identity.
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH156_: { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 36 ; Cesaro variation alphabet:  :
+# RESETIUS |   Axiom /90dd/180dd
+# RESETIUS |   d=d\80d/160d\80d
+# RESETIUS |   }
+#
+let ANGLE = 10;
+
+axiom ExplicitMinus(90) D D ExplicitMinus(180) D D;
+
+match D then D ExplicitPlus(80) D ExplicitMinus(160) D ExplicitPlus(80) D;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

@@ -1,0 +1,40 @@
+# ID       : LSYS-EF9BE5B8477F
+# Name     : Sierpinski2
+# Aliases  : serp
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/serp.ls, section serp (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/serp.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Sierpinski2 (#28) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sierpinski2--ef9be5b847.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ef9be5b8477f5ce41a11021b50c4d1c53037934ab7b4b3d30555d6bcb3b5f89f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | serp {
+# RESETIUS | axiom FXF--FF--FF
+# RESETIUS | F=FF
+# RESETIUS | X=--FXF++FXF++FXF--
+# RESETIUS | theta 1.0471975511965977461542144610932
+# RESETIUS | }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Sierpinski2 { ; from The Science of Fractal Images
+# FRACTINT |   axiom FXF--FF--FF
+# FRACTINT |   f=FF
+# FRACTINT |   x=--FXF++FXF++FXF--
+# FRACTINT |   angle 6
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom F X F Minus Minus F F Minus Minus F F;
+
+match F then F F;
+match X then Minus Minus F X F Plus Plus F X F Plus Plus F X F Minus Minus;

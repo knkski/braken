@@ -1,0 +1,5 @@
+ignore Plus Minus;
+
+axiom Fb [ Plus Fa ] Fa [ Minus Fa ] Fa;
+
+match Fa left Fb then Fb;

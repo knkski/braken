@@ -1,0 +1,34 @@
+# ID       : LSYS-DC14B06709BE
+# Name     : a weird tree that looks good from some angles
+# Source   : abiusx/L3D model archive | L/tree5.l3d | https://github.com/abiusx/L3D/blob/master/L/tree5.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 30
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:dc14b06709bec2c7dc76b248c87f2d45f4fe8ec9fdcf9f63a80fa4c56ae0d11e
+# Note     : Upstream thickness setting: 5
+#
+# Original abiusx/L3D model archive:
+# L3D | #a weird tree that looks good from some angles
+# L3D | #http://www.geekyblogger.com/2008/04/tree-and-l-system.html
+# L3D | 8
+# L3D | 30
+# L3D | 5
+# L3D | fA
+# L3D | A=f[^Bl]>>[^Bl]>>A
+# L3D | B=f[-Bl]B
+# L3D | @
+#
+let ANGLE = 30;
+
+axiom f A;
+
+match A then f [ PitchUp B l ] WidthIncrease WidthIncrease [ PitchUp B l ] WidthIncrease WidthIncrease A;
+match B then f [ Minus B l ] B;

@@ -1,0 +1,30 @@
+# ID       : LSYS-EC7A7DF38513
+# Name     : Seaweed
+# Source   : abiusx/L3D model archive | L/seaweed.l | https://github.com/abiusx/L3D/blob/master/L/seaweed.l
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 22
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:ec7a7df3851337e88007af63d4638b8011695826b82082e9f8ee252a365b3b99
+# Note     : Upstream thickness setting: 5
+#
+# Original abiusx/L3D model archive:
+# L3D | 4
+# L3D | 22
+# L3D | 5
+# L3D | F
+# L3D | F=FF-[-F+F+F]+[+F-F-F]
+# L3D | @
+#
+let ANGLE = 22;
+
+axiom F;
+
+match F then F F Minus [ Minus F Plus F Plus F ] Plus [ Plus F Minus F Minus F ];

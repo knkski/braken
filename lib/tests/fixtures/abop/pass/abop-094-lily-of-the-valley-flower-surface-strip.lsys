@@ -1,0 +1,19 @@
+# ID       : ABOP-094
+# Name     : Lily-of-the-valley flower surface strip
+# Source   : chapter 5, book page 126, Fig. 5.10 component grammar
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+# Note     : The printed component grammar intentionally builds a surface strip with nested polygon state.
+#
+# Original ABOP:
+# ABOP | ω : [X(36)A]/(72)[X(36)B]
+# ABOP | p1    : A -> [&G A {.].
+# ABOP | p2    : B -> B & . G .}
+# ABOP | p3    : X(a) -> X(a+4.5)
+#
+axiom [ X(36) A ] RollRight(72) [ X(36) B ];
+
+match A then [ PitchDown G A PolygonBegin Vertex ] Vertex;
+match B then B PitchDown Vertex G Vertex PolygonEnd;
+match X(a) then X(a+4.5);

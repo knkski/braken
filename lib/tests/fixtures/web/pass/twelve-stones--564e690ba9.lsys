@@ -1,0 +1,49 @@
+# ID       : LSYS-564E690BA998
+# Name     : Twelve.Stones
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Twelve.Stones (#36) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/twelve-stones--564e690ba9.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:564e690ba998a5d4624e8dbedaff2e9f7a05c31b3353803a01195c184e8c9dbb
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Twelve.Stones {
+# RESETIUS | 
+# RESETIUS |   ; best order 27
+# RESETIUS |   ; time 0:01
+# RESETIUS | 
+# RESETIUS |     angle 5
+# RESETIUS |     axiom C31A\30A\30A\30A\30A\30A\30A\30A\30A\30A\30A\30A\30
+# RESETIUS | 
+# RESETIUS |     A=[@I2X][Y]@I2D@2
+# RESETIUS |     X=\5>1[D]W
+# RESETIUS |     W=\5[D]X
+# RESETIUS |     Y=/5>1[D]Z
+# RESETIUS |     Z=/5[D]Y
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom Color(31) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30) A ExplicitPlus(30);
+
+match A then [ Scale(0.5) X ] [ Y ] Scale(0.5) D Scale(2);
+match X then ExplicitPlus(5) ColorIncrement(-1) [ D ] W;
+match W then ExplicitPlus(5) [ D ] X;
+match Y then ExplicitMinus(5) ColorIncrement(-1) [ D ] Z;
+match Z then ExplicitMinus(5) [ D ] Y;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

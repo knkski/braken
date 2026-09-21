@@ -1,0 +1,28 @@
+# ID       : ABOP-089
+# Name     : Carex laevigata male spike
+# Source   : chapter 4, book page 117, L-system 4.1
+# Formalism: parametric turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define IRATE 1.025
+# ABOP | #define SRATE 1.02
+# ABOP | #include M
+# ABOP | ω : A
+# ABOP | p1    : A -> [&(5)f(1)~M(1)]F(0.2)/(137.5)A
+# ABOP | p2    : M(s) : s<3 -> M(s*SRATE)
+# ABOP | p3    : f(s) : s<3 -> f(s*SRATE)
+# ABOP | p4    : &(s) : s<15 -> &(s*SRATE)
+# ABOP | p5    : F(i) : i<1 -> F(i*IRATE)
+#
+let IRATE = 1.025;
+let SRATE = 1.02;
+
+axiom A;
+
+match A then [ PitchDown(5) f(1) M(1) ] F(0.2) RollRight(137.5) A;
+match M(s) when s<3 then M(s*SRATE);
+match f(s) when s<3 then f(s*SRATE);
+match PitchDown(s) when s<15 then PitchDown(s*SRATE);
+match F(i) when i<1 then F(i*IRATE);

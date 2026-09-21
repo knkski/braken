@@ -1,0 +1,12 @@
+# Name: Lévy C Curve
+# Summary: Successive 45-degree folds build a self-similar chain of interlocking C shapes.
+# Visualizer: turtle_2d
+# Angle: 45
+# Iterations: 9
+# Preview Iterations: 4
+# Max Iterations: 16
+# Initial Color: 0
+
+axiom Draw Right Right Draw Right Right Draw;
+
+match Draw then Left Draw Right Right Draw Left;

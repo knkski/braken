@@ -1,0 +1,26 @@
+# ID       : LSYS-517E98DF9084
+# Name     : Siepiński sieve
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[10]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/siepiski-sieve--517e98df90.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 60
+# Heading  : 90
+# Draw     : F X
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:517e98df9084d4ae7c06e638e00e0f4cea50032972772f6e0b61e6eea2a20220
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F X.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"F" -> "FF", "X" -> "--FXF++FXF++FXF--"}, "FXF--FF--FF", 5, 60]
+#
+let ANGLE = 60;
+
+axiom F X F Minus Minus F F Minus Minus F F;
+
+match F then F F;
+match X then Minus Minus F X F Plus Plus F X F Plus Plus F X F Minus Minus;

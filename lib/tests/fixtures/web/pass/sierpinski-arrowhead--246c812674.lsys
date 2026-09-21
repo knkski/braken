@@ -1,0 +1,63 @@
+# ID       : LSYS-246C81267470
+# Name     : Sierpinski Arrowhead
+# Aliases  : Curve4
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Curve4 (#6) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Curve4 (#47) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.sierpinskiArrowhead | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 24; heading Sierpinski Arrowhead | https://paulbourke.net/fractals/lsys/
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sierpinski-arrowhead--246c812674.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:246c81267470f4fbbe4d6ce4b0b814a2344fce210c6d1940d931d13e59ef9992
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Curve4 { ; Adrian Mariano
+# RESETIUS |    axiom yf
+# RESETIUS |    x=YF+XF+Y
+# RESETIUS |    y=XF-YF-X
+# RESETIUS |    angle 6
+# RESETIUS |    }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Curve4 { ; Adrian Mariano
+# FRACTINT |    axiom yf
+# FRACTINT |    x=YF+XF+Y
+# FRACTINT |    y=XF-YF-X
+# FRACTINT |    angle 6
+# FRACTINT |    }
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | sierpinskiArrowhead =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "YF+XF+Y" )
+# ELM |             , ( 'Y', "XF-YF-X" )
+# ELM |             ]
+# ELM |         , axiom = "YF"
+# ELM |         , iterations = 7
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.fromDegrees 60
+# ELM |         , windowPosition = { x = -4, y = -121 }
+# ELM |         , windowSize = 135
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = YF
+# BOURKE | X -> YF+XF+Y
+# BOURKE | Y -> XF-YF-X
+# BOURKE | angle = 60
+#
+let ANGLE = 60;
+
+axiom Y F;
+
+match X then Y F Plus X F Plus Y;
+match Y then X F Minus Y F Minus X;

@@ -1,0 +1,14 @@
+# ID       : ABOP-009
+# Name     : Koch curve modification c
+# Source   : chapter 1, book page 10, Fig. 1.9c
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : F-F-F-F
+# ABOP | p1    : F -> FF-F+F-F-FF
+#
+axiom F Minus F Minus F Minus F;
+
+match F then F F Minus F Plus F Minus F Minus F F;

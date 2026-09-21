@@ -1,0 +1,16 @@
+# ID       : ABOP-016
+# Name     : Quadratic Gosper / E-curve
+# Source   : chapter 1, book page 12, Fig. 1.11b
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : -Fr
+# ABOP | p1    : Fl -> FlFl-Fr-Fr+Fl+Fl-Fr-FrFl+Fr-FlFr-Fr-Fl+Fl+FrFr-
+# ABOP | p2    : Fr -> +FlFl-Fr-Fr+Fl+FlFr+Fl-Fr-FrFl-FrFl+Fl+Fr-Fr-Fl+Fl+FrFr
+#
+axiom Minus Fr;
+
+match Fl then Fl Fl Minus Fr Minus Fr Plus Fl Plus Fl Minus Fr Minus Fr Fl Plus Fr Minus Fl Fr Minus Fr Minus Fl Plus Fl Plus Fr Fr Minus;
+match Fr then Plus Fl Fl Minus Fr Minus Fr Plus Fl Plus Fl Fr Plus Fl Minus Fr Minus Fr Fl Minus Fr Fl Plus Fl Plus Fr Minus Fr Minus Fl Plus Fl Plus Fr Fr;

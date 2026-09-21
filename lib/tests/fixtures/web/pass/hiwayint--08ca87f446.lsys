@@ -1,0 +1,44 @@
+# ID       : LSYS-08CA87F4469B
+# Name     : Hiwayint
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hiwayint (#34) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/hiwayint--08ca87f446.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:08ca87f4469ba56d587b002ec6e121e17541fa4baafd8408ff673fa1b14099ad
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hiwayint { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom s
+# RESETIUS |   F=
+# RESETIUS |   s=x+F-t
+# RESETIUS |   t=++F--u+F-t
+# RESETIUS |   u=z-F+v
+# RESETIUS |   v=Fs-F+v
+# RESETIUS |   w=Fsw
+# RESETIUS |   x=xy
+# RESETIUS |   y=++F--uy
+# RESETIUS |   z=zw
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom S;
+
+match F then nothing;
+match S then X Plus F Minus T;
+match T then Plus Plus F Minus Minus U Plus F Minus T;
+match U then Z Minus F Plus V;
+match V then F S Minus F Plus V;
+match W then F S W;
+match X then X Y;
+match Y then Plus Plus F Minus Minus U Y;
+match Z then Z W;

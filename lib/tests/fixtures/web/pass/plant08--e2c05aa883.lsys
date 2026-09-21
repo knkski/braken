@@ -1,0 +1,36 @@
+# ID       : LSYS-E2C05AA88366
+# Name     : Plant08
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Plant08 (#23) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/plant08--e2c05aa883.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 18
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e2c05aa88366dc8ba13bfc04040ccf7e031467020461cf5c9d40c1c0836d5041
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Plant08 { ; Ken Philip, from The Science of Fractal Images, p.286
+# FRACTINT |   axiom SLFFF
+# FRACTINT |   s=[+++Z][---Z]TS
+# FRACTINT |   z=+H[-Z]L
+# FRACTINT |   h=-Z[+H]L
+# FRACTINT |   t=TL
+# FRACTINT |   l=[-FFF][+FFF]F
+# FRACTINT |   angle 20
+# FRACTINT |   }
+#
+let ANGLE = 18;
+
+axiom S L F F F;
+
+match S then [ Plus Plus Plus Z ] [ Minus Minus Minus Z ] T S;
+match Z then Plus H [ Minus Z ] L;
+match H then Minus Z [ Plus H ] L;
+match T then T L;
+match L then [ Minus F F F ] [ Plus F F F ] F;

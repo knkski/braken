@@ -1,0 +1,28 @@
+# ID       : ABOP-104
+# Name     : Microsorium basal-segment map variant
+# Source   : chapter 7, book page 160, Fig. 7.12
+# Formalism: map L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | r1  : A -> a[-B]I
+# ABOP | r2  : B -> E[+b]x[-H]D
+# ABOP | r3  : D -> [-M]F
+# ABOP | r4  : F -> G[+H]x[-H]D
+# ABOP | r5  : H -> x[+F]x
+# ABOP | r6  : I -> C
+# ABOP | r7  : C -> I[-F]I
+# ABOP | r8  : E -> x[-x]x
+# ABOP | r9  : G -> x[+x]x[-x]x
+# ABOP | r10 : J -> L
+# ABOP | r11 : K -> N
+# ABOP | r12 : L -> x[+M]x
+# ABOP | r13 : M -> x[+L]x
+# ABOP | r14 : N -> O
+# ABOP | r15 : O -> x[+L]N
+#
+# Expected parse failure: basal-segment Microsorium is a directed map grammar.
+map lsystem MicrosoriumBasalSegments {
+    # The original edge productions are preserved above.
+}

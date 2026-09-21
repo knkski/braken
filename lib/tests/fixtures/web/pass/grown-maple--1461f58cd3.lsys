@@ -1,0 +1,41 @@
+# ID       : LSYS-1461F58CD334
+# Name     : Grown.Maple
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Grown.Maple (#12) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/grown-maple--1461f58cd3.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 10
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1461f58cd3345eeb861751de8b12dac784b4f74a1596c8a11a968f95441859d5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grown.Maple {
+# RESETIUS | 
+# RESETIUS |   ; best order 8
+# RESETIUS |   ; time 1:41
+# RESETIUS | 
+# RESETIUS |     angle 36
+# RESETIUS |     axiom C46[|@I7G@7|++++X][@I7G@7|----!X]+++++++++@I5G@5X
+# RESETIUS | 
+# RESETIUS |     G=GG
+# RESETIUS |     F=F[+++FX][---FX]F
+# RESETIUS |     X=>1[+++@IQ2.25FX][---@IQ2.25FX]FX
+# RESETIUS |   }
+#
+let ANGLE = 10;
+
+axiom Color(46) [ TurnAround Scale(0.142857142857) G Scale(7) TurnAround Plus Plus Plus Plus X ] [ Scale(0.142857142857) G Scale(7) TurnAround Minus Minus Minus Minus InvertTurns X ] Plus Plus Plus Plus Plus Plus Plus Plus Plus Scale(0.2) G Scale(5) X;
+
+match G then G G;
+match F then F [ Plus Plus Plus F X ] [ Minus Minus Minus F X ] F;
+match X then ColorIncrement(-1) [ Plus Plus Plus Scale(0.666666666667) F X ] [ Minus Minus Minus Scale(0.666666666667) F X ] F X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

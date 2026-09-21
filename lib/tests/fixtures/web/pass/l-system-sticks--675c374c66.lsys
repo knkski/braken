@@ -1,0 +1,66 @@
+# ID       : LSYS-675C374C66B8
+# Name     : L-System sticks
+# Aliases  : Node Rewriting 1; Plant04
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Plant04 (#60) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Plant04 (#38) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Source   : Paul Bourke L-system manual/catalog | example 7; heading L-System sticks | https://paulbourke.net/fractals/lsys/
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/node-rewriting-1.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/node-rewriting-1.xml
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/l-system-sticks--675c374c66.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 20
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:675c374c66b8d8a23ab8d696df6b344c9c22f21c07c242812841d3ee43dd6642
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Plant04 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS | 	 ; Plant-like structure, figure 1.24d p.25
+# RESETIUS |   angle 18
+# RESETIUS |   axiom x
+# RESETIUS |   X=F[+X]F[-X]+X
+# RESETIUS |   F=FF
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Plant04 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	 ; Plant-like structure, figure 1.24d p.25
+# FRACTINT |   angle 18
+# FRACTINT |   axiom x
+# FRACTINT |   X=F[+X]F[-X]+X
+# FRACTINT |   F=FF
+# FRACTINT |   }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = X
+# BOURKE | F -> FF
+# BOURKE | X -> F[+X]F[-X]+X
+# BOURKE | angle = 20
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>
+# OFX | X -&gt; F[+X]F[-X]+X;
+# OFX | F -&gt; FF;
+# OFX | </rule>
+# OFX | <axiom>X</axiom>
+# OFX | <maxDepth>7</maxDepth>
+# OFX | <theta>20</theta>
+# OFX | <bg_color>39, 128, 123, 255</bg_color>
+# OFX | 		<tree_color>150, 180, 0, 255</tree_color>
+# OFX | 	<depth>4</depth>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 20;
+
+axiom X;
+
+match X then F [ Plus X ] F [ Minus X ] Plus X;
+match F then F F;

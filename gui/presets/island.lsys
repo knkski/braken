@@ -1,0 +1,12 @@
+# Name: Islands and Lakes
+# Summary: Alternating drawn and hidden steps carve a coastline threaded with nested lakes.
+# Visualizer: turtle_2d
+# Angle: 90
+# Iterations: 2
+# Max Iterations: 4
+# Initial Color: 0
+
+axiom Draw Left Draw Left Draw Left Draw;
+
+match Draw then Draw Left Move Right Draw Draw Left Draw Left Draw Draw Left Draw Move Left Draw Draw Right Move Left Draw Draw Right Draw Right Draw Draw Right Draw Move Right Draw Draw Draw;
+match Move then Move Move Move Move Move Move;

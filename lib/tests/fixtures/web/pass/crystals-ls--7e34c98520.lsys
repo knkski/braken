@@ -1,0 +1,46 @@
+# ID       : LSYS-7E34C98520A9
+# Name     : Crystals.ls
+# Source   : abiusx/L3D model archive | L/nasty.l | https://github.com/abiusx/L3D/blob/master/L/nasty.l
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 20
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:7e34c98520a9fd4cbf6e57c2bef295896a2b5d2a4ddb79eed45d08230cc20963
+# Note     : Upstream thickness setting: 2
+#
+# Original abiusx/L3D model archive:
+# L3D | #===================================================
+# L3D | #  Crystals.ls         (c) C.J. van der Mark
+# L3D | #
+# L3D | #      Questions about Lparser files to:
+# L3D | #        Internet  cvdmark@xs4all.nl
+# L3D | #           Fido      2:283/203.11
+# L3D | #           PCG       9:526/464.3
+# L3D | #===================================================
+# L3D | 4
+# L3D | 20
+# L3D | 2
+# L3D | I
+# L3D | I=+(40)ffHccI
+# L3D | H=[+fffG]c[-fffG]c[^fffG]c[&fffG]G
+# L3D | G=[dS]e[d]e[d]e[d]e[d]e[d]e[d]e[d]
+# L3D | e=+(90)f-(90)<(45)
+# L3D | d={[f+(90)f+(90)f+(90)f>(+38)-(105)ff-(151)ff][f&(38)+(15)ff+(151)ff]}
+# L3D | @
+#
+let ANGLE = 20;
+
+axiom I;
+
+match I then Plus(40) f f H c c I;
+match H then [ Plus f f f G ] c [ Minus f f f G ] c [ PitchUp f f f G ] c [ PitchDown f f f G ] G;
+match G then [ d S ] e [ d ] e [ d ] e [ d ] e [ d ] e [ d ] e [ d ] e [ d ];
+match e then Plus(90) f Minus(90) WidthDecrease(45);
+match d then PolygonBegin [ f Plus(90) f Plus(90) f Plus(90) f WidthIncrease(38) Minus(105) f f Minus(151) f f ] [ f PitchDown(38) Plus(15) f f Plus(151) f f ] PolygonEnd;

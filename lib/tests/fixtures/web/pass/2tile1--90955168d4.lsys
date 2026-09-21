@@ -1,0 +1,36 @@
+# ID       : LSYS-90955168D46E
+# Name     : 2Tile1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section 2Tile1 (#13) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/2tile1--90955168d4.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:90955168d46e0dc5838c0c368c37c07210a3ddc5a1f2013a07cc572e1d9c7d89
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 2Tile1 {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom r
+# RESETIUS |   r=fx
+# RESETIUS |   x=z-yf
+# RESETIUS |   y=fx-w
+# RESETIUS |   z=x+wf
+# RESETIUS |   w=fz+y
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom R;
+
+match R then F X;
+match X then Z Minus Y F;
+match Y then F X Minus W;
+match Z then X Plus W F;
+match W then F Z Plus Y;

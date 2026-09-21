@@ -1,0 +1,22 @@
+# ID       : ABOP-059
+# Name     : Stochastic developmental switch
+# Source   : chapter 3, book page 66, Stochastic mechanism
+# Formalism: stochastic bracketed string
+# Parse    : pass
+# Execute  : pass
+# Note     : Concrete pi values are supplied solely to make the fixture executable.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a weight pi1 -> I[L]a
+# ABOP | p2    : a weight pi2 -> I[L]A
+# ABOP | p3    : A weight 1 -> K
+#
+let pi1 = 0.8;
+let pi2 = 0.2;
+
+axiom a;
+
+match a weight pi1 then I [ L ] a;
+match a weight pi2 then I [ L ] A;
+match A weight 1 then K;

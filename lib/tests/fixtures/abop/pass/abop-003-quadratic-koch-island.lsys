@@ -1,0 +1,15 @@
+# ID       : ABOP-003
+# Name     : Quadratic Koch island
+# Source   : chapter 1, book page 7, Fig. 1.6
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+# Note     : first listing
+#
+# Original ABOP:
+# ABOP | ω : F-F-F-F
+# ABOP | p1    : F -> F-F+F+FF-F-F+F
+#
+axiom F Minus F Minus F Minus F;
+
+match F then F Minus F Plus F Plus F F Minus F Minus F Plus F;

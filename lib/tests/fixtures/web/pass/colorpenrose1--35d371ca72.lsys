@@ -1,0 +1,41 @@
+# ID       : LSYS-35D371CA724A
+# Name     : ColorPenrose1
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section ColorPenrose1 (#58) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/colorpenrose1--35d371ca72.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:35d371ca724a8db63e1f199b2d36924c382c54eb945a025ee8e0dbd02c73632d
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | ColorPenrose1 { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers",
+# FRACTINT | ; Roger Penrose's rhombuses
+# FRACTINT | ; Uses color to show the edge matching rules to force nonperiodicy
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom +WC02F--XC04F---YC04F--ZC02F
+# FRACTINT |   W=YC04F++ZC02F----XC04F[-YC04F----WC02F]++
+# FRACTINT |   X=+YC04F--ZC02F[---WC02F--XC04F]+
+# FRACTINT |   Y=-WC02F++XC04F[+++YC04F++ZC02F]-
+# FRACTINT |   Z=--YC04F++++WC02F[+ZC02F++++XC04F]--XC04F
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 36;
+
+axiom Plus W Color(2) F Minus Minus X Color(4) F Minus Minus Minus Y Color(4) F Minus Minus Z Color(2) F;
+
+match W then Y Color(4) F Plus Plus Z Color(2) F Minus Minus Minus Minus X Color(4) F [ Minus Y Color(4) F Minus Minus Minus Minus W Color(2) F ] Plus Plus;
+match X then Plus Y Color(4) F Minus Minus Z Color(2) F [ Minus Minus Minus W Color(2) F Minus Minus X Color(4) F ] Plus;
+match Y then Minus W Color(2) F Plus Plus X Color(4) F [ Plus Plus Plus Y Color(4) F Plus Plus Z Color(2) F ] Minus;
+match Z then Minus Minus Y Color(4) F Plus Plus Plus Plus W Color(2) F [ Plus Z Color(2) F Plus Plus Plus Plus X Color(4) F ] Minus Minus X Color(4) F;
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

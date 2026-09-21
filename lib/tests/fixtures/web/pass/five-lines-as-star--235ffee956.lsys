@@ -1,0 +1,37 @@
+# ID       : LSYS-235FFEE95631
+# Name     : five lines as star
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentaline.ls | https://github.com/jkubin/L-system/blob/68a699a/pentaline.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/five-lines-as-star--235ffee956.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 72
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:235ffee956313cf8178a06322acf10896d4908259a873fcc0d9698b42d44bc01
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/10/03⟧)
+# JKUBIN | ___DESCR(⟦five lines as star⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentaline.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTALINE⟧, ⟦[FA]-[FA]-[FA]-[FA]-[FA]⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦<[FA]-[FA]-[FA]-[FA]-[FA]>⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(72),dnl
+# JKUBIN | SCALE(2.62),dnl
+# JKUBIN | "step":600,dnl
+# JKUBIN | 
+# JKUBIN | PENTALINE(5)
+#
+let ANGLE = 72;
+let SCALE = 2.62;
+
+axiom [ F A ] Minus [ F A ] Minus [ F A ] Minus [ F A ] Minus [ F A ];
+
+match A then ScaleLengthInverse [ F A ] Minus [ F A ] Minus [ F A ] Minus [ F A ] Minus [ F A ] ScaleLength;

@@ -1,0 +1,46 @@
+# ID       : LSYS-9339FF74D088
+# Name     : flower http://www.allenpike.com/images/461/lsystem.python
+# Source   : abiusx/L3D model archive | L/flower.l3d | https://github.com/abiusx/L3D/blob/master/L/flower.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : projection
+# Features : context-free, deterministic, turtle3d
+# Angle    : 18
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:9339ff74d08858b2936c8cb8952470cca4a4095cd30c34070eede5c16f9a542e
+# Source-token warnings: ( )
+# Note     : Upstream thickness setting: 15
+# Note     : The upstream model is labelled bad/crashing; rewrite transcription is retained for diagnosis.
+#
+# Original abiusx/L3D model archive:
+# L3D | #flower http://www.allenpike.com/images/461/lsystem.python
+# L3D | #crashes
+# L3D | 5
+# L3D | 18
+# L3D | 15
+# L3D | P
+# L3D | P=I + [P + O] - - // [--L] I [++L] - [P O] ++ PO
+# L3D | I=F S [// && L] [// ^^ L] F S
+# L3D | S=[(33, 'S [// && L] [// ^^ L] F S'), (33, 'S F S'), (34, 'S')]
+# L3D | L=[`{+f-ff-f+ | +f-ff-f}]
+# L3D | O=[&&& D `/ W //// W //// W //// W //// W]
+# L3D | D=FF
+# L3D | W=[`^F] [<&&&& -f+f | -f+f>]
+# L3D | @
+#
+let ANGLE = 18;
+
+axiom P;
+
+match P then I Plus [ P Plus O ] Minus Minus RollRight RollRight [ Minus Minus L ] I [ Plus Plus L ] Minus [ P O ] Plus Plus P O;
+match I then F S [ RollRight RollRight PitchDown PitchDown L ] [ RollRight RollRight PitchUp PitchUp L ] F S;
+match S then [ SourceU0028 TurtleNumber33 ColorPrevious S [ RollRight RollRight PitchDown PitchDown L ] [ RollRight RollRight PitchUp PitchUp L ] F S ColorPrevious SourceU0029 SourceU0028 TurtleNumber33 ColorPrevious S F S ColorPrevious SourceU0029 SourceU0028 TurtleNumber34 ColorPrevious S ColorPrevious SourceU0029 ];
+match L then [ ColorNext PolygonBegin Plus f Minus f f Minus f Plus TurnAround Plus f Minus f f Minus f PolygonEnd ];
+match O then [ PitchDown PitchDown PitchDown D ColorNext RollRight W RollRight RollRight RollRight RollRight W RollRight RollRight RollRight RollRight W RollRight RollRight RollRight RollRight W RollRight RollRight RollRight RollRight W ];
+match D then F F;
+match W then [ ColorNext PitchUp F ] [ WidthDecrease PitchDown PitchDown PitchDown PitchDown Minus f Plus f TurnAround Minus f Plus f WidthIncrease ];

@@ -1,0 +1,26 @@
+# ID       : LSYS-A95587B2AB9D
+# Name     : Arrow weed
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 1 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/arrow-weed--a95587b2ab.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 30
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:a95587b2ab9d7b40bd7d2895f87f11d4df9981bbd96c537b382251b8ac11de0e
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('X', ['F=FF', 'X=F[+X][-X]FX'], 30)
+#
+let ANGLE = 30;
+
+axiom X;
+
+match F then F F;
+match X then F [ Plus X ] [ Minus X ] F X;

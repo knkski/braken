@@ -1,0 +1,26 @@
+# ID       : LSYS-67B6AB67BB4D
+# Name     : Sierpiński arrowhead
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[11]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sierpiski-arrowhead--67b6ab67bb.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 60
+# Heading  : 90
+# Draw     : F X Y
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:67b6ab67bb4d263bd9eddc48569d2f18cd1285ff842f4ae65bae4771dc57aff0
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F X Y.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"X" -> "YF+XF+Y", "Y" -> "XF-YF-X"}, "YF", 6, 60]
+#
+let ANGLE = 60;
+
+axiom Y F;
+
+match X then Y F Plus X F Plus Y;
+match Y then X F Minus Y F Minus X;

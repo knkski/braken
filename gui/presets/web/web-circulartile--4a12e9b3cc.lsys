@@ -1,0 +1,34 @@
+# Name: Circular Tile
+# Summary: Nested tiers of square curls interlock into a color-banded circular tile.
+# Visualizer: turtle_2d
+# Angle: 15
+# Iterations: 6
+# Max Iterations: 35
+
+# Preview Iterations: 3
+
+# ID       : LSYS-4A12E9B3CC29
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section CircularTile (#65) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4a12e9b3cc2987cb62442eb96c06a156f8461ccdf9b471fb67f07443604ea76a
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | CircularTile { ; Adrian Mariano
+# FRACTINT |   axiom X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X
+# FRACTINT |   x=[F+F+F+F[---X-Y]+++++F++++++++F-F-F-F]
+# FRACTINT |   y=[F+F+F+F[---Y]+++++F++++++++F-F-F-F]
+# FRACTINT |   angle 24
+# FRACTINT |   }
+#
+let ANGLE = 15;
+
+axiom X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0) Plus X(0);
+
+match X(c) then [ Color(c) F Plus F Plus F Plus F [ Minus Minus Minus X(c + 1) Minus Y(c + 1) ] Plus Plus Plus Plus Plus F Plus Plus Plus Plus Plus Plus Plus Plus F Minus F Minus F Minus F ];
+match Y(c) then [ Color(c) F Plus F Plus F Plus F [ Minus Minus Minus Y(c + 1) ] Plus Plus Plus Plus Plus F Plus Plus Plus Plus Plus Plus Plus Plus F Minus F Minus F Minus F ];

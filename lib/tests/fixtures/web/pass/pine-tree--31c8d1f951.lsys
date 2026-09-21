@@ -1,0 +1,39 @@
+# ID       : LSYS-31C8D1F951F9
+# Name     : pine tree
+# Source   : abiusx/L3D model archive | L/pine.l3d | https://github.com/abiusx/L3D/blob/master/L/pine.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 37
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:31c8d1f951f944e7329b151678c0fb473f8f2122a57cf328d613367c7450abc5
+# Note     : Upstream thickness setting: 15
+#
+# Original abiusx/L3D model archive:
+# L3D | #pine tree
+# L3D | 15
+# L3D | 37
+# L3D | 15 #thickness percentage
+# L3D | ffffA
+# L3D | A=ff[&(90)TP++P++P++P++P]fAB
+# L3D | P=[^(10)fZ]
+# L3D | Z=fBZ
+# L3D | B=[^(80)[f] [ +(70)[f]+(100)[f]] [-(80)f] ]
+# L3D | T=+(20)T
+# L3D | @
+#
+let ANGLE = 37;
+
+axiom f f f f A;
+
+match A then f f [ PitchDown(90) T P Plus Plus P Plus Plus P Plus Plus P Plus Plus P ] f A B;
+match P then [ PitchUp(10) f Z ];
+match Z then f B Z;
+match B then [ PitchUp(80) [ f ] [ Plus(70) [ f ] Plus(100) [ f ] ] [ Minus(80) f ] ];
+match T then Plus(20) T;

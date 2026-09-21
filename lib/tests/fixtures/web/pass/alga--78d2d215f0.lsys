@@ -1,0 +1,40 @@
+# ID       : LSYS-78D2D215F03D
+# Name     : Alga
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | alga.ls | https://github.com/jkubin/L-system/blob/68a699a/alga.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/alga--78d2d215f0.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 25
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:78d2d215f03d4bc0e811bd1fdd98273f712b3236b7821b0a8635d1c087ceba47
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦Alga⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 alga.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ALGA⟧, ⟦FX⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF-[-F+F]+[+F-F]⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦FF+[+F]+[-F]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(25),dnl
+# JKUBIN | "sety":-400,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | ALGA(4)
+#
+let ANGLE = 25;
+
+axiom F X;
+
+match F then F F Minus [ Minus F Plus F ] Plus [ Plus F Minus F ];
+match X then F F Plus [ Plus F ] Plus [ Minus F ];

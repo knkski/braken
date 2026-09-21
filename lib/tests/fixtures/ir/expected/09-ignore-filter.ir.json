@@ -1,0 +1,115 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "ignore Hidden Turn;\n\naxiom L Hidden A Turn R;\n\nmatch A left L right R then Hit;\n",
+  "source_fingerprint": "fnv1a64:0634aa8d45e145a2",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 0
+    },
+    {
+      "name": "Hidden",
+      "arity": 0
+    },
+    {
+      "name": "Hit",
+      "arity": 0
+    },
+    {
+      "name": "L",
+      "arity": 0
+    },
+    {
+      "name": "R",
+      "arity": 0
+    },
+    {
+      "name": "Turn",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": {
+    "Ignore": [
+      "Hidden",
+      "Turn"
+    ]
+  },
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 3,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 1,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 5,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 4,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 0,
+        "arguments": []
+      },
+      "left": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 3,
+              "arguments": []
+            }
+          }
+        ]
+      },
+      "right": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 4,
+              "arguments": []
+            }
+          }
+        ]
+      },
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 2,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

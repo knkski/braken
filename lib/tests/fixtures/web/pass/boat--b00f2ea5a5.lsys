@@ -1,0 +1,28 @@
+# ID       : LSYS-B00F2EA5A573
+# Name     : Boat
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Boat (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/boat--b00f2ea5a5.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b00f2ea5a573ea333d0119aab48a1f6073be62eb31b2b3e0c2df761ecb2cb1e6
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Boat {  ;
+# RESETIUS |   Axiom f
+# RESETIUS |   Angle 4
+# RESETIUS |   f=+f-f
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then Plus F Minus F;

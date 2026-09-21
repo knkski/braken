@@ -1,0 +1,36 @@
+# ID       : LSYS-4CF111395C9B
+# Name     : Sextet
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Sextet (#6) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sextet--4cf111395c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4cf111395c9b90f58a9e6df31436378af84a48ec5ddea86c194467b6e38c177e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sextet {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=fx++fy--fx--fx--fx+fy+++
+# RESETIUS |   y=---fx-fy++fy++fy++fx--fy
+# RESETIUS |   f=
+# RESETIUS |   p=fp
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom R;
+
+match R then X;
+match X then F X Plus Plus F Y Minus Minus F X Minus Minus F X Minus Minus F X Plus F Y Plus Plus Plus;
+match Y then Minus Minus Minus F X Minus F Y Plus Plus F Y Plus Plus F Y Plus Plus F X Minus Minus F Y;
+match F then nothing;
+match P then F P;

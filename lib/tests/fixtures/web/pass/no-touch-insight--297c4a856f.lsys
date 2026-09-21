@@ -1,0 +1,57 @@
+# ID       : LSYS-297C4A856FD8
+# Name     : No.Touch.Insight
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section No.Touch.Insight (#21) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/no-touch-insight--297c4a856f.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:297c4a856fd806f4d15e1e27975fb0142e8f7fa93cb3f4a9270fcbeb27b0c63a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | No.Touch.Insight {
+# RESETIUS | 
+# RESETIUS |   ; best order 13
+# RESETIUS |   ; time 0:12
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom C39+[A]G++[A]G++[A]G++[A]G++[A]G++
+# RESETIUS | 
+# RESETIUS |     A=<1--@.4472316B
+# RESETIUS |     B=[I]FX[@.618034-H]++[I]FX++[I]FX++[I]FX[@.618034-E]++[I]FX[@.618034-E]
+# RESETIUS |     E=[I]FX[@.618034-H]++[I]FX++[I]FX[@.618034-H]++[I]FX++[I]FX
+# RESETIUS |     H=[I]FX[@.618034-H]++[I]FX++[I]FX++[I]FX++[I]FX
+# RESETIUS |     I=<1+G[@.236068-J]++@.381966K
+# RESETIUS |     J=E
+# RESETIUS |     K=I
+# RESETIUS |     F=
+# RESETIUS |     X=FY
+# RESETIUS |     Y=FW
+# RESETIUS |     W=G
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Color(39) Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus;
+
+match A then ColorIncrement(1) Minus Minus Scale(0.4472316) B;
+match B then [ I ] F X [ Scale(0.618034) Minus H ] Plus Plus [ I ] F X Plus Plus [ I ] F X Plus Plus [ I ] F X [ Scale(0.618034) Minus E ] Plus Plus [ I ] F X [ Scale(0.618034) Minus E ];
+match E then [ I ] F X [ Scale(0.618034) Minus H ] Plus Plus [ I ] F X Plus Plus [ I ] F X [ Scale(0.618034) Minus H ] Plus Plus [ I ] F X Plus Plus [ I ] F X;
+match H then [ I ] F X [ Scale(0.618034) Minus H ] Plus Plus [ I ] F X Plus Plus [ I ] F X Plus Plus [ I ] F X Plus Plus [ I ] F X;
+match I then ColorIncrement(1) Plus G [ Scale(0.236068) Minus J ] Plus Plus Scale(0.381966) K;
+match J then E;
+match K then I;
+match F then nothing;
+match X then F Y;
+match Y then F W;
+match W then G;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

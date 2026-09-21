@@ -1,0 +1,42 @@
+# ID       : LSYS-751DC0F10C33
+# Name     : FASS (space-Filling, self-Avoiding, Simple, self-Similar)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | fass_spiral.ls | https://github.com/jkubin/L-system/blob/68a699a/fass_spiral.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/fass-space-filling-self-avoiding-simple-self-similar--751dc0f10c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:751dc0f10c33e363e2f2001393f94a7c2e1bb044415f828f7d400f3554d1634a
+# Note     : Upstream acknowledgement: http://bl.ocks.org/nitaku/dcce9b645783d5239a04
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦http://bl.ocks.org/nitaku/dcce9b645783d5239a04 ⟧)
+# JKUBIN | ___DESCR(⟦FASS (space-Filling, self-Avoiding, Simple, self-Similar)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 fass_spiral.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦FASS⟧, ⟦FY⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦Y+RFR+FLF+RFRFR+FLFLF⟧)
+# JKUBIN | RULE(⟦L⟧, ⟦LF+RFR+FL-F-LFLFL-FRFR+⟧)
+# JKUBIN | RULE(⟦R⟧, ⟦-LFLF+RFRFR+F+RF-LFL-FR⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | 
+# JKUBIN | FASS(3)
+#
+let ANGLE = 90;
+
+axiom F Y;
+
+match Y then Y Plus R F R Plus F L F Plus R F R F R Plus F L F L F;
+match L then L F Plus R F R Plus F L Minus F Minus L F L F L Minus F R F R Plus;
+match R then Minus L F L F Plus R F R F R Plus F Plus R F Minus L F L Minus F R;

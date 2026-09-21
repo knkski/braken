@@ -1,0 +1,38 @@
+# ID       : LSYS-1D5581A09EF9
+# Name     : Weave
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Weave (#32) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/weave--1d5581a09e.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1d5581a09ef90495aef2499a109398f917d6b14c2673cfbb3f2e2be730561812
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Weave {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom z
+# RESETIUS |   z=x
+# RESETIUS |   x=--g+g+@7f@i7+g+g++x+--g-g-@7f@i7-g-g++y
+# RESETIUS |   y=--g+g+@7f@i7+g+g++x---g-g-@7f@i7-g-g++y
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom Z;
+
+match Z then X;
+match X then Minus Minus G Plus G Plus Scale(7) F Scale(0.142857142857) Plus G Plus G Plus Plus X Plus Minus Minus G Minus G Minus Scale(7) F Scale(0.142857142857) Minus G Minus G Plus Plus Y;
+match Y then Minus Minus G Plus G Plus Scale(7) F Scale(0.142857142857) Plus G Plus G Plus Plus X Minus Minus Minus G Minus G Minus Scale(7) F Scale(0.142857142857) Minus G Minus G Plus Plus Y;
+match F then nothing;
+match G then nothing;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

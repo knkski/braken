@@ -1,0 +1,40 @@
+# Name: Vertigo Spiral
+# Summary: A color-cycling path turns and shrinks into a tightly layered spiral.
+# Visualizer: turtle_2d
+# Angle: 7.82608695652
+# Iterations: 14
+# Max Iterations: 14
+
+# ID       : LSYS-33E9D688B158
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Vertigo1 (#91) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section Vertigo1 (#7) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:33e9d688b158aa5daed1a554ec99d2729b727e31d2b7247fd743c2b70a07c791
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Vertigo1 { ; by Morgan Savage
+# RESETIUS | ; Try order 13 and color cycle in both 256 and 16 color modes
+# RESETIUS |   Angle 46
+# RESETIUS |   Axiom X
+# RESETIUS |   X=X>1F+@.9997X
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Vertigo1 { ; by Morgan Savage
+# FRACTINT | ; Try order 13 and color cycle in both 256 and 16 color modes
+# FRACTINT |   Angle 46
+# FRACTINT |   Axiom X
+# FRACTINT |   X=X>1F+@.9997X
+# FRACTINT |   }
+#
+let ANGLE = 7.82608695652;
+
+axiom X;
+
+match X then X ColorIncrement(-1) F Plus Scale(0.9997) X;

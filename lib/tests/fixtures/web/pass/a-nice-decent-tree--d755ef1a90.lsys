@@ -1,0 +1,39 @@
+# ID       : LSYS-D755EF1A90E7
+# Name     : a nice decent tree!
+# Source   : abiusx/L3D model archive | L++/tree.l++ | https://github.com/abiusx/L3D/blob/master/L++/tree.l++
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, stochastic, turtle3d
+# Angle    : 15
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:d755ef1a90e707f9e4369b1503e96b1028410d4c38a61aedef7a56d53bf38096
+# Note     : Upstream thickness setting: 20
+#
+# Original abiusx/L3D model archive:
+# L3D | #a nice decent tree!
+# L3D | 5
+# L3D | 15
+# L3D | 20
+# L3D | fA
+# L3D | A=^f >(30) B\\B\\\\\B
+# L3D | B=[^^fL \\\\\\A L  ]
+# L3D | L=[^(60) [*(.3)] +(50)*(.28)]
+# L3D | L=[^(60)*(.3)]
+# L3D | L=[&(70)*(.3)]
+# L3D | @
+#
+let ANGLE = 15;
+
+axiom f A;
+
+match A then PitchUp f WidthIncrease(30) B RollLeft RollLeft B RollLeft RollLeft RollLeft RollLeft RollLeft B;
+match B then [ PitchUp PitchUp f L RollLeft RollLeft RollLeft RollLeft RollLeft RollLeft A L ];
+match L weight 1 then [ PitchUp(60) [ Object(0.3) ] Plus(50) Object(0.28) ];
+match L weight 1 then [ PitchUp(60) Object(0.3) ];
+match L weight 1 then [ PitchDown(70) Object(0.3) ];

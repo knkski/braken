@@ -1,0 +1,28 @@
+# ID       : LSYS-B92EA4D1A8FB
+# Name     : Tripeanomed
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Tripeanomed (#82) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/tripeanomed--b92ea4d1a8.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b92ea4d1a8fb71724eae50a54db3e78bec0f594b0598cc6a7c008c392b025112
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Tripeanomed { ; William McWorter
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=x+f+x-f-x-f-x+f+x+f+x-f-x
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then X Plus F Plus X Minus F Minus X Minus F Minus X Plus F Plus X Plus F Plus X Minus F Minus X;

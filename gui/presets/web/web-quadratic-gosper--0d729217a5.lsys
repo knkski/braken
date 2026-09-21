@@ -1,0 +1,65 @@
+# Name: Quadratic Gosper Curve
+# Summary: A right-angled space-filling path packs interlocking meanders into a square.
+# Visualizer: turtle_2d
+# Angle: 90
+# Iterations: 2
+# Max Iterations: 4
+# Initial Color: 8
+
+# ID       : LSYS-0D729217A5B7
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.quadraticGosper | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[33] (Quadratic Gosper) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 12; heading Quadratic Gosper | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:0d729217a5b75e350f2cff0c5b271b6ef4f27bde0539a8eb534781a5f5683311
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | quadraticGosper =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "XFX-YF-YF+FX+FX-YF-YFFX+YF+FXFXYF-FX+YF+FXFX+YF-FXYF-YF-FX+FX+YFYF-" )
+# ELM |             , ( 'Y', "+FXFX-YF-YF+FX+FXYF+FX-YFYF-FX-YF+FXYFYF-FX-YFFX+FX+YF-YF-FX+FX+YFY" )
+# ELM |             ]
+# ELM |         , axiom = "-YF"
+# ELM |         , iterations = 3
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -1, y = -127 }
+# ELM |         , windowSize = 128
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Quadratic Gosper",
+# KITWALLACE |   "-YF",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "+FXFX-YF-YF+FX+FXYF+FX-YFYF-FX-YF+FXYFYF-FX-YFFX+FX+YF-YF-FX+FX+YFY"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "XFX-YF-YF+FX+FX-YF-YFFX+YF+FXFXYF-FX+YF+FXFX+YF-FXYF-YF-FX+FX+YFYF-"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = -YF
+# BOURKE | X -> XFX-YF-YF+FX+FX-YF-YFFX+YF+FXFXYF-FX+YF+FXFX+YF-FXYF-YF-FX+FX+YFYF-
+# BOURKE | Y -> +FXFX-YF-YF+FX+FXYF+FX-YFYF-FX-YF+FXYFYF-FX-YFFX+FX+YF-YF-FX+FX+YFY
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom Minus Y F;
+
+match X then X F X Minus Y F Minus Y F Plus F X Plus F X Minus Y F Minus Y F F X Plus Y F Plus F X F X Y F Minus F X Plus Y F Plus F X F X Plus Y F Minus F X Y F Minus Y F Minus F X Plus F X Plus Y F Y F Minus;
+match Y then Plus F X F X Minus Y F Minus Y F Plus F X Plus F X Y F Plus F X Minus Y F Y F Minus F X Minus Y F Plus F X Y F Y F Minus F X Minus Y F F X Plus F X Plus Y F Minus Y F Minus F X Plus F X Plus Y F Y;

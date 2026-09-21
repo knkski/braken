@@ -1,0 +1,38 @@
+# ID       : LSYS-3F087F56C5BC
+# Name     : a binary tree with scale, thickness and color (young parts are green, old are brown)
+# Source   : jkubin/L-system generated-catalog fallback (commit 68a699a) | Grammar #99: tree_binary_differently_colored.ls | https://github.com/jkubin/L-system/blob/68a699a88aafed49b919c871b6255fd537b7043d/grammars.txt
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/a-binary-tree-with-scale-thickness-and-color-young-parts-are-gre--3f087f56c5.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 20
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:3f087f56c5bca4d7942ad8b035dc51b019dc1c28c38ee54207a24648ea328a55
+# Note     : Fallback adaptation from grammars.txt because the corresponding M4 source file is absent at the pinned revision.
+# Note     : Generated derivation rules and final terminal projections were separated explicitly.
+#
+# Original jkubin/L-system generated-catalog fallback (commit 68a699a):
+# JKUBIN | Grammar #99: tree_binary_differently_colored.ls
+# JKUBIN | Description: a binary tree with scale, thickness and color (young parts are green, old are brown)
+# JKUBIN | Variables: {X, F}
+# JKUBIN | P: {
+# JKUBIN | 	ω → X
+# JKUBIN | 	X → F[-X][+X]
+# JKUBIN | 	F → >#F!<
+# JKUBIN | 	X → G
+# JKUBIN | 	F → N
+# JKUBIN | }
+# JKUBIN | n = 8, δ = 20°, scale = 1.5
+#
+let ANGLE = 20;
+let SCALE = 1.5;
+
+axiom X;
+
+match X then F [ Minus X ] [ Plus X ];
+match F then ScaleLength WidthIncrease F WidthDecrease ScaleLengthInverse;

@@ -1,0 +1,33 @@
+# ID       : LSYS-D374D78CBE46
+# Name     : Leafy
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Leafy (#44) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/leafy--d374d78cbe.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 7.2
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:d374d78cbe463df9de2d6f78d85f79e728ad034a5f36c8e023ab8114edeca49a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Leafy {
+# RESETIUS | ; order 3
+# RESETIUS |   Angle 50
+# RESETIUS |   Axiom +++++++++++++c6x
+# RESETIUS |   x=f[@.5+++++++++x@.5f+++++++c48f--f|++++f------f]
+# RESETIUS |   x=-f[@.4-----------!x@.5f+++++++c48f--f|++++f------f]
+# RESETIUS |   x=@.6x
+# RESETIUS |   }
+#
+let ANGLE = 7.2;
+
+axiom Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Color(6) X;
+
+match X then F [ Scale(0.5) Plus Plus Plus Plus Plus Plus Plus Plus Plus X Scale(0.5) F Plus Plus Plus Plus Plus Plus Plus Color(48) F Minus Minus F TurnAround Plus Plus Plus Plus F Minus Minus Minus Minus Minus Minus F ] Minus F [ Scale(0.4) Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus InvertTurns X Scale(0.5) F Plus Plus Plus Plus Plus Plus Plus Color(48) F Minus Minus F TurnAround Plus Plus Plus Plus F Minus Minus Minus Minus Minus Minus F ] Scale(0.6) X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

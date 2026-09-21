@@ -1,0 +1,36 @@
+# ID       : LSYS-61107C24E366
+# Name     : Pinetree
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Pinetree (#18) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pinetree--61107c24e3.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 20
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:61107c24e3665925c00b8ce6984dab9fb03da3df48aa3dd75baf396fc879699e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pinetree {
+# RESETIUS |   Angle 18
+# RESETIUS |   Axiom vzfff
+# RESETIUS |   v=[+++w][---w]yv
+# RESETIUS |   w=+x[-w]z
+# RESETIUS |   x=-w[+x]z
+# RESETIUS |   y=yz
+# RESETIUS |   z=[-fff][+fff]f
+# RESETIUS |   }
+#
+let ANGLE = 20;
+
+axiom V Z F F F;
+
+match V then [ Plus Plus Plus W ] [ Minus Minus Minus W ] Y V;
+match W then Plus X [ Minus W ] Z;
+match X then Minus W [ Plus X ] Z;
+match Y then Y Z;
+match Z then [ Minus F F F ] [ Plus F F F ] F;

@@ -1,0 +1,9 @@
+# Name: Sierpinski Triangle
+# Summary: Triangle gasket curve.
+# Angle: 60
+# Iterations: 8
+
+axiom X;
+
+match Draw then Draw Draw;
+match X then Right Right Draw X Draw Left Left Draw X Draw Left Left Draw X Draw Right Right;

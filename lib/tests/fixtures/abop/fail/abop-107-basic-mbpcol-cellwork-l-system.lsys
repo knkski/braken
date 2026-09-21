@@ -1,0 +1,16 @@
+# ID       : ABOP-107
+# Name     : Basic mBPCOL cellwork L-system
+# Source   : chapter 7, book page 172, Fig. 7.23
+# Formalism: cellwork L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | p1 : A : wall 1 -> B1[A2]B1
+# ABOP | p2 : A : wall 2 -> B2[C2]B2
+# ABOP | p3 : B : * -> A
+#
+# Expected parse failure: cellwork rules operate on walls of 3D cells.
+cellwork match A wall 1 then B1 [ A2 ] B1;
+cellwork match A wall 2 then B2 [ C2 ] B2;
+cellwork match B wall any then A;

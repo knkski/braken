@@ -1,0 +1,11 @@
+# Name: Pentaflake
+# Summary: A fivefold edge substitution packs smaller pentagonal loops around a central void.
+# Visualizer: turtle_2d
+# Angle: 72
+# Iterations: 4
+# Max Iterations: 6
+# Initial Color: 5
+
+axiom Draw Right Draw Right Draw Right Draw Right Draw;
+
+match Draw then Draw Right Draw Left Left Draw Left Draw Right Draw Right Draw;

@@ -1,0 +1,32 @@
+# ID       : LSYS-AAD66AB444FC
+# Name     : SpacefillingTree
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section SpacefillingTree (#27) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/spacefillingtree--aad66ab444.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:aad66ab444fca65fa2975702f4a929df8f049389f6bcf81cf8307cce53602eee
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SpacefillingTree {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=xf[-f+x]+f+y--
+# RESETIUS |   y=xf[+f+x]-f+y
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom R;
+
+match R then X;
+match X then X F [ Minus F Plus X ] Plus F Plus Y Minus Minus;
+match Y then X F [ Plus F Plus X ] Minus F Plus Y;

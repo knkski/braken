@@ -1,0 +1,48 @@
+# ID       : LSYS-369DE0542894
+# Name     : Generated random L-system 13
+# Source   : Notgnoshi generative toolkit examples (MIT) | examples/random-lsystems/saved.json[13] | https://github.com/Notgnoshi/generative/blob/25459b6/examples/random-lsystems/saved.json
+# Formalism: generated stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : source-provided; file=../renders/generated-random-l-system-13--369de05428.svg
+# Fidelity : projection
+# Features : context-free, generated, stochastic, turtle3d
+# Angle    : 11
+# Heading  : 0
+# Draw     : F G
+# Move     : f g
+# Profile  : turtle3d
+# Fingerprint: sha256:369de05428941c018d72901fa2a0ba0c0757b23e2b43db1e87df7521854acec8
+# Source-token warnings: unbalanced-branches-projected-to-modules
+# Note     : Source seed: 3509081966
+# Note     : The source contains unmatched branch delimiters. All brackets in each affected axiom or successor are represented as BranchBegin/BranchEnd modules; token order is preserved, but structural branch semantics are intentionally lost.
+#
+# Original Notgnoshi generative toolkit examples (MIT):
+# NOTGNOSHI | {
+# NOTGNOSHI |   "scale": 10,
+# NOTGNOSHI |   "seed": 3509081966,
+# NOTGNOSHI |   "rules": [
+# NOTGNOSHI |     "G -> F]fFg^+f<>F[g",
+# NOTGNOSHI |     "f -> <^>-|+[[g[f[>F>]f",
+# NOTGNOSHI |     "g -> ||FFG|GG",
+# NOTGNOSHI |     "g -> F>>^^[>|v^[[]ff[]g[",
+# NOTGNOSHI |     "f -> vFf>F<+",
+# NOTGNOSHI |     "g -> <fvG[f<[>",
+# NOTGNOSHI |     "F -> G]|"
+# NOTGNOSHI |   ],
+# NOTGNOSHI |   "axiom": "G",
+# NOTGNOSHI |   "iterations": 6,
+# NOTGNOSHI |   "angle": 11
+# NOTGNOSHI | }
+#
+let ANGLE = 11;
+
+axiom G;
+
+match G then F BranchEnd f F g PitchUp Plus f RollLeft RollRight F BranchBegin g;
+match f weight 1 then RollLeft PitchUp RollRight Minus TurnAround Plus BranchBegin BranchBegin g BranchBegin f BranchBegin RollRight F RollRight BranchEnd f;
+match g weight 1 then TurnAround TurnAround F F G TurnAround G G;
+match g weight 1 then F RollRight RollRight PitchUp PitchUp BranchBegin RollRight TurnAround PitchDown PitchUp BranchBegin BranchBegin BranchEnd f f BranchBegin BranchEnd g BranchBegin;
+match f weight 1 then PitchDown F f RollRight F RollLeft Plus;
+match g weight 1 then RollLeft f PitchDown G BranchBegin f RollLeft BranchBegin RollRight;
+match F then G BranchEnd TurnAround;

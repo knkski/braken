@@ -1,0 +1,28 @@
+# ID       : LSYS-453BAEE2C224
+# Name     : ADH125b
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH125b (#38) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh125b--453baee2c2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:453baee2c224dadd89cfc0423e7f78f94dc26c0fb1447de4e6aa92500db53ba1
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH125b { ; Anthony Hanmer 2000 Spiral of 125
+# RESETIUS |   Angle 4 ; (Add -@.5f to the axiom as many times as desired)
+# RESETIUS |   Axiom f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f-@.5f
+# RESETIUS |   f=ff--g+g++ff++g
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F Minus Scale(0.5) F;
+
+match F then F F Minus Minus G Plus G Plus Plus F F Plus Plus G;

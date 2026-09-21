@@ -1,0 +1,38 @@
+# ID       : LSYS-5CFC3B933869
+# Name     : Lévy C curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | levy_c_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/levy_c_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/lvy-c-curve--5cfc3b9338.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5cfc3b933869923d59575bbb517d5e75bbb27949452d119226579b80c64d8069
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L%C3%A9vy_C_curve
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/02⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L%C3%A9vy_C_curve ⟧)
+# JKUBIN | ___DESCR(⟦Lévy C curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 levy_c_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦LEVY_C_CURVE⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦-F++F-⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | 
+# JKUBIN | LEVY_C_CURVE(12)
+#
+let ANGLE = 45;
+
+axiom F;
+
+match F then Minus F Plus Plus F Minus;

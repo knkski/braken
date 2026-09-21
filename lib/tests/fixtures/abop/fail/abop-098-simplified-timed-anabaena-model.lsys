@@ -1,0 +1,16 @@
+# ID       : ABOP-098
+# Name     : Simplified timed Anabaena model
+# Source   : chapter 6, book page 137, Eq. 6.2
+# Formalism: timed DOL
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | ω : (ar,1)
+# ABOP | p1    : (ar,2) -> (al,1)(ar,0)
+# ABOP | p2    : (al,2) -> (al,0)(ar,1)
+#
+# Expected parse failure: simplified timed DOL semantics are still continuous-time semantics.
+timed axiom (ar, 1);
+timed match (ar, 2) then (al, 1) (ar, 0);
+timed match (al, 2) then (al, 0) (ar, 1);

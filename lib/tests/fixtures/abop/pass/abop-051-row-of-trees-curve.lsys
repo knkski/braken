@@ -1,0 +1,23 @@
+# ID       : ABOP-051
+# Name     : Row-of-trees curve
+# Source   : chapter 1, book page 47, Fig. 1.37a
+# Formalism: parametric turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define c 1
+# ABOP | #define p 0.3
+# ABOP | #define q c-p
+# ABOP | #define h (p*q)^0.5
+# ABOP | ω : F(1)
+# ABOP | p1    : F(x) -> F(x*p)+F(x*h)--F(x*h)+F(x*q)
+#
+let c = 1;
+let p = 0.3;
+let q = c-p;
+let h = sqrt(p*q);
+
+axiom F(1);
+
+match F(x) then F(x*p) Plus F(x*h) Minus Minus F(x*h) Plus F(x*q);

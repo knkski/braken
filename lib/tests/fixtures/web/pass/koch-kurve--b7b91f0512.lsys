@@ -1,0 +1,40 @@
+# ID       : LSYS-B7B91F051263
+# Name     : koch_kurve
+# Aliases  : koch curve, from wikipedia
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/koch_curve.ls, section koch_kurve (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/koch_curve.ls
+# Source   : abiusx/L3D model archive | L/koch.l | https://github.com/abiusx/L3D/blob/master/L/koch.l
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/koch-kurve--b7b91f0512.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b7b91f05126339a649d43f4eb86c8acdb76ff4b7475cc7d0639ccff2ef86a1d5
+# Note     : Upstream thickness setting: 10
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | koch_kurve {
+# RESETIUS | axiom  F
+# RESETIUS | F=F+F-F-F+F
+# RESETIUS | theta 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+# Original abiusx/L3D model archive:
+# L3D | #koch curve, from wikipedia
+# L3D | 6
+# L3D | 90
+# L3D | 10
+# L3D | F
+# L3D | F=F+F-F-F+F
+# L3D | @
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Plus F;

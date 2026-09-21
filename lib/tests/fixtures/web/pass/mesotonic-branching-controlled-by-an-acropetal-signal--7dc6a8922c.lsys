@@ -1,0 +1,40 @@
+# ID       : LSYS-7DC6A8922C40
+# Name     : Mesotonic branching controlled by an acropetal signal
+# Source   : Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996) | Equation 15 | https://algorithmicbotany.org/papers/l-sys.csiro96.pdf
+# Formalism: parametric left-context-sensitive bracketed L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-context-turtle2d'
+# Fidelity : equivalent
+# Features : bracketed, context-sensitive, mesotonic, parametric, signal
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : parametric-context-turtle2d
+# Fingerprint: sha256:7dc6a8922c40cf89f6d8f3aeda33d1d11744e6f91821108f9365b084def8cf82
+#
+# Original Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996):
+# SCHOLARLY | m=3; n=4; u=4; v=2
+# SCHOLARLY | ignore + -
+# SCHOLARLY | ω : S(0)F(1,0)A(0)
+# SCHOLARLY | p1-p9: timed A/B growth and acropetal S signal; see cited equation for typography
+#
+let M = 3;
+let N = 4;
+let U = 4;
+let V = 2;
+let ANGLE = 60;
+
+ignore Plus Minus TurnAround;
+axiom S(0) F(1,0) A(0);
+
+match A(i) when i < M - 1 then A(i+1);
+match A(i) when i = M - 1 then [ Plus(60) F(1,1) B(0) ] F(1,0) TurnAround A(0);
+match B(i) when i < N - 1 then B(i+1);
+match B(i) when i = N - 1 then F(1,1) B(0);
+match S(i) when i < U + V then S(i+1);
+match S(i) when i = U + V then nothing;
+match F(l,o) left S(i) when o = 0 and i = U - 1 then WideStart F(l,o) WideEnd S(0);
+match F(l,o) left S(i) when o = 1 and i = V - 1 then WideStart F(l,o) WideEnd S(0);
+match B(j) left S(i) then nothing;

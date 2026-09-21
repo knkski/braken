@@ -1,0 +1,14 @@
+# ID       : ABOP-049
+# Name     : Sample parametric 2L production
+# Source   : chapter 1, book page 43, Eq. 1.8
+# Formalism: parametric context-sensitive string
+# Parse    : pass
+# Execute  : pass
+# Note     : The axiom is the sample word shown directly below the production.
+#
+# Original ABOP:
+# ABOP | A(x) < B(y) > C(z) : x+y+z>10 -> E((x+y)/2) F((y+z)/2)
+#
+axiom A(4) B(5) C(6);
+
+match B(y) left A(x) right C(z) when x+y+z>10 then E((x+y)/2) F((y+z)/2);

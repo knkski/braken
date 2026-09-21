@@ -1,0 +1,37 @@
+# ID       : LSYS-0CFCFB5E5E6A
+# Name     : Bush 1
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/bush-1.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/bush-1.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/bush-1--0cfcfb5e5e.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 25
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:0cfcfb5e5e6afd0cc66413322f5a4d88caa7c560be2c88b844a627d5dc10bc75
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>F -&gt; FF+[+F-F-F]-[-F+F+F]</rule>
+# OFX | <axiom>F</axiom>
+# OFX | <maxDepth>2</maxDepth>
+# OFX | <theta>25</theta>
+# OFX | <bg_color>140, 68, 45, 255</bg_color>
+# OFX | 		<tree_color>255, 188, 55, 255</tree_color>
+# OFX | 	<Random_Y_Rotation>0</Random_Y_Rotation>
+# OFX | 		<constants/>
+# OFX | 		<depth>2</depth>
+# OFX | 		<specular_color>10, 93, 252, 255</specular_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 25;
+
+axiom F;
+
+match F then F F Plus [ Plus F Minus F Minus F ] Minus [ Minus F Plus F Plus F ];

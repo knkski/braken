@@ -1,0 +1,16 @@
+# ID       : ABOP-021
+# Name     : 5×5 diagonal-contact FASS curve
+# Source   : chapter 1, book page 17, Fig. 1.17b
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : L
+# ABOP | p1    : L -> L+F+R-F-L+F+R-F-L-F-R+F+L-F-R-F-L+F+R-F-L-F-R-F-L+F+R+F+L+F+R-F-L+F+R+F+L-R-F+F+L+F+R-F-L+F+R-F-L
+# ABOP | p2    : R -> R-F-L+F+R-F-L+F+R+F+L-F-R+F+L+F+R-F-L+F+R+F+L+F+R-F-L-F-R-F-L+F+R-F-L-F-R+F+L-F-R-F-L+F+R-F-L+F+R
+#
+axiom L;
+
+match L then L Plus F Plus R Minus F Minus L Plus F Plus R Minus F Minus L Minus F Minus R Plus F Plus L Minus F Minus R Minus F Minus L Plus F Plus R Minus F Minus L Minus F Minus R Minus F Minus L Plus F Plus R Plus F Plus L Plus F Plus R Minus F Minus L Plus F Plus R Plus F Plus L Minus R Minus F Plus F Plus L Plus F Plus R Minus F Minus L Plus F Plus R Minus F Minus L;
+match R then R Minus F Minus L Plus F Plus R Minus F Minus L Plus F Plus R Plus F Plus L Minus F Minus R Plus F Plus L Plus F Plus R Minus F Minus L Plus F Plus R Plus F Plus L Plus F Plus R Minus F Minus L Minus F Minus R Minus F Minus L Plus F Plus R Minus F Minus L Minus F Minus R Plus F Plus L Minus F Minus R Minus F Minus L Plus F Plus R Minus F Minus L Plus F Plus R;

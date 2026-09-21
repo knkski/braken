@@ -1,0 +1,11 @@
+# Name: Koch Snowflake
+# Summary: A triangular boundary sprouts smaller triangular peaks at every recursive step.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 4
+# Max Iterations: 9
+# Initial Color: 0
+
+axiom Draw Right Right Draw Right Right Draw;
+
+match Draw then Draw Left Draw Right Right Draw Left Draw;

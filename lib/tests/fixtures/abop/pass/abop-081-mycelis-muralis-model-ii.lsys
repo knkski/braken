@@ -1,0 +1,36 @@
+# ID       : ABOP-081
+# Name     : Mycelis muralis, Model II
+# Source   : chapter 3, book page 88, L-system 3.2
+# Formalism: parametric branch-aware context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #include O
+# ABOP | #ignore / + ~ O
+# ABOP | ω : I(20) F A(0)
+# ABOP | p1    : S < A(t) -> T(0) ~ O
+# ABOP | p2    : A(t) : t>0 -> A(t-1)
+# ABOP | p3    : A(t) : t=0 -> [+(30)G]F/(180)A(2)
+# ABOP | p4    : S < F -> F S
+# ABOP | p5    : F > T(c) -> T(c+1) F U(c-1)
+# ABOP | p6    : U(c) < G -> I(c) F A(2)
+# ABOP | p7    : I(c) : c>0 -> I(c-1)
+# ABOP | p8    : I(c) : c=0 -> S
+# ABOP | p9    : S -> epsilon
+# ABOP | p10   : T(c) -> epsilon
+#
+ignore RollRight Plus O;
+
+axiom I(20) F A(0);
+
+match A(t) left S then T(0) O;
+match A(t) when t>0 then A(t-1);
+match A(t) when t=0 then [ Plus(30) G ] F RollRight(180) A(2);
+match F left S then F S;
+match F right T(c) then T(c+1) F U(c-1);
+match G left U(c) then I(c) F A(2);
+match I(c) when c>0 then I(c-1);
+match I(c) when c=0 then S;
+match S then nothing;
+match T(c) then nothing;

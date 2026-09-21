@@ -1,0 +1,81 @@
+# ID       : LSYS-78FCAEEC7A0D
+# Name     : Dragon Curve
+# Aliases  : Dragon
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | dragon_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/dragon_curve.ls
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.dragonCurve | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[0] (Dragon) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 31; heading Dragon Curve | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/dragon-curve--78fcaeec7a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:78fcaeec7a0d64e3cd8fb3b9735fa42e05f41eb41973cd27a9affcaf0c706dc7
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L-system#Example_6:_Dragon_curve
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L-system#Example_6:_Dragon_curve ⟧)
+# JKUBIN | ___DESCR(⟦Dragon curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 dragon_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦DRAGON_CURVE⟧, ⟦FX⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦X+YF+⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦-FX-Y⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":15,dnl
+# JKUBIN | 
+# JKUBIN | DRAGON_CURVE(10)
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | dragonCurve =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "X+YF+" )
+# ELM |             , ( 'Y', "-FX-Y" )
+# ELM |             ]
+# ELM |         , axiom = "FX"
+# ELM |         , iterations = 12
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -75, y = -36 }
+# ELM |         , windowSize = 98
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Dragon",
+# KITWALLACE |   "FX",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "X+YF+"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "-FX-Y"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = FX
+# BOURKE | X -> X+YF+
+# BOURKE | Y -> -FX-Y
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F X;
+
+match X then X Plus Y F Plus;
+match Y then Minus F X Minus Y;

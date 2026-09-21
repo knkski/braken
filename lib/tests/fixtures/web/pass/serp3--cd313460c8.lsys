@@ -1,0 +1,30 @@
+# ID       : LSYS-CD313460C8DC
+# Name     : serp3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/serp3.ls, section serp3 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/serp3.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; output=no-drawable-segments
+# Render   : not-applicable; reason=expanded word contains no drawable segments
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:cd313460c8dc9952525cb1606924d3532676af3063848c71946451edbebad917
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | serp3 {
+# RESETIUS | axiom A
+# RESETIUS | A=x-A-x;
+# RESETIUS | x=A+x+A;
+# RESETIUS | theta 1.0471975511965977461542144610932
+# RESETIUS | }
+#
+let ANGLE = 60;
+
+axiom A;
+
+match A then X Minus A Minus X;
+match X then A Plus X Plus A;

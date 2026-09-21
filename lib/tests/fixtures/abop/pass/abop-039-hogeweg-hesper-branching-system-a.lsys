@@ -1,0 +1,35 @@
+# ID       : ABOP-039
+# Name     : Hogeweg–Hesper branching system a
+# Source   : chapter 1, book page 35, Fig. 1.31a
+# Formalism: branch-aware context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #ignore : + - F
+# ABOP | ω   : F1F1F1
+# ABOP | 0 < 0 > 0 -> 0
+# ABOP | 0 < 0 > 1 -> 1[+F1F1]
+# ABOP | 0 < 1 > 0 -> 1
+# ABOP | 0 < 1 > 1 -> 1
+# ABOP | 1 < 0 > 0 -> 0
+# ABOP | 1 < 0 > 1 -> 1F1
+# ABOP | 1 < 1 > 0 -> 0
+# ABOP | 1 < 1 > 1 -> 0
+# ABOP | * < + > * -> -
+# ABOP | * < - > * -> +
+#
+ignore Plus Minus F;
+
+axiom F One F One F One;
+
+match Zero left Zero right Zero then Zero;
+match Zero left Zero right One then One [ Plus F One F One ];
+match One left Zero right Zero then One;
+match One left Zero right One then One;
+match Zero left One right Zero then Zero;
+match Zero left One right One then One F One;
+match One left One right Zero then Zero;
+match One left One right One then Zero;
+match Plus left _ right _ then Minus;
+match Minus left _ right _ then Plus;

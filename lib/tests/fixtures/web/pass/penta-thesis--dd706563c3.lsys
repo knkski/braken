@@ -1,0 +1,43 @@
+# ID       : LSYS-DD706563C32C
+# Name     : Penta.Thesis
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Penta.Thesis (#23) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/penta-thesis--dd706563c3.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:dd706563c32c93e499e085b657294e3818459df70543df187dd8ec971f5d8164
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Penta.Thesis {
+# RESETIUS | 
+# RESETIUS |   ; best order 13
+# RESETIUS |   ; time 0:07
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom C16[A]G++[A]G++[A]G++[A]G++[A]G++
+# RESETIUS | 
+# RESETIUS |     A=+F[@.236068I]++[@.381966E]F
+# RESETIUS |     B=[A]G[@.618034B]++[A]G++[A]G++[A]G++[A]G++
+# RESETIUS |     E=<3A
+# RESETIUS |     I=<3B
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Color(16) [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus;
+
+match A then Plus F [ Scale(0.236068) I ] Plus Plus [ Scale(0.381966) E ] F;
+match B then [ A ] G [ Scale(0.618034) B ] Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus [ A ] G Plus Plus;
+match E then ColorIncrement(3) A;
+match I then ColorIncrement(3) B;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

@@ -1,0 +1,34 @@
+# ID       : LSYS-8C1FD19792AB
+# Name     : Kites&Darts3
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section Kites&Darts3 (#7) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/kites-darts3--8c1fd19792.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8c1fd19792abb7ba216fdf1ce6dd733cc3d6aa077e05c143e5dcf002a7eb898a
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Kites&Darts3 {
+# FRACTINT |                ;; by Philippe Hurbain
+# FRACTINT |                ;; Penrose's kites and darts, with darts seed
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom [a]++[a]++[a]++[a]++[a]
+# FRACTINT |   k=+[@.618034a]f@.618034---[-k]f-f---[-k]@i.618034f[@.618034|a]
+# FRACTINT |   a=[@.618034k]+f@.618034[|a]----f+f----[a]@i.618034f
+# FRACTINT |   f=g
+# FRACTINT | }
+#
+let ANGLE = 36;
+
+axiom [ A ] Plus Plus [ A ] Plus Plus [ A ] Plus Plus [ A ] Plus Plus [ A ];
+
+match K then Plus [ Scale(0.618034) A ] F Scale(0.618034) Minus Minus Minus [ Minus K ] F Minus F Minus Minus Minus [ Minus K ] Scale(1.6180339593) F [ Scale(0.618034) TurnAround A ];
+match A then [ Scale(0.618034) K ] Plus F Scale(0.618034) [ TurnAround A ] Minus Minus Minus Minus F Plus F Minus Minus Minus Minus [ A ] Scale(1.6180339593) F;
+match F then G;

@@ -1,0 +1,24 @@
+# ID       : LSYS-A6E1E6C82BC1
+# Name     : Parametric Koch curve (propfeds manual)
+# Source   : propfeds Parametric L-systems Renderer examples | parametric.js manualSystems[6] / manual page 7, The Koch curve | https://github.com/propfeds/lsystems-renderer/blob/master/parametric.js
+# Formalism: deterministic parametric context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-turtle2d'
+# Fidelity : transcription
+# Features : context-free, deterministic, explicit-angle, parametric, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : parametric-turtle2d
+# Fingerprint: sha256:a6e1e6c82bc1f2fc3a361cfc6b8f9963089e4b0443ee52289f03711694419646
+#
+# Original propfeds Parametric L-systems Renderer examples:
+# SCHOLARLY | new LSystem('F(1)', ['F(d)=F(d/3)+F(d/3)-(120)F(d/3)+F(d/3)'], 60)
+#
+let ANGLE = 60;
+
+axiom F(1);
+
+match F(d) then F(d/3) Plus F(d/3) Minus(120) F(d/3) Plus F(d/3);

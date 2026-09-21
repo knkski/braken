@@ -1,0 +1,32 @@
+# ID       : ABOP-103
+# Name     : Microsorium linguaeforme map L-system
+# Source   : chapter 7, book page 156, Fig. 7.10
+# Formalism: map L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | ω : directed A D x b
+# ABOP | l1    : a -> A[+b]i
+# ABOP | l2    : b -> e[-B]x[+h]d
+# ABOP | l3    : d -> f
+# ABOP | l4    : f -> g[-h]x[+h]d
+# ABOP | l5    : h -> x[-f]x
+# ABOP | l6    : i -> c
+# ABOP | l7    : c -> i[+f]i
+# ABOP | l8    : e -> x[+x]x
+# ABOP | l9    : g -> x[-x]x[+x]x
+# ABOP | r1    : A -> a[-B]I
+# ABOP | r2    : B -> E[+b]x[-H]D
+# ABOP | r3    : D -> F
+# ABOP | r4    : F -> G[+H]x[-H]D
+# ABOP | r5    : H -> x[+F]x
+# ABOP | r6    : I -> C
+# ABOP | r7    : C -> I[-F]I
+# ABOP | r8    : E -> x[-x]x
+# ABOP | r9    : G -> x[+x]x[-x]x
+#
+# Expected parse failure: full Microsorium map topology requires the map backend.
+map lsystem Microsorium {
+    # The original directed edge productions are preserved above.
+}

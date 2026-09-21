@@ -1,0 +1,35 @@
+# ID       : LSYS-66402C56F7B3
+# Name     : Plant09
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Plant09 (#53) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/plant09--66402c56f7.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:66402c56f7b31d6c3df908ade5b63884f1b181ff3acf5be57fc7a967fa02e759
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Plant09 { ;
+# RESETIUS |   ;
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom F+F+F
+# RESETIUS |   F=F[X]
+# RESETIUS |   X=FSFT
+# RESETIUS |   S=+F[+X]-F[-X]
+# RESETIUS |   T=-F[-X]+F[+X]
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom F Plus F Plus F;
+
+match F then F [ X ];
+match X then F S F T;
+match S then Plus F [ Plus X ] Minus F [ Minus X ];
+match T then Minus F [ Minus X ] Plus F [ Plus X ];

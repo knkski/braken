@@ -1,0 +1,42 @@
+# ID       : LSYS-E7432AE08E4D
+# Name     : Border1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Border1 (#3) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/border1.ls, section Border1 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/border1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/border1--e7432ae08e.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e7432ae08e4df76d87f354efbdee8c7a37d48bcdb006f98a5880abce8a91c42c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Border1 { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom XYXYXYX+XYXYXYX+XYXYXYX+XYXYXYX
+# RESETIUS |   F=
+# RESETIUS |   X=FX+FX+FXFY-FY-
+# RESETIUS |   Y=+FX+FXFY-FY-FY
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Border1 { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom XYXYXYX+XYXYXYX+XYXYXYX+XYXYXYX
+# RESETIUS |   F=
+# RESETIUS |   X=FX+FX+FXFY-FY-
+# RESETIUS |   Y=+FX+FXFY-FY-FY
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X Y X Y X Y X Plus X Y X Y X Y X Plus X Y X Y X Y X Plus X Y X Y X Y X;
+
+match F then nothing;
+match X then F X Plus F X Plus F X F Y Minus F Y Minus;
+match Y then Plus F X Plus F X F Y Minus F Y Minus F Y;

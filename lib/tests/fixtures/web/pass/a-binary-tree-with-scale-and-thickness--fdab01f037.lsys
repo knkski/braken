@@ -1,0 +1,40 @@
+# ID       : LSYS-FDAB01F0374D
+# Name     : a binary tree with scale and thickness
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_binary_differently.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_binary_differently.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/a-binary-tree-with-scale-and-thickness--fdab01f037.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 20
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:fdab01f0374d28145671afdc63c29cb7e65011063f0b10e8bf08c59b1629b4d4
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/10/03⟧)
+# JKUBIN | ___DESCR(⟦a binary tree with scale and thickness⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_binary_differently.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BINARY_TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F[-X][+X]⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>#F!<⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(20),dnl
+# JKUBIN | SCALE(1.5),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | BINARY_TREE(7)
+#
+let ANGLE = 20;
+let SCALE = 1.5;
+
+axiom X;
+
+match X then F [ Minus X ] [ Plus X ];
+match F then ScaleLength WidthIncrease F WidthDecrease ScaleLengthInverse;

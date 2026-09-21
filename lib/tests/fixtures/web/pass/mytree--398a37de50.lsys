@@ -1,0 +1,32 @@
+# ID       : LSYS-398A37DE50D4
+# Name     : MyTree
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section MyTree (#51) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/mytree--398a37de50.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:398a37de50d41bdb0c7ee21f3f7699b0cea662c8a50e630eda6968f464ee1ba1
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | MyTree { ; Adrian Mariano
+# FRACTINT |   Angle 16
+# FRACTINT |   Axiom ++++F
+# FRACTINT |   F=FF-[XY]+[XY]
+# FRACTINT |   X=+FY
+# FRACTINT |   Y=-FX
+# FRACTINT |   }
+#
+let ANGLE = 22.5;
+
+axiom Plus Plus Plus Plus F;
+
+match F then F F Minus [ X Y ] Plus [ X Y ];
+match X then Plus F Y;
+match Y then Minus F X;

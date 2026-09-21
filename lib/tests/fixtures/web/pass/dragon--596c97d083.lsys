@@ -1,0 +1,55 @@
+# ID       : LSYS-596C97D083F1
+# Name     : Dragon
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dragon (#13) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Dragon (#7) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Dragon (#5) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dragon--596c97d083.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:596c97d083f1fad6c7881e7c01a27a1acf6010bf2e4d705000974b56ca592291
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom FX
+# RESETIUS |   F=
+# RESETIUS |   y=+FX--FY+
+# RESETIUS |   x=-FX++FY-
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom FX
+# RESETIUS |   F=
+# RESETIUS |   y=+FX--FY+
+# RESETIUS |   x=-FX++FY-
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Dragon { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 8
+# FRACTINT |   Axiom FX
+# FRACTINT |   F=
+# FRACTINT |   y=+FX--FY+
+# FRACTINT |   x=-FX++FY-
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom F X;
+
+match F then nothing;
+match Y then Plus F X Minus Minus F Y Plus;
+match X then Minus F X Plus Plus F Y Minus;

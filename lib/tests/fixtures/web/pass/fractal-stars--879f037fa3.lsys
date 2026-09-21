@@ -1,0 +1,37 @@
+# ID       : LSYS-879F037FA305
+# Name     : Fractal stars
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | stars.ls | https://github.com/jkubin/L-system/blob/68a699a/stars.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fractal-stars--879f037fa3.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:879f037fa3054188d11e9c9739e77b225db87c0a307aae598dd685d0aa4caf21
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Fractal stars⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 stars.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦STARS⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦Y[+Y][--Y]Y⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦X[++X][-X]X⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | 
+# JKUBIN | STARS(6)
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then Y [ Plus Y ] [ Minus Minus Y ] Y;
+match Y then X [ Plus Plus X ] [ Minus X ] X;

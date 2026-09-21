@@ -1,0 +1,40 @@
+# ID       : LSYS-6FFE83C80345
+# Name     : Cantor set
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | cantor_set.ls | https://github.com/jkubin/L-system/blob/68a699a/cantor_set.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/cantor-set--6ffe83c803.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:6ffe83c80345e42017f805770da67cf147f121af5f31a6fa4a58724b887b750e
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L-system#Example_3:_Cantor_set
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L-system#Example_3:_Cantor_set ⟧)
+# JKUBIN | ___DESCR(⟦Cantor set⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 cantor_set.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦CANTOR_SET⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦ABA⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦BBB⟧, ⟦f⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "penw":5,dnl
+# JKUBIN | "setx":-400,dnl
+# JKUBIN | 
+# JKUBIN | CANTOR_SET(4)
+#
+let ANGLE = 90;
+
+axiom A;
+
+match A then A B A;
+match B then B B B;

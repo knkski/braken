@@ -1,0 +1,12 @@
+# Name: Gosper Curve
+# Summary: A continuous path recursively fills a rounded hexagonal island.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 4
+# Max Iterations: 7
+# Initial Color: 8
+
+axiom X;
+
+match X then X Left Y Draw Left Left Y Draw Right Draw X Right Right Draw X Draw X Right Y Draw Left;
+match Y then Right Draw X Left Y Draw Y Draw Left Left Y Draw Left Draw X Right Right Draw X Right Y;

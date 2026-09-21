@@ -1,0 +1,28 @@
+# ID       : LSYS-17873634E931
+# Name     : ADH122m
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH122m (#205) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh122m--17873634e9.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:17873634e931db5eb4114e05bf7c2d8a16207fabc29c252f3679bed38bb28d00
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH122m { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 6 ;
+# RESETIUS |   Axiom f-f-f-f-f-f
+# RESETIUS |   f=g+[ff-gf]-fg
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom F Minus F Minus F Minus F Minus F Minus F;
+
+match F then G Plus [ F F Minus G F ] Minus F G;

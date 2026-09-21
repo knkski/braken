@@ -1,0 +1,38 @@
+# ID       : LSYS-16B593CB73B0
+# Name     : PreLace
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section PreLace (#61) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/prelace--16b593cb73.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:16b593cb73b0f16ece1d08ec7021e15f62a22ddcfc3a55ed98f6d0ffe4d93110
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | PreLace {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom +++c32fw----c15fzc48fw+
+# RESETIUS |   f=
+# RESETIUS |   y=+++fw----fzfw+
+# RESETIUS |   x=+fzfw----fz+++
+# RESETIUS |   w=---fy++++fxfy-
+# RESETIUS |   z=-fxfy++++fx---
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom Plus Plus Plus Color(32) F W Minus Minus Minus Minus Color(15) F Z Color(48) F W Plus;
+
+match F then nothing;
+match Y then Plus Plus Plus F W Minus Minus Minus Minus F Z F W Plus;
+match X then Plus F Z F W Minus Minus Minus Minus F Z Plus Plus Plus;
+match W then Minus Minus Minus F Y Plus Plus Plus Plus F X F Y Minus;
+match Z then Minus F X F Y Plus Plus Plus Plus F X Minus Minus Minus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

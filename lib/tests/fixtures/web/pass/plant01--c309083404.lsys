@@ -1,0 +1,39 @@
+# ID       : LSYS-C3090834049F
+# Name     : Plant01
+# Aliases  : sornak
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/sornak.ls, section sornak (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/sornak.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Plant01 (#35) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/plant01--c309083404.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 25.7142857143
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c3090834049fd625dd2a1acdd4b57727673086125c66f0cb1ae475051c2276c5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | sornak {
+# RESETIUS | axiom F
+# RESETIUS | F=F[+F]F[-F]F
+# RESETIUS | theta 0.4487989505128276054946633404685
+# RESETIUS | }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Plant01 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	 ; Plant-like structure, figure 1.24a p.25
+# FRACTINT | 	 ; also p.285a The Science of Fractal Images
+# FRACTINT |   angle 14
+# FRACTINT |   axiom f
+# FRACTINT |   f=F[+F]F[-F]F
+# FRACTINT |   }
+#
+let ANGLE = 25.7142857143;
+
+axiom F;
+
+match F then F [ Plus F ] F [ Minus F ] F;

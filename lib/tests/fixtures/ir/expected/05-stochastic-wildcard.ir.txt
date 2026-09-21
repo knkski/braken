@@ -1,0 +1,37 @@
+Braken IR v1 / semantics v2
+7 symbols · 0 globals · 3 productions · 3 expression programs
+maximum expression stack 1 · maximum bindings 0 · maximum context depth 0
+source fingerprint fnv1a64:a01210fe809600f7
+
+symbols
+  s0 = A / 0
+  s1 = B / 0
+  s2 = C / 0
+  s3 = X / 0
+  s4 = Y / 0
+  s5 = Z / 0
+  s6 = _ / 0
+
+axiom
+  A B C
+
+productions
+  p0: A weight e0 then X
+  p1: A weight e1 then Y
+  p2: _ weight e2 then Z
+
+expression programs
+  e0 Weight(ProductionId(0)) (stack 1)
+    0000 push.number 0x4008000000000000 ; 3.0
+    0001 return
+  e1 Weight(ProductionId(1)) (stack 1)
+    0000 push.number 0x3ff0000000000000 ; 1.0
+    0001 return
+  e2 Weight(ProductionId(2)) (stack 1)
+    0000 push.number 0x4000000000000000 ; 2.0
+    0001 return
+
+backend compatibility
+  CPU: compatible
+  CUDA: compatible
+  WGPU: compatible

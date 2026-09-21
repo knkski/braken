@@ -1,0 +1,28 @@
+# ID       : LSYS-A42B346F4AB2
+# Name     : Hilbert curve (3-D)
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 8 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-propfeds'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle3d-propfeds
+# Fingerprint: sha256:a42b346f4ab21038050590e9522b9dd28209ed195e8557358bf06ef7c8674aa4
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('X', [
+# SCHOLARLY |             'X',
+# SCHOLARLY |             'X=^/XF^/XFX-F^\\\\XFX&F+\\\\XFX-F\\X-\\'
+# SCHOLARLY |         ], 90)
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then PitchUp RollRight X F PitchUp RollRight X F X Minus F PitchUp RollLeft RollLeft X F X PitchDown F Plus RollLeft RollLeft X F X Minus F RollLeft X Minus RollLeft;

@@ -1,0 +1,19 @@
+# ID       : ABOP-054
+# Name     : Equivalent elongating branching structure
+# Source   : chapter 1, book page 50, Eq. 1.10 / Fig. 1.40
+# Formalism: parametric bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define R 1.456
+# ABOP | ω : A
+# ABOP | p1    : A -> F(1)[+A][-A]
+# ABOP | p2    : F(s) -> F(s*R)
+#
+let R = 1.456;
+
+axiom A;
+
+match A then F(1) [ Plus A ] [ Minus A ];
+match F(s) then F(s*R);

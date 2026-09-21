@@ -1,0 +1,28 @@
+# ID       : LSYS-3339BF78B207
+# Name     : Smoke
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Smoke (#68) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/smoke--3339bf78b2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:3339bf78b2075effa58cecc95025bf4d4bb67c8b20ba3b3bc2d9337623544e72
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Smoke {  ;
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom F
+# RESETIUS |   F=-FF++FFFFFFFFFF
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then Minus F F Plus Plus F F F F F F F F F F;

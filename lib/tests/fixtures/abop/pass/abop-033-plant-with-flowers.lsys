@@ -1,0 +1,26 @@
+# ID       : ABOP-033
+# Name     : Plant with flowers
+# Source   : chapter 1, book page 27, Fig. 1.26
+# Formalism: deterministic bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : plant
+# ABOP | p1    : plant -> internode + [plant + flower] -- // [-- leaf] internode [++ leaf] - [plant flower] ++ plant flower
+# ABOP | p2    : internode -> F seg [// && leaf] [// ^^ leaf] F seg
+# ABOP | p3    : seg -> seg F seg
+# ABOP | p4    : leaf -> [' {+f-ff-f+|+f-ff-f}]
+# ABOP | p5    : flower -> [&&& pedicel ' / wedge //// wedge //// wedge //// wedge //// wedge]
+# ABOP | p6    : pedicel -> FF
+# ABOP | p7    : wedge -> [' ^ F][{&&&&-f+f|-f+f}]
+#
+axiom plant;
+
+match plant then internode Plus [ plant Plus flower ] Minus Minus RollRight RollRight [ Minus Minus leaf ] internode [ Plus Plus leaf ] Minus [ plant flower ] Plus Plus plant flower;
+match internode then F seg [ RollRight RollRight PitchDown PitchDown leaf ] [ RollRight RollRight PitchUp PitchUp leaf ] F seg;
+match seg then seg F seg;
+match leaf then [ ColorNext PolygonBegin Plus f Minus f f Minus f Plus Around Plus f Minus f f Minus f PolygonEnd ];
+match flower then [ PitchDown PitchDown PitchDown pedicel ColorNext RollRight wedge RollRight RollRight RollRight RollRight wedge RollRight RollRight RollRight RollRight wedge RollRight RollRight RollRight RollRight wedge RollRight RollRight RollRight RollRight wedge ];
+match pedicel then F F;
+match wedge then [ ColorNext PitchUp F ] [ PolygonBegin PitchDown PitchDown PitchDown PitchDown Minus f Plus f Around Minus f Plus f PolygonEnd ];

@@ -1,0 +1,37 @@
+# ID       : LSYS-926D77812014
+# Name     : Pentaplex
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentaplex.ls | https://github.com/jkubin/L-system/blob/68a699a/pentaplex.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentaplex--926d778120.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 36
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:926d77812014d9bff4f051384fbd1e733587db0ea9dc8d5fee18eca0a4394243
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/02⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ⟧)
+# JKUBIN | ___DESCR(⟦Pentaplex⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentaplex.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAPLEX⟧, ⟦F++F++F++F++F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F++F++F|F-F++F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(36),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | 
+# JKUBIN | PENTAPLEX(3)
+#
+let ANGLE = 36;
+
+axiom F Plus Plus F Plus Plus F Plus Plus F Plus Plus F;
+
+match F then F Plus Plus F Plus Plus F TurnAround F Minus F Plus Plus F;

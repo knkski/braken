@@ -1,0 +1,44 @@
+# ID       : LSYS-2D5F6C2EFB1B
+# Name     : pentagram-snowflake as a Eulerian graph
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentagram.ls | https://github.com/jkubin/L-system/blob/68a699a/pentagram.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentagram-snowflake-as-a-eulerian-graph--2d5f6c2efb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 144
+# Heading  : 36
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2d5f6c2efb1b9b7a81b7fcb49299332d97e72c77f0eb7b06a387050f992452e6
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/09/29⟧)
+# JKUBIN | ___DESCR(⟦pentagram-snowflake as a Eulerian graph⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentagram.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAGRAM⟧, ⟦FAFAFAFAFA⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦<FAFAFAFAF>⟧, ⟦-⟧)
+# JKUBIN | 
+# JKUBIN | # AXIOM(⟦PENTAGRAM⟧, ⟦FAFAFAFAFB⟧)
+# JKUBIN | # RULE(⟦A⟧, ⟦<FAFAFAFAF>⟧, ⟦-⟧)
+# JKUBIN | # RULE(⟦B⟧, ⟦<FAFAFAFAF>⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(144),dnl
+# JKUBIN | SCALE(2.62),dnl
+# JKUBIN | "step":900,dnl
+# JKUBIN | "penw":2,dnl
+# JKUBIN | "sety":-400,dnl
+# JKUBIN | "seth":36,dnl
+# JKUBIN | 
+# JKUBIN | PENTAGRAM(5)
+#
+let ANGLE = 144;
+let SCALE = 2.62;
+
+axiom F A F A F A F A F A;
+
+match A then ScaleLengthInverse F A F A F A F A F ScaleLength;

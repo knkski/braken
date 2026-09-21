@@ -1,0 +1,56 @@
+# ID       : LSYS-83812A10C7A7
+# Name     : Rings
+# Aliases  : ABP Koch a
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.rings | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[24] (ABP Koch a) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 30; heading Rings | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/rings--83812a10c7.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:83812a10c7a7398f5202f93deb594d68e5cf2129d31f4b5b44c6774c3a90cb8a
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | rings =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "FF+F+F+F+F+F-F" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F+F"
+# ELM |         , iterations = 4
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -106, y = -10 }
+# ELM |         , windowSize = 144
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "ABP Koch a",
+# KITWALLACE |   "F+F+F+F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "FF+F+F+F+F+F-F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F+F
+# BOURKE | F -> FF+F+F+F+F+F-F
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F F Plus F Plus F Plus F Plus F Plus F Minus F;

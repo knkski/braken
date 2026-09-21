@@ -1,0 +1,30 @@
+# ID       : LSYS-28D4A7559143
+# Name     : Plant07
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Plant07 (#22) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/plant07--28d4a75591.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 25.7142857143
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:28d4a75591434022dd91d25a22573799f7bf7767f7fde0cd90df8a280685a047
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Plant07 { ; Ken Philip, from The Science of Fractal Images p.285b
+# FRACTINT |   axiom Z
+# FRACTINT |   z=zFX[+Z][-Z]
+# FRACTINT |   x=x[-FFF][+FFF]FX
+# FRACTINT |   angle 14
+# FRACTINT |   }
+#
+let ANGLE = 25.7142857143;
+
+axiom Z;
+
+match Z then Z F X [ Plus Z ] [ Minus Z ];
+match X then X [ Minus F F F ] [ Plus F F F ] F X;

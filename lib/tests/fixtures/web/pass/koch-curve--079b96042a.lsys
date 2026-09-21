@@ -1,0 +1,40 @@
+# ID       : LSYS-079B96042AC7
+# Name     : Koch Curve
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.kochCurve | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 21; heading Koch Curve | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/koch-curve--079b96042a.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:079b96042ac764fa71dfcffc9f35a48a60b1d859281d79ac06a80bcec904c467
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | kochCurve =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F+F-F-FF+F+F-F" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F+F"
+# ELM |         , iterations = 3
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -22, y = -22 }
+# ELM |         , windowSize = 108
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F+F
+# BOURKE | F -> F+F-F-FF+F+F-F
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Plus F Minus F Minus F F Plus F Plus F Minus F;

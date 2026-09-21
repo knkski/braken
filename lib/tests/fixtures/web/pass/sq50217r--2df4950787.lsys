@@ -1,0 +1,36 @@
+# ID       : LSYS-2DF495078745
+# Name     : sq50217r
+# Source   : Fractint 20.04p17 official rule library | lsystem/fract205.l, section sq50217r (#3) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/sq50217r--2df4950787.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:2df4950787451fea6eba8a4e6c1e29044581743f4e26b6ab6e3ec1b018d93c0e
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | sq50217r { ; Anthony Hanmer 1/9/2003, a.hanmer@gmail.com
+# FRACTINT |   Angle 4  ; One of my VERY best Hanmer Tiles:
+# FRACTINT |   ; WAY COOL, a personal all-parallel favourite
+# FRACTINT |   ; More work to be found at:
+# FRACTINT |   ; http://spanky.triumf.ca/pub/fractals/LSYSTEMS/
+# FRACTINT |   ; in HanmerTiles.zip
+# FRACTINT |   Axiom +c53f+g+c12f
+# FRACTINT |   f=GGGGG|FFFFF|GGGGG+G+ffggf|fggff+G+fgfgg|ggfgf+G+ffgfg|gfgff+G+gffgg|ggffg+G+GGGGG+GGGGG+GGGGG
+# FRACTINT |   g=ggggg
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom Plus Color(53) F Plus G Plus Color(12) F;
+
+match F then G G G G G TurnAround F F F F F TurnAround G G G G G Plus G Plus F F G G F TurnAround F G G F F Plus G Plus F G F G G TurnAround G G F G F Plus G Plus F F G F G TurnAround G F G F F Plus G Plus G F F G G TurnAround G G F F G Plus G Plus G G G G G Plus G G G G G Plus G G G G G;
+match G then G G G G G;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

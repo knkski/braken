@@ -1,0 +1,28 @@
+# ID       : LSYS-B4EAA139F456
+# Name     : Lace
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Lace (#71) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/lace--b4eaa139f4.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b4eaa139f45618f88f65d8ae13a53544dcaaf1c4b7c1401d1d6909e994193c2c
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Lace { ; From Ivan Daunis daunis@teleline.es
+# FRACTINT |   Angle 8
+# FRACTINT |   Axiom F++F++F++F
+# FRACTINT |   F=F+++F---F+F---F++F--F++F
+# FRACTINT | }
+#
+let ANGLE = 45;
+
+axiom F Plus Plus F Plus Plus F Plus Plus F;
+
+match F then F Plus Plus Plus F Minus Minus Minus F Plus F Minus Minus Minus F Plus Plus F Minus Minus F Plus Plus F;

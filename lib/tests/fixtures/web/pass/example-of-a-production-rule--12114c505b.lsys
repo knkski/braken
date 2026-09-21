@@ -1,0 +1,30 @@
+# ID       : LSYS-12114C505B00
+# Name     : Example of a production rule
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | aAA.ls | https://github.com/jkubin/L-system/blob/68a699a/aAA.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'string-only'
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : unspecified
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : string-only
+# Fingerprint: sha256:12114c505b0074d2e904716152403c71d4eb1b1353b8facae380eefc6a665a06
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/10/13⟧)
+# JKUBIN | ___DESCR(⟦Example of a production rule⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 aAA.ls | tail -1⟧)
+# JKUBIN | 
+# JKUBIN | RULE(⟦A⟧, ⟦aAA⟧, ⟦A⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl
+# JKUBIN | 
+# JKUBIN | A(5)
+#
+axiom A;
+
+match A then a A A;

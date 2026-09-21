@@ -1,0 +1,40 @@
+# ID       : LSYS-6EB5A75CEFA5
+# Name     : Peano-Gosper curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | peano_gosper_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/peano_gosper_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano-gosper-curve--6eb5a75cef.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:6eb5a75cefa5e249a52dab04571902ff16437df60b0044f7b2ea0674c4f303df
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Peano-Gosper curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 peano_gosper_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PEANO_GOSPER⟧, ⟦FX⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦X+YF++YF-FX--FXFX-YF+⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦-FX+YFYF++YF+FX--FX-Y⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | "step":12,dnl
+# JKUBIN | "setx":100,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | PEANO_GOSPER(3)
+#
+let ANGLE = 60;
+
+axiom F X;
+
+match X then X Plus Y F Plus Plus Y F Minus F X Minus Minus F X F X Minus Y F Plus;
+match Y then Minus F X Plus Y F Y F Plus Plus Y F Plus F X Minus Minus F X Minus Y;

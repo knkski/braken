@@ -1,0 +1,47 @@
+# ID       : LSYS-DAE3B60D155C
+# Name     : scaled fractal pentagram as a Eulerian graph
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentafrac_scaled.ls | https://github.com/jkubin/L-system/blob/68a699a/pentafrac_scaled.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/scaled-fractal-pentagram-as-a-eulerian-graph--dae3b60d15.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 144
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:dae3b60d155cc05c894fa967e19ec7fcd182b455119224d95594cb6ed4cfed05
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/04⟧)
+# JKUBIN | ___DESCR(⟦scaled fractal pentagram as a Eulerian graph⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentafrac_scaled.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAFRAC⟧, ⟦F-F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F>`F'<--F-F-F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(144),dnl
+# JKUBIN | "step":6,dnl
+# JKUBIN | SCALE(2.0),dnl
+# JKUBIN | "setx":-500,dnl
+# JKUBIN | "sety":-100,dnl
+# JKUBIN | "pencolor":[dnl
+# JKUBIN | 	"black",dnl
+# JKUBIN | 	"magenta",dnl
+# JKUBIN | 	"green",dnl
+# JKUBIN | 	"red",dnl
+# JKUBIN | 	"gold",dnl
+# JKUBIN | 	"blue"dnl
+# JKUBIN | ],dnl
+# JKUBIN | 
+# JKUBIN | PENTAFRAC(4)
+#
+let ANGLE = 144;
+let SCALE = 2;
+
+axiom F Minus F Minus F Minus F Minus F;
+
+match F then F ScaleLength ColorNext F ColorPrevious ScaleLengthInverse Minus Minus F Minus F Minus F Minus F;

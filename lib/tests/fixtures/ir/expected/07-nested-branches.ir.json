@@ -1,0 +1,120 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom A [ B [ C ] D ] E;\n\nmatch B then X [ Y ];\n",
+  "source_fingerprint": "fnv1a64:47a003ce4fe7797f",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 0
+    },
+    {
+      "name": "B",
+      "arity": 0
+    },
+    {
+      "name": "C",
+      "arity": 0
+    },
+    {
+      "name": "D",
+      "arity": 0
+    },
+    {
+      "name": "E",
+      "arity": 0
+    },
+    {
+      "name": "X",
+      "arity": 0
+    },
+    {
+      "name": "Y",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      },
+      {
+        "Branch": {
+          "items": [
+            {
+              "Module": {
+                "symbol": 1,
+                "arguments": []
+              }
+            },
+            {
+              "Branch": {
+                "items": [
+                  {
+                    "Module": {
+                      "symbol": 2,
+                      "arguments": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Module": {
+                "symbol": 3,
+                "arguments": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 4,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 1,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 5,
+              "arguments": []
+            }
+          },
+          {
+            "Branch": {
+              "items": [
+                {
+                  "Module": {
+                    "symbol": 6,
+                    "arguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

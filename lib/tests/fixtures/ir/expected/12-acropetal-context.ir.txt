@@ -1,0 +1,30 @@
+Braken IR v1 / semantics v2
+4 symbols · 0 globals · 1 productions · 0 expression programs
+maximum expression stack 0 · maximum bindings 0 · maximum context depth 1
+source fingerprint fnv1a64:40459c1f5b3b4690
+
+symbols
+  s0 = Fa / 0
+  s1 = Fb / 0
+  s2 = Minus / 0
+  s3 = Plus / 0
+
+axiom
+  Fb [Plus Fa] Fa [Minus Fa] Fa
+
+context filter
+  ignore Plus Minus
+
+productions
+  p0: Fa left Fb then Fb
+
+expression programs
+
+backend compatibility
+  CPU: compatible
+  CUDA: unsupported
+    Error [gpu-context] the current GPU derivation compiler accepts only context-free productions
+    Error [gpu-context-filter] the current GPU derivation compiler does not implement ignore/only filters
+  WGPU: unsupported
+    Error [gpu-context] the current GPU derivation compiler accepts only context-free productions
+    Error [gpu-context-filter] the current GPU derivation compiler does not implement ignore/only filters

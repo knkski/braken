@@ -1,0 +1,39 @@
+# ID       : LSYS-FD823B60A9BF
+# Name     : Mango leaves
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | mango_leaves.ls | https://github.com/jkubin/L-system/blob/68a699a/mango_leaves.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/mango-leaves--fd823b60a9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:fd823b60a9bfbe4c11d69a67ab6efc54212791d1144118306fca9259eb2f4887
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Mango leaves⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 mango_leaves.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦MANGO⟧, ⟦A---A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦f-F+Z+F-fA⟧)
+# JKUBIN | RULE(⟦Z⟧, ⟦F-FF-F--[--Z]F-FF-F--F-FF-F--⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | MANGO(6)
+#
+let ANGLE = 60;
+
+axiom A Minus Minus Minus A;
+
+match A then f Minus F Plus HalfForward Plus F Minus f A;
+match Z then F Minus F F Minus F Minus Minus [ Minus Minus HalfForward ] F Minus F F Minus F Minus Minus F Minus F F Minus F Minus Minus;

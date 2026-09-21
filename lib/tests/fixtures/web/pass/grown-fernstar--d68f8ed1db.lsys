@@ -1,0 +1,47 @@
+# ID       : LSYS-D68F8ED1DB98
+# Name     : Grown.FernStar
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Grown.FernStar (#9) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/grown-fernstar--d68f8ed1db.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:d68f8ed1db98f470fd26b95f1fbb34e42bf8f95de195a0617b6db4dc67403c72
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grown.FernStar {
+# RESETIUS | 
+# RESETIUS |   ; best order 24
+# RESETIUS |   ; time 0:21
+# RESETIUS | 
+# RESETIUS |     angle 5
+# RESETIUS |     axiom C79\36D[X]\72D[X]\72D[X]\72D[X]\72D[X]
+# RESETIUS | 
+# RESETIUS |     X=/3D[/72!Y]/1@I3D@3[\72Y]@Q0.618034>1X@IQ0.618034
+# RESETIUS |     Y=Z
+# RESETIUS |     Z=A
+# RESETIUS |     A=@0.381966X
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom Color(79) ExplicitPlus(36) D [ X ] ExplicitPlus(72) D [ X ] ExplicitPlus(72) D [ X ] ExplicitPlus(72) D [ X ] ExplicitPlus(72) D [ X ];
+
+match X then ExplicitMinus(3) D [ ExplicitMinus(72) InvertTurns Y ] ExplicitMinus(1) Scale(0.333333333333) D Scale(3) [ ExplicitPlus(72) Y ] Scale(0.786151384913) ColorIncrement(-1) X Scale(1.27201963794);
+match Y then Z;
+match Z then A;
+match A then Scale(0.381966) X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

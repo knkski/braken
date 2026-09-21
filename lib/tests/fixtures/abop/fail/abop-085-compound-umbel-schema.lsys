@@ -1,0 +1,19 @@
+# ID       : ABOP-085
+# Name     : Compound umbel schema
+# Source   : chapter 3, book page 95, Compound umbel
+# Formalism: bracketed string with repetition
+# Parse    : fail
+# Execute  : unsupported
+# Note     : Requires compile-time or runtime successor repetition.
+#
+# Original ABOP:
+# ABOP | ω : A
+# ABOP | p1    : A -> I[IB]^k B
+# ABOP | p2    : B -> I[IC]^l C
+# ABOP | p3    : C -> I[IK]^m
+#
+# Expected parse failure: symbolic successor repetition is future syntax.
+axiom A;
+match A then I repeat(k, [ I B ]) B;
+match B then I repeat(l, [ I C ]) C;
+match C then I repeat(m, [ I K ]);

@@ -1,0 +1,39 @@
+# ID       : LSYS-7CFA93E7FC1D
+# Name     : DragonCurve
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section DragonCurve (#8) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section DragonCurve (#54) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dragoncurve--7cfa93e7fc.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:7cfa93e7fc1dc69bad53ae007120de6c86ca30e8c58949a64feba6d16e101d8a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | DragonCurve { ; Adrian Mariano
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom X
+# RESETIUS |   X=X-YF-
+# RESETIUS |   Y=+FX+Y
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | DragonCurve { ; Adrian Mariano
+# FRACTINT |   Angle 4
+# FRACTINT |   Axiom X
+# FRACTINT |   X=X-YF-
+# FRACTINT |   Y=+FX+Y
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then X Minus Y F Minus;
+match Y then Plus F X Plus Y;

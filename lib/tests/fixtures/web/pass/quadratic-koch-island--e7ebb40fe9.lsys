@@ -1,0 +1,37 @@
+# ID       : LSYS-E7EBB40FE937
+# Name     : Quadratic Koch island
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | koch_island.ls | https://github.com/jkubin/L-system/blob/68a699a/koch_island.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/quadratic-koch-island--e7ebb40fe9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e7ebb40fe9376edb5d157b60182802ee90743a29fe7aed3fd54551cec2ed7ec4
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Quadratic Koch island⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 koch_island.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦QUADRATIC_KOCH_ISLAND⟧, ⟦F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-FF+F+F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | "sety":300,dnl
+# JKUBIN | 
+# JKUBIN | QUADRATIC_KOCH_ISLAND(3)
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F Plus F Minus F Minus F F Plus F Plus F Minus F;

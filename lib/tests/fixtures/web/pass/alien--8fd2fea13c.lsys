@@ -1,0 +1,39 @@
+# ID       : LSYS-8FD2FEA13CB4
+# Name     : Alien
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/alien.ls, section Alien (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/alien.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Alien (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/alien--8fd2fea13c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 32.7272727273
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8fd2fea13cb4b3197faa412a7704c0eba0d75b995f5ec0026db1625c6189599d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Alien {
+# RESETIUS |   Angle 11
+# RESETIUS |   Axiom x
+# RESETIUS |   x=[@q2.0@I2.0-fx]g[@q2.0@I2.0---fx]
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Alien { ; William McWorter
+# RESETIUS |   Angle 11
+# RESETIUS |   Axiom x
+# RESETIUS |   x=[@q2@I2-fx]g[@q2@I2---fx]
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 32.7272727273;
+
+axiom X;
+
+match X then [ Scale(1.41421356237) Scale(0.5) Minus F X ] G [ Scale(1.41421356237) Scale(0.5) Minus Minus Minus F X ];
+match F then nothing;

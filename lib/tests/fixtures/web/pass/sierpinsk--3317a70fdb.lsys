@@ -1,0 +1,32 @@
+# ID       : LSYS-3317A70FDB33
+# Name     : Sierpinsk
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Sierpinsk (#63) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sierpinsk--3317a70fdb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:3317a70fdb33a007031afc43ed4f688a6231438f1a8bea6c0536dc3cbfc24b78
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierpinsk { ; William McWorter
+# RESETIUS |   ; Isoceles right triangle dissects into two congruent
+# RESETIUS |   ; isoceles right triangles
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom L
+# RESETIUS |   L=+R-F-R+
+# RESETIUS |   R=-L+F+L-
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom L;
+
+match L then Plus R Minus F Minus R Plus;
+match R then Minus L Plus F Plus L Minus;

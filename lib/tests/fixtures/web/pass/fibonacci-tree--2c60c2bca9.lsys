@@ -1,0 +1,62 @@
+# ID       : LSYS-2C60C2BCA951
+# Name     : Fibonacci tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | fibonacci_tree.ls | https://github.com/jkubin/L-system/blob/68a699a/fibonacci_tree.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fibonacci-tree--2c60c2bca9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 20
+# Heading  : 270
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2c60c2bca9516b24bd38d56a59e9c9814d8b1b1cf1ef72a85753d4c89109cd7e
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/17⟧)
+# JKUBIN | ___DESCR(⟦Fibonacci tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 fibonacci_tree.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | # n = 0: A
+# JKUBIN | # n = 1: B
+# JKUBIN | # n = 2: AB
+# JKUBIN | # n = 3: BAB
+# JKUBIN | # n = 4: ABBAB
+# JKUBIN | # n = 5: BABABBAB
+# JKUBIN | # n = 6: ABBABBABABBAB
+# JKUBIN | # n = 7: BABABBABABBABBABABBAB
+# JKUBIN | # …
+# JKUBIN | #
+# JKUBIN | # n = 0:         A           start (axiom/initiator)
+# JKUBIN | #                |
+# JKUBIN | # n = 1:         B
+# JKUBIN | #               / \
+# JKUBIN | # n = 2:       A   B
+# JKUBIN | #             /    |\
+# JKUBIN | # n = 3:     B     A B
+# JKUBIN | #           /|     | |\
+# JKUBIN | # n = 4:   A B     B A B
+# JKUBIN | #         / /|    /| | |\
+# JKUBIN | # n = 5: B A B   A B B A B
+# JKUBIN | # …
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦FIBONACCI_TREE⟧, ⟦FA⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦FB⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦[-FA][+FB]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(20),dnl
+# JKUBIN | "step":30,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | "seth":270,dnl
+# JKUBIN | 
+# JKUBIN | FIBONACCI_TREE(8)
+#
+let ANGLE = 20;
+
+axiom F A;
+
+match A then F B;
+match B then [ Minus F A ] [ Plus F B ];

@@ -1,0 +1,21 @@
+# ID       : ABOP-025
+# Name     : Three-dimensional Hilbert curve
+# Source   : chapter 1, book page 20, Fig. 1.19
+# Formalism: deterministic bracketed/turtle string
+# Parse    : pass
+# Execute  : pass
+# Note     : 3D turtle commands are ordinary modules to the rewrite engine.
+#
+# Original ABOP:
+# ABOP | ω : A
+# ABOP | p1    : A -> B-F+CFC+F-D&F^D-F+&&CFC+F+B//
+# ABOP | p2    : B -> A&F^CFB^F^D^^-F-D^|F^B|FC^F^A//
+# ABOP | p3    : C -> |D^|F^B-F+C^F^A&&FA&F^C+F+B^F^D//
+# ABOP | p4    : D -> |CFB-F+B|FA&F^A&&FB-F+B|FC//
+#
+axiom A;
+
+match A then B Minus F Plus C F C Plus F Minus D PitchDown F PitchUp D Minus F Plus PitchDown PitchDown C F C Plus F Plus B RollRight RollRight;
+match B then A PitchDown F PitchUp C F B PitchUp F PitchUp D PitchUp PitchUp Minus F Minus D PitchUp Around F PitchUp B Around F C PitchUp F PitchUp A RollRight RollRight;
+match C then Around D PitchUp Around F PitchUp B Minus F Plus C PitchUp F PitchUp A PitchDown PitchDown F A PitchDown F PitchUp C Plus F Plus B PitchUp F PitchUp D RollRight RollRight;
+match D then Around C F B Minus F Plus B Around F A PitchDown F PitchUp A PitchDown PitchDown F B Minus F Plus B Around F C RollRight RollRight;

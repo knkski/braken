@@ -1,0 +1,30 @@
+# ID       : LSYS-43A3C161737A
+# Name     : NetLogo default apply-rules
+# Source   : NetLogo L-System Fractals model | NetLogo 7.0.4 code lines 22-32; apply-rules | https://raw.githubusercontent.com/NetLogo/models/46db92708c960b3f10c5d6b3b685c37be1faf79c/Sample%20Models/Mathematics/Fractals/L-System%20Fractals.nlogox
+# Formalism: parallel turtle-agent procedural rewriting projected to a parametric bracketed L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-agent-turtle2d'
+# Fidelity : projection
+# Features : bracketed, deterministic, parallel-turtle-agents, parametric, spawn, turtle2d
+# Angle    : unspecified
+# Heading  : 90
+# Draw     : Forward
+# Move     : Move
+# Profile  : parametric-agent-turtle2d
+# Fingerprint: sha256:43a3c161737a8c448dcfb45c0ff313b324a8915b07239c0bcd1adbaeda53dc2e
+# Note     : NetLogo runs one procedure per live turtle per tick. Tip parameters preserve turtle-local length, and [Tip(...)] represents a spawned clone at its spawn pose.
+# Note     : Geometry is preserved; NetLogo color inheritance/increment and absolute initial x/y translation are omitted because the target language has no equivalent state channels.
+# Note     : NetLogo heading 0 (north) is normalized to Cartesian turtle heading 90 degrees.
+# Note     : The model leaves tick count interactive; no source iteration count is asserted.
+# Note     : Official model page: https://ccl.northwestern.edu/netlogo/models/L-SystemFractals
+# Note     : Source initial point: (0, 0); source initial heading: 0 degrees.
+#
+# Original NetLogo L-System Fractals model:
+# NETLOGO-LSYSTEM-FR | to apply-rules
+# NETLOGO-LSYSTEM-FR |   fd 3 rt 15 spawn fd 3 lt 30 fd 3
+# NETLOGO-LSYSTEM-FR | end
+#
+axiom Tip(128);
+
+match Tip(len) then Forward(3) ExplicitMinus(15) [ Tip(len) ] Forward(3) ExplicitPlus(30) Forward(3) Tip(len);

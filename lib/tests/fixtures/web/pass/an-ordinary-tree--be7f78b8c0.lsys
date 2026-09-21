@@ -1,0 +1,40 @@
+# ID       : LSYS-BE7F78B8C0B9
+# Name     : an ordinary tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_ordinary.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_ordinary.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/an-ordinary-tree--be7f78b8c0.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:be7f78b8c0b98e5073b670fda8340521948a8a4ebcf3508c1da6787138ec7c56
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/07⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦an ordinary tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_ordinary.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦F[+A][-A]FA⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | "sety":-200,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(6)
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then F [ Plus A ] [ Minus A ] F A;
+match F then F F;

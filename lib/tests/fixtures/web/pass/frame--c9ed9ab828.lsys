@@ -1,0 +1,34 @@
+# ID       : LSYS-C9ED9AB828EA
+# Name     : Frame
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Frame (#24) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/frame--c9ed9ab828.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c9ed9ab828ea9ce613cd161d78870b18698692e57a087f3ae20fd0bbd0ac71ac
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Frame { ; William McWorter
+# RESETIUS |   ; made from Moore's spacefilling curve
+# RESETIUS | ; order 4
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom YXY-YXY-YXY-YXY
+# RESETIUS |   F=
+# RESETIUS |   X=FX+FX+FXFYFX+FXFY-FY-FY-
+# RESETIUS |   Y=+FX+FX+FXFY-FYFXFY-FY-FY
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom Y X Y Minus Y X Y Minus Y X Y Minus Y X Y;
+
+match F then nothing;
+match X then F X Plus F X Plus F X F Y F X Plus F X F Y Minus F Y Minus F Y Minus;
+match Y then Plus F X Plus F X Plus F X F Y Minus F Y F X F Y Minus F Y Minus F Y;

@@ -1,0 +1,37 @@
+# ID       : LSYS-32B457C4F70F
+# Name     : Snow flake
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | flake.ls | https://github.com/jkubin/L-system/blob/68a699a/flake.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/snow-flake--32b457c4f7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:32b457c4f70fae02655a37d4cb974cbab0ee10a6df0538bafcc0799ecf8ede9c
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/20⟧)
+# JKUBIN | ___DESCR(⟦Snow flake⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 flake.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦FLAKE⟧, ⟦[F]+[F]+[F]+[F]+[F]+[F]⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>F<[+F][-F]F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | SCALE(2.0),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | 
+# JKUBIN | FLAKE(4)
+#
+let ANGLE = 60;
+let SCALE = 2;
+
+axiom [ F ] Plus [ F ] Plus [ F ] Plus [ F ] Plus [ F ] Plus [ F ];
+
+match F then ScaleLength F ScaleLengthInverse [ Plus F ] [ Minus F ] F;

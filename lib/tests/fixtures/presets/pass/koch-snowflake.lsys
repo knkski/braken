@@ -1,0 +1,8 @@
+# Name: Koch Snowflake
+# Summary: Classic triangular snowflake outline.
+# Angle: 60
+# Iterations: 4
+
+axiom Draw Right Right Draw Right Right Draw;
+
+match Draw then Draw Left Draw Right Right Draw Left Draw;

@@ -1,0 +1,32 @@
+# ID       : LSYS-9A9E04C1C1DE
+# Name     : Bronchius
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Bronchius (#24) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/bronchius--9a9e04c1c1.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9a9e04c1c1def0291d4d12d9977a4ba55c668f9156ca7ae312ee279a1d5b798d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Bronchius { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom x
+# RESETIUS |   x=<1F>1+<1F>1[+X][-X]<1F>1-<1F>1[+X][-X]
+# RESETIUS |   f=<1F>1[+X][-X]<1F>1[+X][-X]
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom X;
+
+match X then ColorIncrement(1) F ColorIncrement(-1) Plus ColorIncrement(1) F ColorIncrement(-1) [ Plus X ] [ Minus X ] ColorIncrement(1) F ColorIncrement(-1) Minus ColorIncrement(1) F ColorIncrement(-1) [ Plus X ] [ Minus X ];
+match F then ColorIncrement(1) F ColorIncrement(-1) [ Plus X ] [ Minus X ] ColorIncrement(1) F ColorIncrement(-1) [ Plus X ] [ Minus X ];
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

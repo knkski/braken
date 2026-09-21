@@ -1,0 +1,16 @@
+# ID       : ABOP-006
+# Name     : Combination of islands and lakes
+# Source   : chapter 1, book page 9, Fig. 1.8
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : F+F+F+F
+# ABOP | p1    : F -> F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF
+# ABOP | p2    : f -> ffffff
+#
+axiom F Plus F Plus F Plus F;
+
+match F then F Plus f Minus F F Plus F Plus F F Plus F f Plus F F Minus f Plus F F Minus F Minus F F Minus F f Minus F F F;
+match f then f f f f f f;

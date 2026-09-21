@@ -1,0 +1,28 @@
+# ID       : LSYS-4EE79F2566BD
+# Name     : ADH105m4
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH105m4 (#12) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh105m4--4ee79f2566.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4ee79f2566bdc1a29ea6f90100f222378a2a4d79cd0e8c40fc3f1d5e54a58819
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH105m4 { ; median version of Anthony Hanmer's 105d, 2000
+# RESETIUS |   Angle 8 ; playing
+# RESETIUS |   Axiom -x
+# RESETIUS |   x=x+f+x+g+x-f-x-g-x
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Minus X;
+
+match X then X Plus F Plus X Plus G Plus X Minus F Minus X Minus G Minus X;

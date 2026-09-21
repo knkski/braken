@@ -1,0 +1,32 @@
+# ID       : LSYS-FBBC30D168BA
+# Name     : Barbells
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Barbells (#29) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/barbells--fbbc30d168.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fbbc30d168babfb95798ffa42dd09c801f33f11363540b2762b20c2148426473
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Barbells {
+# RESETIUS |   Angle 16
+# RESETIUS |   Axiom x
+# RESETIUS |   x=-f++f-x+++++f--f+y
+# RESETIUS |   y=-f++f-x----+f--f+y
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 22.5;
+
+axiom X;
+
+match X then Minus F Plus Plus F Minus X Plus Plus Plus Plus Plus F Minus Minus F Plus Y;
+match Y then Minus F Plus Plus F Minus X Minus Minus Minus Minus Plus F Minus Minus F Plus Y;
+match F then nothing;

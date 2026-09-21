@@ -1,0 +1,34 @@
+# ID       : LSYS-0E7EA624D75B
+# Name     : TerdragonAlt
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TerdragonAlt (#15) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/terdragonalt--0e7ea624d7.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0e7ea624d75b75cc726f2b44a87353679da20fee9433aa3a448af0ea4cb16bc0
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TerdragonAlt {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=-g+[+++f]+g-x+++g+[+++f]+g-x-----g+[+++f]+g-x
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom R;
+
+match R then X;
+match X then Minus G Plus [ Plus Plus Plus F ] Plus G Minus X Plus Plus Plus G Plus [ Plus Plus Plus F ] Plus G Minus X Minus Minus Minus Minus Minus G Plus [ Plus Plus Plus F ] Plus G Minus X;
+match F then nothing;
+match G then nothing;

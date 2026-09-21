@@ -1,0 +1,26 @@
+Braken IR v1 / semantics v2
+7 symbols · 0 globals · 1 productions · 0 expression programs
+maximum expression stack 0 · maximum bindings 0 · maximum context depth 0
+source fingerprint fnv1a64:47a003ce4fe7797f
+
+symbols
+  s0 = A / 0
+  s1 = B / 0
+  s2 = C / 0
+  s3 = D / 0
+  s4 = E / 0
+  s5 = X / 0
+  s6 = Y / 0
+
+axiom
+  A [B [C] D] E
+
+productions
+  p0: B then X [Y]
+
+expression programs
+
+backend compatibility
+  CPU: compatible
+  CUDA: compatible
+  WGPU: compatible

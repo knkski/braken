@@ -1,0 +1,43 @@
+# ID       : LSYS-0A59D9B77484
+# Name     : Koch.StarRing
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Koch.StarRing (#15) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/koch-starring--0a59d9b774.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0a59d9b774842bb4d2a2dbdde0fbc4a95d83bb42070bc540e58f5be22a076d90
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch.StarRing {
+# RESETIUS | 
+# RESETIUS |   ; best order 6
+# RESETIUS |   ; time 0:14
+# RESETIUS | 
+# RESETIUS |     angle 6
+# RESETIUS |     axiom C31FX-FX-FX-FX-FX-FX-
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=FX-FXFY++FZFX-FX
+# RESETIUS |     Y=->2FX-FXFY++FZFXFY++FZFX-FX<2-
+# RESETIUS |     Z=-->2FXFY++FZFXFY++FZFX-FX<2-
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom Color(31) F X Minus F X Minus F X Minus F X Minus F X Minus F X Minus;
+
+match F then nothing;
+match X then F X Minus F X F Y Plus Plus F Z F X Minus F X;
+match Y then Minus ColorIncrement(-2) F X Minus F X F Y Plus Plus F Z F X F Y Plus Plus F Z F X Minus F X ColorIncrement(2) Minus;
+match Z then Minus Minus ColorIncrement(-2) F X F Y Plus Plus F Z F X F Y Plus Plus F Z F X Minus F X ColorIncrement(2) Minus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

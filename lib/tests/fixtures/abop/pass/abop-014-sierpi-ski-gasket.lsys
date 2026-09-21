@@ -1,0 +1,16 @@
+# ID       : ABOP-014
+# Name     : Sierpiński gasket
+# Source   : chapter 1, book page 11, Fig. 1.10b
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : Fr
+# ABOP | p1    : Fl -> Fr+Fl+Fr
+# ABOP | p2    : Fr -> Fl-Fr-Fl
+#
+axiom Fr;
+
+match Fl then Fr Plus Fl Plus Fr;
+match Fr then Fl Minus Fr Minus Fl;

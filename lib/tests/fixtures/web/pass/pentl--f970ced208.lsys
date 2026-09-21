@@ -1,0 +1,28 @@
+# ID       : LSYS-F970CED20819
+# Name     : Pentl
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Pentl (#59) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentl--f970ced208.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f970ced20819da5e0522dfc034f9d4422de56b2ce87d1aff355d26d9932f6d18
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentl { ; William McWorter
+# RESETIUS |   Angle 5
+# RESETIUS |   Axiom f-f-f-f-f
+# RESETIUS |   f=f-f-f++f+f-f
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom F Minus F Minus F Minus F Minus F;
+
+match F then F Minus F Minus F Plus Plus F Plus F Minus F;

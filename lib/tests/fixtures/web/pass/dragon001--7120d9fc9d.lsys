@@ -1,0 +1,36 @@
+# ID       : LSYS-7120D9FC9D6F
+# Name     : Dragon001
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Dragon001 (#4) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/dragon001--7120d9fc9d.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:7120d9fc9d6f092a14c0f6c420bd80cf6c7f3b7a764c7d078cdbd7b80d5b2a8a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon001 {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom r
+# RESETIUS |   r=c40fx-<8yf-<8fx-<4yf
+# RESETIUS |   x=x+yf+fx-yf-fx+yf-fx-yf
+# RESETIUS |   y=fx+yf+fx-yf+fx+yf-fx-y
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom R;
+
+match R then Color(40) F X Minus ColorIncrement(8) Y F Minus ColorIncrement(8) F X Minus ColorIncrement(4) Y F;
+match X then X Plus Y F Plus F X Minus Y F Minus F X Plus Y F Minus F X Minus Y F;
+match Y then F X Plus Y F Plus F X Minus Y F Plus F X Plus Y F Minus F X Minus Y;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

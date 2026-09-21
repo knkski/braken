@@ -1,0 +1,34 @@
+# ID       : LSYS-BC8BF3E432FB
+# Name     : TwinDragonCurd
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section TwinDragonCurd (#85) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/twindragoncurd--bc8bf3e432.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bc8bf3e432fbd5a3793073f3003cd71f991b49eed2c4d5eff409adedeafdd009
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TwinDragonCurd {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom fx+fx
+# RESETIUS |   x=fx+gy
+# RESETIUS |   y=gx-fy
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F X Plus F X;
+
+match X then F X Plus G Y;
+match Y then G X Minus F Y;
+match F then nothing;
+match G then nothing;

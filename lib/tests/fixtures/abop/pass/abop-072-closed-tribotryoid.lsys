@@ -1,0 +1,37 @@
+# ID       : ABOP-072
+# Name     : Closed tribotryoid
+# Source   : chapter 3, book page 81, Closed tribotryoid
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Parses; execution needs an explicit policy for unweighted alternatives.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a -> I[L]a
+# ABOP | p2    : a -> I[L]A
+# ABOP | p3    : A -> I[L][b]A
+# ABOP | p4    : A -> I[L][b]B
+# ABOP | p5    : b -> I[L]b
+# ABOP | p6    : b -> I[L]B
+# ABOP | p7    : B -> I[L][c]B
+# ABOP | p8    : B -> I[L][c]C
+# ABOP | p9    : c -> I[L]c
+# ABOP | p10    : c -> I[L]C
+# ABOP | p11    : C -> I[K]C
+# ABOP | p12    : C -> K
+#
+axiom a;
+
+match a then I [ L ] a;
+match a then I [ L ] A;
+match A then I [ L ] [ b ] A;
+match A then I [ L ] [ b ] B;
+match b then I [ L ] b;
+match b then I [ L ] B;
+match B then I [ L ] [ c ] B;
+match B then I [ L ] [ c ] C;
+match c then I [ L ] c;
+match c then I [ L ] C;
+match C then I [ K ] C;
+match C then K;

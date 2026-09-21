@@ -1,0 +1,40 @@
+# ID       : LSYS-FF6F0A9BD04C
+# Name     : Sierpiński triangle
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | sierpinski.ls | https://github.com/jkubin/L-system/blob/68a699a/sierpinski.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpiski-triangle--ff6f0a9bd0.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 120
+# Heading  : 60
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:ff6f0a9bd04ce7c5659280c857348c35812fd7e9edbccfa0ad13b4b640a622b7
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | ___DESCR(⟦Sierpiński triangle⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 sierpinski.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SIERPINSKI⟧, ⟦F-G-G⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-G+F+G-F⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦G⟧, ⟦GG⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(120),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | "sety":-200,dnl
+# JKUBIN | "seth":60,dnl
+# JKUBIN | 
+# JKUBIN | SIERPINSKI(5)
+#
+let ANGLE = 120;
+
+axiom F Minus G Minus G;
+
+match F then F Minus G Plus F Plus G Minus F;
+match G then G G;

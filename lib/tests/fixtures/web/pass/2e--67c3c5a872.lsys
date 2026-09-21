@@ -1,0 +1,36 @@
+# ID       : LSYS-67C3C5A872A5
+# Name     : 2e
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section 2e (#19) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/2e--67c3c5a872.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:67c3c5a872a50c64e9a269a5f75632eb6c2a670091a57b0d7bb5181ce7627a05
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 2e { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom x
+# RESETIUS |   x=<5F[++Y][--Y]<5@.9326F[++Y][--Y]<5@.8557F[++Y][--Y]
+# RESETIUS |   x=@.7788F>5[++Y][--Y]@.7019F>5[+Y][-Y]@.625F>5[Y]
+# RESETIUS |   y=<5F[++X][--X]<5@.9326F[++X][--X]<5@.8557F[++X][--X]
+# RESETIUS |   y=@.7788F>5[++X][--X]@.7019F>5[+X][-X]@.625F>5[X]
+# RESETIUS |   F=<10F<10F>10F>10
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom X;
+
+match X then ColorIncrement(5) F [ Plus Plus Y ] [ Minus Minus Y ] ColorIncrement(5) Scale(0.9326) F [ Plus Plus Y ] [ Minus Minus Y ] ColorIncrement(5) Scale(0.8557) F [ Plus Plus Y ] [ Minus Minus Y ] Scale(0.7788) F ColorIncrement(-5) [ Plus Plus Y ] [ Minus Minus Y ] Scale(0.7019) F ColorIncrement(-5) [ Plus Y ] [ Minus Y ] Scale(0.625) F ColorIncrement(-5) [ Y ];
+match Y then ColorIncrement(5) F [ Plus Plus X ] [ Minus Minus X ] ColorIncrement(5) Scale(0.9326) F [ Plus Plus X ] [ Minus Minus X ] ColorIncrement(5) Scale(0.8557) F [ Plus Plus X ] [ Minus Minus X ] Scale(0.7788) F ColorIncrement(-5) [ Plus Plus X ] [ Minus Minus X ] Scale(0.7019) F ColorIncrement(-5) [ Plus X ] [ Minus X ] Scale(0.625) F ColorIncrement(-5) [ X ];
+match F then ColorIncrement(10) F ColorIncrement(10) F ColorIncrement(-10) F ColorIncrement(-10);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

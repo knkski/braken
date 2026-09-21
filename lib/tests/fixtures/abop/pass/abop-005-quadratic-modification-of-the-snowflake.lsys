@@ -1,0 +1,14 @@
+# ID       : ABOP-005
+# Name     : Quadratic modification of the snowflake
+# Source   : chapter 1, book page 9, Fig. 1.7b
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : -F
+# ABOP | p1    : F -> F+F-F+F
+#
+axiom Minus F;
+
+match F then F Plus F Minus F Plus F;

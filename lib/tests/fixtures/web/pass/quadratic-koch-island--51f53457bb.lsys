@@ -1,0 +1,25 @@
+# ID       : LSYS-51F53457BB72
+# Name     : Quadratic Koch island
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[9]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/quadratic-koch-island--51f53457bb.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:51f53457bb721f46e5559eebfbd3c7b4caaf38f0338afa1bdcd5fd3d33a2681c
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"F" -> "F-F+F+FFF-F-F+F"}, "F+F+F+F", 3, 90]
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Minus F Plus F Plus F F F Minus F Minus F Plus F;

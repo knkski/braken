@@ -1,0 +1,34 @@
+# ID       : LSYS-1A85F95FCCB4
+# Name     : Branch shedding and dynamic-equilibrium palm skeleton
+# Source   : Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996) | Equation 14 | https://algorithmicbotany.org/papers/l-sys.csiro96.pdf
+# Formalism: parametric bracketed L-system with cut
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'cut-turtle2d'
+# Fidelity : projection
+# Features : bracketed, branch-shedding, cut, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : cut-turtle2d
+# Fingerprint: sha256:1a85f95fccb43e33c6198368383c04ebefbc1d081e9bfa567e04040b26648ea6
+# Note     : The target rewrite evaluator treats Cut as a module; a turtle/cut interpreter must remove the following branch suffix to reproduce shedding.
+#
+# Original Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996):
+# SCHOLARLY | ω : A
+# SCHOLARLY | p1 : A -> F(1)[-X(3)B][+X(3)B]A
+# SCHOLARLY | p2 : B -> F(1)B
+# SCHOLARLY | p3 : X(d):d>0 -> X(d-1)
+# SCHOLARLY | p4 : X(d):d=0 -> U%
+# SCHOLARLY | p5 : U -> F(0.3)
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then F(1) [ Minus X(3) B ] [ Plus X(3) B ] A;
+match B then F(1) B;
+match X(d) when d > 0 then X(d-1);
+match X(d) when d = 0 then U Cut;
+match U then F(0.3);

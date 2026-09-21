@@ -1,0 +1,28 @@
+# ID       : LSYS-27660D95888C
+# Name     : Doily
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Doily (#10) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/doily--27660d9588.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:27660d95888cba4ee49c47df3eda867d3e40f85632129bef245da8b9e9859b78
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Doily { ; Adrian Mariano
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom f--f--f--f--f--f
+# RESETIUS |   f=-f[--f--f]++f--f+
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom F Minus Minus F Minus Minus F Minus Minus F Minus Minus F Minus Minus F;
+
+match F then Minus F [ Minus Minus F Minus Minus F ] Plus Plus F Minus Minus F Plus;

@@ -1,0 +1,63 @@
+# ID       : LSYS-7820DA732A98
+# Name     : DragonCurd
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section DragonCurd (#18) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/dragoncurd.ls, section DragonCurd (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/dragoncurd.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/dragoncurd--7820da732a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:7820da732a98080fe060d7cb2cc5693ad85641d0893650cfa18fb902e32e6cc0
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | DragonCurd { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom su
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   s=fs+g-x
+# RESETIUS |   t=++f--u+g-x
+# RESETIUS |   u=++f--u-g+z
+# RESETIUS |   v=fs-g+z
+# RESETIUS |   w=gw+f-t
+# RESETIUS |   x=++g--y+f-t
+# RESETIUS |   y=++g--y-f+v
+# RESETIUS |   z=gw-f+v
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | DragonCurd {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom su
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   s=fs+g-x
+# RESETIUS |   t=++f--u+g-x
+# RESETIUS |   u=++f--u-g+z
+# RESETIUS |   v=fs-g+z
+# RESETIUS |   w=gw+f-t
+# RESETIUS |   x=++g--y+f-t
+# RESETIUS |   y=++g--y-f+v
+# RESETIUS |   z=gw-f+v
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom S U;
+
+match F then nothing;
+match G then nothing;
+match S then F S Plus G Minus X;
+match T then Plus Plus F Minus Minus U Plus G Minus X;
+match U then Plus Plus F Minus Minus U Minus G Plus Z;
+match V then F S Minus G Plus Z;
+match W then G W Plus F Minus T;
+match X then Plus Plus G Minus Minus Y Plus F Minus T;
+match Y then Plus Plus G Minus Minus Y Minus F Plus V;
+match Z then G W Minus F Plus V;

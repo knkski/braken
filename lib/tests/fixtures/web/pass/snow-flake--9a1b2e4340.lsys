@@ -1,0 +1,38 @@
+# ID       : LSYS-9A1B2E43409A
+# Name     : Snow flake
+# Source   : jkubin/L-system generated-catalog fallback (commit 68a699a) | Grammar #30: flake_thickness.ls | https://github.com/jkubin/L-system/blob/68a699a88aafed49b919c871b6255fd537b7043d/grammars.txt
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/snow-flake--9a1b2e4340.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:9a1b2e43409a262f5efe5a2c2ecc0ef5eae3e93adecf87a8507f40d3a5122dc5
+# Note     : Fallback adaptation from grammars.txt because the corresponding M4 source file is absent at the pinned revision.
+# Note     : Generated derivation rules and final terminal projections were separated explicitly.
+#
+# Original jkubin/L-system generated-catalog fallback (commit 68a699a):
+# JKUBIN | Grammar #30: flake_thickness.ls
+# JKUBIN | Description: Snow flake
+# JKUBIN | Variables: {A, F}
+# JKUBIN | P: {
+# JKUBIN | 	ω → [A]+[A]+[A]+[A]+[A]+[A]
+# JKUBIN | 	A → #AF![+F][-F]F
+# JKUBIN | 	F → >F<
+# JKUBIN | 	A → F
+# JKUBIN | 	F → F
+# JKUBIN | }
+# JKUBIN | n = 6, δ = 60°, scale = 1.8
+#
+let ANGLE = 60;
+let SCALE = 1.8;
+
+axiom [ A ] Plus [ A ] Plus [ A ] Plus [ A ] Plus [ A ] Plus [ A ];
+
+match A then WidthIncrease A F WidthDecrease [ Plus F ] [ Minus F ] F;
+match F then ScaleLength F ScaleLengthInverse;

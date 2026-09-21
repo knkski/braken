@@ -1,0 +1,41 @@
+# ID       : LSYS-CED7AA81DB87
+# Name     : Shaded.Paper
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Shaded.Paper (#26) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/shaded-paper--ced7aa81db.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ced7aa81db874f5278a685659ac14465e68a06b5b494903aabac463ad60e0ed4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Shaded.Paper {
+# RESETIUS | 
+# RESETIUS |   ; best order 17
+# RESETIUS |   ; time 0:32
+# RESETIUS | 
+# RESETIUS |     angle 8
+# RESETIUS |     axiom c16FX--FX--FX--FX--
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=-FY<1++FY>1-
+# RESETIUS |     Y=+FX<1--FX>1+
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Color(16) F X Minus Minus F X Minus Minus F X Minus Minus F X Minus Minus;
+
+match F then nothing;
+match X then Minus F Y ColorIncrement(1) Plus Plus F Y ColorIncrement(-1) Minus;
+match Y then Plus F X ColorIncrement(1) Minus Minus F X ColorIncrement(-1) Plus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

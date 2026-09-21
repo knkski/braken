@@ -1,0 +1,59 @@
+# ID       : LSYS-2CF178F5F7FC
+# Name     : Classic Sierpinski Curve
+# Aliases  : Sierpinski curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | sierpinski_curve_classic.ls | https://github.com/jkubin/L-system/blob/68a699a/sierpinski_curve_classic.ls
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[11] (Sierpinski curve) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 34; heading Classic Sierpinski Curve | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/classic-sierpinski-curve--2cf178f5f7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2cf178f5f7fc12877757f390669bc59f94a9a4a6309ed85fc56f9a560b559453
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/ ; Rules by Chris Wallace
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/02⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ; Rules by Chris Wallace⟧)
+# JKUBIN | ___DESCR(⟦Classic Sierpinski Curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 sierpinski_curve_classic.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SIERPINSKI_CURVE_CLASSIC⟧, ⟦F--XF--F--XF⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦XF+F+XF--F--XF+F+X⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "setx":-50,dnl
+# JKUBIN | "sety":300,dnl
+# JKUBIN | 
+# JKUBIN | SIERPINSKI_CURVE_CLASSIC(4)
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Sierpinski curve",
+# KITWALLACE |   "F--XF--F--XF",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "XF+F+XF--F--XF+F+X"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   45.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F--XF--F--XF
+# BOURKE | X -> XF+F+XF--F--XF+F+X
+# BOURKE | angle = 45
+#
+let ANGLE = 45;
+
+axiom F Minus Minus X F Minus Minus F Minus Minus X F;
+
+match X then X F Plus F Plus X F Minus Minus F Minus Minus X F Plus F Plus X;

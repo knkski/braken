@@ -1,0 +1,28 @@
+# ID       : LSYS-795D531ED711
+# Name     : Peanomed
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Peanomed (#50) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peanomed--795d531ed7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:795d531ed711cadf306a076b5680f1f9fc7f0db97ccbfc2d7a5bcb81dffa66ba
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Peanomed { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom -X
+# RESETIUS |   X=X+F+X-F-X-F-X-F-X+F+X+F+X+F+X-F-X
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Minus X;
+
+match X then X Plus F Plus X Minus F Minus X Minus F Minus X Minus F Minus X Plus F Plus X Plus F Plus X Plus F Plus X Minus F Minus X;

@@ -1,0 +1,21 @@
+# Name: Braken
+# Summary: A planar bracken frond generated from the Spatial Fern recurrence.
+# Visualizer: turtle_2d
+# Angle: 4
+# Heading: 90
+# Draw: A B C D E F
+# Iterations: 7
+# Preview Iterations: 7
+# Max Iterations: 7
+# Initial Width: 1
+# Initial Color: 0
+# Background: #0f1420
+# Palette: #57b86a #173c2b
+# Source: Planar transcription of the Spatial Fern preset.
+# Attribution: propfeds L-systems Renderer manual/gallery, classic.js constructor 9.
+
+axiom F F F A;
+
+match A then [ Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus F C ] B PitchUp Plus B [ Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus F D ] B Plus B A;
+match C then [ Minus Minus Minus Minus Minus Minus Minus Minus Minus F F ] [ Plus Plus Plus Plus Plus Plus Plus Plus Plus F F ] B PitchDown PitchDown Plus C;
+match D then [ Minus Minus Minus Minus Minus Minus Minus Minus Minus F F ] [ Plus Plus Plus Plus Plus Plus Plus Plus Plus F F ] B PitchDown PitchDown Minus D;

@@ -1,0 +1,30 @@
+# ID       : ABOP-057
+# Name     : Ternary branching with tropism
+# Source   : chapter 2, book page 60, Fig. 2.8
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+# Note     : Tropism is interpretation-side and is not encoded in the printed productions.
+#
+# Original ABOP:
+# ABOP | #define d1 94.74
+# ABOP | #define d2 132.63
+# ABOP | #define a 18.95
+# ABOP | #define lr 1.109
+# ABOP | #define vr 1.732
+# ABOP | ω : !(1)F(200)/(45)A
+# ABOP | p1    : A -> !(vr)F(50)[&(a)F(50)A]/(d1)[&(a)F(50)A]/(d2)[&(a)F(50)A]
+# ABOP | p2    : F(l) -> F(l*lr)
+# ABOP | p3    : !(w) -> !(w*vr)
+#
+let d1 = 94.74;
+let d2 = 132.63;
+let a = 18.95;
+let lr = 1.109;
+let vr = 1.732;
+
+axiom Width(1) F(200) RollRight(45) A;
+
+match A then Width(vr) F(50) [ PitchDown(a) F(50) A ] RollRight(d1) [ PitchDown(a) F(50) A ] RollRight(d2) [ PitchDown(a) F(50) A ];
+match F(l) then F(l*lr);
+match Width(w) then Width(w*vr);

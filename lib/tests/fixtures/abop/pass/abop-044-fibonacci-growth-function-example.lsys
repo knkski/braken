@@ -1,0 +1,17 @@
+# ID       : ABOP-044
+# Name     : Fibonacci growth-function example
+# Source   : chapter 1, book page 36, Eq. 1.2
+# Formalism: deterministic context-free string
+# Parse    : pass
+# Execute  : pass
+# Note     : Same production system as ABOP-001, with axiom a.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a -> a b
+# ABOP | p2    : b -> a
+#
+axiom a;
+
+match a then a b;
+match b then a;

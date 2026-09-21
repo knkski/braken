@@ -1,0 +1,74 @@
+# ID       : LSYS-DA89B4F52D2C
+# Name     : One-stem Markov branching model
+# Source   : OpenAlea L-Py training example: one-stem Markov model | share/training/11a-markov-1stem.lpy | https://github.com/openalea/lpy/blob/4226991d625e/share/training/11a-markov-1stem.lpy
+# Formalism: parametric stochastic context-free L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-stochastic-string'
+# Fidelity : equivalent
+# Features : Markov, bracketed, parametric, stochastic
+# Angle    : unspecified
+# Heading  : 0
+# Draw     : none
+# Move     : none
+# Profile  : parametric-stochastic-string
+# Fingerprint: sha256:da89b4f52d2c26545e13f058ddaf56da340b29ea8f91aa2cbaea86c45eb6282f
+# Note     : Python random branches are represented by proportional weights; the L-Py homomorphism is not part of derivation.
+#
+# Original OpenAlea L-Py training example: one-stem Markov model:
+# SCHOLARLY | from random import *
+# SCHOLARLY | p1 = 0.750000 # probability of staying in a branched node
+# SCHOLARLY | p2 = 0.750000 # probability of staying in an empty node
+# SCHOLARLY | m = 0
+# SCHOLARLY | 
+# SCHOLARLY | 
+# SCHOLARLY | Axiom: _(1)S(1)
+# SCHOLARLY | derivation length: 100
+# SCHOLARLY | 
+# SCHOLARLY | # A = branching state
+# SCHOLARLY | # B = non-branching state
+# SCHOLARLY | 
+# SCHOLARLY | def Start():
+# SCHOLARLY | 	global m
+# SCHOLARLY | 	m = 0
+# SCHOLARLY | 
+# SCHOLARLY | production:
+# SCHOLARLY | 
+# SCHOLARLY | S(x) :
+# SCHOLARLY | 	if random() <= 0.5: produce A(x)
+# SCHOLARLY | 	else: produce B(x)
+# SCHOLARLY | 
+# SCHOLARLY | A(x) :
+# SCHOLARLY | 	if random() <= p1: produce I[M(x)]A(1-x)
+# SCHOLARLY | 	else: produce IB(1-x)
+# SCHOLARLY | 
+# SCHOLARLY | B(x) :
+# SCHOLARLY | 	if random() <= p2: produce IB(1-x)
+# SCHOLARLY | 	else: produce I[M(x)]A(1-x)
+# SCHOLARLY | 
+# SCHOLARLY | homomorphism:
+# SCHOLARLY | 
+# SCHOLARLY | M(x) :
+# SCHOLARLY | 	if x==0 :   produce ;(2)+F(20)
+# SCHOLARLY | 	elif x==1 : produce ;(2)-F(20)
+# SCHOLARLY | 
+# SCHOLARLY | I    : produce ;(1)F(2)
+# SCHOLARLY | A(x) : produce ;(1)@O(3)
+# SCHOLARLY | B(x) : produce ;(2)@O(3)
+# SCHOLARLY | 
+# SCHOLARLY | endlsystem
+# SCHOLARLY | ###### INITIALISATION ######
+# SCHOLARLY | 
+# SCHOLARLY | __copyright__ = 'open-source GPL'
+# SCHOLARLY | __description__ = '- give different values to the probabilities p1 and p2 to observe different types of branching\n\n'
+# SCHOLARLY | __institutes__ = 'INRIA - CIRAD Virtual Plants'
+# SCHOLARLY | __authors__ = 'C. Godin, F. Boudon'
+#
+axiom Width(1) S(1);
+
+match S(x) weight 0.5 then A(x);
+match S(x) weight 0.5 then B(x);
+match A(x) weight 0.75 then I [ M(x) ] A(1-x);
+match A(x) weight 0.25 then I B(1-x);
+match B(x) weight 0.75 then I B(1-x);
+match B(x) weight 0.25 then I [ M(x) ] A(1-x);

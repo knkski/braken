@@ -1,0 +1,30 @@
+# ID       : LSYS-250222E6F31F
+# Name     : Root
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Root (#55) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/root--250222e6f3.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 15.652173913
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:250222e6f31f559c65d397cb617dfdcd077ff11cbcfb7be3cdcc8a41446f8a49
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Root { ;
+# RESETIUS |   Angle 23
+# RESETIUS |   Axiom X
+# RESETIUS |   X=+F[-X]--F[+X]
+# RESETIUS |   F=-F[+F]+F[-F]
+# RESETIUS |   }
+#
+let ANGLE = 15.652173913;
+
+axiom X;
+
+match X then Plus F [ Minus X ] Minus Minus F [ Plus X ];
+match F then Minus F [ Plus F ] Plus F [ Minus F ];

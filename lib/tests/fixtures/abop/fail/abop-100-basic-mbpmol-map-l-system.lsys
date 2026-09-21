@@ -1,0 +1,16 @@
+# ID       : ABOP-100
+# Name     : Basic mBPMOL map L-system
+# Source   : chapter 7, book page 147, Fig. 7.2
+# Formalism: map L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | ω : A B A B
+# ABOP | p1    : A -> B[-A][+A]B
+# ABOP | p2    : B -> A
+#
+# Expected parse failure: map words are cyclic planar maps, not linear generations.
+map axiom A B A B;
+map match A then B [ - A ] [ + A ] B;
+map match B then A;

@@ -1,0 +1,29 @@
+# ID       : LSYS-595485AE0593
+# Name     : Lars1
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Lars1 (#66) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/lars1--595485ae05.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:595485ae05937a4d5ce192be3b7242adf12efbda0f6c67a59397a231fbb119e0
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Lars1{ ; By Jonathan Osuch [73277,1432]
+# FRACTINT |        ; Based on a suggestion by Lars Vangsgaard
+# FRACTINT |   Angle 8  ; angle increment/decrement is 45
+# FRACTINT |   axiom [F]++[F]++[F]++F
+# FRACTINT |   F=F[+F][-F]
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom [ F ] Plus Plus [ F ] Plus Plus [ F ] Plus Plus F;
+
+match F then F [ Plus F ] [ Minus F ];

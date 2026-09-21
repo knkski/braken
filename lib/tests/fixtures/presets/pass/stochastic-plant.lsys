@@ -1,0 +1,10 @@
+# Name: Stochastic Plant
+# Summary: Branching plant.
+# Angle: 22.5
+# Iterations: 6
+
+axiom Draw;
+
+match Draw then Draw [ Left Draw ] Draw [ Right Draw ] Draw;
+match Draw then Draw [ Left Draw ] Draw;
+match Draw then Draw [ Right Draw ] Draw;

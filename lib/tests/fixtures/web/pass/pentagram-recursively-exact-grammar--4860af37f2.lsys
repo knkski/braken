@@ -1,0 +1,40 @@
+# ID       : LSYS-4860AF37F290
+# Name     : pentagram recursively (exact grammar)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentagram_recur_exact.ls | https://github.com/jkubin/L-system/blob/68a699a/pentagram_recur_exact.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/pentagram-recursively-exact-grammar--4860af37f2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 144
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:4860af37f2901db9e7702b36ca280449ed2cb69ac2084c815ce0a8487ebd2261
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/10/03⟧)
+# JKUBIN | ___DESCR(⟦pentagram recursively (exact grammar)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentagram_recur_exact.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAGRAM⟧, ⟦FAFAFAFAFB⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦-<AFAFAFAFAF>⟧, ⟦-⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦-<AFAFAFAFAF>⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(144),dnl
+# JKUBIN | SCALE(2.62),dnl
+# JKUBIN | "step":900,dnl
+# JKUBIN | "sety":100,dnl
+# JKUBIN | 
+# JKUBIN | PENTAGRAM(5)
+#
+let ANGLE = 144;
+let SCALE = 2.62;
+
+axiom F A F A F A F A F B;
+
+match A then Minus ScaleLengthInverse A F A F A F A F A F ScaleLength;
+match B then Minus ScaleLengthInverse A F A F A F A F A F ScaleLength;

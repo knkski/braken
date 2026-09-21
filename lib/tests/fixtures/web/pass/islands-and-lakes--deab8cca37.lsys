@@ -1,0 +1,37 @@
+# ID       : LSYS-DEAB8CCA377A
+# Name     : Islands and lakes
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | islands_and_lakes.ls | https://github.com/jkubin/L-system/blob/68a699a/islands_and_lakes.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/islands-and-lakes--deab8cca37.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:deab8cca377a8189edb28b5d73592b4bdd817b9e2933d77efe621e884a903efc
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/20⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Islands and lakes⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 islands_and_lakes.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ISLANDS_AND_LAKES⟧, ⟦F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-f+FF-F-FF-Ff-FF+f-FF+F+FF+Ff+FFF⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦f⟧, ⟦ffffff⟧, ⟦f⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | 
+# JKUBIN | ISLANDS_AND_LAKES(2)
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F Minus f Plus F F Minus F Minus F F Minus F f Minus F F Plus f Minus F F Plus F Plus F F Plus F f Plus F F F;
+match f then f f f f f f;

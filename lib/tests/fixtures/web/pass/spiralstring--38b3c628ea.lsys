@@ -1,0 +1,32 @@
+# ID       : LSYS-38B3C628EA8C
+# Name     : Spiralstring
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Spiralstring (#69) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/spiralstring--38b3c628ea.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 12
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:38b3c628ea8c77dde07874c6f6527aaa71498a499e58d9756230b0da0dbce9b4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Spiralstring {
+# RESETIUS |   Angle 30
+# RESETIUS |   Axiom d
+# RESETIUS |   d=+<1d[d[|-f][|+f]-<1d[|--f][|++f]+<1d[|---f][|+++f]<1f[|----f][|++++f]]
+# RESETIUS |   F=+<1d[d]-<1d[d]
+# RESETIUS |   }
+#
+let ANGLE = 12;
+
+axiom D;
+
+match D then Plus ColorIncrement(1) D [ D [ TurnAround Minus F ] [ TurnAround Plus F ] Minus ColorIncrement(1) D [ TurnAround Minus Minus F ] [ TurnAround Plus Plus F ] Plus ColorIncrement(1) D [ TurnAround Minus Minus Minus F ] [ TurnAround Plus Plus Plus F ] ColorIncrement(1) F [ TurnAround Minus Minus Minus Minus F ] [ TurnAround Plus Plus Plus Plus F ] ];
+match F then Plus ColorIncrement(1) D [ D ] Minus ColorIncrement(1) D [ D ];
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

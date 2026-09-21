@@ -1,0 +1,42 @@
+# ID       : LSYS-799EC0915B73
+# Name     : binary tree (young parts are green, old are brown)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_binary.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_binary.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/binary-tree-young-parts-are-green-old-are-brown--799ec0915b.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:799ec0915b73625ee4f5f830bc5d59a0081bf6a30ce7a5769b8470654e28911b
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L-system#Example_2:_Fractal_(binary)_tree
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L-system#Example_2:_Fractal_(binary)_tree ⟧)
+# JKUBIN | ___DESCR(⟦binary tree (young parts are green, old are brown)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_binary.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BINARY_TREE⟧, ⟦G⟧)
+# JKUBIN | RULE(⟦G⟧, ⟦B[-G]+G⟧, ⟦G⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦BB⟧, ⟦N⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":2,dnl
+# JKUBIN | "penw":2,dnl
+# JKUBIN | "sety":-200,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | BINARY_TREE(8)
+#
+let ANGLE = 45;
+
+axiom G;
+
+match G then B [ Minus G ] Plus G;
+match B then B B;

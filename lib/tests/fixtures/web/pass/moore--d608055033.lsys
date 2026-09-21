@@ -1,0 +1,39 @@
+# ID       : LSYS-D60805503356
+# Name     : Moore
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[7] (Moore) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/moore--d608055033.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d608055033565d0eb5543b295adf044c1fb2138956d3504e9200c9c4da09a458
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Moore",
+# KITWALLACE |   "LFL+F+LFL",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "L",
+# KITWALLACE |       "-RF+LFL+FR-"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "R",
+# KITWALLACE |       "+LF-RFR-FL+"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+let ANGLE = 90;
+
+axiom L F L Plus F Plus L F L;
+
+match L then Minus R F Plus L F L Plus F R Minus;
+match R then Plus L F Minus R F R Minus F L Plus;

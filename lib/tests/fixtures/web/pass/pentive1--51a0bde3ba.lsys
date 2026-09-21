@@ -1,0 +1,38 @@
+# ID       : LSYS-51A0BDE3BA06
+# Name     : Pentive1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Pentive1 (#55) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/pentive1--51a0bde3ba.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:51a0bde3ba062eed615321a5d93b3ccaf5b9a9a76019ddea65a71843966dbc94
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentive1 {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom x
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   x=++fz----fy++fx
+# RESETIUS |   y=+fw--gz+
+# RESETIUS |   z=--fx++++fw--fz
+# RESETIUS |   w=-fy++gx-
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom X;
+
+match F then nothing;
+match G then nothing;
+match X then Plus Plus F Z Minus Minus Minus Minus F Y Plus Plus F X;
+match Y then Plus F W Minus Minus G Z Plus;
+match Z then Minus Minus F X Plus Plus Plus Plus F W Minus Minus F Z;
+match W then Minus F Y Plus Plus G X Minus;

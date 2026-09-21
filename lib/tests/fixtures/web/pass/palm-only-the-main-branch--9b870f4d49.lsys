@@ -1,0 +1,39 @@
+# ID       : LSYS-9B870F4D49E2
+# Name     : Palm, only the main branch :(
+# Source   : abiusx/L3D model archive | L/palm.l3d | https://github.com/abiusx/L3D/blob/master/L/palm.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 2
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:9b870f4d49e2ebf03cc27311e5192f0dc7b7fdf75dd676f73694627b2a8801f5
+# Note     : Upstream thickness setting: 88
+#
+# Original abiusx/L3D model archive:
+# L3D | #Palm, only the main branch :(
+# L3D | 8
+# L3D | 2
+# L3D | 88
+# L3D | a'12b
+# L3D | a=a&~xf
+# L3D | b=15\[16&cA]
+# L3D | c=c2&
+# L3D | A=F[12+B]8&[A][12-B]
+# L3D | B=F8&B
+# L3D | @
+#
+let ANGLE = 2;
+
+axiom a ColorPrevious TurtleNumber12 b;
+
+match a then a PitchDown Surface x f;
+match b then TurtleNumber15 RollLeft [ TurtleNumber16 PitchDown c A ];
+match c then c TurtleNumber2 PitchDown;
+match A then F [ TurtleNumber12 Plus B ] TurtleNumber8 PitchDown [ A ] [ TurtleNumber12 Minus B ];
+match B then F TurtleNumber8 PitchDown B;

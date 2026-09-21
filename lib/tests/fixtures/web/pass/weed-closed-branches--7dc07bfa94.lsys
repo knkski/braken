@@ -1,0 +1,38 @@
+# ID       : LSYS-7DC07BFA9452
+# Name     : Weed closed branches
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | weed_closed.ls | https://github.com/jkubin/L-system/blob/68a699a/weed_closed.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/weed-closed-branches--7dc07bfa94.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 22
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:7dc07bfa9452466a494e11b411a55d96a27f57f6a526523f483c40f8584c2c79
+# Note     : Upstream acknowledgement: http://www.kevs3d.co.uk/dev/lsystems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦http://www.kevs3d.co.uk/dev/lsystems/ ⟧)
+# JKUBIN | ___DESCR(⟦Weed closed branches⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 weed_closed.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦WEED⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF-[-F+F+F]+[+F-F-F]⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(22),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | WEED(3)
+#
+let ANGLE = 22;
+
+axiom F;
+
+match F then F F Minus [ Minus F Plus F Plus F ] Plus [ Plus F Minus F Minus F ];

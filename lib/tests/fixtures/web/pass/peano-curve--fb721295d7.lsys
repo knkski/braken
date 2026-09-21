@@ -1,0 +1,65 @@
+# ID       : LSYS-FB721295D7B4
+# Name     : Peano Curve
+# Aliases  : Peano; Peano3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Peano3 (#22) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Peano3 (#26) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[10] (Peano) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 15; heading Peano Curve | https://paulbourke.net/fractals/lsys/
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano-curve--fb721295d7.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fb721295d7b4eaca1be2875b173157118221312a752de449d7f1e94897c16d77
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Peano3 {
+# RESETIUS |   axiom x
+# RESETIUS |   x=XFYFX+F+YFXFY-F-XFYFX
+# RESETIUS |   y=YFXFY-F-XFYFX+F+YFXFY
+# RESETIUS |   angle 4
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Peano3 {
+# FRACTINT |   axiom x
+# FRACTINT |   x=XFYFX+F+YFXFY-F-XFYFX
+# FRACTINT |   y=YFXFY-F-XFYFX+F+YFXFY
+# FRACTINT |   angle 4
+# FRACTINT |   }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Peano",
+# KITWALLACE |   "X",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "XFYFX+F+YFXFY-F-XFYFX"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "YFXFY-F-XFYFX+F+YFXFY"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = X
+# BOURKE | X -> XFYFX+F+YFXFY-F-XFYFX
+# BOURKE | Y -> YFXFY-F-XFYFX+F+YFXFY
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom X;
+
+match X then X F Y F X Plus F Plus Y F X F Y Minus F Minus X F Y F X;
+match Y then Y F X F Y Minus F Minus X F Y F X Plus F Plus Y F X F Y;

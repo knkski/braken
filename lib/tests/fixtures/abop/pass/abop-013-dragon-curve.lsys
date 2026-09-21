@@ -1,0 +1,16 @@
+# ID       : ABOP-013
+# Name     : Dragon curve
+# Source   : chapter 1, book page 11, Fig. 1.10a
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : Fl
+# ABOP | p1    : Fl -> Fl+Fr+
+# ABOP | p2    : Fr -> -Fl-Fr
+#
+axiom Fl;
+
+match Fl then Fl Plus Fr Plus;
+match Fr then Minus Fl Minus Fr;

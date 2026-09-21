@@ -1,0 +1,41 @@
+# ID       : LSYS-2F3FF9EA3D7D
+# Name     : A1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section A1 (#20) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/a1--2f3ff9ea3d.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:2f3ff9ea3d7daca8ca9de5c66ad56a292ba06a9fa6221f2ef1b12712e610dc4d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | A1 { ; Terdragon median based on a modification
+# RESETIUS |      ; of the triangle tiling
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom r
+# RESETIUS |   r=c40f-ff+fx+fp+fp<8f-ff+fx+fp+fp<8f-ff+fx+fp+fp
+# RESETIUS |   x=f-ff+fx+fp+fpf-ff+fxfp-fp-f-ff+fx
+# RESETIUS |   p=fp
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom R;
+
+match R then Color(40) F Minus F F Plus F X Plus F P Plus F P ColorIncrement(8) F Minus F F Plus F X Plus F P Plus F P ColorIncrement(8) F Minus F F Plus F X Plus F P Plus F P;
+match X then F Minus F F Plus F X Plus F P Plus F P F Minus F F Plus F X F P Minus F P Minus F Minus F F Plus F X;
+match P then F P;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

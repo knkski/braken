@@ -1,0 +1,31 @@
+# ID       : LSYS-E56F6436147B
+# Name     : Sierpinski1
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Sierpinski1 (#20) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpinski1--e56f643614.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e56f6436147b2e88a196d5e59dabf4ffbb13612b31c4ce6d36d1e3665d7f6b9c
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Sierpinski1 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 3
+# FRACTINT |   axiom F
+# FRACTINT |   F=FXF
+# FRACTINT |   X=+FXF-FXF-FXF+
+# FRACTINT |   }
+#
+let ANGLE = 120;
+
+axiom F;
+
+match F then F X F;
+match X then Plus F X F Minus F X F Minus F X F Plus;

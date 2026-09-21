@@ -1,0 +1,28 @@
+# ID       : LSYS-63E70A0F5D9F
+# Name     : snezh
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snezh.ls, section snezh (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snezh.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/snezh--63e70a0f5d.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:63e70a0f5d9fb547ba1454100cb6efe356427a14c9c6cc6db94b9ab57ad9990d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | snezh {
+# RESETIUS | axiom [F]+[F]+[F]+[F]+[F]+[F]
+# RESETIUS | F=F[++F][-FF]FF[+F][-F]FF
+# RESETIUS | theta 1.0471975511965977461542144610932
+# RESETIUS | }
+#
+let ANGLE = 60;
+
+axiom [ F ] Plus [ F ] Plus [ F ] Plus [ F ] Plus [ F ] Plus [ F ];
+
+match F then F [ Plus Plus F ] [ Minus F F ] F F [ Plus F ] [ Minus F ] F F;

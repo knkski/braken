@@ -1,0 +1,42 @@
+# ID       : LSYS-F887FA219992
+# Name     : A three-dimensionsional bush-like structure
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | bush_like_structure_three_dim.ls | https://github.com/jkubin/L-system/blob/68a699a/bush_like_structure_three_dim.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d'
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle3d
+# Angle    : 22.9
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle3d
+# Fingerprint: sha256:f887fa219992b018c243fd6b4461e391e9bddb93d09b88de9fb020ddbcc863f5
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/10/28⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants (page: 26)⟧)
+# JKUBIN | ___DESCR(⟦A three-dimensionsional bush-like structure⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 bush_like_structure_three_dim.ls | turtle_three_dim⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BUSH_LIKE_STRUCTURE_THREE_DIM⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦[&FL!A]/////"[&FL!A]///////"[&FL!A]⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦FL⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦B/////F⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦L⟧, ⟦["""^^{-f+f+f-|-f+f+f}]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(22.9),dnl
+# JKUBIN | "turtle":"three_dim",dnl
+# JKUBIN | 
+# JKUBIN | BUSH_LIKE_STRUCTURE_THREE_DIM(3)
+#
+let ANGLE = 22.9;
+
+axiom A;
+
+match A then [ PitchDown F L WidthDecrease A ] RollRight RollRight RollRight RollRight RollRight TurnAngleIncrease [ PitchDown F L WidthDecrease A ] RollRight RollRight RollRight RollRight RollRight RollRight RollRight TurnAngleIncrease [ PitchDown F L WidthDecrease A ];
+match B then F L;
+match F then B RollRight RollRight RollRight RollRight RollRight F;
+match L then [ TurnAngleIncrease TurnAngleIncrease TurnAngleIncrease PitchUp PitchUp PolygonBegin Minus f Plus f Plus f Minus TurnAround Minus f Plus f Plus f PolygonEnd ];

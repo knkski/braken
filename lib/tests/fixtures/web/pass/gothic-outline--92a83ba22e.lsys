@@ -1,0 +1,39 @@
+# ID       : LSYS-92A83BA22EA0
+# Name     : Gothic.Outline
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Gothic.Outline (#6) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/gothic-outline--92a83ba22e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:92a83ba22ea092fb88a864b6bcb5a3adcce37f89c3d8373096c16d49c52b036f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Gothic.Outline {
+# RESETIUS | 
+# RESETIUS |   ; best order 3
+# RESETIUS |   ; time 0:02
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom FX++FX++FX++FX++FX++
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=FX++FX[++GY]-FX[++GY[++GY]-FX++FX]-FX[++GY--GY]-FX[++GY]-FX++FX
+# RESETIUS |     Y=GY++FX[++GY]-FX[++GY[++GY]-FX++FX]-FX[++GY--GY]-FX[++GY]-FX++GY
+# RESETIUS |     G=
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom F X Plus Plus F X Plus Plus F X Plus Plus F X Plus Plus F X Plus Plus;
+
+match F then nothing;
+match X then F X Plus Plus F X [ Plus Plus G Y ] Minus F X [ Plus Plus G Y [ Plus Plus G Y ] Minus F X Plus Plus F X ] Minus F X [ Plus Plus G Y Minus Minus G Y ] Minus F X [ Plus Plus G Y ] Minus F X Plus Plus F X;
+match Y then G Y Plus Plus F X [ Plus Plus G Y ] Minus F X [ Plus Plus G Y [ Plus Plus G Y ] Minus F X Plus Plus F X ] Minus F X [ Plus Plus G Y Minus Minus G Y ] Minus F X [ Plus Plus G Y ] Minus F X Plus Plus G Y;
+match G then nothing;

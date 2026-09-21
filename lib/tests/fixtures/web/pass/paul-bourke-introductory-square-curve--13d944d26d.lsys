@@ -1,0 +1,62 @@
+# ID       : LSYS-13D944D26D77
+# Name     : Paul Bourke introductory square curve
+# Aliases  : ABP Koch c; Tiles
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.tiles | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[26] (ABP Koch c) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | introductory Example 2 (before Symbols) | https://paulbourke.net/fractals/lsys/
+# Source   : Paul Bourke L-system manual/catalog | example 29; heading Tiles | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/paul-bourke-introductory-square-curve--13d944d26d.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, introductory-example, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:13d944d26d7718c4be28811d72e4c0ad3ec62ed3d2a00640c98407df202d7bf4
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | tiles =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "FF+F-F+F+FF" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F+F"
+# ELM |         , iterations = 3
+# ELM |         , lineLength = 10
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -200, y = -150 }
+# ELM |         , windowSize = 250
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "ABP Koch c",
+# KITWALLACE |   "F+F+F+F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "FF+F-F+F+FF"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | Axiom F+F+F+F
+# BOURKE | F -> FF+F-F+F+FF
+# BOURKE | theta = 90
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F+F
+# BOURKE | F -> FF+F-F+F+FF
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F F Plus F Minus F Plus F Plus F F;

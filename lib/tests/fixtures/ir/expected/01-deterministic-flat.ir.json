@@ -1,0 +1,79 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom A;\n\nmatch A then A B;\nmatch B then A;\n",
+  "source_fingerprint": "fnv1a64:0bd21156d4efa804",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 0
+    },
+    {
+      "name": "B",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 0,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": []
+            }
+          },
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 1,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

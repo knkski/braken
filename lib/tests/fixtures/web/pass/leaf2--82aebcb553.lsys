@@ -1,0 +1,50 @@
+# ID       : LSYS-82AEBCB553C1
+# Name     : Leaf2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Leaf2 (#43) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Leaf2 (#49) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/leaf2--82aebcb553.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:82aebcb553c13ce03fcea1aa82b8f1a130b4073ef94af3ecd273075bc4b0fa05
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Leaf2 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS | 	; Compound leaf with alternating branches, Figure 5.12a p.130
+# RESETIUS |   angle 8
+# RESETIUS |   axiom a
+# RESETIUS |   a=f[+x]fb
+# RESETIUS |   b=f[-y]fa
+# RESETIUS |   x=a
+# RESETIUS |   y=b
+# RESETIUS |   f=@1.36f@i1.36
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Leaf2 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	; Compound leaf with alternating branches, Figure 5.12a p.130
+# FRACTINT |   angle 8
+# FRACTINT |   axiom a
+# FRACTINT |   a=f[+x]fb
+# FRACTINT |   b=f[-y]fa
+# FRACTINT |   x=a
+# FRACTINT |   y=b
+# FRACTINT |   f=@1.36f@i1.36
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom A;
+
+match A then F [ Plus X ] F B;
+match B then F [ Minus Y ] F A;
+match X then A;
+match Y then B;
+match F then Scale(1.36) F Scale(0.735294117647);

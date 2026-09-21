@@ -1,0 +1,39 @@
+# ID       : LSYS-E4823B837B31
+# Name     : Pythagorean tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_pythagorean.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_pythagorean.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/pythagorean-tree--e4823b837b.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 270
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e4823b837b3145b00e700a3aefa5f54208f15ac2496cfae1a6315d5a608fda40
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | ___DESCR(⟦Pythagorean tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_pythagorean.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PYTHAGOREAN_TREE⟧, ⟦F++F++F++A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦[--->F++A++F++F]F[--->F++F++A++F]⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":100,dnl
+# JKUBIN | SCALE(0.707106781),dnl
+# JKUBIN | "setx":-100,dnl
+# JKUBIN | "seth":270,dnl
+# JKUBIN | 
+# JKUBIN | PYTHAGOREAN_TREE(11)
+#
+let ANGLE = 45;
+let SCALE = 0.707106781;
+
+axiom F Plus Plus F Plus Plus F Plus Plus A;
+
+match A then [ Minus Minus Minus ScaleLength F Plus Plus A Plus Plus F Plus Plus F ] F [ Minus Minus Minus ScaleLength F Plus Plus F Plus Plus A Plus Plus F ];

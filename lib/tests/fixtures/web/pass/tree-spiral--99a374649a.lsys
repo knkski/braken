@@ -1,0 +1,39 @@
+# ID       : LSYS-99A374649AF2
+# Name     : Tree spiral
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_spiral.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_spiral.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/tree-spiral--99a374649a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 16
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:99a374649af275bec1255bd9f037611bb2df04f2a2e54d8fec8b85b92ad15110
+# Note     : Upstream acknowledgement: https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/ ⟧)
+# JKUBIN | ___DESCR(⟦Tree spiral⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_spiral.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FXF[-F[-FX]+FX]⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F++F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(16),dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(4)
+#
+let ANGLE = 16;
+
+axiom X;
+
+match F then F X F [ Minus F [ Minus F X ] Plus F X ];
+match X then F Plus Plus F;

@@ -1,0 +1,59 @@
+# ID       : LSYS-6802CB8E589E
+# Name     : Quadratic Koch Island
+# Aliases  : Koch6; Quadratic Koch Island2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Koch6 (#18) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Koch6 (#4) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.quadraticKochIsland2 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 19; heading Quadratic Koch Island | https://paulbourke.net/fractals/lsys/
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/quadratic-koch-island--6802cb8e58.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6802cb8e589e6a0f3c1403cfe95cadd4b8d1fdc7e6445a6f4d4df79dc0dc292c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch6 { ; Adrian Mariano
+# RESETIUS | ; order 3
+# RESETIUS |    axiom f+f+f+f
+# RESETIUS |    f=f-ff+ff+f+f-f-ff+f+f-f-ff-ff+f
+# RESETIUS |    angle 4
+# RESETIUS |     }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Koch6 { ; Adrian Mariano
+# FRACTINT |    axiom f+f+f+f
+# FRACTINT |    f=f-ff+ff+f+f-f-ff+f+f-f-ff-ff+f
+# FRACTINT |    angle 4
+# FRACTINT |     }
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | quadraticKochIsland2 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F-FF+FF+F+F-F-FF+F+F-F-FF-FF+F" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F+F"
+# ELM |         , iterations = 2
+# ELM |         , lineLength = 3
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -43, y = -43 }
+# ELM |         , windowSize = 194
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F+F
+# BOURKE | F -> F-FF+FF+F+F-F-FF+F+F-F-FF-FF+F
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Minus F F Plus F F Plus F Plus F Minus F Minus F F Plus F Plus F Minus F Minus F F Minus F F Plus F;

@@ -1,0 +1,37 @@
+# ID       : LSYS-2A273A33678B
+# Name     : Grid
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | grid.ls | https://github.com/jkubin/L-system/blob/68a699a/grid.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/grid--2a273a3367.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2a273a33678b255d9a30c558c897fba3ccd43cce62b36d001295b13dc5becb2a
+# Note     : Upstream acknowledgement: https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html ⟧)
+# JKUBIN | ___DESCR(⟦Grid⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 grid.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦GRID⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-F+F+F+F-F-F-F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | 
+# JKUBIN | GRID(2)
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Minus F Plus F Plus F Plus F Minus F Minus F Minus F Plus F;

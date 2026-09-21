@@ -1,0 +1,49 @@
+# ID       : LSYS-831BC1C73241
+# Name     : Fractal.Rose
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Fractal.Rose (#5) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/fractal-rose--831bc1c732.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:831bc1c732419142c2a4ca44998f92a440cd0ff00f0c810801f48404118edb37
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Fractal.Rose {
+# RESETIUS | 
+# RESETIUS |   ; best order 13
+# RESETIUS |   ; time 1:33
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom C17A
+# RESETIUS | 
+# RESETIUS |     A=[X]G++[X]G++[X]G++[X]G++[X]G++
+# RESETIUS |     W=FV
+# RESETIUS |     V=G
+# RESETIUS |     F=
+# RESETIUS |     X=@.276393[A]FW++FW[---Y]++FW++FW++FW++
+# RESETIUS |     Y=@.618034[A]FW++FW++FW[<2---Z]++FW++FW++
+# RESETIUS |     Z=@.618034[A]FW++FW++FW[---Y]++FW++FW++
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Color(17) A;
+
+match A then [ X ] G Plus Plus [ X ] G Plus Plus [ X ] G Plus Plus [ X ] G Plus Plus [ X ] G Plus Plus;
+match W then F V;
+match V then G;
+match F then nothing;
+match X then Scale(0.276393) [ A ] F W Plus Plus F W [ Minus Minus Minus Y ] Plus Plus F W Plus Plus F W Plus Plus F W Plus Plus;
+match Y then Scale(0.618034) [ A ] F W Plus Plus F W Plus Plus F W [ ColorIncrement(2) Minus Minus Minus Z ] Plus Plus F W Plus Plus F W Plus Plus;
+match Z then Scale(0.618034) [ A ] F W Plus Plus F W Plus Plus F W [ Minus Minus Minus Y ] Plus Plus F W Plus Plus F W Plus Plus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

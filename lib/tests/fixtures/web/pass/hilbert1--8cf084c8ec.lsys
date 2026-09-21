@@ -1,0 +1,35 @@
+# ID       : LSYS-8CF084C8EC98
+# Name     : Hilbert1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, recovered section Hilbert1 (#31) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hilbert1--8cf084c8ec.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, inventory-recovery, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8cf084c8ec98f2ad3b94d3193032365f39a9d57c25c95a2d9bcc5bb181806b01
+# Note     : Recovered from an active source section omitted by the independent inventory.
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS |  Hilbert1 {
+# RESETIUS |   axiom z
+# RESETIUS |   z=-c32Yc15f+c32Xc15Fc32X+c15Fc32Y-
+# RESETIUS |   x=-YF+XFX+FY-
+# RESETIUS |   y=+XF-YFY-FX+
+# RESETIUS |   angle 4
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom Z;
+
+match Z then Minus Color(32) Y Color(15) F Plus Color(32) X Color(15) F Color(32) X Plus Color(15) F Color(32) Y Minus;
+match X then Minus Y F Plus X F X Plus F Y Minus;
+match Y then Plus X F Minus Y F Y Minus F X Plus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

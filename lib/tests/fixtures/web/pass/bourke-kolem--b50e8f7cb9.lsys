@@ -1,0 +1,49 @@
+# ID       : LSYS-B50E8F7CB9B2
+# Name     : Bourke Kolem
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[35] (Bourke Kolem) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/bourke-kolem--b50e8f7cb9.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:b50e8f7cb9b2ca7b7d4f3c0d4cef6f431e6bae13d5dcb8f15bc2937bf260784f
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Bourke Kolem",
+# KITWALLACE |   "--D--D",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "X",
+# KITWALLACE |       "F++FFFF--F--FFFF++F++FFFF--F"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "Y",
+# KITWALLACE |       "F--FFFF++F++FFFF--F--FFFF++F"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "C",
+# KITWALLACE |       "YFX--YFX"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "D",
+# KITWALLACE |       "CFC--CFC"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   45.0
+# KITWALLACE | ]
+#
+let ANGLE = 45;
+
+axiom Minus Minus D Minus Minus D;
+
+match X then F Plus Plus F F F F Minus Minus F Minus Minus F F F F Plus Plus F Plus Plus F F F F Minus Minus F;
+match Y then F Minus Minus F F F F Plus Plus F Plus Plus F F F F Minus Minus F Minus Minus F F F F Plus Plus F;
+match C then Y F X Minus Minus Y F X;
+match D then C F C Minus Minus C F C;

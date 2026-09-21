@@ -1,0 +1,43 @@
+# ID       : LSYS-02489BF89AE2
+# Name     : Snow.Flake.4
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Snow.Flake.4 (#35) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/snow-flake-4--02489bf89a.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:02489bf89ae2c9fb47072a3c8b9162e7c532bbd0dfce9b8fe203960b5e91fb45
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Snow.Flake.4 {
+# RESETIUS | 
+# RESETIUS |   ; best order 12
+# RESETIUS |   ; time 0:14
+# RESETIUS | 
+# RESETIUS |     angle 6
+# RESETIUS |     axiom C17[FX]+[FX]+[FX]+[FX]+[FX]+[FX]+
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=FY<2[+FY][-FY]>2@2FX@I2
+# RESETIUS |     Y=@3FX@I3
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom Color(17) [ F X ] Plus [ F X ] Plus [ F X ] Plus [ F X ] Plus [ F X ] Plus [ F X ] Plus;
+
+match F then nothing;
+match X then F Y ColorIncrement(2) [ Plus F Y ] [ Minus F Y ] ColorIncrement(-2) Scale(2) F X Scale(0.5);
+match Y then Scale(3) F X Scale(0.333333333333);
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

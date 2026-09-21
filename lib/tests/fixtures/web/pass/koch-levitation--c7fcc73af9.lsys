@@ -1,0 +1,45 @@
+# ID       : LSYS-C7FCC73AF949
+# Name     : Koch.Levitation
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Koch.Levitation (#14) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/koch-levitation--c7fcc73af9.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c7fcc73af9498f71e648f29dff3d85de32cf74b73c13b196e4e8c28b58dcf12e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch.Levitation {
+# RESETIUS | 
+# RESETIUS |   ; best order 6
+# RESETIUS |   ; time 0:10
+# RESETIUS | 
+# RESETIUS |     angle 6
+# RESETIUS |     axiom C31FW+FW+FW+FW+FW+FW+
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     W=-FXFY++FZFX-
+# RESETIUS |     X=FX-FXFY++FZFX-FX
+# RESETIUS |     Y=->3FX-FXFY++FZFXFY++FZFX-FX-
+# RESETIUS |     Z=--FXFY++FZFXFY++FZFX-FX<3-
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom Color(31) F W Plus F W Plus F W Plus F W Plus F W Plus F W Plus;
+
+match F then nothing;
+match W then Minus F X F Y Plus Plus F Z F X Minus;
+match X then F X Minus F X F Y Plus Plus F Z F X Minus F X;
+match Y then Minus ColorIncrement(-3) F X Minus F X F Y Plus Plus F Z F X F Y Plus Plus F Z F X Minus F X Minus;
+match Z then Minus Minus F X F Y Plus Plus F Z F X F Y Plus Plus F Z F X Minus F X ColorIncrement(3) Minus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

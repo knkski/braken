@@ -1,0 +1,31 @@
+# ID       : LSYS-C33FE890526E
+# Name     : plant
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/plant.ls, section plant (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/plant.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/plant--c33fe89052.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 25
+# Heading  : 90
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c33fe890526eb069ff3e23ce5af36fef79eec28e3a42204c3e7e7b6efebbedb3
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | plant {
+# RESETIUS | axiom X
+# RESETIUS | X=F-[[X]+X]+F[+FX]-X
+# RESETIUS | F=FF
+# RESETIUS | theta 0.43633231299858239423092269212215
+# RESETIUS | alpha 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+let ANGLE = 25;
+
+axiom X;
+
+match X then F Minus [ [ X ] Plus X ] Plus F [ Plus F X ] Minus X;
+match F then F F;

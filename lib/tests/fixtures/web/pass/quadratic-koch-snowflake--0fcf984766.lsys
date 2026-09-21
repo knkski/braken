@@ -1,0 +1,36 @@
+# ID       : LSYS-0FCF984766AF
+# Name     : Quadratic Koch snowflake
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | koch_quadratic_snowflake_3.ls | https://github.com/jkubin/L-system/blob/68a699a/koch_quadratic_snowflake_3.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/quadratic-koch-snowflake--0fcf984766.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:0fcf984766af58f8c01052df71ef0a80b744d2cc4b8d917d246a7297c7ce8592
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Quadratic Koch snowflake⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 koch_quadratic_snowflake_3.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦KOCH_QUAD_SNOW⟧, ⟦F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | KOCH_QUAD_SNOW(3)
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F Plus F Minus F Minus F Plus F;

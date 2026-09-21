@@ -1,0 +1,33 @@
+# ID       : LSYS-12517DBAD20C
+# Name     : Pentasnow (unresolved template)
+# Aliases  : Pentasnow
+# Source   : jkubin/L-system generated-catalog fallback (commit 68a699a) | Grammar #77: pentasnow.ls | https://github.com/jkubin/L-system/blob/68a699a88aafed49b919c871b6255fd537b7043d/grammars.txt
+# Formalism: unresolved generated-catalog template represented as an inert string system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'string-only'
+# Fidelity : projection
+# Features : context-free, deterministic, quarantine, unresolved-template
+# Angle    : unspecified
+# Heading  : 0
+# Draw     : none
+# Move     : none
+# Profile  : string-only
+# Fingerprint: sha256:12517dbad20cfb998a0c7fc2484649f44f9a472423b2a178daf7b9f9116956dc
+# Source-token warnings: %%%
+# Note     : The generated entry contains only %%% placeholders for alphabet, axiom, rules, and angle; an inert module preserves its provenance without inventing a grammar.
+#
+# Original jkubin/L-system generated-catalog fallback (commit 68a699a):
+# JKUBIN | Grammar #77: pentasnow.ls
+# JKUBIN | Description:
+# JKUBIN | Variables: {%%%}
+# JKUBIN | P: {
+# JKUBIN | 	ω → %%%
+# JKUBIN | 	%%% → %%%
+# JKUBIN | 	%%% → %%%
+# JKUBIN | }
+# JKUBIN | n = 2, δ = %%%°, scale = 1.0
+#
+axiom TemplatePlaceholder;
+
+match TemplatePlaceholder then TemplatePlaceholder;

@@ -1,0 +1,56 @@
+# ID       : LSYS-DF4749E92B47
+# Name     : Pentive4
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Pentive4 (#31) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/pentive4--df4749e92b.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:df4749e92b47d850bd49b69e1f04a79778905f456b42fe547330c3d3cddc4a30
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Pentive4 { ; from 2isosceles
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=--fz++++fw--fo
+# RESETIUS |   y=+fq--fs+
+# RESETIUS |   z=++fx----fy++fn
+# RESETIUS |   w=-ft++fp-
+# RESETIUS |   u=fq--fs++++fv--
+# RESETIUS |   v=ft++fp----fu++
+# RESETIUS |   t=+fq--fs++++fv|g++
+# RESETIUS |   s=-fy++fn-
+# RESETIUS |   q=-ft++fp----fu|g--
+# RESETIUS |   p=+fw--fo+
+# RESETIUS |   o=--g|fx----fy++fn-
+# RESETIUS |   n=++g|fz++++fw--fo+
+# RESETIUS |   f=
+# RESETIUS |   g=+g--g+
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom R;
+
+match R then X;
+match X then Minus Minus F Z Plus Plus Plus Plus F W Minus Minus F O;
+match Y then Plus F Q Minus Minus F S Plus;
+match Z then Plus Plus F X Minus Minus Minus Minus F Y Plus Plus F N;
+match W then Minus F T Plus Plus F P Minus;
+match U then F Q Minus Minus F S Plus Plus Plus Plus F V Minus Minus;
+match V then F T Plus Plus F P Minus Minus Minus Minus F U Plus Plus;
+match T then Plus F Q Minus Minus F S Plus Plus Plus Plus F V TurnAround G Plus Plus;
+match S then Minus F Y Plus Plus F N Minus;
+match Q then Minus F T Plus Plus F P Minus Minus Minus Minus F U TurnAround G Minus Minus;
+match P then Plus F W Minus Minus F O Plus;
+match O then Minus Minus G TurnAround F X Minus Minus Minus Minus F Y Plus Plus F N Minus;
+match N then Plus Plus G TurnAround F Z Plus Plus Plus Plus F W Minus Minus F O Plus;
+match F then nothing;
+match G then Plus G Minus Minus G Plus;

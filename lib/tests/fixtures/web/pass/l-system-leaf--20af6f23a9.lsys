@@ -1,0 +1,34 @@
+# ID       : LSYS-20AF6F23A96A
+# Name     : L-System Leaf
+# Source   : Paul Bourke L-system manual/catalog | example 1; heading L-System Leaf | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/l-system-leaf--20af6f23a9.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:20af6f23a96a4aed8ed6c06f7bff37aad9289688a796877c3906413a64b5de25
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = a
+# BOURKE | F -> >F<
+# BOURKE | a -> F[+x]Fb
+# BOURKE | b -> F[-y]Fa
+# BOURKE | x -> a
+# BOURKE | y -> b
+# BOURKE | angle = 45
+#
+let ANGLE = 45;
+
+axiom a;
+
+match F then ScaleLength F ScaleLengthInverse;
+match a then F [ Plus x ] F b;
+match b then F [ Minus y ] F a;
+match x then a;
+match y then b;

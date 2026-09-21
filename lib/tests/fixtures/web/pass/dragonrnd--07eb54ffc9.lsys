@@ -1,0 +1,70 @@
+# ID       : LSYS-07EB54FFC9D9
+# Name     : Dragonrnd
+# Aliases  : Dragon1; DragonAlt1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/dragonrnd.ls, section Dragonrnd (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/dragonrnd.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dragon1 (#15) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section DragonAlt1 (#17) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dragonrnd (#19) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dragonrnd--07eb54ffc9.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:07eb54ffc9d903e39f1c5626523c3932e4fed02069b179dffdca72618e8b9921
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragonrnd {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom X
+# RESETIUS |   F=
+# RESETIUS |   X=FX+@.500FZ@2.00+FY
+# RESETIUS |   Y=FX-@.500FZ@2.00-FY
+# RESETIUS |   Z=FZ
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon1 { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom X
+# RESETIUS |   F=
+# RESETIUS |   X=FX+@.500FZ@2.00+FY
+# RESETIUS |   Y=FX-@.500FZ@2.00-FY
+# RESETIUS |   Z=FZ
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | DragonAlt1 { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom X
+# RESETIUS |   F=
+# RESETIUS |   X=FX+@.500FZ@2.00+FY
+# RESETIUS |   Y=FX-@.500FZ@2.00-FY
+# RESETIUS |   Z=FZ
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragonrnd { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom X
+# RESETIUS |   F=
+# RESETIUS |   X=FX+@.500FZ@2.00+FY
+# RESETIUS |   Y=FX-@.500FZ@2.00-FY
+# RESETIUS |   Z=FZ
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match F then nothing;
+match X then F X Plus Scale(0.5) F Z Scale(2) Plus F Y;
+match Y then F X Minus Scale(0.5) F Z Scale(2) Minus F Y;
+match Z then F Z;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

@@ -1,0 +1,39 @@
+# ID       : LSYS-FABDA4ED1209
+# Name     : Double branched tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_double.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_double.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/double-branched-tree--fabda4ed12.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 25
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:fabda4ed1209fd0887bfc19d45a11f8e9ef16e9a7bd3ca8f7fcdf0c11fa973f8
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ⟧)
+# JKUBIN | ___DESCR(⟦Double branched tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_double.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦DOUBLE_TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F[+X]F[-X]+X⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(25),dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | DOUBLE_TREE(5)
+#
+let ANGLE = 25;
+
+axiom X;
+
+match F then F F;
+match X then F [ Plus X ] F [ Minus X ] Plus X;

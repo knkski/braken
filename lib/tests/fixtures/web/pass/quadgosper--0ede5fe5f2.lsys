@@ -1,0 +1,45 @@
+# ID       : LSYS-0EDE5FE5F261
+# Name     : QuadGosper
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section QuadGosper (#23) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section QuadGosper (#34) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/quadgosper--0ede5fe5f2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:0ede5fe5f26195b46ca196398cf5ab0c7514c7d728ff29974b9effd072f661fc
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | QuadGosper { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS |         ; Quadratic Gosper curve, Figure 1.11b p.12
+# RESETIUS | ; order 3
+# RESETIUS |   angle 4
+# RESETIUS |   axiom -Fr
+# RESETIUS |   l=FlFl-Fr-Fr+Fl+Fl-Fr-FrFl+Fr+FlFlFr-Fl+Fr+FlFl+Fr-FlFr-Fr-Fl+Fl+FrFr-
+# RESETIUS |   r=+FlFl-Fr-Fr+Fl+FlFr+Fl-FrFr-Fl-Fr+FlFrFr-Fl-FrFl+Fl+Fr-Fr-Fl+Fl+FrFr
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | QuadGosper { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	     ; Quadratic Gosper curve, Figure 1.11b p.12
+# FRACTINT |   angle 4
+# FRACTINT |   axiom -Fr
+# FRACTINT |   l=FlFl-Fr-Fr+Fl+Fl-Fr-FrFl+Fr+FlFlFr-Fl+Fr+FlFl+Fr-FlFr-Fr-Fl+Fl+FrFr-
+# FRACTINT |   r=+FlFl-Fr-Fr+Fl+FlFr+Fl-FrFr-Fl-Fr+FlFrFr-Fl-FrFl+Fl+Fr-Fr-Fl+Fl+FrFr
+# FRACTINT |   f=
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom Minus F R;
+
+match L then F L F L Minus F R Minus F R Plus F L Plus F L Minus F R Minus F R F L Plus F R Plus F L F L F R Minus F L Plus F R Plus F L F L Plus F R Minus F L F R Minus F R Minus F L Plus F L Plus F R F R Minus;
+match R then Plus F L F L Minus F R Minus F R Plus F L Plus F L F R Plus F L Minus F R F R Minus F L Minus F R Plus F L F R F R Minus F L Minus F R F L Plus F L Plus F R Minus F R Minus F L Plus F L Plus F R F R;
+match F then nothing;

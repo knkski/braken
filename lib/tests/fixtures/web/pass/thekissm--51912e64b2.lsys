@@ -1,0 +1,28 @@
+# ID       : LSYS-51912E64B2BF
+# Name     : TheKissM
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TheKissM (#36) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/thekissm--51912e64b2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:51912e64b2bff65f510402269219c4a4f1573736dc5e5e414b50132d1b9948b1
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TheKissM {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=x+f+x-f-x-f-x+f+x-f-x+f+x+f+x-f-x
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then X Plus F Plus X Minus F Minus X Minus F Minus X Plus F Plus X Minus F Minus X Plus F Plus X Plus F Plus X Minus F Minus X;

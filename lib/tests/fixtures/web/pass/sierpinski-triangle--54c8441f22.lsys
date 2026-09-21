@@ -1,0 +1,43 @@
+# ID       : LSYS-54C8441F2283
+# Name     : Sierpinski triangle
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[13] (Sierpinski triangle) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/sierpinski-triangle--54c8441f22.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : A B
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:54c8441f22839b70db51767885751c765bc3f7724042434a106c758d03d307eb
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Sierpinski triangle",
+# KITWALLACE |   "A-B-B",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "A",
+# KITWALLACE |       "A-B+A+B-A"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "B",
+# KITWALLACE |       "BB"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   120.0,
+# KITWALLACE |   [
+# KITWALLACE |     "A",
+# KITWALLACE |     "B"
+# KITWALLACE |   ]
+# KITWALLACE | ]
+#
+let ANGLE = 120;
+
+axiom A Minus B Minus B;
+
+match A then A Minus B Plus A Plus B Minus A;
+match B then B B;

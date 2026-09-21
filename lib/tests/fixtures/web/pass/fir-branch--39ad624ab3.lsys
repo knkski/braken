@@ -1,0 +1,39 @@
+# ID       : LSYS-39AD624AB332
+# Name     : Fir branch
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | fir_branch.ls | https://github.com/jkubin/L-system/blob/68a699a/fir_branch.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fir-branch--39ad624ab3.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 25
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:39ad624ab3328be5b0beb4d86bba21dbba47b633f4eb29a6aa0ef787156d8c10
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/19⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ⟧)
+# JKUBIN | ___DESCR(⟦Fir branch⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 fir_branch.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦FIR⟧, ⟦Y⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦X[-FFF][+FFF]FX⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦YFX[+Y][-Y]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(25),dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | FIR(5)
+#
+let ANGLE = 25;
+
+axiom Y;
+
+match X then X [ Minus F F F ] [ Plus F F F ] F X;
+match Y then Y F X [ Plus Y ] [ Minus Y ];

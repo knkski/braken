@@ -1,0 +1,41 @@
+# ID       : LSYS-AFC733699049
+# Name     : Penrose1Color
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section Penrose1Color (#1) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/penrose1color--afc7336990.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:afc7336990496ff7e252e97ffbe86df5af9b60bc3eef5e90fd9a19aeec38740f
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Penrose1Color { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers",
+# FRACTINT | ; Roger Penrose's rhombuses
+# FRACTINT | ; Uses color to show similar lines
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom +WC10F--XC12F---YC12F--ZC10F
+# FRACTINT |   W=YC12F++ZC10F----XC12F[-YC12F----WC10F]++
+# FRACTINT |   X=+YC12F--ZC10F[---WC10F--XC12F]+
+# FRACTINT |   Y=-WC10F++XC12F[+++YC12F++ZC10F]-
+# FRACTINT |   Z=--YC12F++++WC10F[+ZC10F++++XC12F]--XC12F
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 36;
+
+axiom Plus W Color(10) F Minus Minus X Color(12) F Minus Minus Minus Y Color(12) F Minus Minus Z Color(10) F;
+
+match W then Y Color(12) F Plus Plus Z Color(10) F Minus Minus Minus Minus X Color(12) F [ Minus Y Color(12) F Minus Minus Minus Minus W Color(10) F ] Plus Plus;
+match X then Plus Y Color(12) F Minus Minus Z Color(10) F [ Minus Minus Minus W Color(10) F Minus Minus X Color(12) F ] Plus;
+match Y then Minus W Color(10) F Plus Plus X Color(12) F [ Plus Plus Plus Y Color(12) F Plus Plus Z Color(10) F ] Minus;
+match Z then Minus Minus Y Color(12) F Plus Plus Plus Plus W Color(10) F [ Plus Z Color(10) F Plus Plus Plus Plus X Color(12) F ] Minus Minus X Color(12) F;
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

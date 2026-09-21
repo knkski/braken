@@ -1,0 +1,18 @@
+# ID       : ABOP-099
+# Name     : Timed branching/compound-leaf system
+# Source   : chapter 6, book page 141, §6.2.2
+# Formalism: timed bracketed DOL
+# Parse    : fail
+# Execute  : unsupported
+# Note     : The listing is distributed through the timed-development discussion and figures.
+#
+# Original ABOP:
+# ABOP | # Timed branching system from section 6.2.2.
+# ABOP | # Modules have terminal ages and age-dependent geometric growth functions.
+# ABOP | ω : timed branching axiom shown in the book
+# ABOP | productions : timed branch and compound-leaf development rules
+#
+# Expected parse failure: this is intentionally future timed-language syntax.
+timed lsystem BranchingDevelopment {
+    # See ABOP section 6.2.2 for terminal ages and growth functions.
+}

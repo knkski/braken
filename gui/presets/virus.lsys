@@ -1,0 +1,12 @@
+# Name: Orthogonal Virus
+# Summary: A dense right-angle substitution grows a cross-linked circuit-like colony.
+# Visualizer: turtle_2d
+# Angle: 90
+# Orientation Anchor: endpoint
+# Iterations: 4
+# Max Iterations: 6
+# Initial Color: 3
+
+axiom Draw;
+
+match Draw then Left Draw Left Draw Right Draw Right Draw Left Draw Left Draw Left Draw Right Draw Right Draw Left Draw;

@@ -1,0 +1,30 @@
+# ID       : LSYS-F8DC093CDA08
+# Name     : Dragon001med
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Dragon001med (#3) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/dragon001med--f8dc093cda.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f8dc093cda08d709ced9401fc25a570d31cef0a2f69e5ca818b5dff82233a07a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon001med {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom +x
+# RESETIUS |   x=x+f+y+f+x-f-y-f-x+f+y-f-x-f-y
+# RESETIUS |   y=x+f+y+f+x-f-y+f+x+f+y-f-x-f-y
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Plus X;
+
+match X then X Plus F Plus Y Plus F Plus X Minus F Minus Y Minus F Minus X Plus F Plus Y Minus F Minus X Minus F Minus Y;
+match Y then X Plus F Plus Y Plus F Plus X Minus F Minus Y Plus F Plus X Plus F Plus Y Minus F Minus X Minus F Minus Y;

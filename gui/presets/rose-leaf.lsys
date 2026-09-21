@@ -1,0 +1,29 @@
+# Name: Rose Leaflet
+# Summary: A notched rose leaflet grown as paired rows of trapezoidal surfaces.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 25
+# Preview Iterations: 25
+# Max Iterations: 35
+# Draw: G
+# Initial Width: 0.25
+# Initial Color: 0
+# Palette: #79b968 #234f38
+#
+# Figure 5.8 of The Algorithmic Beauty of Plants. The two branches build the
+# left and right halves of the blade while G draws the midrib and lateral veins.
+
+let LA = 5;
+let RA = 1.15;
+let LB = 1.3;
+let RB = 1.25;
+let LC = 3;
+let RC = 1.19;
+
+axiom [ Color(0) PolygonBegin Color(1) A(0,0) Vertex PolygonEnd ] [ Color(0) PolygonBegin Color(1) A(0,1) Vertex PolygonEnd ];
+
+match A(t,d) when d=0 then Vertex G(LA,RA) Vertex [ Plus B(t) G(LC,RC,t) Vertex PolygonEnd ] [ Plus B(t) Color(0) PolygonBegin Color(1) Vertex ] A(t+1,d);
+match A(t,d) when d=1 then Vertex G(LA,RA) Vertex [ Minus B(t) G(LC,RC,t) Vertex PolygonEnd ] [ Minus B(t) Color(0) PolygonBegin Color(1) Vertex ] A(t+1,d);
+match B(t) when t>0 then G(LB,RB) B(t-1);
+match G(s,r) then G(s*r,r);
+match G(s,r,t) when t>1 then G(s*r,r,t-1);

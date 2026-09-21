@@ -1,0 +1,51 @@
+# ID       : LSYS-89F83BDF63C2
+# Name     : Lace
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/lace.ls, section Lace (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/lace.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Lace (#42) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/lace--89f83bdf63.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:89f83bdf63c284630f74e3eb1f352a3a3b4e2f54890ec61d9b324d05b76ad0e3
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Lace {
+# RESETIUS |   ; A 30-60-90 triangle dissects into three
+# RESETIUS |   ; congruent 30-60-90 triangles
+# RESETIUS |   ; This script traverses the centers of the congruent triangles
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom w
+# RESETIUS |   w=+++x--F--zFx+
+# RESETIUS |   x=---w++F++yFw-
+# RESETIUS |   y=+zFx--F--z+++
+# RESETIUS |   z=-yFw++F++y---
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Lace { ; William McWorter
+# RESETIUS |   ; A 30-60-90 triangle dissects into three
+# RESETIUS |   ; congruent 30-60-90 triangles
+# RESETIUS |   ; This script traverses the centers of the congruent triangles
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom w
+# RESETIUS |   w=+++x--F--zFx+
+# RESETIUS |   x=---w++F++yFw-
+# RESETIUS |   y=+zFx--F--z+++
+# RESETIUS |   z=-yFw++F++y---
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom W;
+
+match W then Plus Plus Plus X Minus Minus F Minus Minus Z F X Plus;
+match X then Minus Minus Minus W Plus Plus F Plus Plus Y F W Minus;
+match Y then Plus Z F X Minus Minus F Minus Minus Z Plus Plus Plus;
+match Z then Minus Y F W Plus Plus F Plus Plus Y Minus Minus Minus;

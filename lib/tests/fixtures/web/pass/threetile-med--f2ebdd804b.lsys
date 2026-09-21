@@ -1,0 +1,54 @@
+# ID       : LSYS-F2EBDD804B97
+# Name     : ThreeTile&med
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section ThreeTile&med (#77) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/threetile-med--f2ebdd804b.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f2ebdd804b9708510508c92f87bc547c63dd5b517b423a3421bd99b1f0de5cd8
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ThreeTile&med {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom u
+# RESETIUS |   u=[c32++++g+++++@1.366f+++@q3f+++++@2@iq3f]x
+# RESETIUS |   x=+++[c32----g-----@1.366f---@q3f-----@2@iq3f]y--fp--
+# RESETIUS |   x=[c32--g+++++@1.366f+++@q3f+++++@2@iq3f]zfp
+# RESETIUS |   x=[c32----g-----@1.366f---@q3f-----@2@iq3f]y+
+# RESETIUS |   y=---[c32++++g+++++@1.366f+++@q3f+++++@2@iq3f]x++fp++
+# RESETIUS |   y=[c32++g-----@1.366f---@q3f-----@2@iq3f]wfp
+# RESETIUS |   y=[c32++++g+++++@1.366f+++@q3f+++++@2@iq3f]x-
+# RESETIUS |   z=-[c32++g-----@1.366f---@q3f-----@2@iq3f]wfp
+# RESETIUS |   z=[c32++++g+++++@1.366f+++@q3f+++++@2@iq3f]x++fp++
+# RESETIUS |   z=[c32++g-----@1.366f---@q3f-----@2@iq3f]w---
+# RESETIUS |   w=+[c32--g+++++@1.366f+++@q3f+++++@2@iq3f]zfp
+# RESETIUS |   w=[c32----g-----@1.366f---@q3f-----@2@iq3f]y--fp--
+# RESETIUS |   w=[c32--g+++++@1.366f+++@q3f+++++@2@iq3f]z+++
+# RESETIUS |   p=fp
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom U;
+
+match U then [ Color(32) Plus Plus Plus Plus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] X;
+match X then Plus Plus Plus [ Color(32) Minus Minus Minus Minus G Minus Minus Minus Minus Minus Scale(1.366) F Minus Minus Minus Scale(1.73205080757) F Minus Minus Minus Minus Minus Scale(2) Scale(0.57735026919) F ] Y Minus Minus F P Minus Minus [ Color(32) Minus Minus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] Z F P [ Color(32) Minus Minus Minus Minus G Minus Minus Minus Minus Minus Scale(1.366) F Minus Minus Minus Scale(1.73205080757) F Minus Minus Minus Minus Minus Scale(2) Scale(0.57735026919) F ] Y Plus;
+match Y then Minus Minus Minus [ Color(32) Plus Plus Plus Plus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] X Plus Plus F P Plus Plus [ Color(32) Plus Plus G Minus Minus Minus Minus Minus Scale(1.366) F Minus Minus Minus Scale(1.73205080757) F Minus Minus Minus Minus Minus Scale(2) Scale(0.57735026919) F ] W F P [ Color(32) Plus Plus Plus Plus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] X Minus;
+match Z then Minus [ Color(32) Plus Plus G Minus Minus Minus Minus Minus Scale(1.366) F Minus Minus Minus Scale(1.73205080757) F Minus Minus Minus Minus Minus Scale(2) Scale(0.57735026919) F ] W F P [ Color(32) Plus Plus Plus Plus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] X Plus Plus F P Plus Plus [ Color(32) Plus Plus G Minus Minus Minus Minus Minus Scale(1.366) F Minus Minus Minus Scale(1.73205080757) F Minus Minus Minus Minus Minus Scale(2) Scale(0.57735026919) F ] W Minus Minus Minus;
+match W then Plus [ Color(32) Minus Minus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] Z F P [ Color(32) Minus Minus Minus Minus G Minus Minus Minus Minus Minus Scale(1.366) F Minus Minus Minus Scale(1.73205080757) F Minus Minus Minus Minus Minus Scale(2) Scale(0.57735026919) F ] Y Minus Minus F P Minus Minus [ Color(32) Minus Minus G Plus Plus Plus Plus Plus Scale(1.366) F Plus Plus Plus Scale(1.73205080757) F Plus Plus Plus Plus Plus Scale(2) Scale(0.57735026919) F ] Z Plus Plus Plus;
+match P then F P;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

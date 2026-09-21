@@ -1,0 +1,22 @@
+# ID       : ABOP-062
+# Name     : Accumulation-controlled switch
+# Source   : chapter 3, book page 67, Eq. 3.2
+# Formalism: parametric bracketed string
+# Parse    : pass
+# Execute  : pass
+# Note     : Concrete C and dc values are supplied for execution.
+#
+# Original ABOP:
+# ABOP | ω : a(0)
+# ABOP | p1    : a(c) : c<C  -> I[L]a(c+dc)
+# ABOP | p2    : a(c) : c>=C -> I[L]A
+# ABOP | p3    : A -> K
+#
+let C = 10;
+let dc = 1;
+
+axiom a(0);
+
+match a(c) when c<C then I [ L ] a(c+dc);
+match a(c) when c>=C then I [ L ] A;
+match A then K;

@@ -1,0 +1,40 @@
+# ID       : LSYS-BDDEA40A348A
+# Name     : Doublecrossmed
+# Aliases  : Untitledmed
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Doublecrossmed (#9) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Untitledmed (#88) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/doublecrossmed--bddea40a34.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bddea40a348ab124699c5cbef651576403d0aff9ce55fab4b57397af66f606af
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Doublecrossmed { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom +x
+# RESETIUS |   x=x-f-y-f-x+f+y+f+x+f+y-f-x-f-y
+# RESETIUS |   y=x+f+y+f+x-f-y-f-x-f-y+f+x+f+y
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Untitledmed { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom +x
+# RESETIUS |   x=x-f-y-f-x+f+y+f+x+f+y-f-x-f-y
+# RESETIUS |   y=x+f+y+f+x-f-y-f-x-f-y+f+x+f+y
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Plus X;
+
+match X then X Minus F Minus Y Minus F Minus X Plus F Plus Y Plus F Plus X Plus F Plus Y Minus F Minus X Minus F Minus Y;
+match Y then X Plus F Plus Y Plus F Plus X Minus F Minus Y Minus F Minus X Minus F Minus Y Plus F Plus X Plus F Plus Y;

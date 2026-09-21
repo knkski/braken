@@ -1,0 +1,36 @@
+# ID       : LSYS-4F1163B423B1
+# Name     : Seed
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Seed (#67) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/seed--4f1163b423.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 7.2
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4f1163b423b13a035a056e564e0cfdc22cdafaad4804328a4324012259342cab
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Seed {  ;
+# RESETIUS |   axiom st
+# RESETIUS |   angle 50
+# RESETIUS |   s=<10x[+++++s][-----s]<10x[++++s][----s]<10
+# RESETIUS |   s=x>10[+++s][---s]x>10[++s][--s]x>10[+s][-s]
+# RESETIUS |   t=<10x[+++++t][-----t]<10x[++++t][----t]<10x
+# RESETIUS |   t=>10[+++t][---t]x>10[++t][--t]x>10[+t][-t]
+# RESETIUS |   x=@.75f@.85f
+# RESETIUS |   }
+#
+let ANGLE = 7.2;
+
+axiom S T;
+
+match S then ColorIncrement(10) X [ Plus Plus Plus Plus Plus S ] [ Minus Minus Minus Minus Minus S ] ColorIncrement(10) X [ Plus Plus Plus Plus S ] [ Minus Minus Minus Minus S ] ColorIncrement(10) X ColorIncrement(-10) [ Plus Plus Plus S ] [ Minus Minus Minus S ] X ColorIncrement(-10) [ Plus Plus S ] [ Minus Minus S ] X ColorIncrement(-10) [ Plus S ] [ Minus S ];
+match T then ColorIncrement(10) X [ Plus Plus Plus Plus Plus T ] [ Minus Minus Minus Minus Minus T ] ColorIncrement(10) X [ Plus Plus Plus Plus T ] [ Minus Minus Minus Minus T ] ColorIncrement(10) X ColorIncrement(-10) [ Plus Plus Plus T ] [ Minus Minus Minus T ] X ColorIncrement(-10) [ Plus Plus T ] [ Minus Minus T ] X ColorIncrement(-10) [ Plus T ] [ Minus T ];
+match X then Scale(0.75) F Scale(0.85) F;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

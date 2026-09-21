@@ -1,0 +1,29 @@
+# ID       : LSYS-38AEDE567C9D
+# Name     : Weed-0
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Weed-0 (#89) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/weed-0--38aede567c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 7.2
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:38aede567c9dcedc54a05d74ad07a2cbcb66b5ffb05a3651b8ec38cdc2cd7960
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Weed-0 {
+# RESETIUS | ; order 7
+# RESETIUS |   Angle 50
+# RESETIUS |   Axiom +++++++++++++x
+# RESETIUS |   x=f[@.5+++++++++x]-f[@.4-----------!x]x
+# RESETIUS |   }
+#
+let ANGLE = 7.2;
+
+axiom Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus X;
+
+match X then F [ Scale(0.5) Plus Plus Plus Plus Plus Plus Plus Plus Plus X ] Minus F [ Scale(0.4) Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus InvertTurns X ] X;

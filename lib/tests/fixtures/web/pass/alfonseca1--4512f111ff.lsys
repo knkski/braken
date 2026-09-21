@@ -1,0 +1,39 @@
+# ID       : LSYS-4512F111FF7E
+# Name     : Alfonseca1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Alfonseca1 (#40) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/alfonseca1--4512f111ff.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4512f111ff7e7f2081764d9c68664cac6fa725c2ab671e0c8ef31478d296a119
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Alfonseca1 { ;Manuel Alfonseca rendered for fractint
+# RESETIUS | ; order 8
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom t
+# RESETIUS |   f=ff
+# RESETIUS |   l=[c48s+f-f-f+|+f-f-f]
+# RESETIUS |   r=f[--l][++l]f
+# RESETIUS |   t=r+[t]--[--l]r[++l]-[t]++t
+# RESETIUS |   s=@.5s
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom T;
+
+match F then F F;
+match L then [ Color(48) S Plus F Minus F Minus F Plus TurnAround Plus F Minus F Minus F ];
+match R then F [ Minus Minus L ] [ Plus Plus L ] F;
+match T then R Plus [ T ] Minus Minus [ Minus Minus L ] R [ Plus Plus L ] Minus [ T ] Plus Plus T;
+match S then Scale(0.5) S;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

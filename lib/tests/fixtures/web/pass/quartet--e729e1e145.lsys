@@ -1,0 +1,50 @@
+# ID       : LSYS-E729E1E145C8
+# Name     : Quartet
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Quartet (#25) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Quartet (#15) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/quartet--e729e1e145.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e729e1e145c81c17f6fc327b380514c4ef00d0a15b0adf15bb30c17d82dbb321
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Quartet { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   angle 4
+# RESETIUS |   axiom fb
+# RESETIUS |   A=FBFA+HFA+FB-FA
+# RESETIUS |   B=FB+FA-FB-JFBFA
+# RESETIUS |   F=
+# RESETIUS |   H=-
+# RESETIUS |   J=+
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Quartet { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 4
+# FRACTINT |   axiom fb
+# FRACTINT |   A=FBFA+HFA+FB-FA
+# FRACTINT |   B=FB+FA-FB-JFBFA
+# FRACTINT |   F=
+# FRACTINT |   H=-
+# FRACTINT |   J=+
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom F B;
+
+match A then F B F A Plus H F A Plus F B Minus F A;
+match B then F B Plus F A Minus F B Minus J F B F A;
+match F then nothing;
+match H then Minus;
+match J then Plus;

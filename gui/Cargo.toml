@@ -1,0 +1,71 @@
+[package]
+name = "braken-gui"
+description = "Native and Iced web interface for Braken"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+homepage.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "braken-gui"
+path = "src/main.rs"
+
+[[bin]]
+name = "braken-render-worker"
+path = "src/bin/braken_render_worker.rs"
+required-features = ["web-worker"]
+
+[dependencies]
+bytemuck = { version = "1.25.0", features = ["derive"] }
+console_error_panic_hook = { version = "0.1.7", optional = true }
+iced = { version = "0.14.0", default-features = false, optional = true }
+braken-viz = { path = "../viz" }
+braken = { path = "../lib" }
+web-time = "1.1.0"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+js-sys = "0.3.83"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+wasm-bindgen = "0.2.106"
+wasm-bindgen-futures = { version = "0.4", optional = true }
+web-sys = { version = "0.3.83", features = ["Blob", "BlobPropertyBag", "DedicatedWorkerGlobalScope", "Document", "Element", "ErrorEvent", "HtmlAnchorElement", "Location", "MediaQueryList", "MessageEvent", "Node", "Url", "Window", "Worker", "WorkerGlobalScope"] }
+
+[features]
+default = ["desktop"]
+desktop = [
+  "dep:iced",
+  "iced/advanced",
+  "iced/canvas",
+  "iced/fira-sans",
+  "iced/linux-theme-detection",
+  "iced/svg",
+  "iced/tiny-skia",
+  "iced/tokio",
+  "iced/wgpu",
+  "iced/web-colors",
+  "iced/x11",
+  "iced/wayland",
+]
+web = [
+  "web-worker",
+  "console_error_panic_hook",
+  "dep:iced",
+  "iced/canvas",
+  "iced/fira-sans",
+  "iced/svg",
+  "iced/webgl",
+  "iced/web-colors",
+  "iced/wgpu",
+  "iced/wgpu-bare",
+]
+web-worker = ["console_error_panic_hook", "dep:wasm-bindgen-futures"]
+cuda = ["desktop", "braken/cuda", "braken-viz/cuda"]
+
+[dev-dependencies]
+naga = { version = "27.0.3", features = ["wgsl-in"] }
+resvg = { version = "0.45.1", default-features = false }

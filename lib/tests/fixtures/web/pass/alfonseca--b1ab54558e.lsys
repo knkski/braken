@@ -1,0 +1,31 @@
+# ID       : LSYS-B1AB54558E63
+# Name     : Alfonseca
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Alfonseca (#39) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/alfonseca--b1ab54558e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b1ab54558e638c77e235c8c547d6b44f52336415b53f1f60d84d03b5b5937500
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Alfonseca { ; Manuel Alfonseca rendered for fractint
+# RESETIUS | ; order 7
+# RESETIUS |   Angle 16
+# RESETIUS |   Axiom A
+# RESETIUS |   A=f-[A+A]+f[+fA]-A
+# RESETIUS |   f=ff
+# RESETIUS |   }
+#
+let ANGLE = 22.5;
+
+axiom A;
+
+match A then F Minus [ A Plus A ] Plus F [ Plus F A ] Minus A;
+match F then F F;

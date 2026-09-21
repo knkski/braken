@@ -1,0 +1,8 @@
+# Name: Virus
+# Summary: Dense orthogonal motif.
+# Angle: 90
+# Iterations: 4
+
+axiom Draw;
+
+match Draw then Left Draw Left Draw Right Draw Right Draw Left Draw Left Draw Left Draw Right Draw Right Draw Left Draw;

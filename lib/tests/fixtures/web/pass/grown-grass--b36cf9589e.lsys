@@ -1,0 +1,45 @@
+# ID       : LSYS-B36CF9589E31
+# Name     : Grown.Grass
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Grown.Grass (#10) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/grown-grass--b36cf9589e.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:b36cf9589e31fdb448878270186258e8f08a2d9bbc0a61e7c22fd5fcacaf5ce8
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grown.Grass {
+# RESETIUS | 
+# RESETIUS |   ; best order 28
+# RESETIUS |   ; time 0:21
+# RESETIUS | 
+# RESETIUS |     angle 5
+# RESETIUS |     axiom C70\72[X]
+# RESETIUS | 
+# RESETIUS |     X=D/2[A]D/2[!A]D/2@0.618034X
+# RESETIUS |     A=B
+# RESETIUS |     B=E
+# RESETIUS |     E=@0.381966>1X
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom Color(70) ExplicitPlus(72) [ X ];
+
+match X then D ExplicitMinus(2) [ A ] D ExplicitMinus(2) [ InvertTurns A ] D ExplicitMinus(2) Scale(0.618034) X;
+match A then B;
+match B then E;
+match E then Scale(0.381966) ColorIncrement(-1) X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

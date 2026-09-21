@@ -1,0 +1,43 @@
+# ID       : LSYS-83F8B0AF2ACE
+# Name     : Binary tree with scale and thickness
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_binary_scale_thickness.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_binary_scale_thickness.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/binary-tree-with-scale-and-thickness--83f8b0af2a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 40
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:83f8b0af2aceb70d05b33381e6ee3394f0217f36afcb052ceb40bfb0fd4921cd
+# Note     : Upstream acknowledgement: http://paulbourke.net/fractals/lsys/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/05⟧)
+# JKUBIN | __THANKS(⟦http://paulbourke.net/fractals/lsys/ ⟧)
+# JKUBIN | ___DESCR(⟦Binary tree with scale and thickness⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_binary_scale_thickness.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BINARY_TREE⟧, ⟦FX⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦>[-FX]+FX⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦#F!⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(40),dnl
+# JKUBIN | "step":400,dnl
+# JKUBIN | SCALE(0.568),dnl
+# JKUBIN | "sety":-400,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | BINARY_TREE(9)
+#
+let ANGLE = 40;
+let SCALE = 0.568;
+
+axiom F X;
+
+match X then ScaleLength [ Minus F X ] Plus F X;
+match F then WidthIncrease F WidthDecrease;

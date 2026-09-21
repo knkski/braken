@@ -1,0 +1,48 @@
+# ID       : LSYS-E6A97584B0B3
+# Name     : .FractInt
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section .FractInt (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/fractint--e6a97584b0.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e6a97584b0b3eacaff903e756dac3b813513a13b1c737034df8781498c12357a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | .FractInt {; see FractInt.Pictorial: http://fractint.oblivion.cz/
+# RESETIUS | 
+# RESETIUS |   ; Take care of "best order"s. It's for 1024 x 768 and 256 colors.
+# RESETIUS |   ; Then, "time" is for the best order, integer math at Pentium266.
+# RESETIUS |   ; Sometimes, floating-point is needed. I'll always warn you then.
+# RESETIUS | 
+# RESETIUS |   ; best order 3
+# RESETIUS |   ; time 0:09
+# RESETIUS | 
+# RESETIUS |     angle 8
+# RESETIUS |     axiom !.[!.FractInt]>7.FractInt               ;o)
+# RESETIUS | 
+# RESETIUS |     F=G[++@2F[--@I2F]F--F]GGG                     ; F
+# RESETIUS |     F=[[++@2F[--@I2F]F--@I2F]GG++F+@Q2F--F++F]GGG ; R
+# RESETIUS |     F=[@2[++F[--F]@I2F-@Q2F]G++F@I2F+@Q2F]GGG     ; A
+# RESETIUS |     F=[++G[---@Q2F++F]@2F-@IQ2F--F]GGG            ; C
+# RESETIUS |     F=[G++@2FF++@I2G|@2F]GGG                      ; T
+# RESETIUS |     F=[[@2F]G[++@2FF++@I2G|@2F]]GGG               ; I
+# RESETIUS |     F=[@2[++FF|@I2G+@Q2@2F]G++FF]GGG              ; N
+# RESETIUS |     F=[G++@2FF++@I2G|@2F]GG                       ; T
+# RESETIUS |     G=@24G@I24
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom InvertTurns Dot [ InvertTurns Dot F R A C T I N T ] ColorIncrement(-7) Dot F R A C T I N T;
+
+match F then G [ Plus Plus Scale(2) F [ Minus Minus Scale(0.5) F ] F Minus Minus F ] G G G [ [ Plus Plus Scale(2) F [ Minus Minus Scale(0.5) F ] F Minus Minus Scale(0.5) F ] G G Plus Plus F Plus Scale(1.41421356237) F Minus Minus F Plus Plus F ] G G G [ Scale(2) [ Plus Plus F [ Minus Minus F ] Scale(0.5) F Minus Scale(1.41421356237) F ] G Plus Plus F Scale(0.5) F Plus Scale(1.41421356237) F ] G G G [ Plus Plus G [ Minus Minus Minus Scale(1.41421356237) F Plus Plus F ] Scale(2) F Minus Scale(0.707106781187) F Minus Minus F ] G G G [ G Plus Plus Scale(2) F F Plus Plus Scale(0.5) G TurnAround Scale(2) F ] G G G [ [ Scale(2) F ] G [ Plus Plus Scale(2) F F Plus Plus Scale(0.5) G TurnAround Scale(2) F ] ] G G G [ Scale(2) [ Plus Plus F F TurnAround Scale(0.5) G Plus Scale(1.41421356237) Scale(2) F ] G Plus Plus F F ] G G G [ G Plus Plus Scale(2) F F Plus Plus Scale(0.5) G TurnAround Scale(2) F ] G G;
+match G then Scale(24) G Scale(0.0416666666667);
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

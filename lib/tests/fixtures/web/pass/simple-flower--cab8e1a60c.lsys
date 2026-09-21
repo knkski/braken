@@ -1,0 +1,38 @@
+# ID       : LSYS-CAB8E1A60C7F
+# Name     : Simple Flower
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 10: Simple Flower | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 10
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:cab8e1a60c7fc336489395a2a755d5af2b42ab815062920ed230046e7a17614b
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Simple Flower",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "m{0x00FF00} J m{0xFF0000} K K K K K K K KK K K K K K K K K K K K",
+# GERIZIM |       productions:
+# GERIZIM |         "J -> J -y s f f f e m{0x00FF00}\nK -> -z{30} [ -y{32} L A ]\nL -> L -y{4}\nA -> s f e [ -x{24} B ] -y{16} [ A ] [ +x{24} B ]\nB -> s f e -y{16} B",
+# GERIZIM |       iterations: 5,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 0.2, angle: 10
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 10;
+
+axiom m(65280) J m(16711680) K K K K K K K KK K K K K K K K K K K K;
+
+match J then J RollRight s f f f e m(65280);
+match K then Minus(30) [ RollRight(32) L A ];
+match L then L RollRight(4);
+match A then s f e [ PitchDown(24) B ] RollRight(16) [ A ] [ PitchUp(24) B ];
+match B then s f e RollRight(16) B;

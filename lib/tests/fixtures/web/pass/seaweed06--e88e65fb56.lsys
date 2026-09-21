@@ -1,0 +1,30 @@
+# ID       : LSYS-E88E65FB5609
+# Name     : Seaweed06
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Seaweed06 (#64) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/seaweed06--e88e65fb56.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 16.3636363636
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:e88e65fb56096411e80578924a8b5ae156429a0ba57db0438f90ba34438128b3
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Seaweed06 { ;
+# RESETIUS |   Angle 22
+# RESETIUS |   Axiom F
+# RESETIUS |   X=-F[-X]-F[+X]
+# RESETIUS |   F=F[-X]F
+# RESETIUS |   }
+#
+let ANGLE = 16.3636363636;
+
+axiom F;
+
+match X then Minus F [ Minus X ] Minus F [ Plus X ];
+match F then F [ Minus X ] F;

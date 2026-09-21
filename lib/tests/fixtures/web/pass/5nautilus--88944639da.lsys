@@ -1,0 +1,37 @@
+# ID       : LSYS-88944639DA0C
+# Name     : 5Nautilus
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/torres.ls, section 5Nautilus (#4) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/torres.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/5nautilus--88944639da.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 7.65957446809
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:88944639da0c9d332b60e783cfaa00761624218d11ffb57c5b6923340dea9cd0
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 5Nautilus {;Nautilus plain white
+# RESETIUS | 
+# RESETIUS |   Angle 47
+# RESETIUS |   Axiom X
+# RESETIUS |   X=XG+@.97X[@3.68A@.92B]
+# RESETIUS |   A=--------------F-F-F-F-F-@.5F/120+F+F+F
+# RESETIUS |   B=\2++++++++++++++FF+FF+FF+FF+FF
+# RESETIUS |   }
+#
+let ANGLE = 7.65957446809;
+
+axiom X;
+
+match X then X G Plus Scale(0.97) X [ Scale(3.68) A Scale(0.92) B ];
+match A then Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus Minus F Minus F Minus F Minus F Minus F Minus Scale(0.5) F ExplicitMinus(120) Plus F Plus F Plus F;
+match B then ExplicitPlus(2) Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus Plus F F Plus F F Plus F F Plus F F Plus F F;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

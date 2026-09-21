@@ -1,0 +1,47 @@
+# Name: Organic Tapered Tree
+# Summary: An asymmetric crown grows from branches that change length and width at every fork.
+# Visualizer: turtle_2d
+# Angle: 15
+# Iterations: 3
+# Max Iterations: 3
+# Initial Color: 6
+
+# Render Map: F=F X=F
+
+# ID       : LSYS-D6722C939FA3
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_organic_scale_width.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_organic_scale_width.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Heading  : 105
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d6722c939fa33a64edffcafef786c068d8da0a2cbefbbb16160b9ebbf6f9b6fa
+# Note     : Upstream acknowledgement: https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/12⟧)
+# JKUBIN | __THANKS(⟦https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/ ⟧)
+# JKUBIN | ___DESCR(⟦Organic tree (scale, width)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_organic_scale_width.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦ORGANIC_TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦-F[+F][---X]+F-F[++++X]-X⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>#F!<⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(15),dnl
+# JKUBIN | SCALE(1.8),dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":105,dnl
+# JKUBIN | 
+# JKUBIN | ORGANIC_TREE(6)
+#
+let ANGLE = 15;
+let SCALE = 1.8;
+
+axiom X;
+
+match X then Minus F [ Plus F ] [ Minus Minus Minus X ] Plus F Minus F [ Plus Plus Plus Plus X ] Minus X;
+match F then ScaleLength WidthIncrease F WidthDecrease ScaleLengthInverse;

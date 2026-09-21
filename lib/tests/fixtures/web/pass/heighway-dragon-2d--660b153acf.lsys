@@ -1,0 +1,35 @@
+# ID       : LSYS-660B153ACF28
+# Name     : Heighway Dragon (2D)
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 11: Heighway Dragon (2D) | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:660b153acf28fb32ae95e4ccfbfcb660de40cc6260872b0ebfa476b309955b2f
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Heighway Dragon (2D)",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "f l X",
+# GERIZIM |       productions:
+# GERIZIM |         "X -> X +x Y l +x\nY -> -x l X -x Y",
+# GERIZIM |       iterations: 6,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 0.2, angle: 90
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 90;
+
+axiom f l X;
+
+match X then X PitchUp Y l PitchUp;
+match Y then PitchDown l X PitchDown Y;

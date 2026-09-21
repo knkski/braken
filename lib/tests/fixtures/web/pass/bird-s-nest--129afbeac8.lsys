@@ -1,0 +1,44 @@
+# ID       : LSYS-129AFBEAC814
+# Name     : bird's nest
+# Source   : abiusx/L3D model archive | L/birds-nest.l3d | https://github.com/abiusx/L3D/blob/master/L/birds-nest.l3d
+# Source   : abiusx/L3D model archive | L/creative.l3d | https://github.com/abiusx/L3D/blob/master/L/creative.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 15
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:129afbeac814f8d826ce120b1a08f3b2487f98c4a5a0f2486ba51bd7cb9bd704
+# Note     : Upstream thickness setting: 3
+#
+# Original abiusx/L3D model archive:
+# L3D | #bird's nest
+# L3D | 3
+# L3D | 15
+# L3D | 3
+# L3D | F
+# L3D | F=[-&>G][>++&G]||F[--&<G][+&G]FF-[-F+F+F]-[^>F-F-F&<]
+# L3D | G=F[+G][-G]F[+G][-G]FG
+# L3D | @
+#
+# Original abiusx/L3D model archive:
+# L3D | #bird's nest
+# L3D | 3
+# L3D | 15
+# L3D | 3
+# L3D | F
+# L3D | F=[-&>G][>++&G]||F[--&<G][+&G]FF-[-F+F+F]-[^>F-F-F&<]
+# L3D | G=F[+G][-G]F[+G][-G]FG
+# L3D | @
+#
+let ANGLE = 15;
+
+axiom F;
+
+match F then [ Minus PitchDown WidthIncrease G ] [ WidthIncrease Plus Plus PitchDown G ] TurnAround TurnAround F [ Minus Minus PitchDown WidthDecrease G ] [ Plus PitchDown G ] F F Minus [ Minus F Plus F Plus F ] Minus [ PitchUp WidthIncrease F Minus F Minus F PitchDown WidthDecrease ];
+match G then F [ Plus G ] [ Minus G ] F [ Plus G ] [ Minus G ] F G;

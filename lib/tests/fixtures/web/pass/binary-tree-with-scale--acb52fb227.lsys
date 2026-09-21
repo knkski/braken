@@ -1,0 +1,38 @@
+# ID       : LSYS-ACB52FB22746
+# Name     : Binary tree with scale
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_binary_scale.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_binary_scale.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/binary-tree-with-scale--acb52fb227.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 40
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:acb52fb22746db94a6581184a5de38ce333f153c57a6df0dda6386360fd95bd0
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | ___DESCR(⟦Binary tree with scale⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_binary_scale.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BINARY_TREE⟧, ⟦FX⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦>[-FX]+FX⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(40),dnl
+# JKUBIN | "step":400,dnl
+# JKUBIN | SCALE(0.568),dnl
+# JKUBIN | "sety":-400,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | BINARY_TREE(9)
+#
+let ANGLE = 40;
+let SCALE = 0.568;
+
+axiom F X;
+
+match X then ScaleLength [ Minus F X ] Plus F X;

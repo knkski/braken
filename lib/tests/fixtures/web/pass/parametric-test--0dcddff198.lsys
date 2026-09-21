@@ -1,0 +1,41 @@
+# ID       : LSYS-0DCDDFF19846
+# Name     : Parametric Test
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/parametric-test.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/parametric-test.xml
+# Formalism: parametric bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-turtle2d'
+# Fidelity : transcription
+# Features : bracketed, conditional, parametric
+# Angle    : 25
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : parametric-turtle2d
+# Fingerprint: sha256:0dcddff19846900affddbedb07a42125871f76a4697fadfc654f3c6494e88597
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>
+# OFX | A(x,y): y&lt;=3 -> A(x*2,x+y);
+# OFX | A(x,y): y&gt;3 -> B(x)A(x/y,0);
+# OFX | B(x) :x&lt;1 -> C;
+# OFX | B(x) : x&gt;=1 -> B(x-1);
+# OFX | </rule>
+# OFX | <axiom>B(2)A(4,4)</axiom>
+# OFX | <maxDepth>2</maxDepth>
+# OFX | <theta>25</theta>
+# OFX | <bg_color>100, 100, 140, 255</bg_color>
+# OFX | 		<tree_color>255, 0, 0, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 25;
+
+axiom B(2) A(4,4);
+
+match A(x,y) when y<=3 then A(x*2,x+y);
+match A(x,y) when y>3 then B(x) A(x/y,0);
+match B(x) when x<1 then C;
+match B(x) when x>=1 then B(x-1);

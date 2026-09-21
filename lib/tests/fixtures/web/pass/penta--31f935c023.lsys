@@ -1,0 +1,35 @@
+# ID       : LSYS-31F935C023C7
+# Name     : Penta
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section Penta (#4) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/penta--31f935c023.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 18
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:31f935c023c7a0776a13fe830ce681b0a015c99a1ed590b0793c02c1e908ead3
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Penta {
+# FRACTINT |         ;; by Philippe Hurbain
+# FRACTINT |         ;; Same as PentaColor, but showing only the coloring
+# FRACTINT |   Angle 20
+# FRACTINT |   Axiom [x]++++[x]++++[x]++++[x]++++[x]
+# FRACTINT |   x=@.618034++g[@1.1755-------f][|y]----g[|x]
+# FRACTINT |   x=[|++@.618034g@i.618034x]------[x]g----[y]g
+# FRACTINT |   y=@.618034++++[x]g|++g[|y]--[y]g|++g[|x]
+# FRACTINT |   f=g
+# FRACTINT | }
+#
+let ANGLE = 18;
+
+axiom [ X ] Plus Plus Plus Plus [ X ] Plus Plus Plus Plus [ X ] Plus Plus Plus Plus [ X ] Plus Plus Plus Plus [ X ];
+
+match X then Scale(0.618034) Plus Plus G [ Scale(1.1755) Minus Minus Minus Minus Minus Minus Minus F ] [ TurnAround Y ] Minus Minus Minus Minus G [ TurnAround X ] [ TurnAround Plus Plus Scale(0.618034) G Scale(1.6180339593) X ] Minus Minus Minus Minus Minus Minus [ X ] G Minus Minus Minus Minus [ Y ] G;
+match Y then Scale(0.618034) Plus Plus Plus Plus [ X ] G TurnAround Plus Plus G [ TurnAround Y ] Minus Minus [ Y ] G TurnAround Plus Plus G [ TurnAround X ];
+match F then G;

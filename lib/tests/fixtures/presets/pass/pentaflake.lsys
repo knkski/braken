@@ -1,0 +1,8 @@
+# Name: Pentaflake
+# Summary: Five-fold recursive flake.
+# Angle: 72
+# Iterations: 4
+
+axiom Draw Right Draw Right Draw Right Draw Right Draw;
+
+match Draw then Draw Right Draw Left Left Draw Left Draw Right Draw Right Draw;

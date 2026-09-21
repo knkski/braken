@@ -1,0 +1,50 @@
+# ID       : LSYS-64E0FB62C221
+# Name     : Kolam
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.kolam | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 38; heading Kolam | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/kolam--64e0fb62c2.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:64e0fb62c2213c51caf440b173f56f0570d0f1caabe5126ac7ffc4e3487697d1
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | kolam =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'A', "F++FFFF--F--FFFF++F++FFFF--F" )
+# ELM |             , ( 'B', "F--FFFF++F++FFFF--F--FFFF++F" )
+# ELM |             , ( 'C', "BFA--BFA" )
+# ELM |             , ( 'D', "CFC--CFC" )
+# ELM |             ]
+# ELM |         , axiom = "(-D--D)"
+# ELM |         , iterations = 3
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.fromDegrees 45
+# ELM |         , windowPosition = { x = -15, y = -28 }
+# ELM |         , windowSize = 30
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = (-D--D)
+# BOURKE | A -> F++FFFF--F--FFFF++F++FFFF--F
+# BOURKE | B -> F--FFFF++F++FFFF--F--FFFF++F
+# BOURKE | C -> BFA--BFA
+# BOURKE | D -> CFC--CFC
+# BOURKE | angle = 45
+#
+let ANGLE = 45;
+
+axiom TurnAngleDecrease Minus D Minus Minus D TurnAngleIncrease;
+
+match A then F Plus Plus F F F F Minus Minus F Minus Minus F F F F Plus Plus F Plus Plus F F F F Minus Minus F;
+match B then F Minus Minus F F F F Plus Plus F Plus Plus F F F F Minus Minus F Minus Minus F F F F Plus Plus F;
+match C then B F A Minus Minus B F A;
+match D then C F C Minus Minus C F C;

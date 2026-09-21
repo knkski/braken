@@ -1,0 +1,18 @@
+# ID       : ABOP-046
+# Name     : Sigmoidal-growth approximation schema
+# Source   : chapter 1, book page 38, Eq. 1.4
+# Formalism: indexed deterministic string family
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : a0
+# ABOP | p_i     : a_i -> a_(i+1) b0, for i < k
+# ABOP | p_(k+j) : b_j -> b_(j+1) F, for j < l
+#
+# Parametric normalization of the two indexed families.
+let k = 20;
+let l = 20;
+axiom a(0);
+match a(i) when i < k then a(i + 1) b(0);
+match b(j) when j < l then b(j + 1) F;

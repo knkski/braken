@@ -1,0 +1,29 @@
+# Name: Lily-of-the-Valley Flower
+# Summary: Five nested polygon strips curl into a radial bell-shaped flower surface.
+# Visualizer: turtle_3d
+# Angle: 18
+# Iterations: 10
+# Preview Iterations: 10
+# Max Iterations: 16
+# Draw: G
+# Render Map: X=PitchDown
+# Initial Width: 0.3
+# Initial Color: 1
+# Palette: #f3eee0 #55735b
+#
+# Figure 5.10 of The Algorithmic Beauty of Plants gives one strip between two
+# adjacent framework curves. Repeating that component at 72-degree roll
+# intervals closes the five-part flower shown in the figure. X controls the
+# initial curl of each boundary while the ordinary PitchDown commands retain
+# the preset's 18-degree turn angle.
+
+axiom Color(1)
+    [ X(36) A ] RollRight(72) [ X(36) B ]
+    [ X(36) A ] RollRight(72) [ X(36) B ]
+    [ X(36) A ] RollRight(72) [ X(36) B ]
+    [ X(36) A ] RollRight(72) [ X(36) B ]
+    [ X(36) A ] RollRight(72) [ X(36) B ];
+
+match A then [ PitchDown G A Color(0) PolygonBegin Color(1) Vertex ] Color(1) Vertex;
+match B then B PitchDown Vertex G Vertex PolygonEnd;
+match X(a) then X(a+4.5);

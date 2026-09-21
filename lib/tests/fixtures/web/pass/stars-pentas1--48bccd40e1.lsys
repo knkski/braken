@@ -1,0 +1,36 @@
+# ID       : LSYS-48BCCD40E143
+# Name     : Stars&Pentas1
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section Stars&Pentas1 (#12) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/stars-pentas1--48bccd40e1.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 18
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:48bccd40e14311a4623b6c4706ae9fb1855589e6e98a5fa5daa2b3a8af32ac6e
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Stars&Pentas1 {
+# FRACTINT |                 ;; by Philippe Hurbain
+# FRACTINT |                 ;; Same as Stars&PentasColor, showing only coloring
+# FRACTINT |   Angle 20
+# FRACTINT |   Axiom [k]++++[k]++++[k]++++[k]++++[k]
+# FRACTINT |   k=++[@.618034[g-@.5878[f]------ff++++f]a]g@.618034------
+# FRACTINT |   k=[--k]g--g------[--k]@i.618034g[@.618034|a]
+# FRACTINT |   a=[@.618034k]++g@.618034[|[g@.5878+++++++f]a]--------g
+# FRACTINT |   a=++g--------[g@.5878-------f][a]@i.618034g
+# FRACTINT |   f=g
+# FRACTINT | }
+#
+let ANGLE = 18;
+
+axiom [ K ] Plus Plus Plus Plus [ K ] Plus Plus Plus Plus [ K ] Plus Plus Plus Plus [ K ] Plus Plus Plus Plus [ K ];
+
+match K then Plus Plus [ Scale(0.618034) [ G Minus Scale(0.5878) [ F ] Minus Minus Minus Minus Minus Minus F F Plus Plus Plus Plus F ] A ] G Scale(0.618034) Minus Minus Minus Minus Minus Minus [ Minus Minus K ] G Minus Minus G Minus Minus Minus Minus Minus Minus [ Minus Minus K ] Scale(1.6180339593) G [ Scale(0.618034) TurnAround A ];
+match A then [ Scale(0.618034) K ] Plus Plus G Scale(0.618034) [ TurnAround [ G Scale(0.5878) Plus Plus Plus Plus Plus Plus Plus F ] A ] Minus Minus Minus Minus Minus Minus Minus Minus G Plus Plus G Minus Minus Minus Minus Minus Minus Minus Minus [ G Scale(0.5878) Minus Minus Minus Minus Minus Minus Minus F ] [ A ] Scale(1.6180339593) G;
+match F then G;

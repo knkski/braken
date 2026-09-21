@@ -1,0 +1,28 @@
+# ID       : LSYS-A8CFF1A724F6
+# Name     : TheKiss
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TheKiss (#37) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/thekiss--a8cff1a724.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a8cff1a724f6ea18cf2902745a41685def0a47aafc6b0b07653493d251d68c45
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TheKiss {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom f
+# RESETIUS |   f=f+f-f-f+f-f+f+f-f
+# RESETIUS |   }
+#
+let ANGLE = 120;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Plus F Minus F Plus F Plus F Minus F;

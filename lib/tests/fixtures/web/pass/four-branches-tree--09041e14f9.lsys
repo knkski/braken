@@ -1,0 +1,41 @@
+# ID       : LSYS-09041E14F980
+# Name     : Four branches tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_four_branches.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_four_branches.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/four-branches-tree--09041e14f9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 19
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:09041e14f980636dd00dad94540de96c7e08b263d89449c10e08445b9ecf6c35
+# Note     : Upstream acknowledgement: https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://www.vexlio.com/blog/drawing-simple-organics-with-l-systems/ ⟧)
+# JKUBIN | ___DESCR(⟦Four branches tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_four_branches.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F+[-F-XF-X][+FF][--XF[+X]][++F-X]⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(19),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(5)
+#
+let ANGLE = 19;
+
+axiom X;
+
+match X then F Plus [ Minus F Minus X F Minus X ] [ Plus F F ] [ Minus Minus X F [ Plus X ] ] [ Plus Plus F Minus X ];
+match F then F F;

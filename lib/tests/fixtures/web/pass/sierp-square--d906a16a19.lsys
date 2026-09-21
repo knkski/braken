@@ -1,0 +1,39 @@
+# ID       : LSYS-D906A16A1941
+# Name     : Sierp.Square
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Sierp.Square (#27) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/sierp-square--d906a16a19.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:d906a16a1941fce2ec42a178f6550dd2b485013863a5f6d2b4e43692e57b8a6e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierp.Square {
+# RESETIUS | 
+# RESETIUS |   ; best order 5 and 7
+# RESETIUS |   ; time 0:04 and 3:03
+# RESETIUS | 
+# RESETIUS |     angle 4
+# RESETIUS |     axiom FX-FX-FX-FX-
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     G=
+# RESETIUS |     X=GX-GX+GY++FX-GX-GX-GX++GX-GX
+# RESETIUS |     Y=GYGYGY
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F X Minus F X Minus F X Minus F X Minus;
+
+match F then nothing;
+match G then nothing;
+match X then G X Minus G X Plus G Y Plus Plus F X Minus G X Minus G X Minus G X Plus Plus G X Minus G X;
+match Y then G Y G Y G Y;

@@ -1,0 +1,24 @@
+# ID       : ABOP-047
+# Name     : Square-root growth 2L system
+# Source   : chapter 1, book page 39, Eq. 1.5
+# Formalism: context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : X Fu Fa X
+# ABOP | p1    : Fu < Fa > Fa -> Fu
+# ABOP | p2    : Fu < Fa > X  -> Fd Fa
+# ABOP | p3    : Fa < Fa > Fd -> Fd
+# ABOP | p4    : X  < Fa > Fd -> Fu
+# ABOP | p5    : Fu -> Fa
+# ABOP | p6    : Fd -> Fa
+#
+axiom X Fu Fa X;
+
+match Fa left Fu right Fa then Fu;
+match Fa left Fu right X then Fd Fa;
+match Fa left Fa right Fd then Fd;
+match Fa left X right Fd then Fu;
+match Fu then Fa;
+match Fd then Fa;

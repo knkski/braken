@@ -1,0 +1,4 @@
+axiom Delete Keep Grow;
+
+match Delete then nothing;
+match Grow then A B;

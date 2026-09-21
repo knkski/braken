@@ -1,0 +1,61 @@
+# ID       : LSYS-58FEED3B4EAE
+# Name     : Lindenmayer's modelling the growth of Anabaena catenula
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | algae_tree.ls | https://github.com/jkubin/L-system/blob/68a699a/algae_tree.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/lindenmayer-s-modelling-the-growth-of-anabaena-catenula--58feed3b4e.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 20
+# Heading  : 270
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:58feed3b4eaeb9388952fab2133504ff3f5ed1053aa24a2ac24c00add316b9d9
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/12⟧)
+# JKUBIN | ___DESCR(⟦Lindenmayer's modelling the growth of Anabaena catenula⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 algae_tree.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | # n = 0: A
+# JKUBIN | # n = 1: AB
+# JKUBIN | # n = 2: ABA
+# JKUBIN | # n = 3: ABAAB
+# JKUBIN | # n = 4: ABAABABA
+# JKUBIN | # n = 5: ABAABABAABAAB
+# JKUBIN | # n = 6: ABAABABAABAABABAABABA
+# JKUBIN | # n = 7: ABAABABAABAABABAABABAABAABABAABAAB
+# JKUBIN | # …
+# JKUBIN | #
+# JKUBIN | # n = 0:             A               A (start, axiom/initiator)
+# JKUBIN | #                   / \
+# JKUBIN | # n = 1:           A   B             A → AB
+# JKUBIN | #                 /|    \
+# JKUBIN | # n = 2:         A B     A           A → AB, B → A
+# JKUBIN | #              / | |     | \
+# JKUBIN | # n = 3:     A   B A     A   B       A → AB, B → A, A → AB
+# JKUBIN | #           /|   | |\    |\   \
+# JKUBIN | # n = 4:   A B   A A B   A B   A     A → AB, B → A, A → AB, A → AB, …
+# JKUBIN | #         /| |  /| |\ \  |\ \  |\
+# JKUBIN | # n = 5: A B A A B A B A A B A A B   …
+# JKUBIN | # …
+# JKUBIN | 
+# JKUBIN | RULE(⟦A⟧, ⟦[-FA][+FB]⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦FA⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl
+# JKUBIN | ANGLE(20),dnl
+# JKUBIN | "step":30,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | "seth":270,dnl
+# JKUBIN | 
+# JKUBIN | A(7)
+#
+let ANGLE = 20;
+
+axiom A;
+
+match A then [ Minus F A ] [ Plus F B ];
+match B then F A;

@@ -1,0 +1,30 @@
+# ID       : LSYS-50A77774BEC1
+# Name     : Doily-c
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Doily-c (#11) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/doily-c--50a77774be.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:50a77774bec115e2b2290c3c9130447cdaeb08b81c8e5d2415ee441b5e2e69dc
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Doily-c {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom c32f--c36f--c40f--c44f--c48f--c52f ; from Default.map
+# RESETIUS |   f=-f[--f--f]++f--f+
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom Color(32) F Minus Minus Color(36) F Minus Minus Color(40) F Minus Minus Color(44) F Minus Minus Color(48) F Minus Minus Color(52) F;
+
+match F then Minus F [ Minus Minus F Minus Minus F ] Plus Plus F Minus Minus F Plus;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

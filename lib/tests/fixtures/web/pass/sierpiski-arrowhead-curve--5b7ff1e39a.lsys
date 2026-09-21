@@ -1,0 +1,40 @@
+# ID       : LSYS-5B7FF1E39A1B
+# Name     : Sierpiński arrowhead curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | sierpinski_arrowhead_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/sierpinski_arrowhead_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/sierpiski-arrowhead-curve--5b7ff1e39a.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5b7ff1e39a1b8ebfe30b515ae111e2774a2ec52d4f6f4755e2cf3fb8e02a8f65
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L-system#Example_5:_Sierpinski_triangle
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L-system#Example_5:_Sierpinski_triangle ⟧)
+# JKUBIN | ___DESCR(⟦Sierpiński arrowhead curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 sierpinski_arrowhead_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SIERPINSKI_ARROWHEAD_CURVE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦B-A-B⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦A+B+A⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | "setx":-300,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | 
+# JKUBIN | SIERPINSKI_ARROWHEAD_CURVE(6)
+#
+let ANGLE = 60;
+
+axiom A;
+
+match A then B Minus A Minus B;
+match B then A Plus B Plus A;

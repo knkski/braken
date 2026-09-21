@@ -1,0 +1,43 @@
+# ID       : LSYS-AD2C44CAACC8
+# Name     : Dragon curve - simpler form
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[1] (Dragon curve - simpler form) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dragon-curve-simpler-form--ad2c44caac.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F A
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:ad2c44caacc8182789b3c2570afd9e37c247c6b505caad7bd43fae01a9faf996
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Dragon curve - simpler form",
+# KITWALLACE |   "F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F-A"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "A",
+# KITWALLACE |       "F+A"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   90.0,
+# KITWALLACE |   [
+# KITWALLACE |     "F",
+# KITWALLACE |     "A"
+# KITWALLACE |   ]
+# KITWALLACE | ]
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Minus A;
+match A then F Plus A;

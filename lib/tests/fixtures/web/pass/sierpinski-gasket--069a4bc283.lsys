@@ -1,0 +1,34 @@
+# ID       : LSYS-069A4BC28381
+# Name     : Sierpinski Gasket
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/sierpinski-gasket.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/sierpinski-gasket.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sierpinski-gasket--069a4bc283.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:069a4bc283812e33044a7599fd032c68c54c22e8389742059c968c46f4cff290
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>F -> F--F--F--GG; G -> GG</rule>
+# OFX | <axiom>F--F--F</axiom>
+# OFX | <maxDepth>3</maxDepth>
+# OFX | <theta>60</theta>
+# OFX | <bg_color>100, 162, 5, 255</bg_color>
+# OFX | 		<tree_color>37, 255, 255, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 60;
+
+axiom F Minus Minus F Minus Minus F;
+
+match F then F Minus Minus F Minus Minus F Minus Minus G G;
+match G then G G;

@@ -1,0 +1,55 @@
+# ID       : LSYS-A0F42C44AF37
+# Name     : Fibonacci tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | fibonacci.ls | https://github.com/jkubin/L-system/blob/68a699a/fibonacci.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'string-only'
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : unspecified
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : string-only
+# Fingerprint: sha256:a0f42c44af375ac579d2bc1ecaefbc374f40c253277d9d81416c7d9b96b6148a
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/17⟧)
+# JKUBIN | ___DESCR(⟦Fibonacci tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 fibonacci.ls | tail -1⟧)
+# JKUBIN | 
+# JKUBIN | # n = 0: A
+# JKUBIN | # n = 1: B
+# JKUBIN | # n = 2: AB
+# JKUBIN | # n = 3: BAB
+# JKUBIN | # n = 4: ABBAB
+# JKUBIN | # n = 5: BABABBAB
+# JKUBIN | # n = 6: ABBABBABABBAB
+# JKUBIN | # n = 7: BABABBABABBABBABABBAB
+# JKUBIN | # …
+# JKUBIN | #
+# JKUBIN | # n = 0:         A           start (axiom/initiator)
+# JKUBIN | #                |
+# JKUBIN | # n = 1:         B
+# JKUBIN | #               / \
+# JKUBIN | # n = 2:       A   B
+# JKUBIN | #             /    |\
+# JKUBIN | # n = 3:     B     A B
+# JKUBIN | #           /|     | |\
+# JKUBIN | # n = 4:   A B     B A B
+# JKUBIN | #         / /|    /| | |\
+# JKUBIN | # n = 5: B A B   A B B A B
+# JKUBIN | # …
+# JKUBIN | 
+# JKUBIN | RULE(⟦A⟧, ⟦B⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦AB⟧, ⟦B⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl
+# JKUBIN | 
+# JKUBIN | A(5)
+#
+axiom A;
+
+match A then B;
+match B then A B;

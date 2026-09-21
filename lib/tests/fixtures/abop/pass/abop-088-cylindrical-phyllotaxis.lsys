@@ -1,0 +1,22 @@
+# ID       : ABOP-088
+# Name     : Cylindrical phyllotaxis
+# Source   : chapter 4, book page 110, Fig. 4.11
+# Formalism: parametric turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define a 137.5281
+# ABOP | #define h 35.3
+# ABOP | #define r 500
+# ABOP | #include D
+# ABOP | ω : A
+# ABOP | p1    : A -> [&(90)f(r)~D]f(h)/(a)A
+#
+let a = 137.5281;
+let h = 35.3;
+let r = 500;
+
+axiom A;
+
+match A then [ PitchDown(90) f(r) D ] f(h) RollRight(a) A;

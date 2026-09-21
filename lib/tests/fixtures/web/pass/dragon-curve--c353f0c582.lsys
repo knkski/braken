@@ -1,0 +1,26 @@
+# ID       : LSYS-C353F0C582D5
+# Name     : Dragon curve
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[3]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/dragon-curve--c353f0c582.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F X Y
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:c353f0c582d599919c3b706d1f5daa133187ba9d8ad490b8090980b4ca9c21aa
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F X Y.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"X" -> "X+YF+", "Y" -> "-FX-Y"}, "FX", 11, 90]
+#
+let ANGLE = 90;
+
+axiom F X;
+
+match X then X Plus Y F Plus;
+match Y then Minus F X Minus Y;

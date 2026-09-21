@@ -1,0 +1,29 @@
+# ID       : LSYS-78DF36F8C3F8
+# Name     : ADH135a
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH135a (#55) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/adh135a--78df36f8c3.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:78df36f8c3f8248e2d1417a1455713e1826aa36ffa3eb4250b7addd29de52e6a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH135a { ; Anthony Hanmer 2000
+# RESETIUS | ; order 4
+# RESETIUS |   Angle 8 ;
+# RESETIUS |   Axiom [f-f+f]++[f-f+f]++[f-f+f]++[f-f+f]
+# RESETIUS |   f=fff+++fff-ffff+fff---fff
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom [ F Minus F Plus F ] Plus Plus [ F Minus F Plus F ] Plus Plus [ F Minus F Plus F ] Plus Plus [ F Minus F Plus F ];
+
+match F then F F F Plus Plus Plus F F F Minus F F F F Plus F F F Minus Minus Minus F F F;

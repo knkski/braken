@@ -1,0 +1,38 @@
+# ID       : LSYS-D6FDE4EAABE6
+# Name     : Dekking [1982]
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | dekking.ls | https://github.com/jkubin/L-system/blob/68a699a/dekking.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dekking-1982--d6fde4eaab.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d6fde4eaabe6f3fdf00ae989cdb6cc1b133af7b0186a1b8ccd39ac091e5f6aaa
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Dekking [1982]⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 dekking.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦DEKKING⟧, ⟦F+F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(120),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "setx":100,dnl
+# JKUBIN | "sety":200,dnl
+# JKUBIN | 
+# JKUBIN | DEKKING(5)
+#
+let ANGLE = 120;
+
+axiom F Plus F Plus F;
+
+match F then F Minus F Plus F;

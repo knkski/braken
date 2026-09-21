@@ -1,0 +1,29 @@
+# ID       : ABOP-092
+# Name     : Parametric simple-leaf family
+# Source   : chapter 5, book page 123, Fig. 5.6
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define LA 5
+# ABOP | #define RA 1
+# ABOP | #define LB 1
+# ABOP | #define RB 1
+# ABOP | #define PD 1
+# ABOP | ω : {.A(0)}
+# ABOP | p1    : A(t) -> G(LA,RA)[-B(t).][A(t+1)][+B(t).]
+# ABOP | p2    : B(t) : t>0 -> G(LB,RB)B(t-PD)
+# ABOP | p3    : G(s,r) -> G(s*r,r)
+#
+let LA = 5;
+let RA = 1;
+let LB = 1;
+let RB = 1;
+let PD = 1;
+
+axiom PolygonBegin Vertex A(0) PolygonEnd;
+
+match A(t) then G(LA,RA) [ Minus B(t) Vertex ] [ A(t+1) ] [ Plus B(t) Vertex ];
+match B(t) when t>0 then G(LB,RB) B(t-PD);
+match G(s,r) then G(s*r,r);

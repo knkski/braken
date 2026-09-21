@@ -1,0 +1,59 @@
+Braken IR v1 / semantics v2
+1 symbols · 2 globals · 1 productions · 7 expression programs
+maximum expression stack 2 · maximum bindings 2 · maximum context depth 0
+source fingerprint fnv1a64:ca514064a7320844
+
+symbols
+  s0 = F / 2
+
+globals
+  g0 = STEP
+  g1 = BASE
+
+axiom
+  F(expr, expr)
+
+productions
+  p0: F(x, y) when e4 then F(expr, expr)
+    bindings: $0=x $1=y
+
+expression programs
+  e0 Global(GlobalId(0)) (stack 2)
+    0000 load.global g1
+    0001 push.number 0x3ff0000000000000 ; 1.0
+    0002 binary Add
+    0003 return
+  e1 Global(GlobalId(1)) (stack 1)
+    0000 push.number 0x4010000000000000 ; 4.0
+    0001 call sqrt/1
+    0002 return
+  e2 AxiomArgument { module: 0, argument: 0 } (stack 1)
+    0000 load.global g0
+    0001 return
+  e3 AxiomArgument { module: 0, argument: 1 } (stack 1)
+    0000 push.number 0x3fb999999999999a ; 0.1
+    0001 return
+  e4 Condition(ProductionId(0)) (stack 2)
+    0000 load.binding $0
+    0001 push.number 0x4014000000000000 ; 5.0
+    0002 binary Less
+    0003 return
+  e5 SuccessorArgument { production: ProductionId(0), module: 0, argument: 0 } (stack 2)
+    0000 load.binding $0
+    0001 load.global g0
+    0002 binary Add
+    0003 return
+  e6 SuccessorArgument { production: ProductionId(0), module: 0, argument: 1 } (stack 2)
+    0000 load.binding $1
+    0001 push.number 0x3fd0000000000000 ; 0.25
+    0002 call max/2
+    0003 return
+
+backend compatibility
+  CPU: compatible
+  CUDA: unsupported
+    Error [gpu-parameters] the current GPU derivation compiler accepts only argument-free modules
+    Error [gpu-dynamic-condition] the current GPU derivation compiler requires conditions to be independent of module bindings
+  WGPU: unsupported
+    Error [gpu-parameters] the current GPU derivation compiler accepts only argument-free modules
+    Error [gpu-dynamic-condition] the current GPU derivation compiler requires conditions to be independent of module bindings

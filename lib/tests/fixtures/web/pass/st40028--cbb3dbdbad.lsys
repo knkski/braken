@@ -1,0 +1,33 @@
+# ID       : LSYS-CBB3DBDBADE4
+# Name     : ST40028*
+# Source   : Fractint 20.04p17 official rule library | lsystem/fract205.l, section ST40028* (#4) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/st40028--cbb3dbdbad.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:cbb3dbdbade441f2d31359ffc161c2912a154e164df68869234c3354290860f3
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | ST40028* { ; Anthony Hanmer 6/2002, a.hanmer@gmail.com
+# FRACTINT |   Angle 4  ; non-crossing; and 4 together make a tile
+# FRACTINT |   ; More work to be found at:
+# FRACTINT |   ; http://spanky.triumf.ca/pub/fractals/LSYSTEMS/
+# FRACTINT |   ; in STiles.zip
+# FRACTINT |   Axiom c9f+c10f+c12f+c14f
+# FRACTINT |   f=f+ff-f-ff+f+ff-f
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom Color(9) F Plus Color(10) F Plus Color(12) F Plus Color(14) F;
+
+match F then F Plus F F Minus F Minus F F Plus F Plus F F Minus F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

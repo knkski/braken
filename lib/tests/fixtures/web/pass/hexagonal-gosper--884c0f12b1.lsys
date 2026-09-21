@@ -1,0 +1,44 @@
+# ID       : LSYS-884C0F12B1A5
+# Name     : Hexagonal Gosper
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.hexagonalGosper | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 32; heading Hexagonal Gosper | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/hexagonal-gosper--884c0f12b1.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:884c0f12b1a511c919d9d3393d21554e582964484963f4504a076087d6fa80b1
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | hexagonalGosper =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "X+YF++YF-FX--FXFX-YF+" )
+# ELM |             , ( 'Y', "-FX+YFYF++YF+FX--FX-Y" )
+# ELM |             ]
+# ELM |         , axiom = "XF"
+# ELM |         , iterations = 4
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.fromDegrees 60
+# ELM |         , windowPosition = { x = -38, y = -2 }
+# ELM |         , windowSize = 58
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = XF
+# BOURKE | X -> X+YF++YF-FX--FXFX-YF+
+# BOURKE | Y -> -FX+YFYF++YF+FX--FX-Y
+# BOURKE | angle = 60
+#
+let ANGLE = 60;
+
+axiom X F;
+
+match X then X Plus Y F Plus Plus Y F Minus F X Minus Minus F X F X Minus Y F Plus;
+match Y then Minus F X Plus Y F Y F Plus Plus Y F Plus F X Minus Minus F X Minus Y;

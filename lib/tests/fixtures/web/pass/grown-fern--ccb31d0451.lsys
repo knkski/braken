@@ -1,0 +1,47 @@
+# ID       : LSYS-CCB31D0451BB
+# Name     : Grown.Fern
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Grown.Fern (#8) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/grown-fern--ccb31d0451.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 72
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ccb31d0451bb7c04d42774a3d99ec71eeaf37a7c4dff2fbd09b97782434f46ea
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grown.Fern {
+# RESETIUS | 
+# RESETIUS |   ; best order 28
+# RESETIUS |   ; time 0:22
+# RESETIUS | 
+# RESETIUS |     angle 5
+# RESETIUS |     axiom C79[\72X]
+# RESETIUS | 
+# RESETIUS |     X=/3D[/72!Y]/1@I3D@3[\72Y]@Q0.618034>1X
+# RESETIUS |     Y=Z
+# RESETIUS |     Z=A
+# RESETIUS |     A=@0.381966X
+# RESETIUS |   }
+#
+let ANGLE = 72;
+
+axiom Color(79) [ ExplicitPlus(72) X ];
+
+match X then ExplicitMinus(3) D [ ExplicitMinus(72) InvertTurns Y ] ExplicitMinus(1) Scale(0.333333333333) D Scale(3) [ ExplicitPlus(72) Y ] Scale(0.786151384913) ColorIncrement(-1) X;
+match Y then Z;
+match Z then A;
+match A then Scale(0.381966) X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

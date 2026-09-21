@@ -1,0 +1,25 @@
+# ID       : ABOP-079
+# Name     : Closed thyrsus
+# Source   : chapter 3, book page 86, Thyrsus
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Parses; execution needs an explicit policy for unweighted alternatives.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a -> I[L]a
+# ABOP | p2    : a -> I[L]A
+# ABOP | p3    : A -> I[L][B]A
+# ABOP | p4    : A -> K
+# ABOP | p5    : B -> I[B]K
+# ABOP | p6    : B -> K
+#
+axiom a;
+
+match a then I [ L ] a;
+match a then I [ L ] A;
+match A then I [ L ] [ B ] A;
+match A then K;
+match B then I [ B ] K;
+match B then K;

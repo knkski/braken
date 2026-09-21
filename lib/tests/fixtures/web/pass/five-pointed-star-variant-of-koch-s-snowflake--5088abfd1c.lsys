@@ -1,0 +1,36 @@
+# ID       : LSYS-5088ABFD1C23
+# Name     : five pointed star variant of Koch's snowflake
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentakoch.ls | https://github.com/jkubin/L-system/blob/68a699a/pentakoch.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/five-pointed-star-variant-of-koch-s-snowflake--5088abfd1c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 72
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5088abfd1c23cf5e072b35e9848951be28b69dc5fb9d3643022cb432b858f7c8
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/09/29⟧)
+# JKUBIN | ___DESCR(⟦five pointed star variant of Koch's snowflake⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentakoch.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAKOCH⟧, ⟦F+F--F+F--F+F--F+F--F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F--F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(72),dnl
+# JKUBIN | "step":4,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | PENTAKOCH(5)
+#
+let ANGLE = 72;
+
+axiom F Plus F Minus Minus F Plus F Minus Minus F Plus F Minus Minus F Plus F Minus Minus F Plus F;
+
+match F then F Plus F Minus Minus F Plus F;

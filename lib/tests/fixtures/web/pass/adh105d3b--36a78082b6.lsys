@@ -1,0 +1,28 @@
+# ID       : LSYS-36A78082B656
+# Name     : ADH105d3b
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH105d3b (#3) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/adh105d3b--36a78082b6.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:36a78082b656aecd11655f9566ea8a63d5280f784c5f62457cfb517e637c861c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH105d3b { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 6 ;
+# RESETIUS |   Axiom +f
+# RESETIUS |   f=g+f+g+f+g-f-g-f-g
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom Plus F;
+
+match F then G Plus F Plus G Plus F Plus G Minus F Minus G Minus F Minus G;

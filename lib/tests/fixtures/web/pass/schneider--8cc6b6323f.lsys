@@ -1,0 +1,30 @@
+# ID       : LSYS-8CC6B6323F5D
+# Name     : Schneider
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Schneider (#38) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/schneider--8cc6b6323f.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8cc6b6323f5d921b64d00e60f3f234ac4d6acd13711529ffd7c7d38d3a524e7b
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Schneider { ; Craig Schneider rendered for fractint
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom a
+# RESETIUS |   a=f[-a][+a]fa
+# RESETIUS |   f=ff
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom A;
+
+match A then F [ Minus A ] [ Plus A ] F A;
+match F then F F;

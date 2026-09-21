@@ -1,0 +1,72 @@
+# ID       : LSYS-118418443EF1
+# Name     : L-System algae
+# Source   : Paul Bourke L-system manual/catalog | example 9; heading L-System algae | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/l-system-algae--118418443e.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 12
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:118418443ef1391b4a95d38c1ec7201f7b4bf4ed590a71fe8383dea80a7c6e56
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = aF
+# BOURKE | a -> FFFFFy[++++n][----t]fb
+# BOURKE | b -> +FFFFFy[++++n][----t]fc
+# BOURKE | c -> FFFFFy[++++n][----t]fd
+# BOURKE | d -> -FFFFFy[++++n][----t]fe
+# BOURKE | e -> FFFFFy[++++n][----t]fg
+# BOURKE | g -> FFFFFy[+++fa]fh
+# BOURKE | h -> FFFFFy[++++n][----t]fi
+# BOURKE | i -> +FFFFFy[++++n][----t]fj
+# BOURKE | j -> FFFFFy[++++n][----t]fk
+# BOURKE | k -> -FFFFFy[++++n][----t]fl
+# BOURKE | l -> FFFFFy[++++n][----t]fm
+# BOURKE | m -> FFFFFy[---fa]fa
+# BOURKE | n -> ofFFF
+# BOURKE | o -> fFFFp
+# BOURKE | p -> fFFF[-s]q
+# BOURKE | q -> fFFF[-s]r
+# BOURKE | r -> fFFF[-s]
+# BOURKE | s -> fFfF
+# BOURKE | t -> ufFFF
+# BOURKE | u -> fFFFv
+# BOURKE | v -> fFFF[+s]w
+# BOURKE | w -> fFFF[+s]x
+# BOURKE | x -> fFFF[+s]
+# BOURKE | y -> Fy
+# BOURKE | angle = 12
+#
+let ANGLE = 12;
+
+axiom a F;
+
+match a then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f b;
+match b then Plus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f c;
+match c then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f d;
+match d then Minus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f e;
+match e then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f g;
+match g then F F F F F y [ Plus Plus Plus f a ] f h;
+match h then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f i;
+match i then Plus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f j;
+match j then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f k;
+match k then Minus F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f l;
+match l then F F F F F y [ Plus Plus Plus Plus n ] [ Minus Minus Minus Minus t ] f m;
+match m then F F F F F y [ Minus Minus Minus f a ] f a;
+match n then o f F F F;
+match o then f F F F p;
+match p then f F F F [ Minus s ] q;
+match q then f F F F [ Minus s ] r;
+match r then f F F F [ Minus s ];
+match s then f F f F;
+match t then u f F F F;
+match u then f F F F v;
+match v then f F F F [ Plus s ] w;
+match w then f F F F [ Plus s ] x;
+match x then f F F F [ Plus s ];
+match y then F y;

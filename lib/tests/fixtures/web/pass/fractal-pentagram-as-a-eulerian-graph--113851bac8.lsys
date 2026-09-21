@@ -1,0 +1,37 @@
+# ID       : LSYS-113851BAC8DD
+# Name     : fractal pentagram as a Eulerian graph
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | pentafrac.ls | https://github.com/jkubin/L-system/blob/68a699a/pentafrac.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/fractal-pentagram-as-a-eulerian-graph--113851bac8.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 144
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:113851bac8ddef1c77a7e7ea2c90ffaffe4fe6f2e4af9b10653654646408fc71
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/04/05⟧)
+# JKUBIN | ___DESCR(⟦fractal pentagram as a Eulerian graph⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 pentagrac.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PENTAFRAC⟧, ⟦F-F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF--F-F-F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(144),dnl
+# JKUBIN | "step":100,dnl
+# JKUBIN | "setx":-500,dnl
+# JKUBIN | "sety":-250,dnl
+# JKUBIN | 
+# JKUBIN | PENTAFRAC(2)
+#
+let ANGLE = 144;
+
+axiom F Minus F Minus F Minus F Minus F;
+
+match F then F F Minus Minus F Minus F Minus F Minus F;

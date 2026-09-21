@@ -1,0 +1,36 @@
+# ID       : LSYS-FFCB1731929F
+# Name     : Snake kolam
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | snake_kolam.ls | https://github.com/jkubin/L-system/blob/68a699a/snake_kolam.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/snake-kolam--ffcb173192.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:ffcb1731929fb1e9532d0524973afa287601db4b1c437fdb5ee3a47229779507
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Snake kolam⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 snake_kolam.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SNAKE⟧, ⟦F+XF+F+XF⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦XF-F-F+XF+F+XF-F-F+X⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "setx":-100,dnl
+# JKUBIN | 
+# JKUBIN | SNAKE(4)
+#
+let ANGLE = 90;
+
+axiom F Plus X F Plus F Plus X F;
+
+match X then X F Minus F Minus F Plus X F Plus F Plus X F Minus F Minus F Plus X;

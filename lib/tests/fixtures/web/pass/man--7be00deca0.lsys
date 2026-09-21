@@ -1,0 +1,29 @@
+# ID       : LSYS-7BE00DECA0A5
+# Name     : Man
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Man (#70) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/man--7be00deca0.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:7be00deca0a5779065e3c5a80f8faceef4784f02b2f198cf2c14c91f3b3332bd
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Man { ; From Ivan Daunis daunis@teleline.es
+# FRACTINT |    ; looks like man with an odd number of iterations
+# FRACTINT |   Angle 8
+# FRACTINT |   Axiom F++F++F++F
+# FRACTINT |   F=-F-FF+++F+FF-F
+# FRACTINT | }
+#
+let ANGLE = 45;
+
+axiom F Plus Plus F Plus Plus F Plus Plus F;
+
+match F then Minus F Minus F F Plus Plus Plus F Plus F F Minus F;

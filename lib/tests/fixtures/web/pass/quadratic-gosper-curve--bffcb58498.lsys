@@ -1,0 +1,38 @@
+# ID       : LSYS-BFFCB58498BF
+# Name     : Quadratic Gosper curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | quadratic_gosper_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/quadratic_gosper_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/quadratic-gosper-curve--bffcb58498.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:bffcb58498bf5112bf7d2c0b2259cdd7a8fea2afeaf6256846514f997f556ab0
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Quadratic Gosper curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 quadratic_gosper_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦QUAD_GOSPER⟧, ⟦-YF⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦XFX-YF-YF+FX+FX-YF-YFFX+YF+FXFXYF-FX+YF+FXFX+YF-FXYF-YF-FX+FX+YFYF-⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦+FXFX-YF-YF+FX+FXYF+FX-YFYF-FX-YF+FXYFYF-FX-YFFX+FX+YF-YF-FX+FX+YFY⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | QUAD_GOSPER(2)
+#
+let ANGLE = 90;
+
+axiom Minus Y F;
+
+match X then X F X Minus Y F Minus Y F Plus F X Plus F X Minus Y F Minus Y F F X Plus Y F Plus F X F X Y F Minus F X Plus Y F Plus F X F X Plus Y F Minus F X Y F Minus Y F Minus F X Plus F X Plus Y F Y F Minus;
+match Y then Plus F X F X Minus Y F Minus Y F Plus F X Plus F X Y F Plus F X Minus Y F Y F Minus F X Minus Y F Plus F X Y F Y F Minus F X Minus Y F F X Plus F X Plus Y F Minus Y F Minus F X Plus F X Plus Y F Y;

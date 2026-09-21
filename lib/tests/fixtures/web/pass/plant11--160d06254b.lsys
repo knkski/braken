@@ -1,0 +1,28 @@
+# ID       : LSYS-160D06254B35
+# Name     : Plant11
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Plant11 (#43) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/plant11--160d06254b.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:160d06254b35b4960f09fa6977bf65adbe063b54ef92310cf107b76ae2ccbab7
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Plant11 { ; Adrian Mariano
+# FRACTINT |    axiom f
+# FRACTINT |    f=F[+F[+F][-F]F][-F[+F][-F]F]F[+F][-F]F
+# FRACTINT |    angle 12
+# FRACTINT |    }
+#
+let ANGLE = 30;
+
+axiom F;
+
+match F then F [ Plus F [ Plus F ] [ Minus F ] F ] [ Minus F [ Plus F ] [ Minus F ] F ] F [ Plus F ] [ Minus F ] F;

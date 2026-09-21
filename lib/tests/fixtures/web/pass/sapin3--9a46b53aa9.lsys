@@ -1,0 +1,35 @@
+# ID       : LSYS-9A46B53AA992
+# Name     : Sapin3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Sapin3 (#58) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/sapin3--9a46b53aa9.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:9a46b53aa9923a4e42f3032c4303462848a71ea33b1cf06e7fb3e52acc3e836d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sapin3 { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom x
+# RESETIUS |   x=>5F[-X][+X]>5F[--X][++X]>5F<5[---X][+++X]
+# RESETIUS |   x=F<5[----X][++++X]F<5[-----X][+++++X]
+# RESETIUS |   f=c52f@0.9975c32f@0.9935c11F
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom X;
+
+match X then ColorIncrement(-5) F [ Minus X ] [ Plus X ] ColorIncrement(-5) F [ Minus Minus X ] [ Plus Plus X ] ColorIncrement(-5) F ColorIncrement(5) [ Minus Minus Minus X ] [ Plus Plus Plus X ] F ColorIncrement(5) [ Minus Minus Minus Minus X ] [ Plus Plus Plus Plus X ] F ColorIncrement(5) [ Minus Minus Minus Minus Minus X ] [ Plus Plus Plus Plus Plus X ];
+match F then Color(52) F Scale(0.9975) Color(32) F Scale(0.9935) Color(11) F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

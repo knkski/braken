@@ -1,0 +1,45 @@
+# ID       : LSYS-84437833E040
+# Name     : Hiway1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, recovered section Hiway1 (#33) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/hiway1--84437833e0.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, inventory-recovery, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:84437833e040abce4f59c8d3086703d583728f6212180ade9c6db02641047b70
+# Note     : Recovered from an active source section omitted by the independent inventory.
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS |  Hiway1 {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom u
+# RESETIUS |   F=
+# RESETIUS |   g=
+# RESETIUS |   u=v
+# RESETIUS |   v=c32fX+[+++@.5gw---c40@q2fz]+c48fy
+# RESETIUS |   X=fx+[+++@.5gw---c40@q2fz]+fy
+# RESETIUS |   Y=Fx-[---@.5gw+++c40@q2fz]-fy
+# RESETIUS |   z=fz
+# RESETIUS |   w=gw
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom U;
+
+match F then nothing;
+match G then nothing;
+match U then V;
+match V then Color(32) F X Plus [ Plus Plus Plus Scale(0.5) G W Minus Minus Minus Color(40) Scale(1.41421356237) F Z ] Plus Color(48) F Y;
+match X then F X Plus [ Plus Plus Plus Scale(0.5) G W Minus Minus Minus Color(40) Scale(1.41421356237) F Z ] Plus F Y;
+match Y then F X Minus [ Minus Minus Minus Scale(0.5) G W Plus Plus Plus Color(40) Scale(1.41421356237) F Z ] Minus F Y;
+match Z then F Z;
+match W then G W;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

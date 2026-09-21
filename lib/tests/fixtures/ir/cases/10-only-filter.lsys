@@ -1,0 +1,5 @@
+only L A R;
+
+axiom L Decoration A Decoration R;
+
+match A left L right R then Hit;

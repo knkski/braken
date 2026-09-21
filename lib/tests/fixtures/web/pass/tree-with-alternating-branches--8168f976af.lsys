@@ -1,0 +1,41 @@
+# ID       : LSYS-8168F976AF6D
+# Name     : Tree with alternating branches
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_alternating.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_alternating.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/tree-with-alternating-branches--8168f976af.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 30
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:8168f976af6d75ae1a1ab8884bbe7c05983bd49a72356a96d5d81ad914050647
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/04⟧)
+# JKUBIN | ___DESCR(⟦Tree with alternating branches⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_alternating.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE_ALTERNATING⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦F<[+A]FB⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦F<[-B]FA⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(30),dnl
+# JKUBIN | "step":220,dnl
+# JKUBIN | SCALE(1.6),dnl
+# JKUBIN | "sety":-500,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE_ALTERNATING(12)
+#
+let ANGLE = 30;
+let SCALE = 1.6;
+
+axiom A;
+
+match A then F ScaleLengthInverse [ Plus A ] F B;
+match B then F ScaleLengthInverse [ Minus B ] F A;

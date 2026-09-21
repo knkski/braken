@@ -1,0 +1,37 @@
+# ID       : LSYS-A3765FF1AED6
+# Name     : Sierp.Trigon.3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Sierp.Trigon.3 (#30) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/sierp-trigon-3--a3765ff1ae.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a3765ff1aed67824bec69a89a5acf7828bc7ee0f98ac9ec23ffab30a8c8c70de
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierp.Trigon.3 {
+# RESETIUS | 
+# RESETIUS |   ; best order 6
+# RESETIUS |   ; time 0:14
+# RESETIUS | 
+# RESETIUS |     angle 12
+# RESETIUS |     axiom C19+F+++F+++F+++F++++++F---F---F---F
+# RESETIUS | 
+# RESETIUS |     F=F[<2++++F----F----F]FF
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom Color(19) Plus F Plus Plus Plus F Plus Plus Plus F Plus Plus Plus F Plus Plus Plus Plus Plus Plus F Minus Minus Minus F Minus Minus Minus F Minus Minus Minus F;
+
+match F then F [ ColorIncrement(2) Plus Plus Plus Plus F Minus Minus Minus Minus F Minus Minus Minus Minus F ] F F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

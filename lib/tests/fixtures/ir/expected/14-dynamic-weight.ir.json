@@ -1,0 +1,115 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "# Binding-dependent weights exercise an IR feature that the current GPU\n# backends intentionally reject during preflight.\n\naxiom A(1) A(2);\n\nmatch A(x) weight x then Low;\nmatch A(x) weight 3 - x then High;\n",
+  "source_fingerprint": "fnv1a64:0f9a235aa1596fc2",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 1
+    },
+    {
+      "name": "High",
+      "arity": 0
+    },
+    {
+      "name": "Low",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x3ff0000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x4000000000000000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [
+        "x"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": {
+        "Binding": 0
+      },
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 2,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [
+        "x"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": {
+        "Binary": {
+          "op": "Subtract",
+          "left": {
+            "Number": "0x4008000000000000"
+          },
+          "right": {
+            "Binding": 0
+          }
+        }
+      },
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

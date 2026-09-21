@@ -1,0 +1,668 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "# Adapted from ABOP-050, Anabaena catenula with heterocysts.\n# Source: The Algorithmic Beauty of Plants, L-system 1.1 / Fig. 1.35.\n# The final rule carries its printed complementary condition explicitly so\n# this focused fixture has deterministic behavior under the default policy.\n\nlet CH = 900;\nlet CT = 0.4;\nlet ST = 3.9;\n\nonly F;\n\naxiom Minus(90) F(0,0,CH) F(4,1,CH) F(0,0,CH);\n\nmatch F(s,t,c) when t = 1 and s >= 6 then F(s / 3 * 2,2,c) f(1) F(s / 3,1,c);\nmatch F(s,t,c) when t = 2 and s >= 6 then F(s / 3,2,c) f(1) F(s / 3 * 2,1,c);\nmatch F(s,t,c) left F(_,_,k) right F(_,_,r)\n    when s > ST or c > CT\n    then F(s + 0.1,t,c + 0.25 * (k + r - 3 * c));\nmatch F(s,t,c) left F(_,_,_) right F(_,_,_)\n    when not (s > ST or c > CT)\n    then F(0,0,CH) H(1);\nmatch H(s) when s < 3 then H(s * 1.1);\n",
+  "source_fingerprint": "fnv1a64:f5863c8d4db8afb5",
+  "symbols": [
+    {
+      "name": "F",
+      "arity": 3
+    },
+    {
+      "name": "H",
+      "arity": 1
+    },
+    {
+      "name": "Minus",
+      "arity": 1
+    },
+    {
+      "name": "f",
+      "arity": 1
+    }
+  ],
+  "globals": [
+    {
+      "name": "CH",
+      "value": {
+        "Number": "0x408c200000000000"
+      }
+    },
+    {
+      "name": "CT",
+      "value": {
+        "Number": "0x3fd999999999999a"
+      }
+    },
+    {
+      "name": "ST",
+      "value": {
+        "Number": "0x400f333333333333"
+      }
+    }
+  ],
+  "context_filter": {
+    "Only": [
+      "F"
+    ]
+  },
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 2,
+          "arguments": [
+            {
+              "Number": "0x4056800000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x0000000000000000"
+            },
+            {
+              "Number": "0x0000000000000000"
+            },
+            {
+              "Global": 0
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x4010000000000000"
+            },
+            {
+              "Number": "0x3ff0000000000000"
+            },
+            {
+              "Global": 0
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x0000000000000000"
+            },
+            {
+              "Number": "0x0000000000000000"
+            },
+            {
+              "Global": 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [
+        "s",
+        "t",
+        "c"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          {
+            "Bind": 1
+          },
+          {
+            "Bind": 2
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": {
+        "Binary": {
+          "op": "And",
+          "left": {
+            "Binary": {
+              "op": "Equal",
+              "left": {
+                "Binding": 1
+              },
+              "right": {
+                "Number": "0x3ff0000000000000"
+              }
+            }
+          },
+          "right": {
+            "Binary": {
+              "op": "GreaterEqual",
+              "left": {
+                "Binding": 0
+              },
+              "right": {
+                "Number": "0x4018000000000000"
+              }
+            }
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Multiply",
+                    "left": {
+                      "Binary": {
+                        "op": "Divide",
+                        "left": {
+                          "Binding": 0
+                        },
+                        "right": {
+                          "Number": "0x4008000000000000"
+                        }
+                      }
+                    },
+                    "right": {
+                      "Number": "0x4000000000000000"
+                    }
+                  }
+                },
+                {
+                  "Number": "0x4000000000000000"
+                },
+                {
+                  "Binding": 2
+                }
+              ]
+            }
+          },
+          {
+            "Module": {
+              "symbol": 3,
+              "arguments": [
+                {
+                  "Number": "0x3ff0000000000000"
+                }
+              ]
+            }
+          },
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Divide",
+                    "left": {
+                      "Binding": 0
+                    },
+                    "right": {
+                      "Number": "0x4008000000000000"
+                    }
+                  }
+                },
+                {
+                  "Number": "0x3ff0000000000000"
+                },
+                {
+                  "Binding": 2
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [
+        "s",
+        "t",
+        "c"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          {
+            "Bind": 1
+          },
+          {
+            "Bind": 2
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": {
+        "Binary": {
+          "op": "And",
+          "left": {
+            "Binary": {
+              "op": "Equal",
+              "left": {
+                "Binding": 1
+              },
+              "right": {
+                "Number": "0x4000000000000000"
+              }
+            }
+          },
+          "right": {
+            "Binary": {
+              "op": "GreaterEqual",
+              "left": {
+                "Binding": 0
+              },
+              "right": {
+                "Number": "0x4018000000000000"
+              }
+            }
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Divide",
+                    "left": {
+                      "Binding": 0
+                    },
+                    "right": {
+                      "Number": "0x4008000000000000"
+                    }
+                  }
+                },
+                {
+                  "Number": "0x4000000000000000"
+                },
+                {
+                  "Binding": 2
+                }
+              ]
+            }
+          },
+          {
+            "Module": {
+              "symbol": 3,
+              "arguments": [
+                {
+                  "Number": "0x3ff0000000000000"
+                }
+              ]
+            }
+          },
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Multiply",
+                    "left": {
+                      "Binary": {
+                        "op": "Divide",
+                        "left": {
+                          "Binding": 0
+                        },
+                        "right": {
+                          "Number": "0x4008000000000000"
+                        }
+                      }
+                    },
+                    "right": {
+                      "Number": "0x4000000000000000"
+                    }
+                  }
+                },
+                {
+                  "Number": "0x3ff0000000000000"
+                },
+                {
+                  "Binding": 2
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [
+        "s",
+        "t",
+        "c",
+        "k",
+        "r"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          {
+            "Bind": 1
+          },
+          {
+            "Bind": 2
+          }
+        ]
+      },
+      "left": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                "Wildcard",
+                "Wildcard",
+                {
+                  "Bind": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "right": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                "Wildcard",
+                "Wildcard",
+                {
+                  "Bind": 4
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "condition": {
+        "Binary": {
+          "op": "Or",
+          "left": {
+            "Binary": {
+              "op": "Greater",
+              "left": {
+                "Binding": 0
+              },
+              "right": {
+                "Global": 2
+              }
+            }
+          },
+          "right": {
+            "Binary": {
+              "op": "Greater",
+              "left": {
+                "Binding": 2
+              },
+              "right": {
+                "Global": 1
+              }
+            }
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Add",
+                    "left": {
+                      "Binding": 0
+                    },
+                    "right": {
+                      "Number": "0x3fb999999999999a"
+                    }
+                  }
+                },
+                {
+                  "Binding": 1
+                },
+                {
+                  "Binary": {
+                    "op": "Add",
+                    "left": {
+                      "Binding": 2
+                    },
+                    "right": {
+                      "Binary": {
+                        "op": "Multiply",
+                        "left": {
+                          "Number": "0x3fd0000000000000"
+                        },
+                        "right": {
+                          "Binary": {
+                            "op": "Subtract",
+                            "left": {
+                              "Binary": {
+                                "op": "Add",
+                                "left": {
+                                  "Binding": 3
+                                },
+                                "right": {
+                                  "Binding": 4
+                                }
+                              }
+                            },
+                            "right": {
+                              "Binary": {
+                                "op": "Multiply",
+                                "left": {
+                                  "Number": "0x4008000000000000"
+                                },
+                                "right": {
+                                  "Binding": 2
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [
+        "s",
+        "t",
+        "c"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          {
+            "Bind": 1
+          },
+          {
+            "Bind": 2
+          }
+        ]
+      },
+      "left": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                "Wildcard",
+                "Wildcard",
+                "Wildcard"
+              ]
+            }
+          }
+        ]
+      },
+      "right": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                "Wildcard",
+                "Wildcard",
+                "Wildcard"
+              ]
+            }
+          }
+        ]
+      },
+      "condition": {
+        "Unary": {
+          "op": "Not",
+          "operand": {
+            "Binary": {
+              "op": "Or",
+              "left": {
+                "Binary": {
+                  "op": "Greater",
+                  "left": {
+                    "Binding": 0
+                  },
+                  "right": {
+                    "Global": 2
+                  }
+                }
+              },
+              "right": {
+                "Binary": {
+                  "op": "Greater",
+                  "left": {
+                    "Binding": 2
+                  },
+                  "right": {
+                    "Global": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Number": "0x0000000000000000"
+                },
+                {
+                  "Number": "0x0000000000000000"
+                },
+                {
+                  "Global": 0
+                }
+              ]
+            }
+          },
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": [
+                {
+                  "Number": "0x3ff0000000000000"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [
+        "s"
+      ],
+      "center": {
+        "symbol": 1,
+        "arguments": [
+          {
+            "Bind": 0
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": {
+        "Binary": {
+          "op": "Less",
+          "left": {
+            "Binding": 0
+          },
+          "right": {
+            "Number": "0x4008000000000000"
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Multiply",
+                    "left": {
+                      "Binding": 0
+                    },
+                    "right": {
+                      "Number": "0x3ff199999999999a"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

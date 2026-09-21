@@ -1,0 +1,16 @@
+# ID       : ABOP-018
+# Name     : FASS curve on 3×3 tiles
+# Source   : chapter 1, book page 17, Fig. 1.16a
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : -L
+# ABOP | p1    : L -> LF+RFR+FL-F-LFLFL-FRFR+
+# ABOP | p2    : R -> -LFLF+RFRFR+F+RF-LFL-FR
+#
+axiom Minus L;
+
+match L then L F Plus R F R Plus F L Minus F Minus L F L F L Minus F R F R Plus;
+match R then Minus L F L F Plus R F R F R Plus F Plus R F Minus L F L Minus F R;

@@ -1,0 +1,31 @@
+# ID       : LSYS-862FA1EC3083
+# Name     : ADH124a3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hanmer3_0.ls, section ADH124a3 (#30) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hanmer3_0.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; output=no-drawable-segments
+# Render   : not-applicable; reason=expanded word contains no drawable segments
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:862fa1ec30831b14d7db9b8edc0106e9211a438739ffce20e1d74328ed33442e
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH124a3 { ; Anthony Hanmer 2000
+# RESETIUS | ; order 4
+# RESETIUS |   Angle 6 ; Odd orders cancel to a blank screen -
+# RESETIUS |   Axiom f-f-f-f-f-f ; only even orders show...
+# RESETIUS |   f=h-g++h++g-h
+# RESETIUS |   h=f+g--f--g+f
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom F Minus F Minus F Minus F Minus F Minus F;
+
+match F then H Minus G Plus Plus H Plus Plus G Minus H;
+match H then F Plus G Minus Minus F Minus Minus G Plus F;

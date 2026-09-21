@@ -1,0 +1,27 @@
+# ID       : ABOP-069
+# Name     : Open dibotryoid
+# Source   : chapter 3, book page 76, Eq. 3.4
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Parses; execution needs an explicit policy for unweighted alternatives.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a -> I[L]a
+# ABOP | p2    : a -> I[L]A
+# ABOP | p3    : A -> I[L][b]A
+# ABOP | p4    : A -> I[L][b]B
+# ABOP | p5    : b -> I[L]b
+# ABOP | p6    : b -> I[L]B
+# ABOP | p7    : B -> I[K]B
+#
+axiom a;
+
+match a then I [ L ] a;
+match a then I [ L ] A;
+match A then I [ L ] [ b ] A;
+match A then I [ L ] [ b ] B;
+match b then I [ L ] b;
+match b then I [ L ] B;
+match B then I [ K ] B;

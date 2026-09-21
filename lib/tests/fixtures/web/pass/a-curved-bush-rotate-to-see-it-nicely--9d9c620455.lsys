@@ -1,0 +1,31 @@
+# ID       : LSYS-9D9C62045547
+# Name     : a curved bush, rotate to see it nicely
+# Source   : abiusx/L3D model archive | L/simple.l3d | https://github.com/abiusx/L3D/blob/master/L/simple.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 12
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:9d9c620455475e7ffd6128d3b6842778b644c501b537e2dcb3b90fa6211c6298
+# Note     : Upstream thickness setting: 5
+#
+# Original abiusx/L3D model archive:
+# L3D | #a curved bush, rotate to see it nicely
+# L3D | 3
+# L3D | 12
+# L3D | 5
+# L3D | F
+# L3D | F=F[-&<F][<++&F]|F[-&>F][+&F]
+# L3D | @
+#
+let ANGLE = 12;
+
+axiom F;
+
+match F then F [ Minus PitchDown WidthDecrease F ] [ WidthDecrease Plus Plus PitchDown F ] TurnAround F [ Minus PitchDown WidthIncrease F ] [ Plus PitchDown F ];

@@ -1,0 +1,56 @@
+# ID       : LSYS-508E25389A59
+# Name     : 2Isosceles
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section 2Isosceles (#30) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/2isosceles--508e25389a.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:508e25389a59fabfd470620df64ba862b9f3261e900f5418c200fc259b1cd55f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | 2Isosceles {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=[@i1.618f---@1.618f]--fz+++[@i1.618f++f]+fw--[--@i1.618f+++@1.618f]fo
+# RESETIUS |   y=[f+++@i1.618f]+fq--[-@i1.618f++f]fs+
+# RESETIUS |   z=[@i1.618f+++@1.618f]++fx---[@i1.618f--f]-fy++[++@i1.618f---@1.618f]fn
+# RESETIUS |   w=[f---@i1.618f]-ft++[+@i1.618f--f]fp-
+# RESETIUS |   u=[-f+++@i1.618f]fq--[-@i1.618f++f]fs++++[+f---@i1.618f]fv--
+# RESETIUS |   v=[+f---@i1.618f]ft++[+@i1.618f--f]fp----[-f+++@i1.618f]fu++
+# RESETIUS |   t=+[-f+++@i1.618f]fq--[-@i1.618f++f]fs++++[+f---@i1.618f]fv|g++
+# RESETIUS |   s=[@i1.618f--f]-fy++[++@i1.618f---@1.618f]fn-
+# RESETIUS |   q=-[+f---@i1.618f]ft++[+@i1.618f--f]fp----[-f+++@i1.618f]fu|g--
+# RESETIUS |   p=[@i1.618f++f]+fw--[--@i1.618f+++@1.618f]fo+
+# RESETIUS |   o=--g|[--@i1.618f+++@1.618f]fx---[@i1.618f--f]-fy++[++@i1.618f---@1.618f]fn-
+# RESETIUS |   n=++g|[++@i1.618f---@1.618f]fz+++[@i1.618f++f]+fw--[--@i1.618f+++@1.618f]fo+
+# RESETIUS |   f=
+# RESETIUS |   g=+g--g+
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom R;
+
+match R then X;
+match X then [ Scale(0.61804697157) F Minus Minus Minus Scale(1.618) F ] Minus Minus F Z Plus Plus Plus [ Scale(0.61804697157) F Plus Plus F ] Plus F W Minus Minus [ Minus Minus Scale(0.61804697157) F Plus Plus Plus Scale(1.618) F ] F O;
+match Y then [ F Plus Plus Plus Scale(0.61804697157) F ] Plus F Q Minus Minus [ Minus Scale(0.61804697157) F Plus Plus F ] F S Plus;
+match Z then [ Scale(0.61804697157) F Plus Plus Plus Scale(1.618) F ] Plus Plus F X Minus Minus Minus [ Scale(0.61804697157) F Minus Minus F ] Minus F Y Plus Plus [ Plus Plus Scale(0.61804697157) F Minus Minus Minus Scale(1.618) F ] F N;
+match W then [ F Minus Minus Minus Scale(0.61804697157) F ] Minus F T Plus Plus [ Plus Scale(0.61804697157) F Minus Minus F ] F P Minus;
+match U then [ Minus F Plus Plus Plus Scale(0.61804697157) F ] F Q Minus Minus [ Minus Scale(0.61804697157) F Plus Plus F ] F S Plus Plus Plus Plus [ Plus F Minus Minus Minus Scale(0.61804697157) F ] F V Minus Minus;
+match V then [ Plus F Minus Minus Minus Scale(0.61804697157) F ] F T Plus Plus [ Plus Scale(0.61804697157) F Minus Minus F ] F P Minus Minus Minus Minus [ Minus F Plus Plus Plus Scale(0.61804697157) F ] F U Plus Plus;
+match T then Plus [ Minus F Plus Plus Plus Scale(0.61804697157) F ] F Q Minus Minus [ Minus Scale(0.61804697157) F Plus Plus F ] F S Plus Plus Plus Plus [ Plus F Minus Minus Minus Scale(0.61804697157) F ] F V TurnAround G Plus Plus;
+match S then [ Scale(0.61804697157) F Minus Minus F ] Minus F Y Plus Plus [ Plus Plus Scale(0.61804697157) F Minus Minus Minus Scale(1.618) F ] F N Minus;
+match Q then Minus [ Plus F Minus Minus Minus Scale(0.61804697157) F ] F T Plus Plus [ Plus Scale(0.61804697157) F Minus Minus F ] F P Minus Minus Minus Minus [ Minus F Plus Plus Plus Scale(0.61804697157) F ] F U TurnAround G Minus Minus;
+match P then [ Scale(0.61804697157) F Plus Plus F ] Plus F W Minus Minus [ Minus Minus Scale(0.61804697157) F Plus Plus Plus Scale(1.618) F ] F O Plus;
+match O then Minus Minus G TurnAround [ Minus Minus Scale(0.61804697157) F Plus Plus Plus Scale(1.618) F ] F X Minus Minus Minus [ Scale(0.61804697157) F Minus Minus F ] Minus F Y Plus Plus [ Plus Plus Scale(0.61804697157) F Minus Minus Minus Scale(1.618) F ] F N Minus;
+match N then Plus Plus G TurnAround [ Plus Plus Scale(0.61804697157) F Minus Minus Minus Scale(1.618) F ] F Z Plus Plus Plus [ Scale(0.61804697157) F Plus Plus F ] Plus F W Minus Minus [ Minus Minus Scale(0.61804697157) F Plus Plus Plus Scale(1.618) F ] F O Plus;
+match F then nothing;
+match G then Plus G Minus Minus G Plus;

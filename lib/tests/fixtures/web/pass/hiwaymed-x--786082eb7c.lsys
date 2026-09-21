@@ -1,0 +1,44 @@
+# ID       : LSYS-786082EB7CFD
+# Name     : Hiwaymed-x
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hiwaymed-x (#36) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hiwaymed-x--786082eb7c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:786082eb7cfd9621501d26c6a48579444f09079061b2e1957ee6a19739151a51
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hiwaymed-x { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom s
+# RESETIUS |   F=
+# RESETIUS |   s=Fs+F-t
+# RESETIUS |   t=+F-u+F-t
+# RESETIUS |   u=++F--v++F--w
+# RESETIUS |   v=++F--v-F+x
+# RESETIUS |   w=-F+y++F--w
+# RESETIUS |   x=-F+y-F+x
+# RESETIUS |   y=FsFz
+# RESETIUS |   z=+F-uFz
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom S;
+
+match F then nothing;
+match S then F S Plus F Minus T;
+match T then Plus F Minus U Plus F Minus T;
+match U then Plus Plus F Minus Minus V Plus Plus F Minus Minus W;
+match V then Plus Plus F Minus Minus V Minus F Plus X;
+match W then Minus F Plus Y Plus Plus F Minus Minus W;
+match X then Minus F Plus Y Minus F Plus X;
+match Y then F S F Z;
+match Z then Plus F Minus U F Z;

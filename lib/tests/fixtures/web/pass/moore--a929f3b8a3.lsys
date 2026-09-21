@@ -1,0 +1,32 @@
+# ID       : LSYS-A929F3B8A3FB
+# Name     : Moore
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Moore (#48) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/moore--a929f3b8a3.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a929f3b8a3fb2ed7efad0e9699aad85fcadbb84f0f4ce981ec2243e0425f4a82
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Moore { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom X
+# RESETIUS |   F=
+# RESETIUS |   X=FX+FX+FXFYFX+FXFY-FY-FY-
+# RESETIUS |   Y=+FX+FX+FXFY-FYFXFY-FY-FY
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match F then nothing;
+match X then F X Plus F X Plus F X F Y F X Plus F X F Y Minus F Y Minus F Y Minus;
+match Y then Plus F X Plus F X Plus F X F Y Minus F Y F X F Y Minus F Y Minus F Y;

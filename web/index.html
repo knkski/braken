@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f2f5f9" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1420" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Explore and render deterministic L-systems in your browser.">
+    <title>Braken</title>
+    <link rel="icon" href="icons/favicon.ico" sizes="any">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link data-trunk rel="css" href="static/index.css">
+    <link data-trunk rel="copy-dir" href="../gui/assets/icons/web" data-target-path="icons">
+    <link data-trunk rel="rust" href="../gui/Cargo.toml" data-bin="braken-render-worker" data-type="worker" data-cargo-no-default-features data-cargo-features="web-worker">
+</head>
+<body>
+    <div id="wasm-status" class="wasm-status" data-state="loading" role="alert" aria-live="assertive">
+        <section class="wasm-status-card" aria-labelledby="wasm-status-title">
+            <picture class="wasm-status-loader" aria-hidden="true">
+                <source media="(prefers-reduced-motion: reduce)" srcset="icons/recursive-zoom-static.svg">
+                <img src="icons/recursive-zoom-loader.svg" alt="" width="64" height="64">
+            </picture>
+            <h1 id="wasm-status-title">Loading Braken…</h1>
+            <p id="wasm-status-summary">Starting the Yew browser application.</p>
+            <pre id="wasm-status-details" hidden></pre>
+            <button id="wasm-status-reload" type="button" hidden>Reload</button>
+        </section>
+    </div>
+    <main id="app"></main>
+    <script>
+        (() => {
+            const panel = document.getElementById("wasm-status");
+            const title = document.getElementById("wasm-status-title");
+            const summary = document.getElementById("wasm-status-summary");
+            const details = document.getElementById("wasm-status-details");
+            const reload = document.getElementById("wasm-status-reload");
+            const describe = (value) => {
+                if (value instanceof Error) return value.stack || value.message || String(value);
+                if (typeof value === "string") return value;
+                try { return JSON.stringify(value, null, 2) || String(value); }
+                catch (_) { return String(value); }
+            };
+            const showFailure = (value) => {
+                if (panel.dataset.state === "error") return;
+                panel.dataset.state = "error";
+                panel.dataset.source = "javascript";
+                title.textContent = "The browser application could not start";
+                summary.textContent = "Reload the page, or copy the details below when reporting the problem.";
+                details.textContent = describe(value);
+                details.hidden = false;
+                reload.hidden = false;
+                panel.hidden = false;
+            };
+            window.addEventListener("error", (event) => showFailure(event.error || event.message || "Unknown browser error"));
+            window.addEventListener("unhandledrejection", (event) => showFailure(event.reason || "Unhandled promise rejection"));
+            window.addEventListener("TrunkApplicationStarted", () => {
+                if (!panel.dataset.source) panel.hidden = true;
+            });
+            reload.addEventListener("click", () => window.location.reload());
+        })();
+    </script>
+    <link data-trunk rel="rust" href="Cargo.toml" data-bin="braken-web">
+</body>
+</html>

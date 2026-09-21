@@ -1,0 +1,19 @@
+# ID       : ABOP-109
+# Name     : Compound-leaf source for IFS analysis
+# Source   : chapter 8, book page 179, Eq. 8.1
+# Formalism: parametric bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define R 1.5
+# ABOP | ω : A
+# ABOP | p1    : A -> F(1)[+A][-A]F(1)A
+# ABOP | p2    : F(a) -> F(a*R)
+#
+let R = 1.5;
+
+axiom A;
+
+match A then F(1) [ Plus A ] [ Minus A ] F(1) A;
+match F(a) then F(a*R);

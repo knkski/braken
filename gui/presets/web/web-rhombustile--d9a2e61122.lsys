@@ -1,0 +1,31 @@
+# Name: Rhombus Tile
+# Summary: Mirrored 30-degree branches assemble an elongated tile of nested rhombi.
+# Visualizer: turtle_2d
+# Angle: 30
+# Iterations: 4
+# Max Iterations: 10
+# Initial Color: 9
+
+# ID       : LSYS-D9A2E611226E
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section RhombusTile (#62) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:d9a2e611226eb000b6ee8e501ce0231f695972b18b141b079d0066e1e731946f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | RhombusTile {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom f
+# RESETIUS |   f=[-f++f-]+f--f+
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom F;
+
+match F then [ Minus F Plus Plus F Minus ] Plus F Minus Minus F Plus;

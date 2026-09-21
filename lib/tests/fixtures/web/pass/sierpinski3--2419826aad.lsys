@@ -1,0 +1,28 @@
+# ID       : LSYS-2419826AAD4B
+# Name     : Sierpinski3
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Sierpinski3 (#25) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sierpinski3--2419826aad.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:2419826aad4b3a17b84f110bc04633c1ac6560d3362e06da6b34e5377890d9bd
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Sierpinski3 { ; From Jim Hanan via Corbit
+# FRACTINT |   axiom F-F-F
+# FRACTINT |   f=F[-F]F
+# FRACTINT |   angle 3
+# FRACTINT |   }
+#
+let ANGLE = 120;
+
+axiom F Minus F Minus F;
+
+match F then F [ Minus F ] F;

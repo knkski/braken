@@ -1,0 +1,27 @@
+# ID       : ABOP-096
+# Name     : Alternating compound leaf
+# Source   : chapter 5, book page 129, Fig. 5.12
+# Formalism: parametric bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define D 1
+# ABOP | #define R 1.36
+# ABOP | ω : A(0)
+# ABOP | p1    : A(d) : d>0 -> A(d-1)
+# ABOP | p2    : A(d) : d=0 -> F(1)[+A(D)]F(1)B(0)
+# ABOP | p3    : B(d) : d>0 -> B(d-1)
+# ABOP | p4    : B(d) : d=0 -> F(1)[-B(D)]F(1)A(0)
+# ABOP | p5    : F(a) -> F(a*R)
+#
+let D = 1;
+let R = 1.36;
+
+axiom A(0);
+
+match A(d) when d>0 then A(d-1);
+match A(d) when d=0 then F(1) [ Plus A(D) ] F(1) B(0);
+match B(d) when d>0 then B(d-1);
+match B(d) when d=0 then F(1) [ Minus B(D) ] F(1) A(0);
+match F(a) then F(a*R);

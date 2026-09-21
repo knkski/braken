@@ -1,0 +1,44 @@
+# ID       : LSYS-78438751F4BA
+# Name     : SnowFlake1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section SnowFlake1 (#26) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section SnowFlake1 (#16) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/snowflake1--78438751f4.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:78438751f4ba7a84003df60c531c41bad2ab6071e42bcbeddd30bf62097ba683
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | SnowFlake1 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom FR
+# RESETIUS |   R=++!FRFU++FU++FU!---@Q3FU|-@IQ3!FRFU!
+# RESETIUS |   U=!FRFU!|+@Q3FR@IQ3+++!FR--FR--FRFU!--
+# RESETIUS |   F=
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | SnowFlake1 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 12
+# FRACTINT |   Axiom FR
+# FRACTINT |   R=++!FRFU++FU++FU!---@Q3FU|-@IQ3!FRFU!
+# FRACTINT |   U=!FRFU!|+@Q3FR@IQ3+++!FR--FR--FRFU!--
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 30;
+
+axiom F R;
+
+match R then Plus Plus InvertTurns F R F U Plus Plus F U Plus Plus F U InvertTurns Minus Minus Minus Scale(1.73205080757) F U TurnAround Minus Scale(0.57735026919) InvertTurns F R F U InvertTurns;
+match U then InvertTurns F R F U InvertTurns TurnAround Plus Scale(1.73205080757) F R Scale(0.57735026919) Plus Plus Plus InvertTurns F R Minus Minus F R Minus Minus F R F U InvertTurns Minus Minus;
+match F then nothing;

@@ -1,0 +1,43 @@
+# ID       : LSYS-6163A5A22DBF
+# Name     : DoubleCesaro
+# Aliases  : CesaroDouble
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section CesaroDouble (#2) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section DoubleCesaro (#8) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/doublecesaro--6163a5a22d.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6163a5a22dbf65ef827eb93dd9ef571fa75c277209e748b4e2765ec7c0b8f0ce
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | CesaroDouble { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 4
+# RESETIUS |   axiom D\90D\90D\90D\90
+# RESETIUS |   D=\42!D!/84!D!\42
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | DoubleCesaro { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 4
+# FRACTINT |   axiom D\90D\90D\90D\90
+# FRACTINT |   D=\42!D!/84!D!\42
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom D ExplicitPlus(90) D ExplicitPlus(90) D ExplicitPlus(90) D ExplicitPlus(90);
+
+match D then ExplicitPlus(42) InvertTurns D InvertTurns ExplicitMinus(84) InvertTurns D InvertTurns ExplicitPlus(42);
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

@@ -1,0 +1,38 @@
+# ID       : LSYS-EC81DE52D231
+# Name     : Curve1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Curve1 (#3) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Curve1 (#44) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/curve1--ec81de52d2.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ec81de52d2318fa95ef670f7a311e6236968407c61f227d762263d7c26c55aea
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Curve1 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS |     ; curve from figure 1.9a p.10
+# RESETIUS |   angle 4
+# RESETIUS |   axiom F-F-F-F-
+# RESETIUS |   f=FF-F-F-F-F-F+F
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Curve1 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	 ; curve from figure 1.9a p.10
+# FRACTINT |   angle 4
+# FRACTINT |   axiom F-F-F-F-
+# FRACTINT |   f=FF-F-F-F-F-F+F
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F Minus;
+
+match F then F F Minus F Minus F Minus F Minus F Minus F Plus F;

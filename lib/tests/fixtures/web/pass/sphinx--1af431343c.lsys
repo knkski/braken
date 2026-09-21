@@ -1,0 +1,49 @@
+# ID       : LSYS-1AF431343C3B
+# Name     : Sphinx
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Sphinx (#68) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Sphinx (#63) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sphinx--1af431343c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1af431343c3bbc5f19c7d488efe8316c628946d051c3552f99870c479506c922
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sphinx { ; by Herb Savage
+# RESETIUS | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers"
+# RESETIUS | ; This is an example of a "reptile"
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom X
+# RESETIUS |   X=+FF-YFF+FF--FFF|X|F--YFFFYFFF|
+# RESETIUS |   Y=-FF+XFF-FF++FFF|Y|F++XFFFXFFF|
+# RESETIUS |   F=GG
+# RESETIUS |   G=GG
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Sphinx { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers"
+# FRACTINT | ; This is an example of a "reptile"
+# FRACTINT |   Angle 6
+# FRACTINT |   Axiom X
+# FRACTINT |   X=+FF-YFF+FF--FFF|X|F--YFFFYFFF|
+# FRACTINT |   Y=-FF+XFF-FF++FFF|Y|F++XFFFXFFF|
+# FRACTINT |   F=GG
+# FRACTINT |   G=GG
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then Plus F F Minus Y F F Plus F F Minus Minus F F F TurnAround X TurnAround F Minus Minus Y F F F Y F F F TurnAround;
+match Y then Minus F F Plus X F F Minus F F Plus Plus F F F TurnAround Y TurnAround F Plus Plus X F F F X F F F TurnAround;
+match F then G G;
+match G then G G;

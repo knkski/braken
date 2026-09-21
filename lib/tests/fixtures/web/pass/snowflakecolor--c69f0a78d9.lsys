@@ -1,0 +1,33 @@
+# ID       : LSYS-C69F0A78D979
+# Name     : SnowflakeColor
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section SnowflakeColor (#12) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/snowflakecolor--c69f0a78d9.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c69f0a78d979f5cc22716c7b4ee787d8bbf8c656442cfd51bc47a64724cf630a
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | SnowflakeColor { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 12
+# FRACTINT |   axiom F
+# FRACTINT |   F=--!F<1!F<1++F<1++F<1@IQ3|-F<1!F<1++
+# FRACTINT |   F=F<1++F<1!---@Q3F<1@QI3|-F<1!F<1@Q3|-F<1!F<1
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 30;
+
+axiom F;
+
+match F then Minus Minus InvertTurns F ColorIncrement(1) InvertTurns F ColorIncrement(1) Plus Plus F ColorIncrement(1) Plus Plus F ColorIncrement(1) Scale(0.57735026919) TurnAround Minus F ColorIncrement(1) InvertTurns F ColorIncrement(1) Plus Plus F ColorIncrement(1) Plus Plus F ColorIncrement(1) InvertTurns Minus Minus Minus Scale(1.73205080757) F ColorIncrement(1) Scale(0.57735026919) TurnAround Minus F ColorIncrement(1) InvertTurns F ColorIncrement(1) Scale(1.73205080757) TurnAround Minus F ColorIncrement(1) InvertTurns F ColorIncrement(1);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

@@ -1,0 +1,77 @@
+name: Pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  TRUNK_VERSION: 0.21.14
+
+jobs:
+  build:
+    name: Build site
+    if: github.event_name == 'workflow_dispatch' || github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the Rust toolchain
+        run: rustup show active-toolchain
+      - uses: Swatinem/rust-cache@v2.9.2
+      - name: Install Trunk
+        run: cargo install trunk --version "$TRUNK_VERSION" --locked
+      - name: Build the Yew application
+        working-directory: web
+        run: >-
+          trunk build index.html
+          --release
+          --locked
+          --dist ../pages-dist
+          --public-url /braken/
+      - name: Build the Iced application
+        working-directory: gui
+        run: >-
+          trunk build index.html
+          --release
+          --locked
+          --dist ../pages-dist/iced
+          --public-url /braken/iced/
+      - name: Check the site layout
+        run: |
+          test -s pages-dist/index.html
+          test -n "$(find pages-dist -maxdepth 1 -name 'braken-web-*_bg.wasm' -print -quit)"
+          test -s pages-dist/braken-render-worker.js
+          test -s pages-dist/braken-render-worker_bg.wasm
+          test -s pages-dist/iced/index.html
+          test -n "$(find pages-dist/iced -maxdepth 1 -name 'braken-gui-*_bg.wasm' -print -quit)"
+          test -s pages-dist/iced/braken-render-worker.js
+          test -s pages-dist/iced/braken-render-worker_bg.wasm
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: pages-dist
+
+  deploy:
+    name: Deploy site
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

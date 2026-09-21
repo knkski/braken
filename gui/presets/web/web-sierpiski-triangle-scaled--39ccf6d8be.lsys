@@ -1,0 +1,43 @@
+# Name: Sierpiński Triangle
+# Summary: Scaled triangular paths nest into the classic self-similar gasket.
+# Visualizer: turtle_2d
+# Angle: 120
+# Iterations: 4
+# Max Iterations: 4
+# Initial Color: 1
+
+# Render Map: F=F G=F
+
+# ID       : LSYS-39CCF6D8BE72
+# Source   : jkubin/L-system generated-catalog fallback (commit 68a699a) | Grammar #91: sierpinski_triangle_scaled.ls | https://github.com/jkubin/L-system/blob/68a699a88aafed49b919c871b6255fd537b7043d/grammars.txt
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Fidelity : transcription
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:39ccf6d8be72575a5458e7ad65e32f0377efed55b78a5757633d5edbbd522cf7
+# Note     : Fallback adaptation from grammars.txt because the corresponding M4 source file is absent at the pinned revision.
+# Note     : Generated derivation rules and final terminal projections were separated explicitly.
+#
+# Original jkubin/L-system generated-catalog fallback (commit 68a699a):
+# JKUBIN | Grammar #91: sierpinski_triangle_scaled.ls
+# JKUBIN | Description: Sierpiński triangle (scaled)
+# JKUBIN | Variables: {F, G}
+# JKUBIN | P: {
+# JKUBIN | 	ω → F-G-G
+# JKUBIN | 	F → F-G+F+G-F
+# JKUBIN | 	G → >G<
+# JKUBIN | 	F → F
+# JKUBIN | 	G → F
+# JKUBIN | }
+# JKUBIN | n = 4, δ = 120°, scale = 2.0
+#
+let ANGLE = 120;
+let SCALE = 2;
+
+axiom F Minus G Minus G;
+
+match F then F Minus G Plus F Plus G Minus F;
+match G then ScaleLength G ScaleLengthInverse;

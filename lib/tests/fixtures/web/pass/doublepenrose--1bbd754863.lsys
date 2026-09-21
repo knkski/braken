@@ -1,0 +1,37 @@
+# ID       : LSYS-1BBD75486321
+# Name     : DoublePenrose
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section DoublePenrose (#62) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/doublepenrose--1bbd754863.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1bbd754863215f18cc3a029a2bea0512c88f6b3a7059e154c2a9a25cdc833701
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | DoublePenrose { ; by Herb Savage
+# FRACTINT | ; This is Penrose3 and Penrose4 superimposed
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom [X][Y]++[X][Y]++[X][Y]++[X][Y]++[X][Y]
+# FRACTINT |   W=YF++ZF----XF[-YF----WF]++
+# FRACTINT |   X=+YF--ZF[---WF--XF]+
+# FRACTINT |   Y=-WF++XF[+++YF++ZF]-
+# FRACTINT |   Z=--YF++++WF[+ZF++++XF]--XF
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 36;
+
+axiom [ X ] [ Y ] Plus Plus [ X ] [ Y ] Plus Plus [ X ] [ Y ] Plus Plus [ X ] [ Y ] Plus Plus [ X ] [ Y ];
+
+match W then Y F Plus Plus Z F Minus Minus Minus Minus X F [ Minus Y F Minus Minus Minus Minus W F ] Plus Plus;
+match X then Plus Y F Minus Minus Z F [ Minus Minus Minus W F Minus Minus X F ] Plus;
+match Y then Minus W F Plus Plus X F [ Plus Plus Plus Y F Plus Plus Z F ] Minus;
+match Z then Minus Minus Y F Plus Plus Plus Plus W F [ Plus Z F Plus Plus Plus Plus X F ] Minus Minus X F;
+match F then nothing;

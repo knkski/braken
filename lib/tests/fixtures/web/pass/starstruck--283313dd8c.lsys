@@ -1,0 +1,38 @@
+# ID       : LSYS-283313DD8C13
+# Name     : Starstruck
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Starstruck (#33) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/starstruck--283313dd8c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:283313dd8c13738c5b50b4b45d94c7fc034f05e3293430b619b787726d40f1e5
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Starstruck {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom v
+# RESETIUS |   v=x
+# RESETIUS |   x=[---fy][-fz]fy++fx----fy++fx
+# RESETIUS |   y=fy++fx----fy++fx[--fz][----fy]
+# RESETIUS |   z=fz--fw++++fz--fw[++fy][++++fz]
+# RESETIUS |   w=[+++fz][+fy]fz--fw++++fz--fw
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom V;
+
+match V then X;
+match X then [ Minus Minus Minus F Y ] [ Minus F Z ] F Y Plus Plus F X Minus Minus Minus Minus F Y Plus Plus F X;
+match Y then F Y Plus Plus F X Minus Minus Minus Minus F Y Plus Plus F X [ Minus Minus F Z ] [ Minus Minus Minus Minus F Y ];
+match Z then F Z Minus Minus F W Plus Plus Plus Plus F Z Minus Minus F W [ Plus Plus F Y ] [ Plus Plus Plus Plus F Z ];
+match W then [ Plus Plus Plus F Z ] [ Plus F Y ] F Z Minus Minus F W Plus Plus Plus Plus F Z Minus Minus F W;
+match F then nothing;

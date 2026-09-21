@@ -1,0 +1,77 @@
+# ID       : LSYS-A8F20AEC1653
+# Name     : Von Koch Snowflake
+# Aliases  : koch; Koch; Koch snowflake
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/koch.ls, section koch (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/koch.ls
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.vonKochSnowflake | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[19] (Koch snowflake) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 25; heading Von Koch Snowflake | https://paulbourke.net/fractals/lsys/
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/koch.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/koch.xml
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/von-koch-snowflake--a8f20aec16.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a8f20aec1653847f0680be3dcb3249e5ea19989a6b56c099b4d4db5e648cad1c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | koch {
+# RESETIUS | axiom  F++F++F
+# RESETIUS | F     = F-F++F-F
+# RESETIUS | theta  1.0471975511965977461542144610932
+# RESETIUS | }
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | vonKochSnowflake =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F-F++F-F" )
+# ELM |             ]
+# ELM |         , axiom = "F++F++F"
+# ELM |         , iterations = 4
+# ELM |         , lineLength = 6
+# ELM |         , turningAngle = Angle.fromDegrees 60
+# ELM |         , windowPosition = { x = -60, y = -160 }
+# ELM |         , windowSize = 600
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Koch snowflake",
+# KITWALLACE |   "F++F++F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F-F++F-F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F++F++F
+# BOURKE | F -> F-F++F-F
+# BOURKE | angle = 60
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>F -> F - F ++F -F</rule>
+# OFX | <axiom>F++F++F</axiom>
+# OFX | <maxDepth>3</maxDepth>
+# OFX | <theta>60</theta>
+# OFX | <bg_color>100, 162, 5, 255</bg_color>
+# OFX | 		<tree_color>37, 255, 255, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 60;
+
+axiom F Plus Plus F Plus Plus F;
+
+match F then F Minus F Plus Plus F Minus F;

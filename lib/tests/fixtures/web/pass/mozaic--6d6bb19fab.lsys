@@ -1,0 +1,30 @@
+# ID       : LSYS-6D6BB19FAB95
+# Name     : mozaic
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mozaic.ls, section mozaic (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mozaic.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/mozaic--6d6bb19fab.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6d6bb19fab9530174c80ef4ba95e632d622e335f97ed4f731953ccb4fded647c
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | mozaic {
+# RESETIUS | axiom F-F-F-F
+# RESETIUS | F=F-B+FF-F-FB-FF+B-FF+F+FF+FB+FFF
+# RESETIUS | B=BBBBBB
+# RESETIUS | theta 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F Minus B Plus F F Minus F Minus F B Minus F F Plus B Minus F F Plus F Plus F F Plus F B Plus F F F;
+match B then B B B B B B;

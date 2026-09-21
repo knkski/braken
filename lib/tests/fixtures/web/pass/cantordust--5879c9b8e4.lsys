@@ -1,0 +1,31 @@
+# ID       : LSYS-5879C9B8E4CD
+# Name     : CantorDust
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section CantorDust (#10) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/cantordust--5879c9b8e4.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:5879c9b8e4cd32dc4f180d262c30c320cbff91da2bcdd888f82598256f352f83
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | CantorDust { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 6
+# FRACTINT |   Axiom F
+# FRACTINT |   F=FGF
+# FRACTINT |   G=GGG
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then F G F;
+match G then G G G;

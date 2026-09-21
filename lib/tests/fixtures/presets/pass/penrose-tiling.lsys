@@ -1,0 +1,12 @@
+# Name: Penrose Tiling
+# Summary: Five-fold Penrose-style substitution.
+# Angle: 36
+# Iterations: 5
+
+axiom [ N7 ] Left Left [ N7 ] Left Left [ N7 ] Left Left [ N7 ] Left Left [ N7 ];
+
+match N6 then N8 Draw Left Left N9 Draw Right Right Right Right N7 Draw [ Right N8 Draw Right Right Right Right N6 Draw ] Left Left;
+match N7 then Left N8 Draw Right Right N9 Draw [ Right Right Right N6 Draw Right Right N7 Draw ] Left;
+match N8 then Right N6 Draw Left Left N7 Draw [ Left Left Left N8 Draw Left Left N9 Draw ] Right;
+match N9 then Right Right N8 Draw Left Left Left Left N6 Draw [ Left N9 Draw Left Left Left Left N7 Draw ] Right Right N7 Draw;
+match Draw then nothing;

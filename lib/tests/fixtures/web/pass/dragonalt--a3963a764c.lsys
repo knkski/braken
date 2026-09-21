@@ -1,0 +1,54 @@
+# ID       : LSYS-A3963A764CEC
+# Name     : DragonAlt
+# Aliases  : Dragon&med
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section DragonAlt (#16) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dragon&med (#20) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/dragonalt--a3963a764c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a3963a764cec931bbb97d2e914aa724ea6d6fd4e3ff6580e6367371ae22d61cb
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | DragonAlt { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom -c32X+[+++@.5gw---c40@q2fz]+c48y
+# RESETIUS |   F=
+# RESETIUS |   g=
+# RESETIUS |   X=fx+[+++@.5gw---c40@q2fz]+fy
+# RESETIUS |   Y=Fx-[---@.5gw+++c40@q2fz]-fy
+# RESETIUS |   z=fz
+# RESETIUS |   w=gw
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon&med { ; William McWorter
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom -c32X+[+++@.5gw---c40@q2fz]+c48y
+# RESETIUS |   F=
+# RESETIUS |   g=
+# RESETIUS |   X=fx+[+++@.5gw---c40@q2fz]+fy
+# RESETIUS |   Y=Fx-[---@.5gw+++c40@q2fz]-fy
+# RESETIUS |   z=fz
+# RESETIUS |   w=gw
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom Minus Color(32) X Plus [ Plus Plus Plus Scale(0.5) G W Minus Minus Minus Color(40) Scale(1.41421356237) F Z ] Plus Color(48) Y;
+
+match F then nothing;
+match G then nothing;
+match X then F X Plus [ Plus Plus Plus Scale(0.5) G W Minus Minus Minus Color(40) Scale(1.41421356237) F Z ] Plus F Y;
+match Y then F X Minus [ Minus Minus Minus Scale(0.5) G W Plus Plus Plus Color(40) Scale(1.41421356237) F Z ] Minus F Y;
+match Z then F Z;
+match W then G W;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

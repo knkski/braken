@@ -1,0 +1,39 @@
+# ID       : LSYS-CF4FC4D67C20
+# Name     : QuadKoch
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section QuadKoch (#24) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section QuadKoch (#31) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/quadkoch--cf4fc4d67c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:cf4fc4d67c20f0fc30372aa9a0b95f31e456434b51025ef4d7b4562e897c7622
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | QuadKoch { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS |       ; Quadratic Koch island, Figure 1.7a p.9
+# RESETIUS | ; order 3
+# RESETIUS |   angle 4
+# RESETIUS |   AXIOM F-F-F-F-
+# RESETIUS |   F=F+FF-FF-F-F+F+FF-F-F+F+FF+FF-F
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | QuadKoch { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	   ; Quadratic Koch island, Figure 1.7a p.9
+# FRACTINT |   angle 4
+# FRACTINT |   AXIOM F-F-F-F-
+# FRACTINT |   F=F+FF-FF-F-F+F+FF-F-F+F+FF+FF-F
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F Minus;
+
+match F then F Plus F F Minus F F Minus F Minus F Plus F Plus F F Minus F Minus F Plus F Plus F F Plus F F Minus F;

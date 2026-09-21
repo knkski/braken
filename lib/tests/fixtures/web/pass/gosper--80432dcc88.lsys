@@ -1,0 +1,32 @@
+# ID       : LSYS-80432DCC8827
+# Name     : gosper
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/gosper.ls, section gosper (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/gosper.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/gosper--80432dcc88.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:80432dcc88275727e569554f514723995dc45f287edad73ead1164154165723d
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | gosper {
+# RESETIUS | axiom XF
+# RESETIUS | F=F
+# RESETIUS | X=X+YF++YF-FX--FXFX-YF+
+# RESETIUS | Y=-FX+YFYF++YF+FX--FX-Y
+# RESETIUS | theta 1.0471975511965977461542144610932
+# RESETIUS | }
+#
+let ANGLE = 60;
+
+axiom X F;
+
+match F then F;
+match X then X Plus Y F Plus Plus Y F Minus F X Minus Minus F X F X Minus Y F Plus;
+match Y then Minus F X Plus Y F Y F Plus Plus Y F Plus F X Minus Minus F X Minus Y;

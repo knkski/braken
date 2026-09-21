@@ -1,0 +1,49 @@
+# ID       : LSYS-C727B6E3C0A4
+# Name     : Astral.1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Astral.1 (#2) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/astral-1--c727b6e3c0.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:c727b6e3c0a4ca35cb9036640d1f61c06d3520fca21bf2f57d9e954c9e2f7420
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Astral.1 {
+# RESETIUS | 
+# RESETIUS |   ; best order 4
+# RESETIUS |   ; time 0:02
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom +W
+# RESETIUS | 
+# RESETIUS |     W=X--X--X--X--X
+# RESETIUS |     X=[A]G+[C11@1.618034+F++++F++++F++++F++++F]FY++FY++FY++FY++FY-[C13@1.618034+F++++F++++F++++F++++F]FZ++FZ++FZ++FZ++FZ--G
+# RESETIUS |     F=
+# RESETIUS |     Y=+G--G+[C11@1.618034+F++++F++++F++++F++++F]FY++FY[++FY[--B]++FY++FY]-[C13@1.618034+F++++F++++F++++F++++F]FZ++FZ++FZ++FZ++FZ-G++G
+# RESETIUS |     Z=+G--G+[C13@1.618034+F++++F++++F++++F++++F]FZ++FZ[++FZ[--A]++FZ++FZ]-[C11@1.618034+F++++F++++F++++F++++F]FY++FY++FY++FY++FY-G++G
+# RESETIUS |     G=+GG-G-GG+
+# RESETIUS |     A=+G--G+[C13@1.618034+F++++F++++F++++F++++F]FZ++FZ++FZ++FZ++FZ
+# RESETIUS |     B=+G--G+[C11@1.618034+F++++F++++F++++F++++F]FY++FY++FY++FY++FY
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Plus W;
+
+match W then X Minus Minus X Minus Minus X Minus Minus X Minus Minus X;
+match X then [ A ] G Plus [ Color(11) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Minus [ Color(13) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Z Plus Plus F Z Plus Plus F Z Plus Plus F Z Plus Plus F Z Minus Minus G;
+match F then nothing;
+match Y then Plus G Minus Minus G Plus [ Color(11) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Y Plus Plus F Y [ Plus Plus F Y [ Minus Minus B ] Plus Plus F Y Plus Plus F Y ] Minus [ Color(13) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Z Plus Plus F Z Plus Plus F Z Plus Plus F Z Plus Plus F Z Minus G Plus Plus G;
+match Z then Plus G Minus Minus G Plus [ Color(13) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Z Plus Plus F Z [ Plus Plus F Z [ Minus Minus A ] Plus Plus F Z Plus Plus F Z ] Minus [ Color(11) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Minus G Plus Plus G;
+match G then Plus G G Minus G Minus G G Plus;
+match A then Plus G Minus Minus G Plus [ Color(13) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Z Plus Plus F Z Plus Plus F Z Plus Plus F Z Plus Plus F Z;
+match B then Plus G Minus Minus G Plus [ Color(11) Scale(1.618034) Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F Plus Plus Plus Plus F ] F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

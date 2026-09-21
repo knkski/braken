@@ -1,0 +1,39 @@
+# ID       : LSYS-C51DDECC4382
+# Name     : Terdragon (Davis and Knuth)
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | terdragon.ls | https://github.com/jkubin/L-system/blob/68a699a/terdragon.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=7
+# Render   : pass; file=../renders/terdragon-davis-and-knuth--c51ddecc43.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 120
+# Heading  : 60
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:c51ddecc4382673b0d9facb2b09bafbb4e256f5511467d1ab06a1abd7eb2d770
+# Note     : Upstream acknowledgement: https://www.points-edges.de/english/mathematics/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦https://www.points-edges.de/english/mathematics/ ⟧)
+# JKUBIN | ___DESCR(⟦Terdragon (Davis and Knuth)⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 terdragon.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TERDRAGON⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(120),dnl
+# JKUBIN | "setx":100,dnl
+# JKUBIN | "sety":100,dnl
+# JKUBIN | "seth":60,dnl
+# JKUBIN | 
+# JKUBIN | TERDRAGON(7)
+#
+let ANGLE = 120;
+
+axiom F;
+
+match F then F Plus F Minus F;

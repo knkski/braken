@@ -1,0 +1,16 @@
+# ID       : ABOP-036
+# Name     : Linear 1L signal propagation
+# Source   : chapter 1, book page 31, §1.8 signal propagation
+# Formalism: context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : b a a a a a a a a
+# ABOP | p1    : b < a -> b
+# ABOP | p2    : b -> a
+#
+axiom b a a a a a a a a;
+
+match a left b then b;
+match b then a;

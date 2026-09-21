@@ -1,0 +1,5 @@
+axiom A B C;
+
+match A weight 3 then X;
+match A weight 1 then Y;
+match _ weight 2 then Z;

@@ -1,0 +1,36 @@
+# ID       : LSYS-16CDB02B7C1C
+# Name     : TrapezoidTile1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TrapezoidTile1 (#21) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/trapezoidtile1--16cdb02b7c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:16cdb02b7c1c6db9bd7a8501cea08a827df072d476f0fc80e5a4408a209ab480
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TrapezoidTile1 {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=x-@q2f@iq2+x-@q2f@iq2+ff++ff|x--yffff|
+# RESETIUS |   y=y+@q2f@iq2-y+@q2f@iq2-ff--ff|y++xffff|
+# RESETIUS |   f=gg
+# RESETIUS |   g=gg
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom R;
+
+match R then X;
+match X then X Minus Scale(1.41421356237) F Scale(0.707106781187) Plus X Minus Scale(1.41421356237) F Scale(0.707106781187) Plus F F Plus Plus F F TurnAround X Minus Minus Y F F F F TurnAround;
+match Y then Y Plus Scale(1.41421356237) F Scale(0.707106781187) Minus Y Plus Scale(1.41421356237) F Scale(0.707106781187) Minus F F Minus Minus F F TurnAround Y Plus Plus X F F F F TurnAround;
+match F then G G;
+match G then G G;

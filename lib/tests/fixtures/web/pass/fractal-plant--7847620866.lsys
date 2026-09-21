@@ -1,0 +1,41 @@
+# ID       : LSYS-7847620866D3
+# Name     : Fractal plant
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | plant.ls | https://github.com/jkubin/L-system/blob/68a699a/plant.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/fractal-plant--7847620866.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 25
+# Heading  : 70
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:7847620866d3b384c7a3fcfd7bee2f641fc324fe1a5a080d50895d350ebb9edc
+# Note     : Upstream acknowledgement: https://en.wikipedia.org/wiki/L-system#Example_7:_Fractal_plant
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦https://en.wikipedia.org/wiki/L-system#Example_7:_Fractal_plant ⟧)
+# JKUBIN | ___DESCR(⟦Fractal plant⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 plant.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PLANT⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F+[[X]-X]-F[-FX]+X⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(25),dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":70,dnl
+# JKUBIN | 
+# JKUBIN | PLANT(5)
+#
+let ANGLE = 25;
+
+axiom X;
+
+match X then F Plus [ [ X ] Minus X ] Minus F [ Minus F X ] Plus X;
+match F then F F;

@@ -1,0 +1,39 @@
+# ID       : LSYS-4A7FAE58B10E
+# Name     : Blackboard tree
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 7 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-propfeds'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 8
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle3d-propfeds
+# Fingerprint: sha256:4a7fae58b10e72f4ebe0dfeae4f580c49f86cc1514fe72125f999799a58cb06a
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('F', [
+# SCHOLARLY |             'F=Y[++++++MF][-----NF][^^^^^OF][&&&&&PF]',
+# SCHOLARLY |             'M=Z-M',
+# SCHOLARLY |             'N=Z+N',
+# SCHOLARLY |             'O=Z&O',
+# SCHOLARLY |             'P=Z^P',
+# SCHOLARLY |             'Y=Z-ZY+',
+# SCHOLARLY |             'Z=ZZ'
+# SCHOLARLY |         ], 8)
+#
+let ANGLE = 8;
+
+axiom F;
+
+match F then Y [ Plus Plus Plus Plus Plus Plus M F ] [ Minus Minus Minus Minus Minus N F ] [ PitchUp PitchUp PitchUp PitchUp PitchUp O F ] [ PitchDown PitchDown PitchDown PitchDown PitchDown P F ];
+match M then HalfForward Minus M;
+match N then HalfForward Plus N;
+match O then HalfForward PitchDown O;
+match P then HalfForward PitchUp P;
+match Y then HalfForward Minus HalfForward Y Plus;
+match Z then HalfForward HalfForward;

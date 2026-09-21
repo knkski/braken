@@ -1,0 +1,53 @@
+# ID       : LSYS-1EE30EDB73C7
+# Name     : Boundary
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Boundary (#4) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/boundary--1ee30edb73.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1ee30edb73c7a2fb63459126d5f4b3c45c0a04a109b084d27d721d089c1e3eb4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Boundary { ; William McWorter
+# RESETIUS |   ; Dekking's boundary of the Twindragon
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom otuz
+# RESETIUS |   f=
+# RESETIUS |   o=fo+f-t
+# RESETIUS |   p=++f--u+f-x
+# RESETIUS |   q=-f+v++f--q
+# RESETIUS |   r=-f+zfs
+# RESETIUS |   s=fw
+# RESETIUS |   t=++f--u
+# RESETIUS |   u=++f--y
+# RESETIUS |   v=fs
+# RESETIUS |   w=fo+f-p
+# RESETIUS |   x=++f--y+f-x
+# RESETIUS |   y=-f+r++f--q
+# RESETIUS |   z=-f+zfw
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom O T U Z;
+
+match F then nothing;
+match O then F O Plus F Minus T;
+match P then Plus Plus F Minus Minus U Plus F Minus X;
+match Q then Minus F Plus V Plus Plus F Minus Minus Q;
+match R then Minus F Plus Z F S;
+match S then F W;
+match T then Plus Plus F Minus Minus U;
+match U then Plus Plus F Minus Minus Y;
+match V then F S;
+match W then F O Plus F Minus P;
+match X then Plus Plus F Minus Minus Y Plus F Minus X;
+match Y then Minus F Plus R Plus Plus F Minus Minus Q;
+match Z then Minus F Plus Z F W;

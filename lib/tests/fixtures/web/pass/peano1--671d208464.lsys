@@ -1,0 +1,38 @@
+# ID       : LSYS-671D208464C1
+# Name     : Peano1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/peano1.ls, section Peano1 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/peano1.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Peano1 (#49) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/peano1--671d208464.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:671d208464c1df5d9a217e65910063a14028f876b79c5d0d276658dcedab9e53
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Peano1 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom F
+# RESETIUS |   F=F-F+F+F+F-F-F-F+F
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Peano1 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom F
+# RESETIUS |   F=F-F+F+F+F-F-F-F+F
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Minus F Plus F Plus F Plus F Minus F Minus F Minus F Plus F;

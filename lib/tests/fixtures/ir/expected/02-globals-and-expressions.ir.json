@@ -1,0 +1,128 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "let STEP = BASE + 1;\nlet BASE = sqrt(4);\n\naxiom F(STEP, 0.1);\n\nmatch F(x,y) when x < 5 then F(x + STEP, max(y, 0.25));\n",
+  "source_fingerprint": "fnv1a64:ca514064a7320844",
+  "symbols": [
+    {
+      "name": "F",
+      "arity": 2
+    }
+  ],
+  "globals": [
+    {
+      "name": "STEP",
+      "value": {
+        "Binary": {
+          "op": "Add",
+          "left": {
+            "Global": 1
+          },
+          "right": {
+            "Number": "0x3ff0000000000000"
+          }
+        }
+      }
+    },
+    {
+      "name": "BASE",
+      "value": {
+        "Call": {
+          "name": "sqrt",
+          "arguments": [
+            {
+              "Number": "0x4010000000000000"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Global": 0
+            },
+            {
+              "Number": "0x3fb999999999999a"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [
+        "x",
+        "y"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          },
+          {
+            "Bind": 1
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": {
+        "Binary": {
+          "op": "Less",
+          "left": {
+            "Binding": 0
+          },
+          "right": {
+            "Number": "0x4014000000000000"
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 0,
+              "arguments": [
+                {
+                  "Binary": {
+                    "op": "Add",
+                    "left": {
+                      "Binding": 0
+                    },
+                    "right": {
+                      "Global": 0
+                    }
+                  }
+                },
+                {
+                  "Call": {
+                    "name": "max",
+                    "arguments": [
+                      {
+                        "Binding": 1
+                      },
+                      {
+                        "Number": "0x3fd0000000000000"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

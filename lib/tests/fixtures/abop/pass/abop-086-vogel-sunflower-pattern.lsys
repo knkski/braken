@@ -1,0 +1,18 @@
+# ID       : ABOP-086
+# Name     : Vogel sunflower pattern
+# Source   : chapter 4, book page 100, Fig. 4.1
+# Formalism: parametric turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define a 137.5
+# ABOP | #include D
+# ABOP | ω : A(0)
+# ABOP | p1    : A(n) -> +(a)[f(n^0.5) ~ D]A(n+1)
+#
+let a = 137.5;
+
+axiom A(0);
+
+match A(n) then Plus(a) [ f(n^0.5) D ] A(n+1);

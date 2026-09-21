@@ -1,0 +1,15 @@
+# Name: Triangular Knotwork
+# Summary: A four-state path interlaces triangular loops with stepped corners.
+# Visualizer: turtle_2d
+# Angle: 30
+# Iterations: 7
+# Preview Iterations: 4
+# Max Iterations: 11
+# Initial Color: 1
+
+axiom W;
+
+match W then Left Left Left X Right Right Draw Right Right Z Draw X Left;
+match X then Right Right Right W Left Left Draw Left Left Y Draw W Right;
+match Y then Left Z Draw X Right Right Draw Right Right Z Left Left Left;
+match Z then Right Y Draw W Left Left Draw Left Left Y Right Right Right;

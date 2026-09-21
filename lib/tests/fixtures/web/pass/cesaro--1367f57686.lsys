@@ -1,0 +1,41 @@
+# ID       : LSYS-1367F576866F
+# Name     : Cesaro
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Cesaro (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Cesaro (#7) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/cesaro--1367f57686.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 10.5882352941
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1367f576866f39f5fefc99c3fde303e7b0acaefd0421c74ba98bd0fb7fb7ccd8
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Cesaro { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 34
+# RESETIUS |   Axiom FX
+# RESETIUS |   F=
+# RESETIUS |   X=----F!X!++++++++F!X!----
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Cesaro { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 34
+# FRACTINT |   Axiom FX
+# FRACTINT |   F=
+# FRACTINT |   X=----F!X!++++++++F!X!----
+# FRACTINT |   }
+#
+let ANGLE = 10.5882352941;
+
+axiom F X;
+
+match F then nothing;
+match X then Minus Minus Minus Minus F InvertTurns X InvertTurns Plus Plus Plus Plus Plus Plus Plus Plus F InvertTurns X InvertTurns Minus Minus Minus Minus;

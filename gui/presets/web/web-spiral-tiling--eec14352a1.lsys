@@ -1,0 +1,44 @@
+# Name: Spiral Tiling
+# Summary: Repeated square curls sweep around a center to form a circular woven tile.
+# Visualizer: turtle_2d
+# Angle: 15
+# Iterations: 2
+# Max Iterations: 36
+# Initial Color: 7
+
+# ID       : LSYS-EEC14352A147
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | spiral_tiling.ls | https://github.com/jkubin/L-system/blob/68a699a/spiral_tiling.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:eec14352a14762d1dd47eb8026fc7e540298a14f8eb479d007e7098b4883fdc2
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Spiral tiling⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 spiral_tiling.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SPIRAL⟧, ⟦AAAA⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦X+X+X+X+X+X+⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦[F+F+F+F[---X-Y]+++++F++++++++F-F-F-F]⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦[F+F+F+F[---Y]+++++F++++++++F-F-F-F]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(15),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "setx":-100,dnl
+# JKUBIN | 
+# JKUBIN | SPIRAL(5)
+#
+let ANGLE = 15;
+
+axiom A A A A;
+
+match A then X Plus X Plus X Plus X Plus X Plus X Plus;
+match X then [ F Plus F Plus F Plus F [ Minus Minus Minus X Minus Y ] Plus Plus Plus Plus Plus F Plus Plus Plus Plus Plus Plus Plus Plus F Minus F Minus F Minus F ];
+match Y then [ F Plus F Plus F Plus F [ Minus Minus Minus Y ] Plus Plus Plus Plus Plus F Plus Plus Plus Plus Plus Plus Plus Plus F Minus F Minus F Minus F ];

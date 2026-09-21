@@ -1,0 +1,52 @@
+# ID       : LSYS-CB239375925F
+# Name     : Dekking
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dekking (#7) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/dekking.ls, section Dekking (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/dekking.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/dekking--cb23937592.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:cb239375925face221340c73810d48e96c0e009536201ed1a2b7d621168aab66
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dekking { ; Dekking's Church
+# RESETIUS |   ; Advances in Math, Vol. 44, 1982, pp.78-104
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom C32WC06ZC15YC06X
+# RESETIUS |   F=
+# RESETIUS |   W=FW+F-XFW-F+Z
+# RESETIUS |   X=++F--Y-F+Z++F--Y-F+Z
+# RESETIUS |   Y=++F--Y+F-X
+# RESETIUS |   Z=FW+F-X
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dekking { ; Dekking's Church
+# RESETIUS |   ; Advances in Math, vol. 44, 1982, pp. 78-104
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom C32WC06ZC15YC06X
+# RESETIUS |   F=
+# RESETIUS |   W=FW+F-XFW-F+Z
+# RESETIUS |   X=++F--Y-F+Z++F--Y-F+Z
+# RESETIUS |   Y=++F--Y+F-X
+# RESETIUS |   Z=FW+F-X
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom Color(32) W Color(6) Z Color(15) Y Color(6) X;
+
+match F then nothing;
+match W then F W Plus F Minus X F W Minus F Plus Z;
+match X then Plus Plus F Minus Minus Y Minus F Plus Z Plus Plus F Minus Minus Y Minus F Plus Z;
+match Y then Plus Plus F Minus Minus Y Plus F Minus X;
+match Z then F W Plus F Minus X;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

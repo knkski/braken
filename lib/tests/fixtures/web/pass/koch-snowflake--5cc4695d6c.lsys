@@ -1,0 +1,25 @@
+# ID       : LSYS-5CC4695D6C76
+# Name     : Koch snowflake
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[6]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/koch-snowflake--5cc4695d6c.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 60
+# Heading  : 90
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5cc4695d6c765617f3fa926ace22294e2986b926dc4555c319de8444edf84d82
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"F" -> "F+F--F+F"}, "F--F--F", 4, 60]
+#
+let ANGLE = 60;
+
+axiom F Minus Minus F Minus Minus F;
+
+match F then F Plus F Minus Minus F Plus F;

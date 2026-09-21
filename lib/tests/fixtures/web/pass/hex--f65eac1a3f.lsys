@@ -1,0 +1,39 @@
+# ID       : LSYS-F65EAC1A3F7C
+# Name     : Hex
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hex (#28) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/hex.ls, section Hex (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/hex.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hex--f65eac1a3f.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f65eac1a3f7c5512fbf05bc4d0a40a75f9555486ee7d391fc1f258285cb50028
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hex {
+# RESETIUS |   Angle 6	  ; Turns are 60=360/6 degrees
+# RESETIUS |   Axiom f	  ; Birth string is f
+# RESETIUS |   f=-f+f+g[+f+f]- ; Replacement string for f
+# RESETIUS |   g=gg		  ; Replacement string for g (see text below)
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hex {
+# RESETIUS |   Angle 6	  ; Turns are 60=360/6 degrees
+# RESETIUS |   Axiom f	  ; Birth string is f
+# RESETIUS |   f=-f+f+g[+f+f]- ; Replacement string for f
+# RESETIUS |   g=gg		  ; Replacement string for g (see text below)
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then Minus F Plus F Plus G [ Plus F Plus F ] Minus;
+match G then G G;

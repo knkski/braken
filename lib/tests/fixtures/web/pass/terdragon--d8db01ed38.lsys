@@ -1,0 +1,53 @@
+# ID       : LSYS-D8DB01ED385D
+# Name     : Terdragon
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/terdragon.ls, section Terdragon (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/terdragon.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Terdragon (#72) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[3] (Terdragon) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/terdragon--d8db01ed38.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:d8db01ed385dc464e554bc7728fdf95f90e93d627598356a6d5e0e1e6a198281
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Terdragon {
+# RESETIUS |   Angle 3   ; Only need turns of 120=360/3 degrees
+# RESETIUS |   Axiom f   ; Draw one Terdragon
+# RESETIUS |   f=f+f-f   ; Replace with the Terdragon, turn left, another Terdragon, turn right, another
+# RESETIUS |             ; Terdragon
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Terdragon { ; William McWorter
+# RESETIUS | ; from Davis and Knuth. Journal of
+# RESETIUS | ; Rec. Math. vol. 3, 1970, pages 61-81
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom F
+# RESETIUS |   F=F+F-F
+# RESETIUS |   }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Terdragon",
+# KITWALLACE |   "F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F+F-F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   120.0
+# KITWALLACE | ]
+#
+let ANGLE = 120;
+
+axiom F;
+
+match F then F Plus F Minus F;

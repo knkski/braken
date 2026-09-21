@@ -1,0 +1,49 @@
+# ID       : ABOP-070
+# Name     : Signal-controlled dibotryoid
+# Source   : chapter 3, book page 77, L-system 3.1
+# Formalism: parametric context-sensitive bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define d 13
+# ABOP | #define e 3
+# ABOP | #define m 2
+# ABOP | #define n 3
+# ABOP | #define u 1
+# ABOP | #define v 1
+# ABOP | ω : S(0)a(1,0)
+# ABOP | p1    : a(t,c) : t<m -> a(t+1,c)
+# ABOP | p2    : a(t,c) : (t=m)&(c<e) -> I(0,u)[L]a(1,c+1)
+# ABOP | p3    : a(t,c) : (t=m)&(c=e) -> I(0,u)[L][b(1)]a(1,c)
+# ABOP | p4    : b(t) : t<n -> b(t+1)
+# ABOP | p5    : b(t) : t=n -> I(0,v)[L]b(1)
+# ABOP | p6    : S(t) -> S(t+1)
+# ABOP | p7    : S(t) < I(i,j) : t=d -> I(1,j)
+# ABOP | p8    : I(i,j) : 0<i and i<j -> I(i+1,j)
+# ABOP | p9    : I(i,j) < I(k,l) : i=j and k=0 -> I(1,l)
+# ABOP | p10   : I(i,j) < a(k,l) : i>0 -> I[L][b(1)]B
+# ABOP | p11   : I(i,j) < b(k) : i>0 -> I[L]B
+# ABOP | p12   : B -> I[K]B
+#
+let d = 13;
+let e = 3;
+let m = 2;
+let n = 3;
+let u = 1;
+let v = 1;
+
+axiom S(0) a(1,0);
+
+match a(t,c) when t<m then a(t+1,c);
+match a(t,c) when t=m and c<e then I(0,u) [ L ] a(1,c+1);
+match a(t,c) when t=m and c=e then I(0,u) [ L ] [ b(1) ] a(1,c);
+match b(t) when t<n then b(t+1);
+match b(t) when t=n then I(0,v) [ L ] b(1);
+match S(t) then S(t+1);
+match I(i,j) left S(t) when t=d then I(1,j);
+match I(i,j) when 0<i and i<j then I(i+1,j);
+match I(k,l) left I(i,j) when i=j and k=0 then I(1,l);
+match a(k,l) left I(i,j) when i>0 then I [ L ] [ b(1) ] B;
+match b(k) left I(i,j) when i>0 then I [ L ] B;
+match B then I [ K ] B;

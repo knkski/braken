@@ -1,0 +1,42 @@
+# ID       : LSYS-BB4158353C27
+# Name     : Trigrid1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/trigrid1.ls, section Trigrid1 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/trigrid1.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Trigrid1 (#81) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/trigrid1--bb4158353c.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bb4158353c2700195bea42b3fac19c37f6b4b275872489af18aca8d846529e0a
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Trigrid1 {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=fy[+fy][--fy]fy
+# RESETIUS |   y=fx[++fx][-fx]fx
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Trigrid1 {
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom x
+# RESETIUS |   x=fy[+fy][--fy]fy
+# RESETIUS |   y=fx[++fx][-fx]fx
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then F Y [ Plus F Y ] [ Minus Minus F Y ] F Y;
+match Y then F X [ Plus Plus F X ] [ Minus F X ] F X;
+match F then nothing;

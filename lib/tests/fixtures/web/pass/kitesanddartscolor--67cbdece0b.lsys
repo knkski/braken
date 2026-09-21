@@ -1,0 +1,40 @@
+# ID       : LSYS-67CBDECE0B9E
+# Name     : KitesAndDartsColor
+# Source   : Fractint 20.04p17 official rule library | lsystem/tiling.l, section KitesAndDartsColor (#4) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/kitesanddartscolor--67cbdece0b.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:67cbdece0b9ef719ff3a1b088aaafe9237b38caf09f63738c85547ed27a4c330
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | KitesAndDartsColor { ; by Herb Savage
+# FRACTINT | ; based on Martin Gardner's "Penrose Tiles to Trapdoor Ciphers",
+# FRACTINT | ; Roger Penrose's kites and darts
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom WG+XG+WG+XG+WG+XG+WG+XG+WG+X
+# FRACTINT |   W=[C10F][++@1.618033989C12F][++G---@.618033989G|X-Y|G|W]
+# FRACTINT |   X=[C10F+++@1.618033989C12F][++@.618033989GZ|X|-G|W]
+# FRACTINT |   Y=[+C10F][@1.618033989C12F][+G@.618033989|Y+X]
+# FRACTINT |   Z=[-C10F][@1.618033989C12F][@.618033989G--WG|+Z]
+# FRACTINT |   F=
+# FRACTINT |   }
+#
+let ANGLE = 36;
+
+axiom W G Plus X G Plus W G Plus X G Plus W G Plus X G Plus W G Plus X G Plus W G Plus X;
+
+match W then [ Color(10) F ] [ Plus Plus Scale(1.618033989) Color(12) F ] [ Plus Plus G Minus Minus Minus Scale(0.618033989) G TurnAround X Minus Y TurnAround G TurnAround W ];
+match X then [ Color(10) F Plus Plus Plus Scale(1.618033989) Color(12) F ] [ Plus Plus Scale(0.618033989) G Z TurnAround X TurnAround Minus G TurnAround W ];
+match Y then [ Plus Color(10) F ] [ Scale(1.618033989) Color(12) F ] [ Plus G Scale(0.618033989) TurnAround Y Plus X ];
+match Z then [ Minus Color(10) F ] [ Scale(1.618033989) Color(12) F ] [ Scale(0.618033989) G Minus Minus W G TurnAround Plus Z ];
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

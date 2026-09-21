@@ -1,0 +1,26 @@
+# ID       : LSYS-8FCBFB40F34D
+# Name     : Sierpiński triangle
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 3 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sierpiski-triangle--8fcbfb40f3.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:8fcbfb40f34d32d405b02f6f9964945275def19ad15b86f4566274289c307ac3
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('X', ['X=+Y-X-Y+', 'Y=-X+Y+X-'], 60)
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then Plus Y Minus X Minus Y Plus;
+match Y then Minus X Plus Y Plus X Minus;

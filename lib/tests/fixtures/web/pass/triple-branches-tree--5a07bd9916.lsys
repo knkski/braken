@@ -1,0 +1,40 @@
+# ID       : LSYS-5A07BD99169B
+# Name     : Triple branches tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_triple.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_triple.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/triple-branches-tree--5a07bd9916.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 20
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:5a07bd99169b1f5cafd4d130a2e5920dc4bd4c0e51f5027b68c3bae2934c7042
+# Note     : Upstream acknowledgement: http://fable.io/samples-browser/lsystem/
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦http://fable.io/samples-browser/lsystem/ ⟧)
+# JKUBIN | ___DESCR(⟦Triple branches tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_triple.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TRIPLE_TREE⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦F[[[+FX]-FXF]---X]⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(20),dnl
+# JKUBIN | "sety":-500,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TRIPLE_TREE(5)
+#
+let ANGLE = 20;
+
+axiom X;
+
+match X then F [ [ [ Plus F X ] Minus F X F ] Minus Minus Minus X ];
+match F then F F;

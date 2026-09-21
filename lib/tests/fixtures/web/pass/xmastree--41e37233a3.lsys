@@ -1,0 +1,42 @@
+# ID       : LSYS-41E37233A3C0
+# Name     : Xmastree
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/xmastree.ls, section Xmastree (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/xmastree.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/xmastree--41e37233a3.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:41e37233a3c04fbd4533230fed3404fb0ae9daed87c60bbfd6f692959e45d021
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Xmastree {
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom ++p  ; The +'s are there to make the tree stand upright
+# RESETIUS |   f=
+# RESETIUS |   p=--fr++++<1fs--<1fu
+# RESETIUS |   q=ft++<1fr----<1fs++
+# RESETIUS |   r=++fp----<1fq++<1ft
+# RESETIUS |   s=fu--<1fp++++<1fq--
+# RESETIUS |   t=+fu--<1fp+
+# RESETIUS |   u=-fq++<1ft-
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom Plus Plus P;
+
+match F then nothing;
+match P then Minus Minus F R Plus Plus Plus Plus ColorIncrement(1) F S Minus Minus ColorIncrement(1) F U;
+match Q then F T Plus Plus ColorIncrement(1) F R Minus Minus Minus Minus ColorIncrement(1) F S Plus Plus;
+match R then Plus Plus F P Minus Minus Minus Minus ColorIncrement(1) F Q Plus Plus ColorIncrement(1) F T;
+match S then F U Minus Minus ColorIncrement(1) F P Plus Plus Plus Plus ColorIncrement(1) F Q Minus Minus;
+match T then Plus F U Minus Minus ColorIncrement(1) F P Plus;
+match U then Minus F Q Plus Plus ColorIncrement(1) F T Minus;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

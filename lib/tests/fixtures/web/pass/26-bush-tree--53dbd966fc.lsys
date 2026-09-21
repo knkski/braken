@@ -1,0 +1,37 @@
+# ID       : LSYS-53DBD966FCE8
+# Name     : 26: bush/tree
+# Source   : abiusx/L3D model archive | L/tree2.l3d | https://github.com/abiusx/L3D/blob/master/L/tree2.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:53dbd966fce84ef2f5db50d485428baa826043c0f6b322fa9fecdd5272f48c54
+# Note     : Upstream thickness setting: 35
+#
+# Original abiusx/L3D model archive:
+# L3D | #26: bush/tree
+# L3D | 5
+# L3D | 22.5
+# L3D | 35
+# L3D | A
+# L3D | A=[&FL!A]/////`[&FL!A]///////`[&FL!A]
+# L3D | F=S ///// F
+# L3D | S=F L
+# L3D | L=[```^^{-f+f+f-|-f+f+f}]
+# L3D | @
+#
+let ANGLE = 22.5;
+
+axiom A;
+
+match A then [ PitchDown F L WidthDecrease A ] RollRight RollRight RollRight RollRight RollRight ColorNext [ PitchDown F L WidthDecrease A ] RollRight RollRight RollRight RollRight RollRight RollRight RollRight ColorNext [ PitchDown F L WidthDecrease A ];
+match F then S RollRight RollRight RollRight RollRight RollRight F;
+match S then F L;
+match L then [ ColorNext ColorNext ColorNext PitchUp PitchUp PolygonBegin Minus f Plus f Plus f Minus TurnAround Minus f Plus f Plus f PolygonEnd ];

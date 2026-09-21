@@ -1,0 +1,47 @@
+# ID       : LSYS-ACBD35552C4A
+# Name     : Koch1
+# Aliases  : Snowflake
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Snowflake (#67) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Koch1 (#13) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Koch1 (#1) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/koch1--acbd35552c.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:acbd35552c4a31cd0bb814018cd9e7cb0f6185a8ead637ceaacef1b27c7f374f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Snowflake  {
+# RESETIUS |   Angle 6       ; All turns are multiples of 60=360/6 degrees
+# RESETIUS |   Axiom f--f--f ; Draw clockwise a ring of three Snowflakes
+# RESETIUS |   f=f+f--f+f    ; Forward, turn left, forward, turn left, turn left, ... , forward
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch1 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 6
+# RESETIUS |   Axiom F--F--F
+# RESETIUS |   F=F+F--F+F
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Koch1 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 6
+# FRACTINT |   Axiom F--F--F
+# FRACTINT |   F=F+F--F+F
+# FRACTINT |   }
+#
+let ANGLE = 60;
+
+axiom F Minus Minus F Minus Minus F;
+
+match F then F Plus F Minus Minus F Plus F;

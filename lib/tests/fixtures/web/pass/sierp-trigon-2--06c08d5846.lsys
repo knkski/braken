@@ -1,0 +1,37 @@
+# ID       : LSYS-06C08D584622
+# Name     : Sierp.Trigon.2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Sierp.Trigon.2 (#29) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/sierp-trigon-2--06c08d5846.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 60
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:06c08d584622ea16366d7a1363f987a3f3a887fe04676abf0c7030fb13b0ec58
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sierp.Trigon.2 {
+# RESETIUS | 
+# RESETIUS |   ; best order 6
+# RESETIUS |   ; time 0:05
+# RESETIUS | 
+# RESETIUS |     angle 6
+# RESETIUS |     axiom C19F++F++F++
+# RESETIUS | 
+# RESETIUS |     F=F[<2++F--F--F]FF
+# RESETIUS |   }
+#
+let ANGLE = 60;
+
+axiom Color(19) F Plus Plus F Plus Plus F Plus Plus;
+
+match F then F [ ColorIncrement(2) Plus Plus F Minus Minus F Minus Minus F ] F F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

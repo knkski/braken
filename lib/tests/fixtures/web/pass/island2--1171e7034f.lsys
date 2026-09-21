@@ -1,0 +1,33 @@
+# ID       : LSYS-1171E7034F55
+# Name     : Island2
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Island2 (#14) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/island2--1171e7034f.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1171e7034f557fcfe236cf413378ba88b67c6346c4ce26c60fe3b2aebec5ae28
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Island2 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 4
+# FRACTINT |   axiom f+f+f+f
+# FRACTINT |   f=f+gf-ff-f-ff+g+ff-gf+ff+f+ff-g-fff
+# FRACTINT |   g=@6G@I6
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Plus G F Minus F F Minus F Minus F F Plus G Plus F F Minus G F Plus F F Plus F Plus F F Minus G Minus F F F;
+match G then Scale(6) G Scale(0.166666666667);
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

@@ -1,0 +1,42 @@
+# ID       : LSYS-BF34F357428A
+# Name     : IBeam
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section IBeam (#11) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/ibeam--bf34f35742.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bf34f357428a503864a209ff69ab9d5d291506216e9a9e943eae263f88201c78
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | IBeam {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom r
+# RESETIUS |   r=c40x+<8y+<8x+<4y
+# RESETIUS |   x=+fy-fxfyfx-fy+
+# RESETIUS |   y=-fx+fyfxfy+fx-
+# RESETIUS |   z=+fz-fwfxfw-fz+
+# RESETIUS |   w=-fz+fwfxfw+fz-
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom R;
+
+match R then Color(40) X Plus ColorIncrement(8) Y Plus ColorIncrement(8) X Plus ColorIncrement(4) Y;
+match X then Plus F Y Minus F X F Y F X Minus F Y Plus;
+match Y then Minus F X Plus F Y F X F Y Plus F X Minus;
+match Z then Plus F Z Minus F W F X F W Minus F Z Plus;
+match W then Minus F Z Plus F W F X F W Plus F Z Minus;
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

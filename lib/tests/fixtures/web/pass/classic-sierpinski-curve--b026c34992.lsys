@@ -1,0 +1,35 @@
+# ID       : LSYS-B026C34992DE
+# Name     : Classic Sierpinski Curve
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.classicSierpinskiCurve | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/classic-sierpinski-curve--b026c34992.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:b026c34992dede0ada3bf1ac3e7304077521ac47d858e78f5683b05ba4ef79d4
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | classicSierpinskiCurve =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'X', "XF+F+XF--F--XF+F+X" )
+# ELM |             ]
+# ELM |         , axiom = "XF+F+XF--F--XF+F+X"
+# ELM |         , iterations = 4
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.fromDegrees 45
+# ELM |         , windowPosition = { x = -2, y = -30 }
+# ELM |         , windowSize = 110
+# ELM |     }
+#
+let ANGLE = 45;
+
+axiom X F Plus F Plus X F Minus Minus F Minus Minus X F Plus F Plus X;
+
+match X then X F Plus F Plus X F Minus Minus F Minus Minus X F Plus F Plus X;

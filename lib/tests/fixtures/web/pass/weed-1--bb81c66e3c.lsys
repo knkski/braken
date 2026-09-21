@@ -1,0 +1,33 @@
+# ID       : LSYS-BB81C66E3C5E
+# Name     : Weed 1
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/weed-1.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/weed-1.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/weed-1--bb81c66e3c.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 24.3
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:bb81c66e3c5efc4be8d57b83950e4e7aae16ffaa7fc30be74bc0e24220d683b2
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>F -> F[-F]F[+F]F</rule>
+# OFX | <axiom>F</axiom>
+# OFX | <maxDepth>3</maxDepth>
+# OFX | <theta>24.3</theta>
+# OFX | <bg_color>217, 163, 11, 255</bg_color>
+# OFX | 		<tree_color>255, 31, 0, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 24.3;
+
+axiom F;
+
+match F then F [ Minus F ] F [ Plus F ] F;

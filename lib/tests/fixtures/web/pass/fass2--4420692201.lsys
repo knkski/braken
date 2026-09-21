@@ -1,0 +1,53 @@
+# ID       : LSYS-442069220140
+# Name     : Fass2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Fass2 (#22) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Fass2 (#10) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Fass2 (#33) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/fass2--4420692201.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4420692201404ef37281db651cdad4f2ee6400ab5473f291d048d01b43f688d4
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Fass2 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS | 	; FASS curve (4x4 tiles form macrotile), Figure 1.16b p.17
+# RESETIUS | ; order 3
+# RESETIUS |   angle 4
+# RESETIUS |   axiom -l
+# RESETIUS |   L=LFLF+RFR+FLFL-FRF-LFL-FR+F+RF-LFL-FRFRFR+
+# RESETIUS |   R=-LFLFLF+RFR+FL-F-LF+RFR+FLF+RFRF-LFL-FRFR
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Fass2 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# RESETIUS |    ; FASS curve (4x4 tiles form macrotile), Figure 1.16b p.17
+# RESETIUS | ; order 4
+# RESETIUS |   angle 4
+# RESETIUS |   axiom -l
+# RESETIUS |   L=LFLF+RFR+FLFL-FRF-LFL-FR+F+RF-LFL-FRFRFR+
+# RESETIUS |   R=-LFLFLF+RFR+FL-F-LF+RFR+FLF+RFRF-LFL-FRFR
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Fass2 { ; Adrian Mariano, from the Algorithmic Beauty of Plants
+# FRACTINT | 	; FASS curve (4x4 tiles form macrotile), Figure 1.16b p.17
+# FRACTINT |   angle 4
+# FRACTINT |   axiom -l
+# FRACTINT |   L=LFLF+RFR+FLFL-FRF-LFL-FR+F+RF-LFL-FRFRFR+
+# FRACTINT |   R=-LFLFLF+RFR+FL-F-LF+RFR+FLF+RFRF-LFL-FRFR
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom Minus L;
+
+match L then L F L F Plus R F R Plus F L F L Minus F R F Minus L F L Minus F R Plus F Plus R F Minus L F L Minus F R F R F R Plus;
+match R then Minus L F L F L F Plus R F R Plus F L Minus F Minus L F Plus R F R Plus F L F Plus R F R F Minus L F L Minus F R F R;

@@ -1,0 +1,26 @@
+# ID       : ABOP-106
+# Name     : Patella vulgata map L-system
+# Source   : chapter 7, book page 166, Fig. 7.18
+# Formalism: map L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | p1  : A -> b[-a]x[+a]b
+# ABOP | p2  : a -> B[+A]x[-A]B
+# ABOP | p3  : B -> a
+# ABOP | p4  : b -> A
+# ABOP | p5  : C -> D[+a]E
+# ABOP | p6  : D -> C[-A]x
+# ABOP | p7  : E -> C
+# ABOP | p8  : F -> E[-a]G[+a]E
+# ABOP | p9  : G -> J
+# ABOP | p10 : H -> I
+# ABOP | p11 : I -> B[-A]x[+A]B
+# ABOP | p12 : J -> b[+a]x[-a]b
+# ABOP | p13 : Z -> C[-F]H[+F]C
+#
+# Expected parse failure: Patella uses a spherical map and directed edges.
+map spherical lsystem PatellaVulgata {
+    # The original edge productions are preserved above.
+}

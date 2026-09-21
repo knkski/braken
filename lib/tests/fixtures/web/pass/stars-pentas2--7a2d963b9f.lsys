@@ -1,0 +1,86 @@
+# ID       : LSYS-7A2D963B9F95
+# Name     : Stars&Pentas2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/stars_.ls, section Stars&Pentas2 (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/stars_.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Stars&Pentas2 (#70) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section Stars&Pentas2 (#13) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/stars-pentas2--7a2d963b9f.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:7a2d963b9f9534682e88fae7568f9f7aa030b1f20066335ae03b7caff1964694
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Stars&Pentas2  {
+# RESETIUS |      ;; by Philippe Hurbain
+# RESETIUS |      ;; Penrose's stars and pentagons, generated from
+# RESETIUS |      ;; decomposition rules
+# RESETIUS |      ;; u is the star, v is the boat, w is the thin rhombus
+# RESETIUS |      ;; x, y and z are the pentagons
+# RESETIUS |  Angle 10
+# RESETIUS |  Axiom u
+# RESETIUS |  u=@.381966[v]F[|y][-u]++F|+[v]F[|y]++F|+[v]F[|y]++F|+
+# RESETIUS |  u=[v]F[|y]++F|+[v]F[|y]++F
+# RESETIUS |  v=@.381966[v]F[|y]++F|+[v]F[|y]-[u]F-F|+[v]F[|y]++F
+# RESETIUS |  w=@.381966G++[u]F|+F-F|+[v]F[|y]
+# RESETIUS |  y=@.381966[x][y][w]F[|!y]++F++[y][w]F[|!y]++F++[z]F
+# RESETIUS |  x=@.381966G++G++[!x][!z]F--[!z]F--[!z]F--[!z]F--[!z]F
+# RESETIUS |  z=@.381966[z][x]F++[z]F++[w][y]F[|!y]++F++[z]F
+# RESETIUS |  F=G
+# RESETIUS | }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Stars&Pentas2  {
+# RESETIUS |                  ;; by Philippe Hurbain
+# RESETIUS |                  ;; Penrose's stars and pentagons, generated from
+# RESETIUS |                  ;; decomposition rules
+# RESETIUS |                  ;; u is the star, v is the boat, w is the thin rhombus
+# RESETIUS |                  ;; x, y and z are the pentagons
+# RESETIUS |   Angle 10
+# RESETIUS |   Axiom u
+# RESETIUS |   u=@.381966[v]F[|y][-u]++F|+[v]F[|y]++F|+[v]F[|y]++F|+
+# RESETIUS |   u=[v]F[|y]++F|+[v]F[|y]++F
+# RESETIUS |   v=@.381966[v]F[|y]++F|+[v]F[|y]-[u]F-F|+[v]F[|y]++F
+# RESETIUS |   w=@.381966G++[u]F|+F-F|+[v]F[|y]
+# RESETIUS |   y=@.381966[x][y][w]F[|!y]++F++[y][w]F[|!y]++F++[z]F
+# RESETIUS |   x=@.381966G++G++[!x][!z]F--[!z]F--[!z]F--[!z]F--[!z]F
+# RESETIUS |   z=@.381966[z][x]F++[z]F++[w][y]F[|!y]++F++[z]F
+# RESETIUS |   F=G
+# RESETIUS | }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Stars&Pentas2  {
+# FRACTINT |                  ;; by Philippe Hurbain
+# FRACTINT |                  ;; Penrose's stars and pentagons, generated from
+# FRACTINT |                  ;; decomposition rules
+# FRACTINT |                  ;; u is the star, v is the boat, w is the thin rhombus
+# FRACTINT |                  ;; x, y and z are the pentagons
+# FRACTINT |   Angle 10
+# FRACTINT |   Axiom u
+# FRACTINT |   u=@.381966[v]F[|y][-u]++F|+[v]F[|y]++F|+[v]F[|y]++F|+
+# FRACTINT |   u=[v]F[|y]++F|+[v]F[|y]++F
+# FRACTINT |   v=@.381966[v]F[|y]++F|+[v]F[|y]-[u]F-F|+[v]F[|y]++F
+# FRACTINT |   w=@.381966G++[u]F|+F-F|+[v]F[|y]
+# FRACTINT |   y=@.381966[x][y][w]F[|!y]++F++[y][w]F[|!y]++F++[z]F
+# FRACTINT |   x=@.381966G++G++[!x][!z]F--[!z]F--[!z]F--[!z]F--[!z]F
+# FRACTINT |   z=@.381966[z][x]F++[z]F++[w][y]F[|!y]++F++[z]F
+# FRACTINT |   F=G
+# FRACTINT | }
+#
+let ANGLE = 36;
+
+axiom U;
+
+match U then Scale(0.381966) [ V ] F [ TurnAround Y ] [ Minus U ] Plus Plus F TurnAround Plus [ V ] F [ TurnAround Y ] Plus Plus F TurnAround Plus [ V ] F [ TurnAround Y ] Plus Plus F TurnAround Plus [ V ] F [ TurnAround Y ] Plus Plus F TurnAround Plus [ V ] F [ TurnAround Y ] Plus Plus F;
+match V then Scale(0.381966) [ V ] F [ TurnAround Y ] Plus Plus F TurnAround Plus [ V ] F [ TurnAround Y ] Minus [ U ] F Minus F TurnAround Plus [ V ] F [ TurnAround Y ] Plus Plus F;
+match W then Scale(0.381966) G Plus Plus [ U ] F TurnAround Plus F Minus F TurnAround Plus [ V ] F [ TurnAround Y ];
+match Y then Scale(0.381966) [ X ] [ Y ] [ W ] F [ TurnAround InvertTurns Y ] Plus Plus F Plus Plus [ Y ] [ W ] F [ TurnAround InvertTurns Y ] Plus Plus F Plus Plus [ Z ] F;
+match X then Scale(0.381966) G Plus Plus G Plus Plus [ InvertTurns X ] [ InvertTurns Z ] F Minus Minus [ InvertTurns Z ] F Minus Minus [ InvertTurns Z ] F Minus Minus [ InvertTurns Z ] F Minus Minus [ InvertTurns Z ] F;
+match Z then Scale(0.381966) [ Z ] [ X ] F Plus Plus [ Z ] F Plus Plus [ W ] [ Y ] F [ TurnAround InvertTurns Y ] Plus Plus F Plus Plus [ Z ] F;
+match F then G;

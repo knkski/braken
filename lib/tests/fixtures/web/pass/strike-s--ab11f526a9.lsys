@@ -1,0 +1,41 @@
+# ID       : LSYS-AB11F526A9E2
+# Name     : Strike_S
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Strike_S (#71) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/strike-s--ab11f526a9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:ab11f526a9e27328900d471b5e90523718001d4854ebc93ab7106e9475184743
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Strike_S { ; William McWorter
+# RESETIUS |   ; Strikethrough S
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom UW
+# RESETIUS |   F=
+# RESETIUS |   U=FU+F-V
+# RESETIUS |   V=++F--W++F--Z
+# RESETIUS |   W=++F--W-F+X
+# RESETIUS |   X=FUFY
+# RESETIUS |   Y=+F-VFY
+# RESETIUS |   Z=-F+X--F++Z
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom U W;
+
+match F then nothing;
+match U then F U Plus F Minus V;
+match V then Plus Plus F Minus Minus W Plus Plus F Minus Minus Z;
+match W then Plus Plus F Minus Minus W Minus F Plus X;
+match X then F U F Y;
+match Y then Plus F Minus V F Y;
+match Z then Minus F Plus X Minus Minus F Plus Plus Z;

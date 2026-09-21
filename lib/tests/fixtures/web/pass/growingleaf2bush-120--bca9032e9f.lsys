@@ -1,0 +1,39 @@
+# ID       : LSYS-BCA9032E9FBE
+# Name     : GrowingLeaf2Bush-120
+# Source   : abiusx/L3D model archive | L/leafbush.l3d | https://github.com/abiusx/L3D/blob/master/L/leafbush.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:bca9032e9fbe9c0e3898c0ebd3ad2ab07d1c56928f1be77e54683846d1eaacc1
+# Note     : Upstream thickness setting: 75
+#
+# Original abiusx/L3D model archive:
+# L3D | #GrowingLeaf2Bush-120
+# L3D | 8
+# L3D | 22.5
+# L3D | 75
+# L3D | A
+# L3D | A=>>>BY>>>BYA
+# L3D | B=[&Y[+L][-L]YBF]
+# L3D | L=FF+X-X-X+|+X-X
+# L3D | X=gX
+# L3D | Y=FY
+# L3D | @
+#
+let ANGLE = 22.5;
+
+axiom A;
+
+match A then WidthIncrease WidthIncrease WidthIncrease B Y WidthIncrease WidthIncrease WidthIncrease B Y A;
+match B then [ PitchDown Y [ Plus L ] [ Minus L ] Y B F ];
+match L then F F Plus X Minus X Minus X Plus TurnAround Plus X Minus X;
+match X then g X;
+match Y then F Y;

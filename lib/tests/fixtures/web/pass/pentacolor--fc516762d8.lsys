@@ -1,0 +1,37 @@
+# ID       : LSYS-FC516762D898
+# Name     : PentaColor
+# Source   : Fractint 20.04p17 official rule library | lsystem/penrose.l, section PentaColor (#3) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/pentacolor--fc516762d8.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 18
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fc516762d8986f7cd6cb264bf45eb57cc53a54a254c47df7df5150888bf205ab
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | PentaColor {
+# FRACTINT |              ;; by Philippe Hurbain
+# FRACTINT |              ;; Simple coloring of Penrose's rhombuses, showing pentagons
+# FRACTINT |   Angle 20
+# FRACTINT |   Axiom c04[x]++++[x]++++[x]++++[x]++++[x]
+# FRACTINT |   x=@.618034++f[c10@1.1755-------f][|y]----f[|x]
+# FRACTINT |   x=[|++@.618034g@i.618034x]------[x]f----[y]f
+# FRACTINT |   y=@.618034++++[x]f|++f[|y]--[y]f|++f[|x]
+# FRACTINT |   f=g
+# FRACTINT | }
+#
+let ANGLE = 18;
+
+axiom Color(4) [ X ] Plus Plus Plus Plus [ X ] Plus Plus Plus Plus [ X ] Plus Plus Plus Plus [ X ] Plus Plus Plus Plus [ X ];
+
+match X then Scale(0.618034) Plus Plus F [ Color(10) Scale(1.1755) Minus Minus Minus Minus Minus Minus Minus F ] [ TurnAround Y ] Minus Minus Minus Minus F [ TurnAround X ] [ TurnAround Plus Plus Scale(0.618034) G Scale(1.6180339593) X ] Minus Minus Minus Minus Minus Minus [ X ] F Minus Minus Minus Minus [ Y ] F;
+match Y then Scale(0.618034) Plus Plus Plus Plus [ X ] F TurnAround Plus Plus F [ TurnAround Y ] Minus Minus [ Y ] F TurnAround Plus Plus F [ TurnAround X ];
+match F then G;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

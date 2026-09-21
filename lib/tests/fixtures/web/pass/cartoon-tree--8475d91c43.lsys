@@ -1,0 +1,43 @@
+# ID       : LSYS-8475D91C430E
+# Name     : Cartoon Tree
+# Source   : gerizim16/3d-l-system-generator preset catalog | preset 9: Cartoon Tree | https://github.com/gerizim16/3d-l-system-generator/blob/master/src/utils/presets.js
+# Formalism: parametric stochastic context-free 3-D scene grammar
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-gerizim'
+# Fidelity : projection
+# Features : context-free, deterministic, parametric, scene-primitives, turtle3d
+# Angle    : 2
+# Heading  : 0
+# Draw     : f l cone sphere cube
+# Move     : none
+# Profile  : turtle3d-gerizim
+# Fingerprint: sha256:8475d91c430ea7871af324348d1d0ac19b932be50d55101be9b76d09142ccb4c
+# Note     : random() source expressions are projected to the deterministic global RANDOM=0.5 because the target expression language has no RNG builtin.
+#
+# Original gerizim16/3d-l-system-generator preset catalog:
+# GERIZIM | name: "Cartoon Tree",
+# GERIZIM |     lsystem: {
+# GERIZIM |       axiom: "A B m{0x8B4513} sphere",
+# GERIZIM |       productions:
+# GERIZIM |         "A -> s f e\nB -> r{0.4} C I +z{60} B\nC -> C s f e\nE -> -y{4} E\nI -> r{0.4} J J J J J J J J\nJ -> +z{60} [ -y{12} E G ]\nG -> r{0.08} C F [ -x{30} m{0x50C878} D cube ] +y +y [ -x{30} m{0x50C878} D cube ] G\nD -> F [ -x{30} ] +y [ +x{30} ] D\nsphere -> m{0x50C878} sphere{0.5}\ncube -> m{0x50C878} cube{1}",
+# GERIZIM |       iterations: 9,
+# GERIZIM |     },
+# GERIZIM |     defaults: { length: 0.2, angle: 2
+#
+let PI = 3.14159265359;
+let RANDOM = 0.5;
+let ANGLE = 2;
+
+axiom A B m(9127187) sphere;
+
+match A then s f e;
+match B then r(0.4) C I Plus(60) B;
+match C then C s f e;
+match E then RollRight(4) E;
+match I then r(0.4) J J J J J J J J;
+match J then Plus(60) [ RollRight(12) E G ];
+match G then r(0.08) C F [ PitchDown(30) m(5294200) D cube ] RollLeft RollLeft [ PitchDown(30) m(5294200) D cube ] G;
+match D then F [ PitchDown(30) ] RollLeft [ PitchUp(30) ] D;
+match sphere then m(5294200) sphere(0.5);
+match cube then m(5294200) cube(1);

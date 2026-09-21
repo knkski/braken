@@ -1,0 +1,15 @@
+# ID       : ABOP-077
+# Name     : Closed simple cyme
+# Source   : chapter 3, book page 85, Closed simple cyme patch
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Standalone patch fixture.
+#
+# Original ABOP:
+# ABOP | # Patch to the open simple cyme:
+# ABOP | p4 : A -> K
+#
+axiom A;
+
+match A then K;

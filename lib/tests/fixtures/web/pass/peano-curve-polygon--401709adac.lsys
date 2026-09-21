@@ -1,0 +1,35 @@
+# ID       : LSYS-401709ADAC3D
+# Name     : Peano curve polygon
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | peano_curve_polygon.ls | https://github.com/jkubin/L-system/blob/68a699a/peano_curve_polygon.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano-curve-polygon--401709adac.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:401709adac3d9f89d565232ef3d9a6ce05a9ca8bf39d70c742ef4cd4f03e717e
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/10/12⟧)
+# JKUBIN | __THANKS(⟦Hans-Sagan-Space-Filling-Curves-Springer1994a.pdf page 43⟧)
+# JKUBIN | ___DESCR(⟦Peano curve polygon⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 peano_curve_polygon.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦PEANO⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F+F-F-F-F+F+F+F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | 
+# JKUBIN | PEANO(3)
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F Plus F Minus F Minus F Minus F Plus F Plus F Plus F Minus F;

@@ -1,0 +1,41 @@
+# ID       : LSYS-31C8A82C8391
+# Name     : Peano2
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Peano2 (#21) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Peano2 (#19) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano2--31c8a82c83.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:31c8a82c839115c0d3ac2211900251128b05a2fb7fb57ff2040a416ab1675915
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Peano2 { ; Adrian Mariano
+# RESETIUS | ; from The Fractal Geometry of Nature by Mandelbrot
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom FXY++F++FXY++F
+# RESETIUS |   X=XY@Q2-F@IQ2-FXY++F++FXY
+# RESETIUS |   Y=-@Q2F-@IQ2FXY
+# RESETIUS |   }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Peano2 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   Angle 8
+# FRACTINT |   Axiom FXY++F++FXY++F
+# FRACTINT |   X=XY@Q2-F@IQ2-FXY++F++FXY
+# FRACTINT |   Y=-@Q2F-@IQ2FXY
+# FRACTINT |   }
+#
+let ANGLE = 45;
+
+axiom F X Y Plus Plus F Plus Plus F X Y Plus Plus F;
+
+match X then X Y Scale(1.41421356237) Minus F Scale(0.707106781187) Minus F X Y Plus Plus F Plus Plus F X Y;
+match Y then Minus Scale(1.41421356237) F Minus Scale(0.707106781187) F X Y;

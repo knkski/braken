@@ -1,0 +1,42 @@
+# ID       : LSYS-8F30F3C47876
+# Name     : LawnInSpring
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section LawnInSpring (#45) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/lawninspring--8f30f3c478.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:8f30f3c47876cea5a916f190ec4941a3ce116d883b185f694346bf311136e829
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | LawnInSpring {
+# RESETIUS |   Angle 16
+# RESETIUS |   Axiom c49x
+# RESETIUS |   x=[+++++f-f-fz]gx++++gy
+# RESETIUS |   y=[+++++f-f-fz]gx----gy
+# RESETIUS |   z=w
+# RESETIUS |   w=u
+# RESETIUS |   u=[c44@.3[+++f]g++[+++f]g++[+++f]g++[+++f]g++[+++f]g++[+++f]g++[+++f]g++[+++f]g]z
+# RESETIUS |   f=
+# RESETIUS |   g=
+# RESETIUS |   }
+#
+let ANGLE = 22.5;
+
+axiom Color(49) X;
+
+match X then [ Plus Plus Plus Plus Plus F Minus F Minus F Z ] G X Plus Plus Plus Plus G Y;
+match Y then [ Plus Plus Plus Plus Plus F Minus F Minus F Z ] G X Minus Minus Minus Minus G Y;
+match Z then W;
+match W then U;
+match U then [ Color(44) Scale(0.3) [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G Plus Plus [ Plus Plus Plus F ] G ] Z;
+match F then nothing;
+match G then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

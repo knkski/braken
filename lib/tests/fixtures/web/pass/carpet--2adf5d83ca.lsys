@@ -1,0 +1,33 @@
+# ID       : LSYS-2ADF5D83CA30
+# Name     : Carpet
+# Source   : edap/ofxLSystem example grammars (MIT) | example-gui/bin/data/trees/carpet.xml | https://github.com/edap/ofxLSystem/blob/master/example-gui/bin/data/trees/carpet.xml
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/carpet--2adf5d83ca.svg
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:2adf5d83ca3043d0cf81a87e115beb868b16be8e97163bc415d4fd030713e2b1
+#
+# Original edap/ofxLSystem example grammars (MIT):
+# OFX | <settings>
+# OFX | <treed>
+# OFX | <rule>F -> F[F] -F +F [--F] +F -F</rule>
+# OFX | <axiom>F-F-F-F</axiom>
+# OFX | <maxDepth>4</maxDepth>
+# OFX | <theta>90</theta>
+# OFX | <bg_color>100, 162, 5, 255</bg_color>
+# OFX | 		<tree_color>37, 255, 255, 255</tree_color>
+# OFX | 	</treed>
+# OFX | </settings>
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F [ F ] Minus F Plus F [ Minus Minus F ] Plus F Minus F;

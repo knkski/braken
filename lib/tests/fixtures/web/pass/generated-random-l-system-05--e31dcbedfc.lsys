@@ -1,0 +1,36 @@
+# ID       : LSYS-E31DCBEDFC8D
+# Name     : Generated random L-system 05
+# Source   : Notgnoshi generative toolkit examples (MIT) | examples/random-lsystems/saved.json[5] | https://github.com/Notgnoshi/generative/blob/25459b6/examples/random-lsystems/saved.json
+# Formalism: generated stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : source-provided; file=../renders/generated-random-l-system-05--e31dcbedfc.svg
+# Fidelity : projection
+# Features : context-free, deterministic, generated, turtle3d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F G
+# Move     : f g
+# Profile  : turtle3d
+# Fingerprint: sha256:e31dcbedfc8dbcd2eaf611e5bd8507d021f444493be444965c3da3407a334ce9
+# Source-token warnings: unbalanced-branches-projected-to-modules
+# Note     : Source seed: 2668370672
+# Note     : The source contains unmatched branch delimiters. All brackets in each affected axiom or successor are represented as BranchBegin/BranchEnd modules; token order is preserved, but structural branch semantics are intentionally lost.
+#
+# Original Notgnoshi generative toolkit examples (MIT):
+# NOTGNOSHI | {
+# NOTGNOSHI |   "scale": 100,
+# NOTGNOSHI |   "seed": 2668370672,
+# NOTGNOSHI |   "rules": [
+# NOTGNOSHI |     "F -> v><F[[|vF+|-["
+# NOTGNOSHI |   ],
+# NOTGNOSHI |   "axiom": "F",
+# NOTGNOSHI |   "iterations": 10,
+# NOTGNOSHI |   "angle": 60
+# NOTGNOSHI | }
+#
+let ANGLE = 60;
+
+axiom F;
+
+match F then PitchDown RollRight RollLeft F BranchBegin BranchBegin TurnAround PitchDown F Plus TurnAround Minus BranchBegin;

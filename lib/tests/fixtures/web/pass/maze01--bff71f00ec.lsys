@@ -1,0 +1,38 @@
+# ID       : LSYS-BFF71F00EC21
+# Name     : Maze01
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Maze01 (#46) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Maze01 (#59) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/maze01--bff71f00ec.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bff71f00ec21611e6ca91ef2e439fddbb745436ae35af047a4e76d33ac7a0a02
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Maze01 {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom c40f+c48f+c56f
+# RESETIUS |   f=f+ff-f
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Maze01 {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom c40f+c48f+c56f
+# RESETIUS |   f=f+ff-f
+# RESETIUS |   }
+#
+let ANGLE = 120;
+
+axiom Color(40) F Plus Color(48) F Plus Color(56) F;
+
+match F then F Plus F F Minus F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

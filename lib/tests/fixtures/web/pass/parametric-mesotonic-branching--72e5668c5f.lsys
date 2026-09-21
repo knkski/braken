@@ -1,0 +1,27 @@
+# ID       : LSYS-72E5668C5F8C
+# Name     : Parametric mesotonic branching
+# Source   : Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996) | Equation 12 | https://algorithmicbotany.org/papers/l-sys.csiro96.pdf
+# Formalism: parametric deterministic bracketed 0L-system
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'parametric-turtle2d'
+# Fidelity : transcription
+# Features : bracketed, context-free, deterministic, mesotonic, parametric
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : parametric-turtle2d
+# Fingerprint: sha256:72e5668c5f8c92232193b00de72854656ae0d4f5e8581b807493a5f9bbf0bba0
+#
+# Original Prusinkiewicz et al., L-systems: From the Theory to Visual Models of Plants (1996):
+# SCHOLARLY | ω : F A(0)
+# SCHOLARLY | p1 : A(v) -> [-F B(v)][+F B(v)] F A(v+1)
+# SCHOLARLY | p2 : B(v) : v>0 -> F B(v-1)
+#
+let ANGLE = 45;
+
+axiom F A(0);
+
+match A(v) then [ Minus F B(v) ] [ Plus F B(v) ] F A(v+1);
+match B(v) when v > 0 then F B(v-1);

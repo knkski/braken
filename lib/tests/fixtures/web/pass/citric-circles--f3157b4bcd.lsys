@@ -1,0 +1,37 @@
+# ID       : LSYS-F3157B4BCD41
+# Name     : Citric.Circles
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/snoopy.ls, section Citric.Circles (#4) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/snoopy.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/citric-circles--f3157b4bcd.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 36
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f3157b4bcd41e0da873e6db81bf30a4adad4aabea763faa0c482ae24c67ebd0f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Citric.Circles {
+# RESETIUS | 
+# RESETIUS |   ; best order 4
+# RESETIUS |   ; time 0:02
+# RESETIUS | 
+# RESETIUS |     angle 10
+# RESETIUS |     axiom FY++FY++FY++FY++FY++
+# RESETIUS | 
+# RESETIUS |     F=
+# RESETIUS |     X=FX+FX+FX[+FX+FX+FX+FX]----FX+FX+FX
+# RESETIUS |     Y=FY+FX+FX[+FX++FY]----FX+FX+FX
+# RESETIUS |   }
+#
+let ANGLE = 36;
+
+axiom F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Plus Plus F Y Plus Plus;
+
+match F then nothing;
+match X then F X Plus F X Plus F X [ Plus F X Plus F X Plus F X Plus F X ] Minus Minus Minus Minus F X Plus F X Plus F X;
+match Y then F Y Plus F X Plus F X [ Plus F X Plus Plus F Y ] Minus Minus Minus Minus F X Plus F X Plus F X;

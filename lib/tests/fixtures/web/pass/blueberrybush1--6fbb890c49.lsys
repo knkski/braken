@@ -1,0 +1,48 @@
+# ID       : LSYS-6FBB890C49BB
+# Name     : BlueBerryBush1
+# Source   : abiusx/L3D model archive | L/blueberry.l3d | https://github.com/abiusx/L3D/blob/master/L/blueberry.l3d
+# Formalism: context-free 3-D LParser/L3D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-l3d'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 11.25
+# Heading  : 0
+# Draw     : F f
+# Move     : g
+# Profile  : turtle3d-l3d
+# Fingerprint: sha256:6fbb890c49bb0178492a25de458b3746313ce324a8d0878d1f23a06607af94db
+# Note     : Upstream thickness setting: 75
+#
+# Original abiusx/L3D model archive:
+# L3D | #BlueBerryBush1
+# L3D | #http://www.geocities.com/gplatl/LSystem/LSystem.html"
+# L3D | 10
+# L3D | 11.25
+# L3D | 75
+# L3D | 9a
+# L3D | a=4/[^^l]
+# L3D | l=[X^[++B]r]
+# L3D | r=4X^[--B]l
+# L3D | B=[b[3+L][3-L]XB]
+# L3D | L=F'{+Y.-Y.-Y.+|+Y.-Y.}
+# L3D | X=FX
+# L3D | Y=gY
+# L3D | z=4/[^B]
+# L3D | b=X8'[^^4F~S]
+# L3D | @
+#
+let ANGLE = 11.25;
+
+axiom TurtleNumber9 a;
+
+match a then TurtleNumber4 RollRight [ PitchUp PitchUp l ];
+match l then [ X PitchUp [ Plus Plus B ] r ];
+match r then TurtleNumber4 X PitchUp [ Minus Minus B ] l;
+match B then [ b [ TurtleNumber3 Plus L ] [ TurtleNumber3 Minus L ] X B ];
+match L then F ColorPrevious PolygonBegin Plus Y Vertex Minus Y Vertex Minus Y Vertex Plus TurnAround Plus Y Vertex Minus Y Vertex PolygonEnd;
+match X then F X;
+match Y then g Y;
+match z then TurtleNumber4 RollRight [ PitchUp B ];
+match b then X TurtleNumber8 ColorPrevious [ PitchUp PitchUp TurtleNumber4 F Surface S ];

@@ -1,0 +1,34 @@
+# ID       : LSYS-0ED616765D4A
+# Name     : 7-rep-tile
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[32] (7-rep-tile) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/7-rep-tile--0ed616765d.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:0ed616765d4a412cc3f6a1c2d12e5860b7e6974bec72bef80fdf980a9d3fdcdd
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "7-rep-tile",
+# KITWALLACE |   "F-F-F-F-F-F-",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F+F-F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0
+# KITWALLACE | ]
+#
+let ANGLE = 60;
+
+axiom F Minus F Minus F Minus F Minus F Minus F Minus;
+
+match F then F Plus F Minus F;

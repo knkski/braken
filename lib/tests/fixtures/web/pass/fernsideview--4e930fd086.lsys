@@ -1,0 +1,33 @@
+# ID       : LSYS-4E930FD0860F
+# Name     : FernSideView
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section FernSideView (#30) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/fernsideview--4e930fd086.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 7.2
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:4e930fd0860fada0e647c50cfb1ec35f7670087efa779cab63d92bd124381c79
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | FernSideView { ;
+# RESETIUS |   Angle 50
+# RESETIUS |   Axiom x
+# RESETIUS |   x=-<5F[+++++X][-----X]-<5F[++++X][----X]-<5F[+++X][---X]-<5F[++X][--X]
+# RESETIUS |   x=-F>5[+X][-X]-F>5[X]
+# RESETIUS |   f=<20F<20F>20F>20
+# RESETIUS |   }
+#
+let ANGLE = 7.2;
+
+axiom X;
+
+match X then Minus ColorIncrement(5) F [ Plus Plus Plus Plus Plus X ] [ Minus Minus Minus Minus Minus X ] Minus ColorIncrement(5) F [ Plus Plus Plus Plus X ] [ Minus Minus Minus Minus X ] Minus ColorIncrement(5) F [ Plus Plus Plus X ] [ Minus Minus Minus X ] Minus ColorIncrement(5) F [ Plus Plus X ] [ Minus Minus X ] Minus F ColorIncrement(-5) [ Plus X ] [ Minus X ] Minus F ColorIncrement(-5) [ X ];
+match F then ColorIncrement(20) F ColorIncrement(20) F ColorIncrement(-20) F ColorIncrement(-20);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

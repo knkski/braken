@@ -1,0 +1,132 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom A B C;\n\nmatch A weight 3 then X;\nmatch A weight 1 then Y;\nmatch _ weight 2 then Z;\n",
+  "source_fingerprint": "fnv1a64:a01210fe809600f7",
+  "symbols": [
+    {
+      "name": "A",
+      "arity": 0
+    },
+    {
+      "name": "B",
+      "arity": 0
+    },
+    {
+      "name": "C",
+      "arity": 0
+    },
+    {
+      "name": "X",
+      "arity": 0
+    },
+    {
+      "name": "Y",
+      "arity": 0
+    },
+    {
+      "name": "Z",
+      "arity": 0
+    },
+    {
+      "name": "_",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 1,
+          "arguments": []
+        }
+      },
+      {
+        "Module": {
+          "symbol": 2,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 0,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": {
+        "Number": "0x4008000000000000"
+      },
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 3,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 0,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": {
+        "Number": "0x3ff0000000000000"
+      },
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 4,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 6,
+        "arguments": []
+      },
+      "left": null,
+      "right": null,
+      "condition": null,
+      "weight": {
+        "Number": "0x4000000000000000"
+      },
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 5,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

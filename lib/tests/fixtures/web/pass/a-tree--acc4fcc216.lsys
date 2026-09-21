@@ -1,0 +1,38 @@
+# ID       : LSYS-ACC4FCC2160E
+# Name     : A tree
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree.ls | https://github.com/jkubin/L-system/blob/68a699a/tree.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/a-tree--acc4fcc216.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 30
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:acc4fcc2160edd8fa00585096ae3153f0502928c1e8f33f818cdcd47b2879ee1
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2017/07/18⟧)
+# JKUBIN | ___DESCR(⟦A tree⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦B[+A][-A]BA⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦BB⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(30),dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(5)
+#
+let ANGLE = 30;
+
+axiom A;
+
+match A then B [ Plus A ] [ Minus A ] B A;
+match B then B B;

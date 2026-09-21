@@ -1,0 +1,26 @@
+# ID       : LSYS-DA26861CEA8E
+# Name     : Hilbert curve
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[4]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hilbert-curve--da26861cea.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 90
+# Heading  : 90
+# Draw     : F L R
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:da26861cea8e45482421711b6631aa2bcbb7c32895a6d987a7b84a9ccb1689ae
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F L R.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"L" -> "+RF-LFL-FR+", "R" -> "-LF+RFR+FL-"}, "L", 5, 90]
+#
+let ANGLE = 90;
+
+axiom L;
+
+match L then Plus R F Minus L F L Minus F R Plus;
+match R then Minus L F Plus R F R Plus F L Minus;

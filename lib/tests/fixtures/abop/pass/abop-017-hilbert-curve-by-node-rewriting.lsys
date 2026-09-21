@@ -1,0 +1,16 @@
+# ID       : ABOP-017
+# Name     : Hilbert curve by node rewriting
+# Source   : chapter 1, book page 16, Fig. 1.15 / §1.4.2
+# Formalism: deterministic turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : L
+# ABOP | p1    : L -> +RF-LFL-FR+
+# ABOP | p2    : R -> -LF+RFR+FL-
+#
+axiom L;
+
+match L then Plus R F Minus L F L Minus F R Plus;
+match R then Minus L F Plus R F R Plus F L Minus;

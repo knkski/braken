@@ -1,0 +1,5 @@
+# Fibonacci word: a -> a b, b -> a
+axiom b;
+
+match a then a b;
+match b then a;

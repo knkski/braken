@@ -1,0 +1,39 @@
+# ID       : LSYS-4794496C81D0
+# Name     : Hilbert curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | hilbert_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/hilbert_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/hilbert-curve--4794496c81.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:4794496c81d07d11c7cd851dc02047ba45f2a5c85664f618be41e7dd34bbabd8
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/29⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Hilbert curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 hilbert_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦HILBERT⟧, ⟦L⟧)
+# JKUBIN | RULE(⟦L⟧, ⟦+RF-LFL-FR+⟧)
+# JKUBIN | RULE(⟦R⟧, ⟦-LF+RFR+FL-⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":15,dnl
+# JKUBIN | "setx":-200,dnl
+# JKUBIN | 
+# JKUBIN | HILBERT(5)
+#
+let ANGLE = 90;
+
+axiom L;
+
+match L then Plus R F Minus L F L Minus F R Plus;
+match R then Minus L F Plus R F R Plus F L Minus;

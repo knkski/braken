@@ -1,0 +1,32 @@
+# ID       : LSYS-D76099A1F92E
+# Name     : Hiway
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Hiway (#32) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/hiway--d76099a1f9.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:d76099a1f92e7a911ef8d263aea87bb75aa8f36e05ed7204ed4fd03b4a57a5d2
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hiway {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom fx
+# RESETIUS |   x=fx+fy
+# RESETIUS |   y=fx-fy
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F X;
+
+match X then F X Plus F Y;
+match Y then F X Minus F Y;
+match F then nothing;

@@ -1,0 +1,36 @@
+# ID       : LSYS-E3D202E6EA70
+# Name     : Triangular star
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | triangular_star.ls | https://github.com/jkubin/L-system/blob/68a699a/triangular_star.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/triangular-star--e3d202e6ea.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 120
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:e3d202e6ea70616b59efa78b63e01143f3ef5a4691c60c178d2e75e06c620024
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/04⟧)
+# JKUBIN | ___DESCR(⟦Triangular star⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 triangular_star.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TRIANGULAR_STAR⟧, ⟦F+F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦FF++F+F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(120),dnl
+# JKUBIN | "step":30,dnl
+# JKUBIN | "setx":-100,dnl
+# JKUBIN | 
+# JKUBIN | TRIANGULAR_STAR(3)
+#
+let ANGLE = 120;
+
+axiom F Plus F Plus F;
+
+match F then F F Plus Plus F Plus F;

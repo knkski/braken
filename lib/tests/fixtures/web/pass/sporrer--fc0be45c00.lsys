@@ -1,0 +1,28 @@
+# ID       : LSYS-FC0BE45C009E
+# Name     : Sporrer
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section Sporrer (#2) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sporrer--fc0be45c00.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:fc0be45c009efa0646b9186d8a170ee611702d20b9ed8dd4bc297d526b711772
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Sporrer { ;
+# RESETIUS |   angle 4
+# RESETIUS |   axiom F+F+F+F
+# RESETIUS |   F=-F+F
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then Minus F Plus F;

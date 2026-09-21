@@ -1,0 +1,35 @@
+# ID       : LSYS-FFECC88CF000
+# Name     : Sierpiński tree
+# Source   : Notgnoshi generative toolkit examples (MIT) | examples/lsystems/sierpinski-tree.json | https://github.com/Notgnoshi/generative/blob/25459b6/examples/lsystems/sierpinski-tree.json
+# Formalism: generated stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : source-provided; file=../renders/sierpiski-tree--ffecc88cf0.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, generated, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F G
+# Move     : f g
+# Profile  : turtle3d
+# Fingerprint: sha256:ffecc88cf0008bc555da23b69b371426758e5167186471e86f3ce549a93cf97c
+# Note     : Source seed: unspecified
+#
+# Original Notgnoshi generative toolkit examples (MIT):
+# NOTGNOSHI | {
+# NOTGNOSHI |   "long-tokens": false,
+# NOTGNOSHI |   "iterations": 7,
+# NOTGNOSHI |   "seed": null,
+# NOTGNOSHI |   "axiom": "F",
+# NOTGNOSHI |   "rules": [
+# NOTGNOSHI |     "F -> GGG[-F][F][+F]",
+# NOTGNOSHI |     "G -> GG"
+# NOTGNOSHI |   ]
+# NOTGNOSHI | }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then G G G [ Minus F ] [ F ] [ Plus F ];
+match G then G G;

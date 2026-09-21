@@ -1,0 +1,8 @@
+# Name: Levy C Curve
+# Summary: Folded self-similar curve.
+# Angle: 45
+# Iterations: 9
+
+axiom Draw Right Right Draw Right Right Draw;
+
+match Draw then Left Draw Right Right Draw Left;

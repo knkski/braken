@@ -1,0 +1,44 @@
+# ID       : LSYS-365F1781D8A9
+# Name     : PreLace&Med
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section PreLace&Med (#10) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/prelace-med--365f1781d8.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 30
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:365f1781d8a99156dc5706c167f99d2f3e0363fd56194ceff049954194c7ac79
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | PreLace&Med {
+# RESETIUS |   Angle 12
+# RESETIUS |   Axiom r
+# RESETIUS |   r=s
+# RESETIUS |   s=+++c40fw--c15fp--c48fzc15fpc56fw+
+# RESETIUS |   y=+++fw--fp--fzfpfw+
+# RESETIUS |   x=+fzfpfw--fp--fz+++
+# RESETIUS |   w=---fy++fp++fxfpfy-
+# RESETIUS |   z=-fxfpfy++fp++fx---
+# RESETIUS |   p=fp
+# RESETIUS |   f=
+# RESETIUS |   }
+#
+let ANGLE = 30;
+
+axiom R;
+
+match R then S;
+match S then Plus Plus Plus Color(40) F W Minus Minus Color(15) F P Minus Minus Color(48) F Z Color(15) F P Color(56) F W Plus;
+match Y then Plus Plus Plus F W Minus Minus F P Minus Minus F Z F P F W Plus;
+match X then Plus F Z F P F W Minus Minus F P Minus Minus F Z Plus Plus Plus;
+match W then Minus Minus Minus F Y Plus Plus F P Plus Plus F X F P F Y Minus;
+match Z then Minus F X F P F Y Plus Plus F P Plus Plus F X Minus Minus Minus;
+match P then F P;
+match F then nothing;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

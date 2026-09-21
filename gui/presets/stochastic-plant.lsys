@@ -1,0 +1,14 @@
+# Name: Stochastic Plant
+# Summary: Weighted branching choices grow a different airy stem and crown from each seed.
+# Visualizer: turtle_2d
+# Angle: 22.5
+# Iterations: 6
+# Preview Iterations: 3
+# Max Iterations: 8
+# Initial Color: 6
+
+axiom Draw;
+
+match Draw then Draw [ Left Draw ] Draw [ Right Draw ] Draw;
+match Draw then Draw [ Left Draw ] Draw;
+match Draw then Draw [ Right Draw ] Draw;

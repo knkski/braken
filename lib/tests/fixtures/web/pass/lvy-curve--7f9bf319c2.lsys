@@ -1,0 +1,56 @@
+# ID       : LSYS-7F9BF319C2C0
+# Name     : Lévy curve
+# Aliases  : Levy Curve
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.levyCurve | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[15] (Levy Curve) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Source   : Paul Bourke L-system manual/catalog | example 33; heading Lévy curve | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=6
+# Render   : pass; file=../renders/lvy-curve--7f9bf319c2.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 45
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:7f9bf319c2c0f460ce0497efbb12605b16cf9c7ac647235c3c14256fc46ed204
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | levyCurve =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "-F++F-" )
+# ELM |             ]
+# ELM |         , axiom = "F"
+# ELM |         , iterations = 12
+# ELM |         , lineLength = 1
+# ELM |         , turningAngle = Angle.fromDegrees 45
+# ELM |         , windowPosition = { x = -33, y = -85 }
+# ELM |         , windowSize = 130
+# ELM |     }
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Levy Curve",
+# KITWALLACE |   "F",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "-F++F-"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   45.0
+# KITWALLACE | ]
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F
+# BOURKE | F -> -F++F-
+# BOURKE | angle = 45
+#
+let ANGLE = 45;
+
+axiom F;
+
+match F then Minus F Plus Plus F Minus;

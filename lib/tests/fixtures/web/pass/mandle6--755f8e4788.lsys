@@ -1,0 +1,34 @@
+# ID       : LSYS-755F8E478864
+# Name     : Mandle6
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[30] (Mandle6) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/mandle6--755f8e4788.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:755f8e478864be49bd6e81e1a8ea294a89e2ee2c37fde0f3a6f1c275b7dbfd24
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Mandle6",
+# KITWALLACE |   "F+F+F+F+F+F+",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "F",
+# KITWALLACE |       "F-F+F-F+F"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0
+# KITWALLACE | ]
+#
+let ANGLE = 60;
+
+axiom F Plus F Plus F Plus F Plus F Plus F Plus;
+
+match F then F Minus F Plus F Minus F Plus F;

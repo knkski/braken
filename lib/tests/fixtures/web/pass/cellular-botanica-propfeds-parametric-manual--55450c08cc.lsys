@@ -1,0 +1,39 @@
+# ID       : LSYS-55450C08CC98
+# Name     : Cellular botanica (propfeds parametric manual)
+# Source   : propfeds Parametric L-systems Renderer examples | parametric.js manualSystems[4] / manual page 5, Cellular botanica | https://github.com/propfeds/lsystems-renderer/blob/master/parametric.js
+# Formalism: two-sided context-sensitive 2L-system cellular automaton
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'context-turtle2d'
+# Fidelity : equivalent
+# Features : bracketed, cellular-automaton, context-sensitive, turtle2d
+# Angle    : 22.5
+# Heading  : 0
+# Draw     : F
+# Move     : none
+# Profile  : context-turtle2d
+# Fingerprint: sha256:55450c08cc98386a5ec2a38dc0e61f696e18caee4ecab3154b1a1339086b1687
+# Note     : Source modules 0 and 1 are alpha-renamed to Zero and One because target identifiers cannot begin with digits.
+# Note     : The source turtle ignores 0 and 1; the source context matcher ignores F, +, and -.
+#
+# Original propfeds Parametric L-systems Renderer examples:
+# SCHOLARLY | new LSystem('F1F1F1', [
+# SCHOLARLY | 0<0>0=0; 0<0>1=1[-F1F1]; 0<1>0=1; 0<1>1=1;
+# SCHOLARLY | 1<0>0=0; 1<0>1=1F1; 1<1>0=1; 1<1>1=0; +=-; -=+
+# SCHOLARLY | ], 22.5, 0, '01', 'F+-')
+#
+let ANGLE = 22.5;
+
+ignore F Plus Minus;
+axiom F One F One F One;
+
+match Zero left Zero right Zero then Zero;
+match Zero left Zero right One then One [ Minus F One F One ];
+match One left Zero right Zero then One;
+match One left Zero right One then One;
+match Zero left One right Zero then Zero;
+match Zero left One right One then One F One;
+match One left One right Zero then One;
+match One left One right One then Zero;
+match Plus then Minus;
+match Minus then Plus;

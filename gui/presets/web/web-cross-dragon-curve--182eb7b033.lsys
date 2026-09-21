@@ -1,0 +1,44 @@
+# Name: Cross Dragon Curve
+# Summary: A folded dragon path builds a hooked cross-shaped orthogonal motif.
+# Visualizer: turtle_2d
+# Angle: 90
+# Iterations: 4
+# Max Iterations: 9
+# Initial Color: 3
+
+# Render Map: X=F Y=F
+
+# ID       : LSYS-182EB7B03329
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | crossdragon.ls | https://github.com/jkubin/L-system/blob/68a699a/crossdragon.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:182eb7b033299686a25789bf1c13b0640956ccb4c58d5e0e79d8dbe75e010e83
+# Note     : Upstream acknowledgement: https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/09/29⟧)
+# JKUBIN | __THANKS(⟦https://homepages.dcc.ufmg.br/~fernando/projects/LinF/classic.html ⟧)
+# JKUBIN | ___DESCR(⟦Cross dragon curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 crossdragon.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦CROSS_DRAGON⟧, ⟦FX+F⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦X+X+XY-Y-⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦+X+XY-Y-Y⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":7,dnl
+# JKUBIN | 
+# JKUBIN | CROSS_DRAGON(5)
+#
+let ANGLE = 90;
+
+axiom F X Plus F;
+
+match X then X Plus X Plus X Y Minus Y Minus;
+match Y then Plus X Plus X Y Minus Y Minus Y;

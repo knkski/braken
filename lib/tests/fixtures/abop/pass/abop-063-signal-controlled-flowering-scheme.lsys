@@ -1,0 +1,34 @@
+# ID       : ABOP-063
+# Name     : Signal-controlled flowering scheme
+# Source   : chapter 3, book page 67, Signal-controlled development
+# Formalism: parametric context-sensitive bracketed string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | ω : D(1)a(1)
+# ABOP | p1    : a(i) : i<m -> a(i+1)
+# ABOP | p2    : a(i) : i=m -> I[L]a(1)
+# ABOP | p3    : D(i) : i<d -> D(i+1)
+# ABOP | p4    : D(i) : i=d -> S(1)
+# ABOP | p5    : S(i) : i<u -> S(i+1)
+# ABOP | p6    : S(i) : i=u -> epsilon
+# ABOP | p7    : S(i) < I : i=u -> I S(1)
+# ABOP | p8    : S(i) < a(j) -> I[L]A
+# ABOP | p9    : A -> K
+#
+let d = 4;
+let m = 2;
+let u = 1;
+
+axiom D(1) a(1);
+
+match a(i) when i<m then a(i+1);
+match a(i) when i=m then I [ L ] a(1);
+match D(i) when i<d then D(i+1);
+match D(i) when i=d then S(1);
+match S(i) when i<u then S(i+1);
+match S(i) when i=u then nothing;
+match I left S(i) when i=u then I S(1);
+match a(j) left S(i) then I [ L ] A;
+match A then K;

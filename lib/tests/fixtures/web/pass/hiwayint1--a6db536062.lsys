@@ -1,0 +1,30 @@
+# ID       : LSYS-A6DB5360622B
+# Name     : Hiwayint1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section Hiwayint1 (#25) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/hiwayint1--a6db536062.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 45
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:a6db5360622ba0c83ed46c90fa603b9e1f12b8ae4382d376cc3975a8217cecfc
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Hiwayint1 {
+# RESETIUS |   Angle 8
+# RESETIUS |   Axiom x
+# RESETIUS |   x=x++y
+# RESETIUS |   y=x-f-y
+# RESETIUS |   }
+#
+let ANGLE = 45;
+
+axiom X;
+
+match X then X Plus Plus Y;
+match Y then X Minus F Minus Y;

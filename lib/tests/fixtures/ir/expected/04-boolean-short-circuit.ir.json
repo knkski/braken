@@ -1,0 +1,125 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "axiom Check(0) Check(2);\n\nmatch Check(x) when x = 0 or (x > 0 and sqrt(x) > 1) then Pass(x);\n",
+  "source_fingerprint": "fnv1a64:0d000a4b140efbb0",
+  "symbols": [
+    {
+      "name": "Check",
+      "arity": 1
+    },
+    {
+      "name": "Pass",
+      "arity": 1
+    }
+  ],
+  "globals": [],
+  "context_filter": null,
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x0000000000000000"
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": [
+            {
+              "Number": "0x4000000000000000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [
+        "x"
+      ],
+      "center": {
+        "symbol": 0,
+        "arguments": [
+          {
+            "Bind": 0
+          }
+        ]
+      },
+      "left": null,
+      "right": null,
+      "condition": {
+        "Binary": {
+          "op": "Or",
+          "left": {
+            "Binary": {
+              "op": "Equal",
+              "left": {
+                "Binding": 0
+              },
+              "right": {
+                "Number": "0x0000000000000000"
+              }
+            }
+          },
+          "right": {
+            "Binary": {
+              "op": "And",
+              "left": {
+                "Binary": {
+                  "op": "Greater",
+                  "left": {
+                    "Binding": 0
+                  },
+                  "right": {
+                    "Number": "0x0000000000000000"
+                  }
+                }
+              },
+              "right": {
+                "Binary": {
+                  "op": "Greater",
+                  "left": {
+                    "Call": {
+                      "name": "sqrt",
+                      "arguments": [
+                        {
+                          "Binding": 0
+                        }
+                      ]
+                    }
+                  },
+                  "right": {
+                    "Number": "0x3ff0000000000000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": [
+                {
+                  "Binding": 0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

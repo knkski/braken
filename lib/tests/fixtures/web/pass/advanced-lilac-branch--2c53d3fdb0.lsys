@@ -1,0 +1,39 @@
+# ID       : LSYS-2C53D3FDB0DA
+# Name     : Advanced lilac branch
+# Source   : propfeds L-systems Renderer manual/gallery | classic.js constructor 12 | https://github.com/propfeds/lsystems-renderer/blob/master/classic.js
+# Formalism: stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d-propfeds'
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle3d
+# Angle    : 30
+# Heading  : 0
+# Draw     : A B C D E F G H I J K L M N O P Q R S U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+# Move     : none
+# Profile  : turtle3d-propfeds
+# Fingerprint: sha256:2c53d3fdb0daa95b91364038c044e1125b2ccf7fb496ea3eff3255feb0388cb8
+# Note     : The source renderer draws every non-reserved letter; terminal model rules are metadata, not derivation productions.
+#
+# Original propfeds L-systems Renderer manual/gallery:
+# SCHOLARLY | new LSystem('+SA', [
+# SCHOLARLY |             'S=FS',
+# SCHOLARLY |             'A=T[--//K][++//K]I///A',
+# SCHOLARLY |             '~A=[+++aaaa]',
+# SCHOLARLY |             '~a=-{[^-F.][--FF.][&-F.].}+^^^',
+# SCHOLARLY |             '~K=[FT[F]+++kkkk]',
+# SCHOLARLY |             '~k=-{[^--F.][F-^-F.][^--F|++^--F|+F+F.][-F+F.][&--F|++&--F|+F+F.][F-&-F.][&--F.].}+^^^',
+# SCHOLARLY |             'I=Fi',
+# SCHOLARLY |             'i=Fj',
+# SCHOLARLY |             'j=J[--FFA][++FFA]'
+# SCHOLARLY |         ], 30, 0, '', 0.16)
+#
+let ANGLE = 30;
+
+axiom Plus S A;
+
+match S then F S;
+match A then T [ Minus Minus RollRight RollRight K ] [ Plus Plus RollRight RollRight K ] I RollRight RollRight RollRight A;
+match I then F i;
+match i then F j;
+match j then J [ Minus Minus F F A ] [ Plus Plus F F A ];

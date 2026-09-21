@@ -1,0 +1,28 @@
+# ID       : LSYS-3AE4780F7B1F
+# Name     : Grid
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Grid (#25) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/grid--3ae4780f7b.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:3ae4780f7b1f52004800be4f1dcd4a3283f35274c2db8ba1bf9cb1c3cedcb2f9
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Grid {
+# RESETIUS |   Angle 4	; Allow turns of 90=360/4 degrees
+# RESETIUS |   Axiom f	; Birth string is the symbol f (see text below)
+# RESETIUS |   f=f[+f][-f]f	; Replacement string for f (see text below)
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F then F [ Plus F ] [ Minus F ] F;

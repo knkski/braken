@@ -1,0 +1,34 @@
+# ID       : LSYS-092E757A6914
+# Name     : L-System Bushes
+# Source   : Paul Bourke L-system manual/catalog | example 5; heading L-System Bushes | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/l-system-bushes--092e757a69.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 20
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:092e757a69149f5c390d52eaaed81a3866d50a27a98904ff2a029bdb905ae32f
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = VZFFF
+# BOURKE | V -> [+++W][---W]YV
+# BOURKE | W -> +X[-W]Z
+# BOURKE | X -> -W[+X]Z
+# BOURKE | Y -> YZ
+# BOURKE | Z -> [-FFF][+FFF]F
+# BOURKE | angle = 20
+#
+let ANGLE = 20;
+
+axiom V HalfForward F F F;
+
+match V then [ Plus Plus Plus W ] [ Minus Minus Minus W ] Y V;
+match W then Plus X [ Minus W ] HalfForward;
+match X then Minus W [ Plus X ] HalfForward;
+match Y then Y HalfForward;
+match Z then [ Minus F F F ] [ Plus F F F ] F;

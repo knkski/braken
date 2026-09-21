@@ -1,0 +1,12 @@
+# Name: Terdragon Curve
+# Summary: A three-segment substitution folds into a triangular self-similar dragon.
+# Visualizer: turtle_2d
+# Angle: 120
+# Orientation Anchor: endpoint
+# Iterations: 9
+# Max Iterations: 12
+# Initial Color: 3
+
+axiom Draw;
+
+match Draw then Draw Left Draw Right Draw;

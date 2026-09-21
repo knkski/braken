@@ -1,0 +1,28 @@
+# Name: Lanceolate Leaf
+# Summary: A symmetric lance-shaped leaf grows from paired veins and a single polygonal blade.
+# Visualizer: turtle_2d
+# Angle: 60
+# Iterations: 20
+# Preview Iterations: 20
+# Max Iterations: 30
+# Draw: G
+# Initial Width: 0.3
+# Initial Color: 0
+# Palette: #86bd6d #285940
+#
+# Figure 5.6 and Table 5.1 of The Algorithmic Beauty of Plants. These defaults
+# reproduce member b. The other family members use (LA, RA, LB, RB, PD):
+# a=(5,1,1,1,0), c=(5,1,0.6,1.06,0.25), d=(5,1.2,10,1,0.5),
+# e=(5,1.2,4,1.1,0.25), and f=(5,1.1,1,1.2,1).
+
+let LA = 5;
+let RA = 1;
+let LB = 1;
+let RB = 1;
+let PD = 1;
+
+axiom Color(0) PolygonBegin Color(1) Vertex A(0) PolygonEnd;
+
+match A(t) then G(LA,RA) [ Minus B(t) Vertex ] [ A(t+1) ] [ Plus B(t) Vertex ];
+match B(t) when t>0 then G(LB,RB) B(t-PD);
+match G(s,r) then G(s*r,r);

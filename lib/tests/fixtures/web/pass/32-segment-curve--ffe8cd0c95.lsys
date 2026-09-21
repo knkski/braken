@@ -1,0 +1,37 @@
+# ID       : LSYS-FFE8CD0C953E
+# Name     : 32 segment curve
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | 32_segment_curve.ls | https://github.com/jkubin/L-system/blob/68a699a/32_segment_curve.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/32-segment-curve--ffe8cd0c95.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:ffe8cd0c953e2a20b41ea862d684ab9ed1d73b1137957294e547359dc678e712
+# Note     : Upstream acknowledgement: http://mathforum.org/advanced/robertd/lsys2d.html
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/08/20⟧)
+# JKUBIN | __THANKS(⟦http://mathforum.org/advanced/robertd/lsys2d.html ⟧)
+# JKUBIN | ___DESCR(⟦32 segment curve⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 32_segment_curve.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦SEGMENT_CURVE⟧, ⟦F+F+F+F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦-F+F-F-F+F+FF-F+F+FF+F-F-FF+FF-FF+F+F-FF-F-F+FF-F-F+F+F-F+⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | 
+# JKUBIN | SEGMENT_CURVE(2)
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then Minus F Plus F Minus F Minus F Plus F Plus F F Minus F Plus F Plus F F Plus F Minus F Minus F F Plus F F Minus F F Plus F Plus F Minus F F Minus F Minus F Plus F F Minus F Minus F Plus F Plus F Minus F Plus;

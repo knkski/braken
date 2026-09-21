@@ -1,0 +1,42 @@
+# ID       : LSYS-31DF01B5AA2F
+# Name     : Quadratic Snowflake
+# Aliases  : Quadratic Snowflake2
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.quadraticSnowflake2 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 17; heading Quadratic Snowflake | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/quadratic-snowflake--31df01b5aa.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:31df01b5aa2f65acffad5b19b5c01802ee65a676d00068ba23e659f42eb7ddda
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | quadraticSnowflake2 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F+F-F-F+F" )
+# ELM |             ]
+# ELM |         , axiom = "FF+FF+FF+FF"
+# ELM |         , iterations = 4
+# ELM |         , lineLength = 3
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -9, y = -10 }
+# ELM |         , windowSize = 506
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = FF+FF+FF+FF
+# BOURKE | F -> F+F-F-F+F
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F F Plus F F Plus F F Plus F F;
+
+match F then F Plus F Minus F Minus F Plus F;

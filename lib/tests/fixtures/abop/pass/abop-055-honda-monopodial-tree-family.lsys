@@ -1,0 +1,31 @@
+# ID       : ABOP-055
+# Name     : Honda monopodial tree family
+# Source   : chapter 2, book page 56, Fig. 2.6
+# Formalism: parametric bracketed turtle string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #define r1 0.9
+# ABOP | #define r2 0.6
+# ABOP | #define a0 45
+# ABOP | #define a2 45
+# ABOP | #define d 137.5
+# ABOP | #define wr 0.707
+# ABOP | ω : A(1,10)
+# ABOP | p1    : A(l,w) -> !(w)F(l)[&(a0)B(l*r2,w*wr)]/(d)A(l*r1,w*wr)
+# ABOP | p2    : B(l,w) -> !(w)F(l)[-(a2)$C(l*r2,w*wr)]C(l*r1,w*wr)
+# ABOP | p3    : C(l,w) -> !(w)F(l)[+(a2)$B(l*r2,w*wr)]B(l*r1,w*wr)
+#
+let r1 = 0.9;
+let r2 = 0.6;
+let a0 = 45;
+let a2 = 45;
+let d = 137.5;
+let wr = 0.707;
+
+axiom A(1,10);
+
+match A(l,w) then Width(w) F(l) [ PitchDown(a0) B(l*r2,w*wr) ] RollRight(d) A(l*r1,w*wr);
+match B(l,w) then Width(w) F(l) [ Minus(a2) Horizontal C(l*r2,w*wr) ] C(l*r1,w*wr);
+match C(l,w) then Width(w) F(l) [ Plus(a2) Horizontal B(l*r2,w*wr) ] B(l*r1,w*wr);

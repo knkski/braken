@@ -1,0 +1,42 @@
+# ID       : LSYS-67799189CF44
+# Name     : Generated random L-system 01
+# Source   : Notgnoshi generative toolkit examples (MIT) | examples/random-lsystems/saved.json[1] | https://github.com/Notgnoshi/generative/blob/25459b6/examples/random-lsystems/saved.json
+# Formalism: generated stochastic context-free 3-D turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : source-provided; file=../renders/generated-random-l-system-01--67799189cf.svg
+# Fidelity : projection
+# Features : context-free, generated, stochastic, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F G
+# Move     : f g
+# Profile  : turtle3d
+# Fingerprint: sha256:67799189cf443ee1c11a4e8023ecfb9f68ac2cdbae8645dc0e85de2b767b46c3
+# Source-token warnings: unbalanced-branches-projected-to-modules
+# Note     : Source seed: 4064620663
+# Note     : The source contains unmatched branch delimiters. All brackets in each affected axiom or successor are represented as BranchBegin/BranchEnd modules; token order is preserved, but structural branch semantics are intentionally lost.
+#
+# Original Notgnoshi generative toolkit examples (MIT):
+# NOTGNOSHI | {
+# NOTGNOSHI |   "scale": 100,
+# NOTGNOSHI |   "seed": 4064620663,
+# NOTGNOSHI |   "rules": [
+# NOTGNOSHI |     "F -> [F^f][fF^",
+# NOTGNOSHI |     "F -> ^F]f[<v>]>v>v><^",
+# NOTGNOSHI |     "F -> >ffv-]v|>>vfFvf",
+# NOTGNOSHI |     "f -> ^[-vv[|][<Fv-v|f]|"
+# NOTGNOSHI |   ],
+# NOTGNOSHI |   "axiom": "F",
+# NOTGNOSHI |   "iterations": 6,
+# NOTGNOSHI |   "angle": 90
+# NOTGNOSHI | }
+#
+let ANGLE = 90;
+
+axiom F;
+
+match F weight 1 then BranchBegin F PitchUp f BranchEnd BranchBegin f F PitchUp;
+match F weight 1 then PitchUp F BranchEnd f BranchBegin RollLeft PitchDown RollRight BranchEnd RollRight PitchDown RollRight PitchDown RollRight RollLeft PitchUp;
+match F weight 1 then RollRight f f PitchDown Minus BranchEnd PitchDown TurnAround RollRight RollRight PitchDown f F PitchDown f;
+match f then PitchUp BranchBegin Minus PitchDown PitchDown BranchBegin TurnAround BranchEnd BranchBegin RollLeft F PitchDown Minus PitchDown TurnAround f BranchEnd TurnAround;

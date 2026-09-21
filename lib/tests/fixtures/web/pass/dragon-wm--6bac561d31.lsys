@@ -1,0 +1,33 @@
+# ID       : LSYS-6BAC561D31C4
+# Name     : Dragon-wm
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Dragon-wm (#14) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/dragon-wm--6bac561d31.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6bac561d31c4e1e028ff93a5f8fdac1335053ff73264d6e7fd74c21b7065d836
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Dragon-wm { ; William McWorter
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom X
+# RESETIUS |   F=
+# RESETIUS |   X=FX+FY ; Do first half, turn left 90 degrees, do second half
+# RESETIUS |   Y=FX-FY ; Trace first half (X) backwards; Y backwards is X,
+# RESETIUS |           ; left turn becomes right turn, and X backwards is Y
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom X;
+
+match F then nothing;
+match X then F X Plus F Y;
+match Y then F X Minus F Y;

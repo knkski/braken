@@ -1,0 +1,34 @@
+# ID       : LSYS-6DF3E17119D0
+# Name     : Terdragon1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter.ls, section Terdragon1 (#74) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/terdragon1--6df3e17119.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 120
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:6df3e17119d021418cab85b01fbbc3c0ed02b82df33d29108f1fb51c8f744342
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Terdragon1 {
+# RESETIUS |   Angle 3
+# RESETIUS |   Axiom x
+# RESETIUS |   x=y
+# RESETIUS |   y=c15F+c48F-c40F
+# RESETIUS |   F=F+F-F
+# RESETIUS |   }
+#
+let ANGLE = 120;
+
+axiom X;
+
+match X then Y;
+match Y then Color(15) F Plus Color(48) F Minus Color(40) F;
+match F then F Plus F Minus F;
+match Color(delay) when delay > 0 then Color(delay - 1);
+match Color(delay) when delay <= 0 then Color;

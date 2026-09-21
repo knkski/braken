@@ -1,0 +1,20 @@
+# ID       : ABOP-102
+# Name     : Directed-edge map L-system
+# Source   : chapter 7, book page 149, Fig. 7.5
+# Formalism: map L-system
+# Parse    : fail
+# Execute  : unsupported
+#
+# Original ABOP:
+# ABOP | ω : directed A B C D
+# ABOP | p1    : A -> D[-A]B
+# ABOP | p2    : B -> B
+# ABOP | p3    : C -> B[-A]B
+# ABOP | p4    : D -> C
+#
+# Expected parse failure: directed map edges and markers need a map engine.
+map directed axiom A B C D;
+map match A then D [ - A ] B;
+map match B then B;
+map match C then B [ - A ] B;
+map match D then C;

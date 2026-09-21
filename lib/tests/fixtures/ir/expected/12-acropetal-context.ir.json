@@ -1,0 +1,122 @@
+{
+  "format": "braken-ir",
+  "format_version": 1,
+  "semantics_version": 2,
+  "source": "ignore Plus Minus;\n\naxiom Fb [ Plus Fa ] Fa [ Minus Fa ] Fa;\n\nmatch Fa left Fb then Fb;\n",
+  "source_fingerprint": "fnv1a64:40459c1f5b3b4690",
+  "symbols": [
+    {
+      "name": "Fa",
+      "arity": 0
+    },
+    {
+      "name": "Fb",
+      "arity": 0
+    },
+    {
+      "name": "Minus",
+      "arity": 0
+    },
+    {
+      "name": "Plus",
+      "arity": 0
+    }
+  ],
+  "globals": [],
+  "context_filter": {
+    "Ignore": [
+      "Plus",
+      "Minus"
+    ]
+  },
+  "axiom": {
+    "items": [
+      {
+        "Module": {
+          "symbol": 1,
+          "arguments": []
+        }
+      },
+      {
+        "Branch": {
+          "items": [
+            {
+              "Module": {
+                "symbol": 3,
+                "arguments": []
+              }
+            },
+            {
+              "Module": {
+                "symbol": 0,
+                "arguments": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      },
+      {
+        "Branch": {
+          "items": [
+            {
+              "Module": {
+                "symbol": 2,
+                "arguments": []
+              }
+            },
+            {
+              "Module": {
+                "symbol": 0,
+                "arguments": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Module": {
+          "symbol": 0,
+          "arguments": []
+        }
+      }
+    ]
+  },
+  "productions": [
+    {
+      "bindings": [],
+      "center": {
+        "symbol": 0,
+        "arguments": []
+      },
+      "left": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": []
+            }
+          }
+        ]
+      },
+      "right": null,
+      "condition": null,
+      "weight": null,
+      "successor": {
+        "items": [
+          {
+            "Module": {
+              "symbol": 1,
+              "arguments": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

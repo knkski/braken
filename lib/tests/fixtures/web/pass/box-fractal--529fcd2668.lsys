@@ -1,0 +1,40 @@
+# ID       : LSYS-529FCD2668B8
+# Name     : Box fractal
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | box_fractal.ls | https://github.com/jkubin/L-system/blob/68a699a/box_fractal.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/box-fractal--529fcd2668.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 90
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:529fcd2668b83da1c7c3711201c772b48bd1d6b2837da6207fee382d9e1fea15
+# Note     : Upstream acknowledgement: http://mathworld.wolfram.com/BoxFractal.html
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/18⟧)
+# JKUBIN | __THANKS(⟦http://mathworld.wolfram.com/BoxFractal.html ⟧)
+# JKUBIN | ___DESCR(⟦Box fractal⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 box_fractal.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦BOX⟧, ⟦F-F-F-F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦F-F+F+F-F⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "step":8,dnl
+# JKUBIN | "setx":-400,dnl
+# JKUBIN | "sety":-300,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | BOX(4)
+#
+let ANGLE = 90;
+
+axiom F Minus F Minus F Minus F;
+
+match F then F Minus F Plus F Plus F Minus F;

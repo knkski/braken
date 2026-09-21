@@ -1,0 +1,26 @@
+# ID       : LSYS-A98B68AD35A5
+# Name     : Peano-Gosper curve
+# Source   : Wolfram Function Repository LSystem | Scope, In[7], fractals[[8]] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/peano-gosper-curve--a98b68ad35.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 60
+# Heading  : 90
+# Draw     : F X Y
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:a98b68ad35a5a40b5f028b9226a953a7b99679790796ae29b47fe9b12bafdd48
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: F X Y.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"X" -> "X+YF++YF-FX--FXFX-YF+", "Y" -> "-FX+YFYF++YF+FX--FX-Y"}, "FX", 4, 60]
+#
+let ANGLE = 60;
+
+axiom F X;
+
+match X then X Plus Y F Plus Plus Y F Minus F X Minus Minus F X F X Minus Y F Plus;
+match Y then Minus F X Plus Y F Y F Plus Plus Y F Plus F X Minus Minus F X Minus Y;

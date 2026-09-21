@@ -1,0 +1,33 @@
+# ID       : LSYS-BED77861A4EB
+# Name     : Island1
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Island1 (#13) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/island1--bed77861a4.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:bed77861a4ebc7e433ff17e3d6ec44d5f2b8ca829c6b26bc33f27caf3536c88b
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Island1 { ; Adrian Mariano
+# FRACTINT | ; from The Fractal Geometry of Nature by Mandelbrot
+# FRACTINT |   angle 4
+# FRACTINT |   axiom F+F+F+F
+# FRACTINT |   F=FFFF-F+F+F-F[-GFF+F+FF+F]FF
+# FRACTINT |   G=@8G@I8
+# FRACTINT |   }
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F F F F Minus F Plus F Plus F Minus F [ Minus G F F Plus F Plus F F Plus F ] F F;
+match G then Scale(8) G Scale(0.125);
+match Scale(delay) when delay > 0 then Scale(delay - 1);
+match Scale(delay) when delay <= 0 then Scale;

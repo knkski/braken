@@ -1,0 +1,7 @@
+# Binding-dependent weights exercise an IR feature that the current GPU
+# backends intentionally reject during preflight.
+
+axiom A(1) A(2);
+
+match A(x) weight x then Low;
+match A(x) weight 3 - x then High;

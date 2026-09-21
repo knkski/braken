@@ -1,0 +1,32 @@
+# ID       : LSYS-F3C56DD731C8
+# Name     : ADH156_o3
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/alpha01.ls, section ADH156_o3 (#33) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/alpha01.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/adh156-o3--f3c56dd731.svg
+# Fidelity : equivalent
+# Features : context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 10
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:f3c56dd731c8437fd9427660f0d351b67a2c6f87ba76fcc9ad83f11a73691c42
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | ADH156_o3 { ; Anthony Hanmer 2000
+# RESETIUS |   Angle 36 ; Cesaro variation alphabet:  o (3)
+# RESETIUS |   Axiom d\40d\40d\40d\40d\40d\40d\40d\40d/180d/40d/40d/40d/40d/40d/40d/40d/40d/40d
+# RESETIUS |   d=d\80d/160d\80d
+# RESETIUS |   }
+#
+let ANGLE = 10;
+
+axiom D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitPlus(40) D ExplicitMinus(180) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D ExplicitMinus(40) D;
+
+match D then D ExplicitPlus(80) D ExplicitMinus(160) D ExplicitPlus(80) D;
+match ExplicitMinus(delay) when delay > 0 then ExplicitMinus(delay - 1);
+match ExplicitMinus(delay) when delay <= 0 then ExplicitMinus;
+match ExplicitPlus(delay) when delay > 0 then ExplicitPlus(delay - 1);
+match ExplicitPlus(delay) when delay <= 0 then ExplicitPlus;

@@ -1,0 +1,32 @@
+# ID       : LSYS-5465A36C9490
+# Name     : PlantsByRoad
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/oj-plants.ls, section PlantsByRoad (#48) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/oj-plants.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/plantsbyroad--5465a36c94.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, delayed-expansion, deterministic, fractint-turtle, parametric
+# Angle    : 24
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:5465a36c9490ed15f832f51b5c90cf90df14da36e972715d7202c97d25484b1f
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | PlantsByRoad { ;
+# RESETIUS |   Angle 15
+# RESETIUS |   Axiom x
+# RESETIUS |   x=+<18F[+x][-x]-F>18[+x][-x]
+# RESETIUS |   f=<10ff>10
+# RESETIUS |   }
+#
+let ANGLE = 24;
+
+axiom X;
+
+match X then Plus ColorIncrement(18) F [ Plus X ] [ Minus X ] Minus F ColorIncrement(-18) [ Plus X ] [ Minus X ];
+match F then ColorIncrement(10) F F ColorIncrement(-10);
+match ColorIncrement(delay) when delay > 0 then ColorIncrement(delay - 1);
+match ColorIncrement(delay) when delay <= 0 then ColorIncrement;

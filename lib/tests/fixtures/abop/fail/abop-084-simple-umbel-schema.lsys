@@ -1,0 +1,15 @@
+# ID       : ABOP-084
+# Name     : Simple umbel schema
+# Source   : chapter 3, book page 95, Simple umbel
+# Formalism: bracketed string with repetition
+# Parse    : fail
+# Execute  : unsupported
+# Note     : Requires compile-time or runtime successor repetition.
+#
+# Original ABOP:
+# ABOP | ω : A
+# ABOP | p1    : A -> I[IK]^n
+#
+# Expected parse failure: symbolic successor repetition is future syntax.
+axiom A;
+match A then I repeat(n, [ I K ]);

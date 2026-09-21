@@ -1,0 +1,34 @@
+# ID       : LSYS-1C08806B19E3
+# Name     : TriominoTile
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/mcworter1.ls, section TriominoTile (#23) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/mcworter1.ls
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/triominotile--1c08806b19.svg
+# Fidelity : equivalent
+# Features : bracketed, context-free, deterministic, fractint-turtle
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:1c08806b19e3f4af405f59e830c860b8b6dc0a7847d874479402637761504251
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | TriominoTile {
+# RESETIUS |   Angle 4
+# RESETIUS |   Axiom r
+# RESETIUS |   r=x
+# RESETIUS |   x=xff[g+x]+f+f|x|-f+f[-g|x]+ff+
+# RESETIUS |   f=g
+# RESETIUS |   g=gg
+# RESETIUS |   }
+#
+let ANGLE = 90;
+
+axiom R;
+
+match R then X;
+match X then X F F [ G Plus X ] Plus F Plus F TurnAround X TurnAround Minus F Plus F [ Minus G TurnAround X ] Plus F F Plus;
+match F then G;
+match G then G G;

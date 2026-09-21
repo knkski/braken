@@ -1,0 +1,26 @@
+# ID       : LSYS-432F910FF2B4
+# Name     : Wolfram simple L-system
+# Source   : Wolfram Function Repository LSystem | Basic Examples, In[1] | https://resources.wolframcloud.com/FunctionRepository/resources/LSystem/
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=1
+# Render   : pass; file=../renders/wolfram-simple-l-system--432f910ff2.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d, wolfram-every-symbol-draws
+# Angle    : 45
+# Heading  : 90
+# Draw     : A B
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:432f910ff2b4ec17c2ca4ed649b1ae28e41c9f112ba1319620a4f97b24ca3260
+# Note     : Wolfram LSystem interprets every non-control symbol as draw-forward; the exact drawing alphabet here is: A B.
+#
+# Original Wolfram Function Repository LSystem:
+# WOLFRAM-FUNCTION-R | ResourceFunction["LSystem"][{"A" -> "B+B", "B" -> "A-B"}, "AAA", 1, 45]
+#
+let ANGLE = 45;
+
+axiom A A A;
+
+match A then B Plus B;
+match B then A Minus B;

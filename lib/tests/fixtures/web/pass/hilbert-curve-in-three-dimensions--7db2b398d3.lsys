@@ -1,0 +1,42 @@
+# ID       : LSYS-7DB2B398D31F
+# Name     : Hilbert curve in three dimensions
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | hilbert_curve_three_dim.ls | https://github.com/jkubin/L-system/blob/68a699a/hilbert_curve_three_dim.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : not-run; target=attached-cpu
+# Render   : unsupported; reason=unsupported render profile 'turtle3d'
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle3d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle3d
+# Fingerprint: sha256:7db2b398d31fa13aca82190a8860e43f947d05443e4634cb78ed87171236bbb3
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/10/28⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Hilbert curve in three dimensions⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 hilbert_curve_three_dim.ls | turtle_three_dim⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦THREE_DIM_HILBERT_CURVE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦B-F+CFC+F-D&F^D-F+&&CFC+F+B//⟧)
+# JKUBIN | RULE(⟦B⟧, ⟦A&F^CFB^F^D^^-F-D^|F^B|FC^F^A//⟧)
+# JKUBIN | RULE(⟦C⟧, ⟦|D^|F^B-F+C^F^A&&FA&F^C+F+B^F^D//⟧)
+# JKUBIN | RULE(⟦D⟧, ⟦|CFB-F+B|FA&F^A&&FB-F+B|FC//⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(90),dnl
+# JKUBIN | "turtle":"three_dim",dnl
+# JKUBIN | 
+# JKUBIN | THREE_DIM_HILBERT_CURVE(2)
+#
+let ANGLE = 90;
+
+axiom A;
+
+match A then B Minus F Plus C F C Plus F Minus D PitchDown F PitchUp D Minus F Plus PitchDown PitchDown C F C Plus F Plus B RollRight RollRight;
+match B then A PitchDown F PitchUp C F B PitchUp F PitchUp D PitchUp PitchUp Minus F Minus D PitchUp TurnAround F PitchUp B TurnAround F C PitchUp F PitchUp A RollRight RollRight;
+match C then TurnAround D PitchUp TurnAround F PitchUp B Minus F Plus C PitchUp F PitchUp A PitchDown PitchDown F A PitchDown F PitchUp C Plus F Plus B PitchUp F PitchUp D RollRight RollRight;
+match D then TurnAround C F B Minus F Plus B TurnAround F A PitchDown F PitchUp A PitchDown PitchDown F B Minus F Plus B TurnAround F C RollRight RollRight;

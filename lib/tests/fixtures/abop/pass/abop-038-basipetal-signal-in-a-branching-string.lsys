@@ -1,0 +1,17 @@
+# ID       : ABOP-038
+# Name     : Basipetal signal in a branching string
+# Source   : chapter 1, book page 32, Fig. 1.30b
+# Formalism: branch-aware context-sensitive string
+# Parse    : pass
+# Execute  : pass
+#
+# Original ABOP:
+# ABOP | #ignore : + -
+# ABOP | ω   : Fa[+Fa]Fa[-Fa]Fa[+Fa]Fb
+# ABOP | p1      : Fa > Fb -> Fb
+#
+ignore Plus Minus;
+
+axiom Fa [ Plus Fa ] Fa [ Minus Fa ] Fa [ Plus Fa ] Fb;
+
+match Fa right Fb then Fb;

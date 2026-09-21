@@ -1,0 +1,26 @@
+# ID       : LSYS-AFCCD019E0AE
+# Name     : Snake Kolam
+# Source   : Paul Bourke L-system manual/catalog | example 37; heading Snake Kolam | https://paulbourke.net/fractals/lsys/
+# Formalism: deterministic context-free bracketed turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=2
+# Render   : pass; file=../renders/snake-kolam--afccd019e0.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F
+# Move     : f
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:afccd019e0ae2af881b4ba4f1b3df03a4639b57a16c9b332912fe9f6970499e8
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+XF+F+XF
+# BOURKE | X -> X{F-F-F}+XF+F+X{F-F-F}+X
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus X F Plus F Plus X F;
+
+match X then X PolygonBegin F Minus F Minus F PolygonEnd Plus X F Plus F Plus X PolygonBegin F Minus F Minus F PolygonEnd Plus X;

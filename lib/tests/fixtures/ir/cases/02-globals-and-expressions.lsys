@@ -1,0 +1,6 @@
+let STEP = BASE + 1;
+let BASE = sqrt(4);
+
+axiom F(STEP, 0.1);
+
+match F(x,y) when x < 5 then F(x + STEP, max(y, 0.25));

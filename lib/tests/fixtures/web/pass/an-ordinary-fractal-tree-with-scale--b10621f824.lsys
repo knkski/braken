@@ -1,0 +1,41 @@
+# ID       : LSYS-B10621F82493
+# Name     : An ordinary fractal tree with scale
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | tree_ordinary_scale.ls | https://github.com/jkubin/L-system/blob/68a699a/tree_ordinary_scale.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=4
+# Render   : pass; file=../renders/an-ordinary-fractal-tree-with-scale--b10621f824.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 45
+# Heading  : 90
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:b10621f8249397842935076f575028a302b8003f7bb07136b3175322a4a28133
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2020/07/05⟧)
+# JKUBIN | ___DESCR(⟦An ordinary fractal tree with scale⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 tree_ordinary_scale.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦TREE⟧, ⟦A⟧)
+# JKUBIN | RULE(⟦A⟧, ⟦F[+A][-A]FA⟧, ⟦F⟧)
+# JKUBIN | RULE(⟦F⟧, ⟦>F<⟧, ⟦F⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(45),dnl
+# JKUBIN | "step":5,dnl
+# JKUBIN | SCALE(2.0),dnl
+# JKUBIN | "sety":-200,dnl
+# JKUBIN | "seth":90,dnl
+# JKUBIN | 
+# JKUBIN | TREE(6)
+#
+let ANGLE = 45;
+let SCALE = 2;
+
+axiom A;
+
+match A then F [ Plus A ] [ Minus A ] F A;
+match F then ScaleLength F ScaleLengthInverse;

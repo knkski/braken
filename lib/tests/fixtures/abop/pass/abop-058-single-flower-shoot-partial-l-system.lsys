@@ -1,0 +1,19 @@
+# ID       : ABOP-058
+# Name     : Single-flower shoot, partial L-system
+# Source   : chapter 3, book page 64, Eq. 3.1
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Parses; choose AmbiguousRulePolicy::Uniform or a domain policy to execute the partial system.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a -> I[L]a
+# ABOP | p2    : a -> I[L]A
+# ABOP | p3    : A -> K
+#
+axiom a;
+
+match a then I [ L ] a;
+match a then I [ L ] A;
+match A then K;

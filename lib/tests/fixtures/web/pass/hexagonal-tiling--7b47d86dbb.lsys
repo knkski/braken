@@ -1,0 +1,39 @@
+# ID       : LSYS-7B47D86DBB1E
+# Name     : Hexagonal tiling
+# Source   : jkubin/L-system M4 catalog (commit 68a699a) | hexagonal_tiling.ls | https://github.com/jkubin/L-system/blob/68a699a/hexagonal_tiling.ls
+# Formalism: deterministic context-free turtle string with terminal homomorphism
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/hexagonal-tiling--7b47d86dbb.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, terminal-homomorphism, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : F K R G B M N L
+# Move     : f HalfMove
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:7b47d86dbb1ebfe5dc4d470061585c1df17544494f07487b44d6b1b3adb0f8f6
+#
+# Original jkubin/L-system M4 catalog (commit 68a699a):
+# JKUBIN | __HEADER(⟦Josef Kubin⟧, ⟦2018/07/27⟧)
+# JKUBIN | __THANKS(⟦Lindenmayer Systems, Fractals, and Plants⟧)
+# JKUBIN | ___DESCR(⟦Hexagonal tiling⟧)
+# JKUBIN | ___USAGE(⟦m4 lsys.m4 hexagonal_tiling.ls | turtle_plotter⟧)
+# JKUBIN | 
+# JKUBIN | AXIOM(⟦HEXAGON_TILING⟧, ⟦X⟧)
+# JKUBIN | RULE(⟦X⟧, ⟦[-F+F[Y]+F][+F-F[X]-F]⟧)
+# JKUBIN | RULE(⟦Y⟧, ⟦[-F+F[Y]+F][+F-F-F]⟧)
+# JKUBIN | 
+# JKUBIN | divert⟦⟧dnl turtle configuration
+# JKUBIN | ANGLE(60),dnl
+# JKUBIN | "step":20,dnl
+# JKUBIN | "setx":-100,dnl
+# JKUBIN | 
+# JKUBIN | HEXAGON_TILING(8)
+#
+let ANGLE = 60;
+
+axiom X;
+
+match X then [ Minus F Plus F [ Y ] Plus F ] [ Plus F Minus F [ X ] Minus F ];
+match Y then [ Minus F Plus F [ Y ] Plus F ] [ Plus F Minus F Minus F ];

@@ -1,0 +1,30 @@
+Braken IR v1 / semantics v2
+8 symbols · 0 globals · 2 productions · 0 expression programs
+maximum expression stack 0 · maximum bindings 0 · maximum context depth 2
+source fingerprint fnv1a64:8d57f1a25eaa5bc6
+
+symbols
+  s0 = A / 0
+  s1 = B / 0
+  s2 = C / 0
+  s3 = LeftHit / 0
+  s4 = RightHit / 0
+  s5 = X / 0
+  s6 = Y / 0
+  s7 = Z / 0
+
+axiom
+  A [B] C X [Y] Z
+
+productions
+  p0: A right [B] C then RightHit
+  p1: Z left X [Y] then LeftHit
+
+expression programs
+
+backend compatibility
+  CPU: compatible
+  CUDA: unsupported
+    Error [gpu-context] the current GPU derivation compiler accepts only context-free productions
+  WGPU: unsupported
+    Error [gpu-context] the current GPU derivation compiler accepts only context-free productions

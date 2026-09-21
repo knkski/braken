@@ -1,0 +1,43 @@
+# ID       : LSYS-D57C85671175
+# Name     : Sierpinski Arrowhead
+# Source   : Kit Wallace OpenSCAD L-system catalog | curves[12] (Sierpinski Arrowhead) | https://github.com/KitWallace/openscad/blob/master/lib/lsystem.scad
+# Formalism: deterministic context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=5
+# Render   : pass; file=../renders/sierpinski-arrowhead--d57c856711.svg
+# Fidelity : transcription
+# Features : context-free, deterministic, turtle2d
+# Angle    : 60
+# Heading  : 0
+# Draw     : A B
+# Move     : none
+# Profile  : turtle2d-generic
+# Fingerprint: sha256:d57c85671175808c943ef4fe810d77b45bcfd94e828b321ff12bf1fc4741cebd
+#
+# Original Kit Wallace OpenSCAD L-system catalog:
+# KITWALLACE | [
+# KITWALLACE |   "Sierpinski Arrowhead",
+# KITWALLACE |   "A",
+# KITWALLACE |   [
+# KITWALLACE |     [
+# KITWALLACE |       "A",
+# KITWALLACE |       "B-A-B"
+# KITWALLACE |     ],
+# KITWALLACE |     [
+# KITWALLACE |       "B",
+# KITWALLACE |       "A+B+A"
+# KITWALLACE |     ]
+# KITWALLACE |   ],
+# KITWALLACE |   60.0,
+# KITWALLACE |   [
+# KITWALLACE |     "A",
+# KITWALLACE |     "B"
+# KITWALLACE |   ]
+# KITWALLACE | ]
+#
+let ANGLE = 60;
+
+axiom A;
+
+match A then B Minus A Minus B;
+match B then A Plus B Plus A;

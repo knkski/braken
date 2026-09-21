@@ -1,0 +1,66 @@
+# ID       : LSYS-42744D5FF4FF
+# Name     : Quadratic Koch Island
+# Aliases  : island; Koch5; Quadratic Koch Island1
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/curves.ls, section Koch5 (#17) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/curves.ls
+# Source   : resetius/lsystem Fractint-rule catalog (commit f7fa950) | fractals/island.ls, section island (#1) | https://github.com/resetius/lsystem/blob/f7fa950/fractals/island.ls
+# Source   : Fractint 20.04p17 official rule library | lsystem/fractint.l, section Koch5 (#27) | https://www.fractint.org/ftp/current/dos/fractint-20.04p17.zip
+# Source   : Elm L-System Studio presets (BSD-3-Clause, commit a40179d) | Data.Settings.quadraticKochIsland1 | https://github.com/dwayne/elm-l-system-studio/blob/a40179d/src/Data/Settings.elm
+# Source   : Paul Bourke L-system manual/catalog | example 18; heading Quadratic Koch Island | https://paulbourke.net/fractals/lsys/
+# Formalism: Fractint-style context-free turtle string
+# Parse    : pass; validator=corpus-static
+# Execute  : pass; engine=bounded-python-context-free; iterations=3
+# Render   : pass; file=../renders/quadratic-koch-island--42744d5ff4.svg
+# Fidelity : equivalent
+# Features : context-free, deterministic, fractint-turtle, turtle2d
+# Angle    : 90
+# Heading  : 0
+# Draw     : F D
+# Move     : G M
+# Profile  : turtle2d-fractint
+# Fingerprint: sha256:42744d5ff4ff95ef4ffa789f4a7f1c099fd64451038ba642d846976aba23ef89
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | Koch5 {
+# RESETIUS |   axiom f+F+F+F
+# RESETIUS |   f=F+F-F-FFF+F+F-F
+# RESETIUS |   angle 4
+# RESETIUS |   }
+#
+# Original resetius/lsystem Fractint-rule catalog (commit f7fa950):
+# RESETIUS | island {
+# RESETIUS | axiom F+F+F+F
+# RESETIUS | F=F+F-F-FFF+F+F-F
+# RESETIUS | theta 1.5707963267948966192313216916398
+# RESETIUS | }
+#
+# Original Fractint 20.04p17 official rule library:
+# FRACTINT | Koch5 {
+# FRACTINT |   axiom f+F+F+F
+# FRACTINT |   f=F+F-F-FFF+F+F-F
+# FRACTINT |   angle 4
+# FRACTINT |   }
+#
+# Original Elm L-System Studio presets (BSD-3-Clause, commit a40179d):
+# ELM | quadraticKochIsland1 =
+# ELM |     { default
+# ELM |         | rules =
+# ELM |             [ ( 'F', "F+F-F-FFF+F+F-F" )
+# ELM |             ]
+# ELM |         , axiom = "F+F+F+F"
+# ELM |         , iterations = 3
+# ELM |         , lineLength = 3
+# ELM |         , turningAngle = Angle.right
+# ELM |         , windowPosition = { x = -36, y = -178 }
+# ELM |         , windowSize = 370
+# ELM |     }
+#
+# Original Paul Bourke L-system manual/catalog:
+# BOURKE | axiom = F+F+F+F
+# BOURKE | F -> F+F-F-FFF+F+F-F
+# BOURKE | angle = 90
+#
+let ANGLE = 90;
+
+axiom F Plus F Plus F Plus F;
+
+match F then F Plus F Minus F Minus F F F Plus F Plus F Minus F;

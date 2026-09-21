@@ -1,0 +1,19 @@
+# ID       : ABOP-074
+# Name     : Open double cyme
+# Source   : chapter 3, book page 83, Eq. 3.6
+# Formalism: nondeterministic bracketed string
+# Parse    : pass
+# Execute  : policy
+# Note     : Parses; execution needs an explicit policy for unweighted alternatives.
+#
+# Original ABOP:
+# ABOP | ω : a
+# ABOP | p1    : a -> I[L]a
+# ABOP | p2    : a -> I[L]A
+# ABOP | p3    : A -> I[A][A]K
+#
+axiom a;
+
+match a then I [ L ] a;
+match a then I [ L ] A;
+match A then I [ A ] [ A ] K;
